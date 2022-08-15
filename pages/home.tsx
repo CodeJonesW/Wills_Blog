@@ -2,6 +2,8 @@ import type { NextPage } from "next";
 import Image from "next/image";
 import styled from "styled-components";
 import styles from "../styles/Home.module.css";
+import { Button } from "@mui/material";
+
 const HomeContainer = styled.div``;
 
 const LandingSection = styled.div`
@@ -59,10 +61,13 @@ const SecondaryLandingTextRow = styled.div`
   display: flex;
 `;
 
-const Button = styled.button`
+const StyledButton = styled(Button)`
   font-size: 1.2em;
   padding: 8px;
-  background-color: white;
+  &:hover {
+    background-color: white;
+    color: black;
+  }
   border-radius: 16px;
   font-family: "LemonMilkBold";
 `;
@@ -87,10 +92,15 @@ const CompanySubTagline = styled.h2`
 
 const Home: NextPage = () => {
   return (
-    <HomeContainer>
+    <HomeContainer className={styles.quartzoBold}>
       <LandingSection>
         <LeftSection>
-          <Image src="/demoImage.jpeg" width={375} height={425} />
+          <Image
+            style={{ borderRadius: 200 }}
+            src="/demoImage.jpeg"
+            width={400}
+            height={425}
+          />
         </LeftSection>
         <RightSection>
           <MainLandingText>
@@ -109,13 +119,13 @@ const Home: NextPage = () => {
             </SecondaryLandingTextRow>
             <UnshrinkableDiv style={{ height: 20 }} />
             <SecondaryLandingTextRow>
-              <Button>
+              <StyledButton variant="outlined">
                 <h3>Learn how we can expand your business</h3>
-              </Button>
+              </StyledButton>
               <UnshrinkableDiv style={{ width: 10 }} />
-              <Button className={styles.quartzoBold}>
+              <StyledButton variant="contained">
                 <h3>Book a free consultation</h3>
-              </Button>
+              </StyledButton>
             </SecondaryLandingTextRow>
 
             <UnshrinkableDiv style={{ height: 10 }} />
