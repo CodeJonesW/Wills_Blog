@@ -37,11 +37,6 @@ const RightSection = styled.div`
   color: white;
 `;
 
-const ImageContainer = styled.div`
-  max-width: 400px;
-  max-height: 600px;
-`;
-
 const UnshrinkableDiv = styled.div`
   flex-shrink: 0;
 `;
@@ -72,6 +67,24 @@ const Button = styled.button`
   font-family: "LemonMilkBold";
 `;
 
+const SubText = styled.div`
+  font-family: "MontserratMedium";
+`;
+
+const CompanyName = styled.h1`
+  font-family: "LemonMilkBold";
+`;
+
+const CompanyTagline = styled.h2`
+  font-family: "MontserratBold";
+  max-width: 80%;
+`;
+
+const CompanySubTagline = styled.h2`
+  font-family: "MontserratMedium";
+  max-width: 80%;
+`;
+
 const Home: NextPage = () => {
   return (
     <HomeContainer>
@@ -81,18 +94,18 @@ const Home: NextPage = () => {
         </LeftSection>
         <RightSection>
           <MainLandingText>
-            <h1>Web Expert Studio</h1>
+            <CompanyName>Web Expert Studio</CompanyName>
 
             <UnshrinkableDiv style={{ height: 20 }} />
-            <h2>
+            <CompanyTagline>
               I love helping businesses use technology to make more money and
               make lives easier.
-            </h2>
+            </CompanyTagline>
             <SecondaryLandingTextRow style={{ fontFamily: "MontserratMedium" }}>
-              <h3>
+              <CompanySubTagline>
                 Understanding business needs and selecting technologies will
                 best server our customers long term is our specialty.
-              </h3>
+              </CompanySubTagline>
             </SecondaryLandingTextRow>
             <UnshrinkableDiv style={{ height: 20 }} />
             <SecondaryLandingTextRow>
@@ -106,8 +119,10 @@ const Home: NextPage = () => {
             </SecondaryLandingTextRow>
 
             <UnshrinkableDiv style={{ height: 10 }} />
-            <h3>Consulting, Design, Development</h3>
-            <h4>Asheville, North Carolina</h4>
+            <SubText>
+              <h3>Consulting, Design, Development</h3>
+              <h4>Asheville, North Carolina</h4>
+            </SubText>
           </MainLandingText>
         </RightSection>
       </LandingSection>
