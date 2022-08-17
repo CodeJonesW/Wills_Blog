@@ -163,3 +163,10 @@
   font-weight: bold;
   font-size: 1rem;
 }
+
+.box {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  background-color: #00ccff;
+}

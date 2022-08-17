@@ -3,7 +3,8 @@ import Image from "next/image";
 import styled from "styled-components";
 import styles from "../styles/Home.module.css";
 import { Button } from "@mui/material";
-
+import { motion, useScroll } from "framer-motion";
+import { useMotionTemplate, useMotionValue } from "framer-motion";
 const HomeContainer = styled.div``;
 
 const LandingSection = styled.div`
@@ -13,6 +14,7 @@ const LandingSection = styled.div`
   justify-content: center;
   flex-direction: row;
   background-color: black;
+  color: white;
 `;
 
 const LeftSection = styled.div`
@@ -53,7 +55,7 @@ const MainLandingText = styled.div`
 
 const SecondaryLandingTextRow = styled.div`
   min-width: 200px;
-  min-height: 100px;
+  min-height: 40px;
   flex-shrink: 0;
   max-width: 80%;
   line-height: 40px;
@@ -80,6 +82,13 @@ const CompanyName = styled.h1`
   font-family: "LemonMilkBold";
 `;
 
+const ActionTextSection = styled.h1`
+  font-family: "LemonMilkBold";
+  color: black;
+  text-align: center;
+  line-height: 50px;
+`;
+
 const CompanyTagline = styled.h2`
   font-family: "MontserratBold";
   max-width: 80%;
@@ -91,6 +100,13 @@ const CompanySubTagline = styled.h2`
 `;
 
 const Home: NextPage = () => {
+  const { scrollYProgress } = useScroll();
+
+  const x = useMotionValue(200);
+
+  // transform.get() === transform(100px)
+  const transform = useMotionTemplate`transform(${x}px)`;
+
   return (
     <HomeContainer className={styles.quartzoBold}>
       <LandingSection>
@@ -108,16 +124,13 @@ const Home: NextPage = () => {
 
             <UnshrinkableDiv style={{ height: 20 }} />
             <CompanyTagline>
-              I love helping businesses use technology to make more money and
-              make lives easier.
+              Helping businesses use technology to make more money and make
+              lives easier.
             </CompanyTagline>
             <SecondaryLandingTextRow style={{ fontFamily: "MontserratMedium" }}>
-              <CompanySubTagline>
-                Understanding business needs and selecting technologies will
-                best server our customers long term is our specialty.
-              </CompanySubTagline>
+              <CompanySubTagline></CompanySubTagline>
             </SecondaryLandingTextRow>
-            <UnshrinkableDiv style={{ height: 20 }} />
+            {/* <UnshrinkableDiv style={{ height: 20 }} /> */}
             <SecondaryLandingTextRow>
               <StyledButton variant="outlined">
                 <h3>Learn how we can expand your business</h3>
@@ -135,6 +148,23 @@ const Home: NextPage = () => {
             </SubText>
           </MainLandingText>
         </RightSection>
+      </LandingSection>
+      <LandingSection style={{ flexDirection: "column" }}>
+        <UnshrinkableDiv style={{ height: 300 }} />
+        <motion.div
+          style={{
+            width: 400,
+            height: 100,
+            backgroundColor: "white",
+          }}
+          animate={{ x: 200 }}
+          whileInView={{ opacity: 1 }}
+          initial={{ opacity: 0, x: -2000 }}
+          transition={{ duration: 1, type: "spring" }}
+          className="box"
+        >
+          <ActionTextSection>Why us?</ActionTextSection>
+        </motion.div>
       </LandingSection>
     </HomeContainer>
   );
