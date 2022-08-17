@@ -3,9 +3,9 @@ import Image from "next/image";
 import styled from "styled-components";
 import styles from "../styles/Home.module.css";
 import { Button } from "@mui/material";
-import { motion } from "framer-motion";
+import { motion, useScroll } from "framer-motion";
 import { useAnimationControls } from "framer-motion";
-import { useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 
 const HomeContainer = styled.div``;
 
@@ -104,16 +104,23 @@ const CompanySubTagline = styled.h2`
 const Home: NextPage = () => {
   const controls = useAnimationControls();
   const [isWhyIsOpen, setIsWhyIsOpen] = useState(false);
+  const scrollToLocationRef = useRef<HTMLDivElement>(null);
 
   const onTap = (event: any, info: any) => {
     if (!isWhyIsOpen) {
-      controls.start({ opacity: 1, x: 64, transition: { duration: 1.2 } });
+      controls.start({ opacity: 1, y: -48, transition: { duration: 1.2 } });
       setIsWhyIsOpen(true);
     } else {
-      controls.start({ opacity: 0, x: -64, transition: { duration: 1.2 } });
+      controls.start({ opacity: 0, y: 0, transition: { duration: 1.2 } });
       setIsWhyIsOpen(false);
     }
   };
+
+  const { scrollY } = useScroll();
+
+  const scrollHalf = () =>
+    window.scrollTo({ top: window.innerHeight, behavior: "smooth" });
+
   return (
     <HomeContainer className={styles.quartzoBold}>
       <LandingSection>
@@ -138,7 +145,12 @@ const Home: NextPage = () => {
               <CompanySubTagline></CompanySubTagline>
             </SecondaryLandingTextRow>
             <SecondaryLandingTextRow>
-              <StyledButton variant="outlined">
+              <StyledButton
+                onClick={() => {
+                  scrollHalf();
+                }}
+                variant="outlined"
+              >
                 <h3>Learn how we can expand your business</h3>
               </StyledButton>
               <UnshrinkableDiv style={{ width: 10 }} />
@@ -155,16 +167,25 @@ const Home: NextPage = () => {
           </MainLandingText>
         </RightSection>
       </LandingSection>
-      <LandingSection>
+      <LandingSection
+        style={{
+          flexDirection: "column",
+          alignItems: "center",
+          justifyContent: "flex-start",
+        }}
+      >
         <motion.div
+          ref={scrollToLocationRef}
           style={{
+            display: "flex",
+            justifyContent: "center",
             width: 400,
             height: 100,
             backgroundColor: "white",
           }}
           whileInView={{ opacity: 1 }}
           initial={{ opacity: 0 }}
-          transition={{ duration: 1, type: "spring" }}
+          transition={{ duration: 4, type: "spring" }}
           className="box"
           onTap={onTap}
         >
@@ -175,6 +196,8 @@ const Home: NextPage = () => {
             color: "white",
             fontFamily: "MontserratMedium",
             maxWidth: "700px",
+            paddingTop: "64px",
+            textAlign: "center",
           }}
           initial={{ opacity: 0 }}
           animate={controls}
