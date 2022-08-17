@@ -103,10 +103,13 @@ const CompanySubTagline = styled.h2`
 
 const Home: NextPage = () => {
   const controls = useAnimationControls();
+  const controls2 = useAnimationControls();
+  const controls3 = useAnimationControls();
   const [isWhyIsOpen, setIsWhyIsOpen] = useState(false);
   const scrollToLocationRef = useRef<HTMLDivElement>(null);
 
   const onTap = (event: any, info: any) => {
+    controls3.start({ opacity: 0, transition: { duration: 1.2 } });
     if (!isWhyIsOpen) {
       controls.start({ opacity: 1, y: -48, transition: { duration: 1.2 } });
       setIsWhyIsOpen(true);
@@ -114,6 +117,9 @@ const Home: NextPage = () => {
       controls.start({ opacity: 0, y: 0, transition: { duration: 1.2 } });
       setIsWhyIsOpen(false);
     }
+    setTimeout(() => {
+      controls2.start({ opacity: 1, y: -48, transition: { duration: 1.2 } });
+    }, 3000);
   };
 
   const { scrollY } = useScroll();
@@ -174,37 +180,51 @@ const Home: NextPage = () => {
           justifyContent: "flex-start",
         }}
       >
-        <motion.div
-          ref={scrollToLocationRef}
-          style={{
-            display: "flex",
-            justifyContent: "center",
-            width: 400,
-            height: 100,
-            backgroundColor: "white",
-          }}
-          whileInView={{ opacity: 1 }}
-          initial={{ opacity: 0 }}
-          transition={{ duration: 4, type: "spring" }}
-          className="box"
-          onTap={onTap}
-        >
-          <ActionTextSection>Why us?</ActionTextSection>
+        <motion.div initial={{ opacity: 1 }} animate={controls3}>
+          <motion.div
+            ref={scrollToLocationRef}
+            style={{
+              display: "flex",
+              justifyContent: "center",
+              width: 400,
+              height: 100,
+              backgroundColor: "white",
+            }}
+            whileInView={{ opacity: 1 }}
+            initial={{ opacity: 0 }}
+            transition={{ duration: 4, type: "spring" }}
+            className="box"
+            onTap={onTap}
+          >
+            <ActionTextSection>Why us?</ActionTextSection>
+          </motion.div>
         </motion.div>
-        <motion.h3
+        <motion.div
           style={{
             color: "white",
-            fontFamily: "MontserratMedium",
+            fontFamily: "MontserratBold",
             maxWidth: "700px",
             paddingTop: "64px",
             textAlign: "center",
+            fontWeight: "bold",
           }}
           initial={{ opacity: 0 }}
           animate={controls}
         >
-          Individual and small business solutions that help you learn how to
-          maintain your own site.
-        </motion.h3>
+          <h3 style={{ fontSize: "48px" }}>
+            We know what tools will serve your business best.
+          </h3>
+          <UnshrinkableDiv style={{ height: 164 }} />
+          <motion.div initial={{ opacity: 0 }} animate={controls2}>
+            <StyledButton variant="contained" style={{ padding: "16px" }}>
+              You want to manage the site yourself?
+            </StyledButton>
+            <UnshrinkableDiv style={{ height: "48px" }} />
+            <StyledButton style={{ padding: "16px" }}>
+              Maybe have someone else do it.
+            </StyledButton>
+          </motion.div>
+        </motion.div>
       </LandingSection>
     </HomeContainer>
   );
