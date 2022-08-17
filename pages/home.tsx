@@ -3,12 +3,14 @@ import Image from "next/image";
 import styled from "styled-components";
 import styles from "../styles/Home.module.css";
 import { Button } from "@mui/material";
-import { motion, useScroll } from "framer-motion";
-import { useMotionTemplate, useMotionValue } from "framer-motion";
+import { motion } from "framer-motion";
+import { useAnimationControls } from "framer-motion";
+import { useState } from "react";
+
 const HomeContainer = styled.div``;
 
 const LandingSection = styled.div`
-  min-height: 772px;
+  min-height: 844px;
   width: 100vw;
   display: flex;
   justify-content: center;
@@ -100,13 +102,18 @@ const CompanySubTagline = styled.h2`
 `;
 
 const Home: NextPage = () => {
-  const { scrollYProgress } = useScroll();
+  const controls = useAnimationControls();
+  const [isWhyIsOpen, setIsWhyIsOpen] = useState(false);
 
-  const x = useMotionValue(200);
-
-  // transform.get() === transform(100px)
-  const transform = useMotionTemplate`transform(${x}px)`;
-
+  const onTap = (event: any, info: any) => {
+    if (!isWhyIsOpen) {
+      controls.start({ opacity: 1, x: 64, transition: { duration: 1.2 } });
+      setIsWhyIsOpen(true);
+    } else {
+      controls.start({ opacity: 0, x: -64, transition: { duration: 1.2 } });
+      setIsWhyIsOpen(false);
+    }
+  };
   return (
     <HomeContainer className={styles.quartzoBold}>
       <LandingSection>
@@ -130,7 +137,6 @@ const Home: NextPage = () => {
             <SecondaryLandingTextRow style={{ fontFamily: "MontserratMedium" }}>
               <CompanySubTagline></CompanySubTagline>
             </SecondaryLandingTextRow>
-            {/* <UnshrinkableDiv style={{ height: 20 }} /> */}
             <SecondaryLandingTextRow>
               <StyledButton variant="outlined">
                 <h3>Learn how we can expand your business</h3>
@@ -149,22 +155,33 @@ const Home: NextPage = () => {
           </MainLandingText>
         </RightSection>
       </LandingSection>
-      <LandingSection style={{ flexDirection: "column" }}>
-        <UnshrinkableDiv style={{ height: 300 }} />
+      <LandingSection>
         <motion.div
           style={{
             width: 400,
             height: 100,
             backgroundColor: "white",
           }}
-          animate={{ x: 200 }}
           whileInView={{ opacity: 1 }}
-          initial={{ opacity: 0, x: -2000 }}
+          initial={{ opacity: 0 }}
           transition={{ duration: 1, type: "spring" }}
           className="box"
+          onTap={onTap}
         >
           <ActionTextSection>Why us?</ActionTextSection>
         </motion.div>
+        <motion.h3
+          style={{
+            color: "white",
+            fontFamily: "MontserratMedium",
+            maxWidth: "700px",
+          }}
+          initial={{ opacity: 0 }}
+          animate={controls}
+        >
+          Individual and small business solutions that help you learn how to
+          maintain your own site.
+        </motion.h3>
       </LandingSection>
     </HomeContainer>
   );
