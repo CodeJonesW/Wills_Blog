@@ -90,7 +90,6 @@ const Home: NextPage = () => {
   const homeControls = useAnimationControls();
   const packagesControls = useAnimationControls();
   const [isWhyIsOpen, setIsWhyIsOpen] = useState(false);
-  const scrollToLocationRef = useRef<HTMLDivElement>(null);
 
   const onTap = (event: any, info: any) => {
     controls3.start({ opacity: 0, transition: { duration: 1.2 } });
@@ -108,11 +107,8 @@ const Home: NextPage = () => {
     });
   };
 
-  const transitionToNewPage = async () => {
-    await homeControls.start({
-      backgroundColor: "black",
-      transition: { duration: 1.2 },
-    });
+  const scrollToPackages = async () => {
+    scrollSections(2);
 
     packagesControls.start({
       opacity: 1,
@@ -122,8 +118,8 @@ const Home: NextPage = () => {
 
   const { scrollY } = useScroll();
 
-  const scrollHalf = () =>
-    window.scrollTo({ top: window.innerHeight, behavior: "smooth" });
+  const scrollSections = (numOfSections = 1) =>
+    window.scrollTo({ top: 844 * numOfSections, behavior: "smooth" });
 
   return (
     <HomeContainer className={styles.quartzoBold}>
@@ -151,7 +147,7 @@ const Home: NextPage = () => {
             <SecondaryLandingTextRow>
               <StyledButton
                 onClick={() => {
-                  scrollHalf();
+                  scrollSections(1);
                 }}
                 variant="outlined"
               >
@@ -177,7 +173,6 @@ const Home: NextPage = () => {
       >
         <motion.div initial={{ opacity: 1 }} animate={controls3}>
           <motion.div
-            ref={scrollToLocationRef}
             style={{
               display: "flex",
               justifyContent: "center",
@@ -210,9 +205,13 @@ const Home: NextPage = () => {
             We know what tools will serve your business best.
           </h3>
           <UnshrinkableDiv style={{ height: 164 }} />
-          <motion.div initial={{ opacity: 0 }} animate={controls2}>
+          <motion.div
+            style={{ flexDirection: "row" }}
+            initial={{ opacity: 0 }}
+            animate={controls2}
+          >
             <StyledButton
-              onClick={() => transitionToNewPage()}
+              onClick={() => scrollSections(2)}
               variant="contained"
               style={{ padding: "16px" }}
             >
