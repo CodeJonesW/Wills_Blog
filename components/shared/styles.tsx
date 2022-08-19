@@ -3,7 +3,7 @@ import { Button } from "@mui/material";
 import { motion } from "framer-motion";
 
 export const LandingSection = styled(motion.div)`
-  min-height: 844px;
+  min-height: 100vh;
   width: 100vw;
   display: flex;
   justify-content: center;
