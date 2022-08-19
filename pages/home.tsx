@@ -1,23 +1,20 @@
 import type { NextPage } from "next";
 import Image from "next/image";
+import Router from "next/router";
 import styled from "styled-components";
 import styles from "../styles/Home.module.css";
-import { Button } from "@mui/material";
+
 import { motion, useScroll } from "framer-motion";
 import { useAnimationControls } from "framer-motion";
 import React, { useEffect, useRef, useState } from "react";
+import {
+  LandingSection,
+  StyledButton,
+  UnshrinkableDiv,
+} from "../components/shared/styles";
+import Packages from "../components/home/packages";
 
-const HomeContainer = styled.div``;
-
-const LandingSection = styled.div`
-  min-height: 844px;
-  width: 100vw;
-  display: flex;
-  justify-content: center;
-  flex-direction: row;
-  background-color: black;
-  color: white;
-`;
+const HomeContainer = styled(motion.div)``;
 
 const LeftSection = styled.div`
   display: flex;
@@ -43,10 +40,6 @@ const RightSection = styled.div`
   color: white;
 `;
 
-const UnshrinkableDiv = styled.div`
-  flex-shrink: 0;
-`;
-
 const MainLandingText = styled.div`
   min-width: 200px;
   min-height: 200px;
@@ -65,17 +58,6 @@ const SecondaryLandingTextRow = styled.div`
   display: flex;
 `;
 
-const StyledButton = styled(Button)`
-  font-size: 1.2em;
-  padding: 8px;
-  &:hover {
-    background-color: white;
-    color: black;
-  }
-  border-radius: 16px;
-  font-family: "LemonMilkBold";
-`;
-
 const SubText = styled.div`
   font-family: "MontserratMedium";
 `;
@@ -84,7 +66,7 @@ const CompanyName = styled.h1`
   font-family: "LemonMilkBold";
 `;
 
-const ActionTextSection = styled.h1`
+export const ActionTextSection = styled.h1`
   font-family: "LemonMilkBold";
   color: black;
   text-align: center;
@@ -105,6 +87,8 @@ const Home: NextPage = () => {
   const controls = useAnimationControls();
   const controls2 = useAnimationControls();
   const controls3 = useAnimationControls();
+  const homeControls = useAnimationControls();
+  const packagesControls = useAnimationControls();
   const [isWhyIsOpen, setIsWhyIsOpen] = useState(false);
   const scrollToLocationRef = useRef<HTMLDivElement>(null);
 
@@ -117,9 +101,23 @@ const Home: NextPage = () => {
       controls.start({ opacity: 0, y: 0, transition: { duration: 1.2 } });
       setIsWhyIsOpen(false);
     }
-    setTimeout(() => {
-      controls2.start({ opacity: 1, y: -48, transition: { duration: 1.2 } });
-    }, 3000);
+    controls2.start({
+      opacity: 1,
+      y: -48,
+      transition: { duration: 1.2, delay: 3 },
+    });
+  };
+
+  const transitionToNewPage = async () => {
+    await homeControls.start({
+      backgroundColor: "black",
+      transition: { duration: 1.2 },
+    });
+
+    packagesControls.start({
+      opacity: 1,
+      transition: { duration: 1.2 },
+    });
   };
 
   const { scrollY } = useScroll();
@@ -129,7 +127,7 @@ const Home: NextPage = () => {
 
   return (
     <HomeContainer className={styles.quartzoBold}>
-      <LandingSection>
+      <LandingSection animate={homeControls}>
         <LeftSection>
           <Image
             style={{ borderRadius: 200 }}
@@ -166,14 +164,11 @@ const Home: NextPage = () => {
             </SecondaryLandingTextRow>
 
             <UnshrinkableDiv style={{ height: 10 }} />
-            <SubText>
-              <h3>Consulting, Design, Development</h3>
-              <h4>Asheville, North Carolina</h4>
-            </SubText>
           </MainLandingText>
         </RightSection>
       </LandingSection>
       <LandingSection
+        animate={homeControls}
         style={{
           flexDirection: "column",
           alignItems: "center",
@@ -216,16 +211,23 @@ const Home: NextPage = () => {
           </h3>
           <UnshrinkableDiv style={{ height: 164 }} />
           <motion.div initial={{ opacity: 0 }} animate={controls2}>
-            <StyledButton variant="contained" style={{ padding: "16px" }}>
-              You want to manage the site yourself?
+            <StyledButton
+              onClick={() => transitionToNewPage()}
+              variant="contained"
+              style={{ padding: "16px" }}
+            >
+              Want us to build you an amazing website and set you up to manage
+              it?
             </StyledButton>
             <UnshrinkableDiv style={{ height: "48px" }} />
             <StyledButton style={{ padding: "16px" }}>
-              Maybe have someone else do it.
+              Think you might need a custom solution?
             </StyledButton>
           </motion.div>
         </motion.div>
       </LandingSection>
+
+      <Packages {...packagesControls} />
     </HomeContainer>
   );
 };
