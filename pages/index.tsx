@@ -1,6 +1,5 @@
 import type { NextPage } from "next";
 import Image from "next/image";
-import Router from "next/router";
 import styled from "styled-components";
 import styles from "../styles/Home.module.css";
 
@@ -12,6 +11,7 @@ import {
   StyledButton,
   UnshrinkableDiv,
 } from "../components/shared/styles";
+import OutlinedCard from "../components/shared/card";
 
 const HomeContainer = styled(motion.div)`
   background-color: black;
@@ -210,6 +210,11 @@ const Home: NextPage = () => {
         >
           We offer 3 website packages that set you up for independent success
         </ActionTextSection>
+        <SecondaryLandingTextRow>
+          <OutlinedCard />
+          <OutlinedCard />
+          <OutlinedCard />
+        </SecondaryLandingTextRow>
       </LandingSection>
     </HomeContainer>
   );
