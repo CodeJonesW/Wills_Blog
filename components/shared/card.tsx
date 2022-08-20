@@ -5,7 +5,7 @@ import CardActions from "@mui/material/CardActions";
 import CardContent from "@mui/material/CardContent";
 import Button from "@mui/material/Button";
 import Typography from "@mui/material/Typography";
-
+import styles from "../../styles/Home.module.css";
 const bull = (
   <Box
     component="span"
@@ -15,25 +15,36 @@ const bull = (
   </Box>
 );
 
+const fontStyle = { fontFamily: "MontserratMedium" };
+
 const card = (
   <React.Fragment>
-    <CardContent>
-      <Typography sx={{ fontSize: 14 }} color="text.secondary" gutterBottom>
-        Small Business Support
+    <CardContent className={styles.QuartzoBold}>
+      <Typography
+        style={{ fontFamily: "LemonMilkBold" }}
+        sx={{ fontSize: 14 }}
+        color="text.secondary"
+        gutterBottom
+      >
+        The basics for success
       </Typography>
       <Typography variant="h5" component="div"></Typography>
-      <Typography sx={{ mb: 1.5 }} color="text.secondary">
+      <Typography
+        style={{ fontFamily: "MontserratMedium" }}
+        sx={{ mb: 1.5 }}
+        color="text.secondary"
+      >
         What do you get?
       </Typography>
 
-      <Typography variant="body2">
+      <Typography style={fontStyle} variant="body2">
         {bull}Initial design and planning meeting (1 hour)
       </Typography>
 
-      <Typography variant="body2">
+      <Typography style={fontStyle} variant="body2">
         {bull}Review meeting at 60% completion (30 minutes)
       </Typography>
-      <Typography variant="body2">
+      <Typography style={fontStyle} variant="body2">
         {bull}At 100% completion, we send you a link to demo and we create a
         final revisions list.
       </Typography>

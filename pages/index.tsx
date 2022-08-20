@@ -210,7 +210,7 @@ const Home: NextPage = () => {
         >
           We offer 3 website packages that set you up for independent success
         </ActionTextSection>
-        <SecondaryLandingTextRow>
+        <SecondaryLandingTextRow style={{ flexWrap: "wrap" }}>
           <OutlinedCard />
           <OutlinedCard />
           <OutlinedCard />
