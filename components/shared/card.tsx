@@ -7,6 +7,8 @@ import Button from "@mui/material/Button";
 import Typography from "@mui/material/Typography";
 import styles from "../../styles/Home.module.css";
 import type { FC } from "react";
+import { CardModal } from "./card-modal";
+
 const bull = (
   <Box
     component="span"
@@ -24,6 +26,7 @@ interface OutlinedCardProps {
 }
 
 export const OutlinedCard: FC<OutlinedCardProps> = ({ title, features }) => {
+  const [open, setOpen] = React.useState(false);
   return (
     <Box style={{ padding: "16px" }} sx={{ minWidth: 275, maxWidth: 304 }}>
       <Card variant="outlined">
@@ -58,8 +61,11 @@ export const OutlinedCard: FC<OutlinedCardProps> = ({ title, features }) => {
           })}
         </CardContent>
         <CardActions>
-          <Button size="small">Learn More</Button>
+          <Button onClick={() => setOpen(true)} size="small">
+            Learn More
+          </Button>
         </CardActions>
+        <CardModal open={open} setOpen={setOpen} />
       </Card>
     </Box>
   );

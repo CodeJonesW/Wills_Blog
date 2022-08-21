@@ -1,6 +1,7 @@
 import styled from "styled-components";
 import { Button } from "@mui/material";
 import { motion } from "framer-motion";
+import styles from "../../styles/Home.module.css";
 
 export const LandingSection = styled(motion.div)`
   min-height: 100vh;
@@ -28,3 +29,6 @@ export const StyledButton = styled(Button)`
 export const UnshrinkableDiv = styled.div`
   flex-shrink: 0;
 `;
+
+export const MonterratBold = { fontFamily: "MontserratBold" };
+export const MonterratMedium = { fontFamily: "MontserratMedium" };

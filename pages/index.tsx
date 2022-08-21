@@ -12,6 +12,7 @@ import {
   UnshrinkableDiv,
 } from "../components/shared/styles";
 import { OutlinedCard } from "../components/shared/card";
+import { CardModal } from "../components/shared/card-modal";
 
 const HomeContainer = styled(motion.div)`
   background-color: black;
@@ -229,7 +230,8 @@ const Home: NextPage = () => {
               "Documentation on how the site works so you can continue to make updates and improve your site.",
             ]}
           />
-          <OutlinedCard
+
+          {/* <OutlinedCard
             title="The basics for success"
             features={[
               "Initial design and planning meeting (1 hour)",
@@ -246,7 +248,7 @@ const Home: NextPage = () => {
               "At 100% completion, we send you a link to demo and we create a final revisions list.",
               "Documentation on how the site works so you can continue to make updates and improve your site.",
             ]}
-          />
+          /> */}
         </SecondaryLandingTextRow>
       </LandingSection>
     </HomeContainer>
