@@ -174,7 +174,7 @@ const Home: NextPage = () => {
           initial={{ opacity: 0 }}
           transition={{ duration: 4, type: "spring" }}
         >
-          <h3 style={{ fontSize: "48px" }}>
+          <h3 style={{ fontSize: "2.2em", padding: "12px" }}>
             We know what tools will serve your business best.
           </h3>
           <UnshrinkableDiv style={{ height: 164 }} />
