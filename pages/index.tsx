@@ -11,11 +11,20 @@ import {
   StyledButton,
   UnshrinkableDiv,
 } from "../components/shared/styles";
-import OutlinedCard from "../components/shared/card";
+import { OutlinedCard } from "../components/shared/card";
 
 const HomeContainer = styled(motion.div)`
   background-color: black;
 `;
+// animate={{
+//   x: 0,
+//   backgroundColor: "#000",
+//   boxShadow: "10px 10px 0 rgba(0, 0, 0, 0.2)",
+//   position: "fixed",
+//   transitionEnd: {
+//     display: "none",
+//   },
+// }}
 
 const LeftSection = styled.div`
   display: flex;
@@ -204,16 +213,40 @@ const Home: NextPage = () => {
           display: isLandingSection3Visible,
         }}
       >
-        <UnshrinkableDiv style={{ height: 200 }} />
+        <UnshrinkableDiv style={{ height: 100 }} />
         <ActionTextSection
           style={{ textAlign: "center", color: "white", maxWidth: "480px" }}
         >
           We offer 3 website packages that set you up for independent success
         </ActionTextSection>
         <SecondaryLandingTextRow style={{ flexWrap: "wrap" }}>
-          <OutlinedCard />
-          <OutlinedCard />
-          <OutlinedCard />
+          <OutlinedCard
+            title="The basics for success"
+            features={[
+              "Initial design and planning meeting (1 hour)",
+              "Review meeting at 60% completion (30 minutes)",
+              "At 100% completion, we send you a link to demo and we create a final revisions list.",
+              "Documentation on how the site works so you can continue to make updates and improve your site.",
+            ]}
+          />
+          <OutlinedCard
+            title="The basics for success"
+            features={[
+              "Initial design and planning meeting (1 hour)",
+              "Review meeting at 60% completion (30 minutes)",
+              "At 100% completion, we send you a link to demo and we create a final revisions list.",
+              "Documentation on how the site works so you can continue to make updates and improve your site.",
+            ]}
+          />
+          <OutlinedCard
+            title="The basics for success"
+            features={[
+              "Initial design and planning meeting (1 hour)",
+              "Review meeting at 60% completion (30 minutes)",
+              "At 100% completion, we send you a link to demo and we create a final revisions list.",
+              "Documentation on how the site works so you can continue to make updates and improve your site.",
+            ]}
+          />
         </SecondaryLandingTextRow>
       </LandingSection>
     </HomeContainer>

@@ -6,6 +6,7 @@ import CardContent from "@mui/material/CardContent";
 import Button from "@mui/material/Button";
 import Typography from "@mui/material/Typography";
 import styles from "../../styles/Home.module.css";
+import type { FC } from "react";
 const bull = (
   <Box
     component="span"
@@ -17,48 +18,49 @@ const bull = (
 
 const fontStyle = { fontFamily: "MontserratMedium" };
 
-const card = (
-  <React.Fragment>
-    <CardContent className={styles.QuartzoBold}>
-      <Typography
-        style={{ fontFamily: "LemonMilkBold" }}
-        sx={{ fontSize: 14 }}
-        color="text.secondary"
-        gutterBottom
-      >
-        The basics for success
-      </Typography>
-      <Typography variant="h5" component="div"></Typography>
-      <Typography
-        style={{ fontFamily: "MontserratMedium" }}
-        sx={{ mb: 1.5 }}
-        color="text.secondary"
-      >
-        What do you get?
-      </Typography>
+interface OutlinedCardProps {
+  title: string;
+  features: string[];
+}
 
-      <Typography style={fontStyle} variant="body2">
-        {bull}Initial design and planning meeting (1 hour)
-      </Typography>
-
-      <Typography style={fontStyle} variant="body2">
-        {bull}Review meeting at 60% completion (30 minutes)
-      </Typography>
-      <Typography style={fontStyle} variant="body2">
-        {bull}At 100% completion, we send you a link to demo and we create a
-        final revisions list.
-      </Typography>
-    </CardContent>
-    <CardActions>
-      <Button size="small">Learn More</Button>
-    </CardActions>
-  </React.Fragment>
-);
-
-export default function OutlinedCard() {
+export const OutlinedCard: FC<OutlinedCardProps> = ({ title, features }) => {
   return (
-    <Box style={{ padding: "16px" }} sx={{ minWidth: 275 }}>
-      <Card variant="outlined">{card}</Card>
+    <Box style={{ padding: "16px" }} sx={{ minWidth: 275, maxWidth: 304 }}>
+      <Card variant="outlined">
+        <CardContent className={styles.QuartzoBold}>
+          <Typography
+            style={{ fontFamily: "LemonMilkBold" }}
+            sx={{ fontSize: 14 }}
+            color="text.secondary"
+            gutterBottom
+          >
+            {title}
+          </Typography>
+          <Typography variant="h5" component="div"></Typography>
+          <Typography
+            style={{ fontFamily: "MontserratMedium" }}
+            sx={{ mb: 1.5 }}
+            color="text.secondary"
+          >
+            What do you get?
+          </Typography>
+          {features.map((feature) => {
+            return (
+              <Typography
+                key={feature}
+                variant="body2"
+                component="p"
+                style={fontStyle}
+              >
+                {bull} {feature}
+              </Typography>
+            );
+          })}
+        </CardContent>
+        <CardActions>
+          <Button size="small">Learn More</Button>
+        </CardActions>
+      </Card>
     </Box>
   );
-}
+};
