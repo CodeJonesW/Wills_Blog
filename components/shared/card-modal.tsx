@@ -3,7 +3,12 @@ import React from "react";
 import type { FC } from "react";
 import { motion } from "framer-motion";
 import style from "../../styles/Home.module.css";
-import { MonterratBold, MonterratMedium } from "./styles";
+import {
+  MonterratBold,
+  MonterratMedium,
+  StyledButton,
+  UnshrinkableDiv,
+} from "./styles";
 import { bull } from "./card";
 
 interface ModalProps {
@@ -47,13 +52,14 @@ export const CardModal: FC<ModalProps> = ({
           style={{
             display: "flex",
             flexDirection: "column",
-            justifyContent: "center",
+            justifyContent: "flex-start",
             alignItems: "left",
             textAlign: "left",
             paddingLeft: "",
             backgroundColor: "white",
             width: "77%",
-            height: "50%",
+            height: "75%",
+            borderRadius: "16px",
           }}
           sx={MonterratBold}
         >
@@ -67,12 +73,9 @@ export const CardModal: FC<ModalProps> = ({
             }}
           >
             <iframe
-              style={{ width: "100%" }}
+              style={{ width: "100%", borderRadius: "12px 12px 0 0" }}
               src="https://www.loom.com/embed/e1cf312e40894cf1896b33b47d5221b7"
-              frameborder="0"
-              webkitallowfullscreen
-              mozallowfullscreen
-              allowfullscreen
+              frameBorder="0"
             ></iframe>
           </div>
           <div style={{ padding: "16px" }}>
@@ -96,6 +99,10 @@ export const CardModal: FC<ModalProps> = ({
                 </Typography>
               );
             })}
+            <UnshrinkableDiv style={{ height: "10%" }} />
+            <StyledButton variant="contained">
+              Reserve your website
+            </StyledButton>
           </div>
         </Box>
       </Modal>
