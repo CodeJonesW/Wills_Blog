@@ -16,6 +16,7 @@ import { CardModal } from "../components/shared/card-modal";
 
 const HomeContainer = styled(motion.div)`
   background-color: black;
+  height: 100vh;
 `;
 // animate={{
 //   x: 0,
@@ -214,7 +215,7 @@ const Home: NextPage = () => {
           display: isLandingSection3Visible,
         }}
       >
-        <UnshrinkableDiv style={{ height: 100 }} />
+        <UnshrinkableDiv style={{ height: "10%" }} />
         <ActionTextSection
           style={{ textAlign: "center", color: "white", maxWidth: "480px" }}
         >
@@ -222,33 +223,52 @@ const Home: NextPage = () => {
         </ActionTextSection>
         <SecondaryLandingTextRow style={{ flexWrap: "wrap" }}>
           <OutlinedCard
-            title="The basics for success"
+            price={"$2000"}
+            setSectionVisible={setIsLandingSection3Visible}
+            title="Basic"
             features={[
-              "Initial design and planning meeting (1 hour)",
-              "Review meeting at 60% completion (30 minutes)",
+              "Custom domain name",
+              "Email sign uplist",
+              "6 static content pages dynamic to all screen sizes",
+              "Provide designs to match business identity and goals.",
+              "Review meeting at 60% completion",
               "At 100% completion, we send you a link to demo and we create a final revisions list.",
-              "Documentation on how the site works so you can continue to make updates and improve your site.",
+              "Documentation on how the setup works so you can continue to make updates and improve your site.",
             ]}
           />
 
-          {/* <OutlinedCard
-            title="The basics for success"
+          <OutlinedCard
+            price={"$3000"}
+            setSectionVisible={setIsLandingSection3Visible}
+            title="Animated"
             features={[
-              "Initial design and planning meeting (1 hour)",
-              "Review meeting at 60% completion (30 minutes)",
+              "Custom domain name",
+              "Email sign uplist",
+              "6 pages dynamic to all screen sizes",
+              "6 animated content sections",
+              "Provide designs to match business identity and goals.",
+              "2 additional features like automated booking system and contact form.",
+              "Review meeting at 75% completion",
               "At 100% completion, we send you a link to demo and we create a final revisions list.",
               "Documentation on how the site works so you can continue to make updates and improve your site.",
             ]}
           />
           <OutlinedCard
-            title="The basics for success"
+            price={"$4000"}
+            setSectionVisible={setIsLandingSection3Visible}
+            title="Animated Ecommerce"
             features={[
-              "Initial design and planning meeting (1 hour)",
-              "Review meeting at 60% completion (30 minutes)",
+              "Custom domain name",
+              "Email sign uplist",
+              "6 animated content pages dynamic to all screen sizes",
+              "Provide designs to match business identity and goals.",
+              "2 additional features like automated booking system and contact form.",
+              "Ability to add and sell products on your site",
+              "Review meeting at 75% completion",
               "At 100% completion, we send you a link to demo and we create a final revisions list.",
               "Documentation on how the site works so you can continue to make updates and improve your site.",
             ]}
-          /> */}
+          />
         </SecondaryLandingTextRow>
       </LandingSection>
     </HomeContainer>

@@ -9,7 +9,7 @@ import styles from "../../styles/Home.module.css";
 import type { FC } from "react";
 import { CardModal } from "./card-modal";
 
-const bull = (
+export const bull = (
   <Box
     component="span"
     sx={{ display: "inline-block", mx: "2px", transform: "scale(0.8)" }}
@@ -23,10 +23,23 @@ const fontStyle = { fontFamily: "MontserratMedium" };
 interface OutlinedCardProps {
   title: string;
   features: string[];
+  setSectionVisible: Function;
+  price: string;
 }
 
-export const OutlinedCard: FC<OutlinedCardProps> = ({ title, features }) => {
+export const OutlinedCard: FC<OutlinedCardProps> = ({
+  title,
+  features,
+  setSectionVisible,
+  price,
+}) => {
   const [open, setOpen] = React.useState(false);
+
+  const handleOpen = () => {
+    setSectionVisible("none");
+    setOpen(true);
+  };
+
   return (
     <Box style={{ padding: "16px" }} sx={{ minWidth: 275, maxWidth: 304 }}>
       <Card variant="outlined">
@@ -59,13 +72,33 @@ export const OutlinedCard: FC<OutlinedCardProps> = ({ title, features }) => {
               </Typography>
             );
           })}
+          <Typography
+            style={{ fontFamily: "MontserratMedium" }}
+            sx={{ mb: 1.5 }}
+            color="text.secondary"
+          >
+            {price}
+          </Typography>
         </CardContent>
         <CardActions>
-          <Button onClick={() => setOpen(true)} size="small">
+          <Button onClick={() => handleOpen()} size="small">
             Learn More
           </Button>
         </CardActions>
-        <CardModal open={open} setOpen={setOpen} />
+        <CardModal
+          open={open}
+          setOpen={setOpen}
+          setSectionVisible={setSectionVisible}
+          features={[
+            "Custom domain name",
+            "Email sign uplist",
+            "6 static content pages dynamic to all screen sizes",
+            "Initial design and planning meeting",
+            "Review meeting at 60% completion",
+            "At 100% completion, we send you a link to demo and we create a final revisions list.",
+            "Documentation on how the setup works so you can continue to make updates and improve your site.",
+          ]}
+        />
       </Card>
     </Box>
   );
