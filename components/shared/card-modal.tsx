@@ -29,24 +29,29 @@ export const CardModal: FC<ModalProps> = ({
     setOpen(false);
   };
   return (
-    <motion.div
-      whileInView={{ opacity: 1 }}
-      initial={{ opacity: 0 }}
-      transition={{ duration: 5, type: "spring" }}
+    <Modal
+      open={open}
+      onClose={handleClose}
+      aria-labelledby="modal-modal-title"
+      aria-describedby="modal-modal-description"
+      style={{
+        display: "flex",
+        justifyContent: "center",
+        alignItems: "center",
+        width: "100vw",
+        height: "100vh",
+      }}
+      className={style.QuartzoBold}
     >
-      <Modal
-        open={open}
-        onClose={handleClose}
-        aria-labelledby="modal-modal-title"
-        aria-describedby="modal-modal-description"
+      <motion.div
+        whileInView={{ opacity: 1 }}
+        initial={{ opacity: 0 }}
+        transition={{ duration: 1, type: "spring" }}
         style={{
           display: "flex",
           justifyContent: "center",
           alignItems: "center",
-          width: "100vw",
-          height: "100vh",
         }}
-        className={style.QuartzoBold}
       >
         <Box
           style={{
@@ -69,7 +74,8 @@ export const CardModal: FC<ModalProps> = ({
               maxWidth: "360px",
               display: "flex",
               flexDirection: "row",
-              justifyContent: "flex-start",
+              justifyContent: "center",
+              alignItems: "center",
             }}
           >
             <iframe
@@ -99,13 +105,13 @@ export const CardModal: FC<ModalProps> = ({
                 </Typography>
               );
             })}
-            <UnshrinkableDiv style={{ height: "10%" }} />
+            <UnshrinkableDiv style={{ height: "16px" }} />
             <StyledButton variant="contained">
               Reserve your website
             </StyledButton>
           </div>
         </Box>
-      </Modal>
-    </motion.div>
+      </motion.div>
+    </Modal>
   );
 };

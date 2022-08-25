@@ -197,7 +197,7 @@ const Home: NextPage = () => {
             </StyledButton>
             <UnshrinkableDiv style={{ height: "48px" }} />
             <StyledButton style={{ padding: "16px" }}>
-              Maybe you need a custom solution?
+              Think you need a custom solution?
             </StyledButton>
           </motion.div>
         </motion.div>
@@ -215,7 +215,7 @@ const Home: NextPage = () => {
           display: isLandingSection3Visible,
         }}
       >
-        <UnshrinkableDiv style={{ height: "10%" }} />
+        <UnshrinkableDiv style={{ height: "24px" }} />
         <ActionTextSection
           style={{ textAlign: "center", color: "white", maxWidth: "480px" }}
         >
@@ -270,6 +270,7 @@ const Home: NextPage = () => {
             ]}
           />
         </SecondaryLandingTextRow>
+        <UnshrinkableDiv style={{ height: "24px" }} />
       </LandingSection>
     </HomeContainer>
   );
