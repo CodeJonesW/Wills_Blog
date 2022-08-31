@@ -69,6 +69,7 @@ const CompanyTagline = styled.h2`
 `;
 
 const Contact = styled.h3`
+  font-size: 0.9em;
   font-family: "MontserratMedium";
   max-width: 80%;
 `;
@@ -81,8 +82,8 @@ const ContactContainer = styled.div`
 const HomeNavBar = styled.div`
   display: flex;
   width: 90%;
-  padding-left: 5%;
-  padding-right: 5%;
+  padding-left: 4%;
+  padding-right: 4%;
   flex-direction: "row";
   justify-content: "space-between";
   align-items: "flex-start";
@@ -122,9 +123,9 @@ const Home: NextPage = () => {
         transition={{ duration: 4, type: "spring" }}
       >
         <HomeNavBar>
-          <CompanyName>Web Expert Studio</CompanyName>
+          <CompanyName>Web Expert Studios</CompanyName>
           <ContactContainer>
-            <Contact>info@webexperts.com</Contact>
+            <Contact>will@webexpertstudios.com</Contact>
           </ContactContainer>
         </HomeNavBar>
         <TagLineContainer>
@@ -158,11 +159,10 @@ const Home: NextPage = () => {
                 maxWidth: "600px",
               }}
             >
-              Web Experts is a design studio that specializes in creating brands
-              and websites for new companies. As a hands-on creative partner,
-              were big on collaborating and prototyping. With experience in
-              multiple disciplines we help our clients earn their spot in
-              peoples lives.
+              Web Expert Studios specializes in creating brands and websites for
+              new companies. As a hands-on creative partner, were big on
+              collaborating and prototyping. With experience in multiple
+              disciplines we help our clients earn their spot in peoples lives.
             </ActionTextSection>
           </div>
 
