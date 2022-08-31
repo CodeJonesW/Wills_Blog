@@ -1,11 +1,8 @@
 import type { NextPage } from "next";
-import Image from "next/image";
 import styled from "styled-components";
 import styles from "../styles/Home.module.css";
-
-import { motion, useScroll } from "framer-motion";
-import { useAnimationControls } from "framer-motion";
-import React, { useEffect, useRef, useState } from "react";
+import { motion } from "framer-motion";
+import React, { useState } from "react";
 import {
   LandingSection,
   PrimaryButton,
@@ -13,7 +10,6 @@ import {
   UnshrinkableDiv,
 } from "../components/shared/styles";
 import { OutlinedCard } from "../components/shared/card";
-import { CardModal } from "../components/shared/card-modal";
 
 const HomeContainer = styled(motion.div)`
   background-color: black;
@@ -41,26 +37,6 @@ const LeftSection = styled.div`
   align-content: center;
 `;
 
-const RightSection = styled.div`
-  display: flex;
-  font-family: "MontserratBold";
-  flex: 60%;
-  min-height: 772px;
-  text-align: left;
-  justify-content: center;
-  align-items: left;
-  flex-direction: column;
-  color: white;
-`;
-
-const MainLandingText = styled.div`
-  min-width: 200px;
-  min-height: 200px;
-  flex-shrink: 0;
-
-  font-weight: 400;
-`;
-
 const SecondaryLandingTextRow = styled.div`
   min-width: 200px;
   min-height: 40px;
@@ -69,10 +45,6 @@ const SecondaryLandingTextRow = styled.div`
   line-height: 40px;
   flex-direction: row;
   display: flex;
-`;
-
-const SubText = styled.div`
-  font-family: "MontserratMedium";
 `;
 
 const CompanyName = styled.h1`
@@ -106,6 +78,25 @@ const ContactContainer = styled.div`
   padding-top: 1%;
 `;
 
+const HomeNavBar = styled.div`
+  display: flex;
+  width: 90%;
+  padding-left: 5%;
+  padding-right: 5%;
+  flex-direction: "row";
+  justify-content: "space-between";
+  align-items: "flex-start";
+`;
+
+const TagLineContainer = styled.div`
+  width: 100%;
+  height: 40vh;
+  align-items: center;
+  justify-content: center;
+  display: flex;
+  padding-top: 15%;
+`;
+
 const Home: NextPage = () => {
   const [isLandingSection1Visible, setIsLandingSection1Visible] =
     useState("flex");
@@ -114,51 +105,33 @@ const Home: NextPage = () => {
   const [isLandingSection3Visible, setIsLandingSection3Visible] =
     useState("none");
 
+  const HomeSection = styled(LandingSection)`
+    display: ${isLandingSection1Visible};
+    background-color: white;
+    width: 100vw;
+    height: 200vh;
+    justify-content: flex-start;
+    flex-direction: column;
+  `;
+
   return (
     <HomeContainer className={styles.quartzoBold}>
-      <LandingSection
-        style={{
-          display: isLandingSection1Visible,
-          backgroundColor: "white",
-          flexDirection: "column",
-          justifyContent: "flex-start",
-          width: "100vw",
-          height: "200vh",
-        }}
+      <HomeSection
         whileInView={{ opacity: 1 }}
         initial={{ opacity: 0 }}
         transition={{ duration: 4, type: "spring" }}
       >
-        <div
-          style={{
-            display: "flex",
-            width: "90%",
-            paddingLeft: "5%",
-            paddingRight: "5%",
-            flexDirection: "row",
-            justifyContent: "space-between",
-            alignItems: "flex-start",
-          }}
-        >
+        <HomeNavBar>
           <CompanyName>Web Expert Studio</CompanyName>
           <ContactContainer>
             <Contact>info@webexperts.com</Contact>
           </ContactContainer>
-        </div>
-        <div
-          style={{
-            width: "100%",
-            height: "40vh",
-            alignItems: "center",
-            justifyContent: "center",
-            display: "flex",
-            paddingTop: "15%",
-          }}
-        >
+        </HomeNavBar>
+        <TagLineContainer>
           <CompanyTagline>
             We create dynamic brands to help new companies grow.
           </CompanyTagline>
-        </div>
+        </TagLineContainer>
         <UnshrinkableDiv style={{ height: "15%" }} />
         <div
           style={{
@@ -169,7 +142,7 @@ const Home: NextPage = () => {
         >
           <ActionTextSection>⬇</ActionTextSection>
         </div>
-        <UnshrinkableDiv style={{ height: "5%" }} />
+        <UnshrinkableDiv style={{ height: "14%" }} />
         <div
           style={{
             display: "flex",
@@ -179,7 +152,11 @@ const Home: NextPage = () => {
         >
           <div style={{ padding: "32px", alignItems: "center" }}>
             <ActionTextSection
-              style={{ fontSize: "1em", textAlign: "left", maxWidth: "600px" }}
+              style={{
+                fontSize: "1.1em",
+                textAlign: "left",
+                maxWidth: "600px",
+              }}
             >
               Web Experts is a design studio that specializes in creating brands
               and websites for new companies. As a hands-on creative partner,
@@ -216,7 +193,7 @@ const Home: NextPage = () => {
           </div>
         </div>
         <UnshrinkableDiv style={{ height: "5%" }} />
-      </LandingSection>
+      </HomeSection>
       <LandingSection
         whileInView={{ opacity: 1 }}
         initial={{ opacity: 0 }}
