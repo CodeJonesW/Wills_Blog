@@ -220,7 +220,9 @@ const Home: NextPage = () => {
           transition={{ duration: 4, delay: 3, type: "spring" }}
         >
           <ContactContainer>
-            <Contact style={{ color: "white" }}>info@webexperts.com</Contact>
+            <Contact style={{ color: "white" }}>
+              will@webexpertstudios.com
+            </Contact>
           </ContactContainer>
         </motion.div>
         <motion.div
