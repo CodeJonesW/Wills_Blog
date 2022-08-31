@@ -160,9 +160,9 @@ const Home: NextPage = () => {
             >
               Web Experts is a design studio that specializes in creating brands
               and websites for new companies. As a hands-on creative partner,
-              we're big on collaborating and prototyping. With experience in
+              were big on collaborating and prototyping. With experience in
               multiple disciplines we help our clients earn their spot in
-              people's lives.
+              peoples lives.
             </ActionTextSection>
           </div>
 
