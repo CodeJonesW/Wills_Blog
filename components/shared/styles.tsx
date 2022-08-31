@@ -10,17 +10,33 @@ export const LandingSection = styled(motion.div)`
   justify-content: center;
   flex-direction: row;
   background-color: black;
-  color: white;
+  /* color: white; */
 `;
 
-export const StyledButton = styled(Button)`
-  font-size: 1.2em;
+export const SecondaryButton = styled(Button)`
+  font-size: 1em;
   max-width: 360px;
-  max-height: 164px;
-  padding: 8px;
+  color: black;
+  height: 144px;
+  padding: 16px;
   &:hover {
-    background-color: white;
-    color: black;
+    background-color: black;
+    color: white;
+  }
+  border-radius: 16px;
+  font-family: "LemonMilkBold";
+`;
+
+export const PrimaryButton = styled(Button)`
+  font-size: 1em;
+  max-width: 360px;
+  height: 144px;
+  background-color: black;
+  color: white;
+  padding: 16px;
+  &:hover {
+    background-color: black;
+    color: white;
   }
   border-radius: 16px;
   font-family: "LemonMilkBold";

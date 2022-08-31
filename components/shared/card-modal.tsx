@@ -6,7 +6,7 @@ import style from "../../styles/Home.module.css";
 import {
   MonterratBold,
   MonterratMedium,
-  StyledButton,
+  PrimaryButton,
   UnshrinkableDiv,
 } from "./styles";
 import { bull } from "./card";
@@ -106,9 +106,9 @@ export const CardModal: FC<ModalProps> = ({
               );
             })}
             <UnshrinkableDiv style={{ height: "16px" }} />
-            <StyledButton variant="contained">
+            <PrimaryButton variant="contained">
               Reserve your website
-            </StyledButton>
+            </PrimaryButton>
           </div>
         </Box>
       </motion.div>

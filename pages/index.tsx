@@ -8,7 +8,8 @@ import { useAnimationControls } from "framer-motion";
 import React, { useEffect, useRef, useState } from "react";
 import {
   LandingSection,
-  StyledButton,
+  PrimaryButton,
+  SecondaryButton,
   UnshrinkableDiv,
 } from "../components/shared/styles";
 import { OutlinedCard } from "../components/shared/card";
@@ -31,7 +32,7 @@ const HomeContainer = styled(motion.div)`
 const LeftSection = styled.div`
   display: flex;
   flex: 40%;
-  background-color: black;
+  background-color: white;
   min-height: 772px;
   justify-content: center;
   align-items: center;
@@ -64,7 +65,7 @@ const SecondaryLandingTextRow = styled.div`
   min-width: 200px;
   min-height: 40px;
   flex-shrink: 0;
-  max-width: 80%;
+  max-width: 100%;
   line-height: 40px;
   flex-direction: row;
   display: flex;
@@ -76,23 +77,33 @@ const SubText = styled.div`
 
 const CompanyName = styled.h1`
   font-family: "LemonMilkBold";
+  color: "black";
+  max-width: 240px;
 `;
 
 export const ActionTextSection = styled.h1`
-  font-family: "LemonMilkBold";
+  font-family: "MontserratBold";
   color: black;
   text-align: center;
+  font-size: 1.5em;
   line-height: 50px;
 `;
 
 const CompanyTagline = styled.h2`
   font-family: "MontserratBold";
   max-width: 80%;
+  font-size: 2em;
+  color: black;
 `;
 
-const CompanySubTagline = styled.h2`
+const Contact = styled.h3`
   font-family: "MontserratMedium";
   max-width: 80%;
+`;
+
+const ContactContainer = styled.div`
+  display: flex;
+  padding-top: 1%;
 `;
 
 const Home: NextPage = () => {
@@ -106,50 +117,105 @@ const Home: NextPage = () => {
   return (
     <HomeContainer className={styles.quartzoBold}>
       <LandingSection
-        style={{ display: isLandingSection1Visible }}
+        style={{
+          display: isLandingSection1Visible,
+          backgroundColor: "white",
+          flexDirection: "column",
+          justifyContent: "flex-start",
+          width: "100vw",
+          height: "200vh",
+        }}
         whileInView={{ opacity: 1 }}
         initial={{ opacity: 0 }}
         transition={{ duration: 4, type: "spring" }}
       >
-        <LeftSection>
-          <Image
-            style={{ borderRadius: 200 }}
-            src="/demoImage.jpeg"
-            width={400}
-            height={425}
-          />
-        </LeftSection>
-        <RightSection>
-          <MainLandingText>
-            <CompanyName>Web Expert Studio</CompanyName>
+        <div
+          style={{
+            display: "flex",
+            width: "90%",
+            paddingLeft: "5%",
+            paddingRight: "5%",
+            flexDirection: "row",
+            justifyContent: "space-between",
+            alignItems: "flex-start",
+          }}
+        >
+          <CompanyName>Web Expert Studio</CompanyName>
+          <ContactContainer>
+            <Contact>info@webexperts.com</Contact>
+          </ContactContainer>
+        </div>
+        <div
+          style={{
+            width: "100%",
+            height: "40vh",
+            alignItems: "center",
+            justifyContent: "center",
+            display: "flex",
+            paddingTop: "15%",
+          }}
+        >
+          <CompanyTagline>
+            We create dynamic brands to help new companies grow.
+          </CompanyTagline>
+        </div>
+        <UnshrinkableDiv style={{ height: "15%" }} />
+        <div
+          style={{
+            flexDirection: "column",
+            display: "flex",
+            justifyContent: "flex-end",
+          }}
+        >
+          <ActionTextSection>⬇</ActionTextSection>
+        </div>
+        <UnshrinkableDiv style={{ height: "5%" }} />
+        <div
+          style={{
+            display: "flex",
+            flexDirection: "column",
+            alignItems: "center",
+          }}
+        >
+          <div style={{ padding: "32px", alignItems: "center" }}>
+            <ActionTextSection
+              style={{ fontSize: "1em", textAlign: "left", maxWidth: "600px" }}
+            >
+              Web Experts is a design studio that specializes in creating brands
+              and websites for new companies. As a hands-on creative partner,
+              we're big on collaborating and prototyping. With experience in
+              multiple disciplines we help our clients earn their spot in
+              people's lives.
+            </ActionTextSection>
+          </div>
 
-            <UnshrinkableDiv style={{ height: 20 }} />
-            <CompanyTagline>
-              Helping businesses use technology to make more money and make
-              lives easier.
-            </CompanyTagline>
-            <SecondaryLandingTextRow style={{ fontFamily: "MontserratMedium" }}>
-              <CompanySubTagline></CompanySubTagline>
-            </SecondaryLandingTextRow>
-            <SecondaryLandingTextRow>
-              <StyledButton
+          <div style={{ width: "100%" }}>
+            <SecondaryLandingTextRow
+              style={{
+                alignContent: "center",
+                justifyContent: "center",
+                flexWrap: "wrap",
+              }}
+            >
+              <PrimaryButton
                 onClick={() => {
                   setIsLandingSection1Visible("none");
                   setIsLandingSection2Visible("flex");
                 }}
-                variant="outlined"
+                style={{ marginBottom: "16px" }}
               >
                 <h3>Learn how we can expand your business</h3>
-              </StyledButton>
-              <UnshrinkableDiv style={{ width: 10 }} />
-              <StyledButton variant="contained">
+              </PrimaryButton>
+              <UnshrinkableDiv style={{ width: "10px", height: "10px" }} />
+              <SecondaryButton
+                sx={{ border: "2px solid black", color: "black" }}
+              >
                 <h3>Book a free consultation</h3>
-              </StyledButton>
+              </SecondaryButton>
             </SecondaryLandingTextRow>
-
-            <UnshrinkableDiv style={{ height: 10 }} />
-          </MainLandingText>
-        </RightSection>
+          </div>
+        </div>
+        <UnshrinkableDiv style={{ height: "5%" }} />
       </LandingSection>
       <LandingSection
         whileInView={{ opacity: 1 }}
@@ -164,6 +230,24 @@ const Home: NextPage = () => {
       >
         <motion.div
           style={{
+            display: "flex",
+            width: "90%",
+            paddingLeft: "5%",
+            paddingRight: "5%",
+            flexDirection: "row",
+            justifyContent: "space-between",
+            alignItems: "flex-end",
+          }}
+          whileInView={{ opacity: 1 }}
+          initial={{ opacity: 0 }}
+          transition={{ duration: 4, delay: 3, type: "spring" }}
+        >
+          <ContactContainer>
+            <Contact style={{ color: "white" }}>info@webexperts.com</Contact>
+          </ContactContainer>
+        </motion.div>
+        <motion.div
+          style={{
             color: "white",
             fontFamily: "MontserratBold",
             maxWidth: "700px",
@@ -176,29 +260,25 @@ const Home: NextPage = () => {
           transition={{ duration: 4, type: "spring" }}
         >
           <h3 style={{ fontSize: "2.2em", padding: "12px" }}>
-            We know what tools will serve your business best.
+            A website’s design is the #1 factor in determining the credibility
+            of a business.
           </h3>
-          <UnshrinkableDiv style={{ height: 164 }} />
+          <UnshrinkableDiv style={{ height: 64 }} />
           <motion.div
-            style={{ flexDirection: "row" }}
+            style={{ display: "flex", justifyContent: "center" }}
             whileInView={{ opacity: 1 }}
             initial={{ opacity: 0 }}
             transition={{ duration: 4, delay: 2, type: "spring" }}
           >
-            <StyledButton
-              onClick={() => {
-                setIsLandingSection2Visible("none");
-                setIsLandingSection3Visible("flex");
+            <p
+              style={{
+                fontFamily: "MontserratMedium",
+                textAlign: "center",
+                maxWidth: "320px",
               }}
-              variant="contained"
-              style={{ padding: "16px" }}
             >
-              Looking for something fast?
-            </StyledButton>
-            <UnshrinkableDiv style={{ height: "48px" }} />
-            <StyledButton style={{ padding: "16px" }}>
-              Think you need a custom solution?
-            </StyledButton>
+              Lets define what success looks like and work backwards from there.
+            </p>
           </motion.div>
         </motion.div>
       </LandingSection>
