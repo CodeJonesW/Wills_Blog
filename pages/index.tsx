@@ -192,7 +192,7 @@ const Home: NextPage = () => {
             </SecondaryLandingTextRow>
           </div>
         </div>
-        <UnshrinkableDiv style={{ height: "5%" }} />
+        <UnshrinkableDiv style={{ height: "1%" }} />
       </HomeSection>
       <LandingSection
         whileInView={{ opacity: 1 }}
