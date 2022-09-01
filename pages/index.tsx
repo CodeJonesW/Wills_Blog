@@ -98,6 +98,9 @@ const TagLineContainer = styled.div`
   padding-top: 15%;
 `;
 
+const ArrowContainer = styled.div``;
+const Circle = styled.div``;
+
 const Home: NextPage = () => {
   const [isLandingSection1Visible, setIsLandingSection1Visible] =
     useState("flex");
@@ -134,15 +137,29 @@ const Home: NextPage = () => {
           </CompanyTagline>
         </TagLineContainer>
         <UnshrinkableDiv style={{ height: "15%" }} />
-        <div
+        <ArrowContainer
           style={{
-            flexDirection: "column",
+            flexDirection: "row",
             display: "flex",
-            justifyContent: "flex-end",
+            justifyContent: "center",
           }}
         >
-          <ActionTextSection>⬇</ActionTextSection>
-        </div>
+          <Circle
+            style={{
+              width: "40px",
+              height: "40px",
+              borderRadius: "100px",
+              borderColor: "black",
+              borderStyle: "solid",
+              display: "flex",
+              flexDirection: "row",
+              justifyContent: "center",
+              alignItems: "center",
+            }}
+          >
+            <p>⬇</p>
+          </Circle>
+        </ArrowContainer>
         <UnshrinkableDiv style={{ height: "14%" }} />
         <div
           style={{
