@@ -201,9 +201,7 @@ const Home: NextPage = () => {
                 <h3>Learn how we can expand your business</h3>
               </PrimaryButton>
               <UnshrinkableDiv style={{ width: "10px", height: "10px" }} />
-              <SecondaryButton
-                sx={{ border: "2px solid black", color: "black" }}
-              >
+              <SecondaryButton style={{ marginBottom: "16px" }}>
                 <h3>Book a free consultation</h3>
               </SecondaryButton>
             </SecondaryLandingTextRow>

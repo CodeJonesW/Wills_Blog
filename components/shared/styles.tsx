@@ -13,12 +13,17 @@ export const LandingSection = styled(motion.div)`
   /* color: white; */
 `;
 
-export const SecondaryButton = styled(Button)`
+export const SecondaryButton = styled(motion.div)`
+  display: flex;
   font-size: 1em;
   max-width: 360px;
+  min-width: 360px;
   color: black;
-  height: 144px;
+  max-height: 144px;
   padding: 16px;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
   &:hover {
     background-color: black;
     color: white;
@@ -27,10 +32,14 @@ export const SecondaryButton = styled(Button)`
   font-family: "LemonMilkBold";
 `;
 
-export const PrimaryButton = styled(Button)`
+export const PrimaryButton = styled(motion.div)`
+  display: flex;
   font-size: 1em;
   max-width: 360px;
-  height: 144px;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  max-height: 144px;
   background-color: black;
   color: white;
   padding: 16px;
