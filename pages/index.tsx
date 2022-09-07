@@ -81,8 +81,9 @@ const ContactContainer = styled.div`
 
 const HomeNavBar = styled.div`
   display: flex;
-  width: 90vw;
-  /* min-width: 90vw; */
+
+  max-width: 1350px;
+  justify-content: space-between;
   padding-left: 4%;
   padding-right: 4%;
 `;
@@ -125,15 +126,17 @@ const Home: NextPage = () => {
         initial={{ opacity: 0 }}
         transition={{ duration: 4, type: "spring" }}
       >
-        <HomeNavBar>
-          <CompanyNameContainer>
-            <CompanyName>Web Expert Studios</CompanyName>
-          </CompanyNameContainer>
-          <UnshrinkableDiv style={{ width: "0%" }} />
-          <ContactContainer>
-            <Contact>will@webexpertstudios.com</Contact>
-          </ContactContainer>
-        </HomeNavBar>
+        <div>
+          <HomeNavBar>
+            <CompanyNameContainer>
+              <CompanyName>Web Expert Studios</CompanyName>
+            </CompanyNameContainer>
+
+            <ContactContainer>
+              <Contact>will@webexpertstudios.com</Contact>
+            </ContactContainer>
+          </HomeNavBar>
+        </div>
         <TagLineContainer>
           <CompanyTagline>
             We create dynamic brands to help new companies grow.
