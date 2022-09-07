@@ -95,7 +95,7 @@ const TagLineContainer = styled.div`
   align-items: center;
   justify-content: center;
   display: flex;
-  padding-top: 15%;
+  padding-top: 10%;
 `;
 
 const ArrowContainer = styled.div``;
