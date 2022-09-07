@@ -17,11 +17,12 @@ export const SecondaryButton = styled(motion.div)`
   display: flex;
   font-size: 1em;
   max-width: 360px;
-  min-width: 360px;
+  /* min-width: 360px; */
   color: black;
   max-height: 144px;
   padding: 16px;
   text-align: center;
+  background-color: white;
   justify-content: center;
   align-items: center;
   &:hover {

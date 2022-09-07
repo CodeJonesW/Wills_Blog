@@ -41,7 +41,7 @@ export const OutlinedCard: FC<OutlinedCardProps> = ({
   };
 
   return (
-    <Box style={{ padding: "16px" }} sx={{ minWidth: 275, maxWidth: 304 }}>
+    <Box style={{ padding: "16px" }} sx={{ maxWidth: 304 }}>
       <Card variant="outlined">
         <CardContent className={styles.QuartzoBold}>
           <Typography

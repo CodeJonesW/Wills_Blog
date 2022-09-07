@@ -38,7 +38,7 @@ const LeftSection = styled.div`
 `;
 
 const SecondaryLandingTextRow = styled.div`
-  min-width: 200px;
+  /* min-width: 200px; */
   min-height: 40px;
   flex-shrink: 0;
   max-width: 100%;
@@ -82,7 +82,7 @@ const ContactContainer = styled.div`
 const HomeNavBar = styled.div`
   display: flex;
   width: 90vw;
-  min-width: 90vw;
+  /* min-width: 90vw; */
   padding-left: 4%;
   padding-right: 4%;
 `;
@@ -93,7 +93,7 @@ const TagLineContainer = styled.div`
   align-items: center;
   justify-content: center;
   display: flex;
-  padding-top: 10%;
+  padding-top: 5%;
 `;
 
 const CompanyNameContainer = styled.div``;
@@ -263,7 +263,12 @@ const Home: NextPage = () => {
           </h3>
           <UnshrinkableDiv style={{ height: 64 }} />
           <motion.div
-            style={{ display: "flex", justifyContent: "center" }}
+            style={{
+              display: "flex",
+              justifyContent: "center",
+              alignItems: "center",
+              flexDirection: "column",
+            }}
             whileInView={{ opacity: 1 }}
             initial={{ opacity: 0 }}
             transition={{ duration: 4, delay: 2, type: "spring" }}
@@ -273,10 +278,15 @@ const Home: NextPage = () => {
                 fontFamily: "MontserratMedium",
                 textAlign: "center",
                 maxWidth: "320px",
+                fontSize: "1.3em",
               }}
             >
               Lets define what success looks like and work backwards from there.
             </p>
+            <UnshrinkableDiv style={{ height: "12vh" }} />
+            <SecondaryButton>
+              <h3>Lets get in touch</h3>
+            </SecondaryButton>
           </motion.div>
         </motion.div>
       </LandingSection>
