@@ -106,9 +106,7 @@ export const CardModal: FC<ModalProps> = ({
               );
             })}
             <UnshrinkableDiv style={{ height: "16px" }} />
-            <PrimaryButton variant="contained">
-              Reserve your website
-            </PrimaryButton>
+            <PrimaryButton>Reserve your website</PrimaryButton>
           </div>
         </Box>
       </motion.div>
