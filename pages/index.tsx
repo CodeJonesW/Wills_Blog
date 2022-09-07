@@ -75,18 +75,16 @@ const Contact = styled.h3`
 `;
 
 const ContactContainer = styled.div`
-  display: flex;
   padding-top: 1%;
+  max-width: 220px;
 `;
 
 const HomeNavBar = styled.div`
   display: flex;
-  width: 90%;
+  width: 90vw;
+  min-width: 90vw;
   padding-left: 4%;
   padding-right: 4%;
-  flex-direction: "row";
-  justify-content: "space-between";
-  align-items: "flex-start";
 `;
 
 const TagLineContainer = styled.div`
@@ -97,6 +95,8 @@ const TagLineContainer = styled.div`
   display: flex;
   padding-top: 10%;
 `;
+
+const CompanyNameContainer = styled.div``;
 
 const ArrowContainer = styled.div``;
 const Circle = styled.div``;
@@ -126,7 +126,10 @@ const Home: NextPage = () => {
         transition={{ duration: 4, type: "spring" }}
       >
         <HomeNavBar>
-          <CompanyName>Web Expert Studios</CompanyName>
+          <CompanyNameContainer>
+            <CompanyName>Web Expert Studios</CompanyName>
+          </CompanyNameContainer>
+          <UnshrinkableDiv style={{ width: "0%" }} />
           <ContactContainer>
             <Contact>will@webexpertstudios.com</Contact>
           </ContactContainer>
@@ -136,7 +139,7 @@ const Home: NextPage = () => {
             We create dynamic brands to help new companies grow.
           </CompanyTagline>
         </TagLineContainer>
-        <UnshrinkableDiv style={{ height: "15%" }} />
+        <UnshrinkableDiv style={{ height: "8%" }} />
         <ArrowContainer
           style={{
             flexDirection: "row",
@@ -160,7 +163,7 @@ const Home: NextPage = () => {
             <p>⬇</p>
           </Circle>
         </ArrowContainer>
-        <UnshrinkableDiv style={{ height: "14%" }} />
+        <UnshrinkableDiv style={{ height: "10%" }} />
         <div
           style={{
             display: "flex",
@@ -186,7 +189,8 @@ const Home: NextPage = () => {
           <div style={{ width: "100%" }}>
             <SecondaryLandingTextRow
               style={{
-                alignContent: "center",
+                padding: "4px",
+                alignItems: "center",
                 justifyContent: "center",
                 flexWrap: "wrap",
               }}
