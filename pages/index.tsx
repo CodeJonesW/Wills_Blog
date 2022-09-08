@@ -274,6 +274,7 @@ const Home: NextPage = () => {
                 style={{ textDecoration: "none" }}
                 href="https://calendly.com/webexpertstudios/30min?back=1&month=2022-09"
                 target="_blank"
+                rel="noreferrer"
               >
                 <PrimaryButton style={{ marginBottom: "16px" }}>
                   <h3>Book a free consultation</h3>
@@ -376,6 +377,7 @@ const Home: NextPage = () => {
               style={{ textDecoration: "none" }}
               href="https://mail.google.com/mail/?view=cm&fs=1&to=will@webexpertstudios.com"
               target="_blank"
+              rel="noreferrer"
             >
               <SecondaryButton>
                 <h3>Lets get in touch</h3>
