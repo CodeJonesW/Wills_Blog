@@ -17,7 +17,8 @@ export const SecondaryButton = styled(motion.div)`
   display: flex;
   font-size: 1em;
   max-width: 360px;
-  /* min-width: 360px; */
+  min-width: 360px;
+  height: 104px;
   color: black;
   max-height: 144px;
   padding: 16px;
@@ -25,9 +26,15 @@ export const SecondaryButton = styled(motion.div)`
   background-color: white;
   justify-content: center;
   align-items: center;
+  transition: all 0.2s ease-in-out;
+  border-style: solid;
+  border-width: 2px;
+  border-color: black;
   &:hover {
-    background-color: black;
-    color: white;
+    cursor: pointer;
+    border: 1px solid white;
+    color: "white";
+    box-shadow: 0 10px 20px rgba(225, 217, 231, 0.4);
   }
   border-radius: 16px;
   font-family: "LemonMilkBold";
@@ -36,17 +43,23 @@ export const SecondaryButton = styled(motion.div)`
 export const PrimaryButton = styled(motion.div)`
   display: flex;
   font-size: 1em;
-  max-width: 344px;
+  max-width: 360px;
+  min-width: 360px;
   text-align: center;
   justify-content: center;
   align-items: center;
   max-height: 144px;
+  height: 104px;
   background-color: black;
   color: white;
+  border: 1px solid white;
   padding: 16px;
+  transition: all 0.2s ease-in-out;
   &:hover {
-    background-color: black;
     color: white;
+    cursor: pointer;
+    color: "white";
+    box-shadow: 0 10px 20px rgba(225, 217, 231, 0.4);
   }
   border-radius: 16px;
   font-family: "LemonMilkBold";
