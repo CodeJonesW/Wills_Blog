@@ -366,7 +366,7 @@ const Home: NextPage = () => {
               style={{
                 fontFamily: "MontserratMedium",
                 textAlign: "center",
-                maxWidth: "420px",
+                maxWidth: "320px",
                 fontSize: "1.3em",
               }}
             >
