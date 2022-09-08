@@ -17,7 +17,7 @@ export const SecondaryButton = styled(motion.div)`
   display: flex;
   font-size: 1em;
   max-width: 336px;
-  min-width: 360px;
+  min-width: 336px;
   height: 104px;
   color: black;
   max-height: 144px;
@@ -44,7 +44,7 @@ export const PrimaryButton = styled(motion.div)`
   display: flex;
   font-size: 1em;
   max-width: 336px;
-  min-width: 360px;
+  min-width: 336px;
   text-align: center;
   justify-content: center;
   align-items: center;
