@@ -375,7 +375,7 @@ const Home: NextPage = () => {
             <UnshrinkableDiv style={{ height: "2vh" }} />
             <a
               style={{ textDecoration: "none" }}
-              href="mailto:will@webexpertstudios.com?subject=Website%20Interest👨🏻"
+              href="mailto:will@webexpertstudios.com?subject=Website%20Interest"
               target="_blank"
               rel="noreferrer"
             >
