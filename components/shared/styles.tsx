@@ -71,3 +71,87 @@ export const UnshrinkableDiv = styled.div`
 
 export const MonterratBold = { fontFamily: "MontserratBold" };
 export const MonterratMedium = { fontFamily: "MontserratMedium" };
+
+export const ArrowContainer = styled.div``;
+
+export const Circle = styled(motion.div)`
+  width: "40px";
+  height: "40px";
+  border-radius: "100px";
+  border-color: "black";
+  border-style: "solid";
+  display: "flex";
+  flex-direction: "row";
+  justify-content: "center";
+  align-items: "center";
+  &:hover {
+    cursor: pointer;
+  }
+`;
+
+export const ContactContainer = styled.div`
+  padding-top: 1%;
+  max-width: 220px;
+  display: flex;
+`;
+export const BackArrowContainer = styled(ContactContainer)`
+  padding-top: 3%;
+  &:hover {
+    cursor: pointer;
+  }
+`;
+
+export const BackArrow = styled(motion.i)`
+  width: 0;
+  height: 0;
+  border-top: 10px solid transparent;
+  border-bottom: 10px solid transparent;
+
+  border-right: 10px solid white;
+`;
+
+export const Contact = styled.h3`
+  font-size: 0.9em;
+  font-family: "MontserratMedium";
+  max-width: 80%;
+`;
+
+export const CompanyName = styled.h1`
+  font-family: "LemonMilkBold";
+  color: "black";
+  max-width: 240px;
+`;
+
+export const InfoText = styled(motion.h1)`
+  font-family: "MontserratBold";
+  color: black;
+  text-align: center;
+  font-size: 1.5em;
+  line-height: 24px;
+`;
+
+export const CompanyTagline = styled.h2`
+  font-family: "MontserratBold";
+  max-width: 80%;
+  font-size: 2em;
+  color: black;
+`;
+
+export const HomeNavBar = styled.div`
+  display: flex;
+  max-width: 1350px;
+  justify-content: space-between;
+  padding-left: 4%;
+  padding-right: 4%;
+`;
+
+export const TagLineContainer = styled.div`
+  width: 100%;
+  height: 40vh;
+  align-items: center;
+  justify-content: center;
+  display: flex;
+  padding-top: 5%;
+`;
+
+export const CompanyNameContainer = styled.div``;

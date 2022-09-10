@@ -4,18 +4,30 @@ import styles from "../styles/Home.module.css";
 import { motion } from "framer-motion";
 import React, { useState } from "react";
 import {
+  ArrowContainer,
+  BackArrow,
+  BackArrowContainer,
+  Circle,
+  CompanyName,
+  CompanyNameContainer,
+  CompanyTagline,
+  Contact,
+  ContactContainer,
+  HomeNavBar,
+  InfoText,
   LandingSection,
   PrimaryButton,
   SecondaryButton,
+  TagLineContainer,
   UnshrinkableDiv,
 } from "../components/shared/styles";
 
-const HomeContainer = styled(motion.div)`
+const OuterContainer = styled(motion.div)`
   background-color: black;
   height: 100vh;
 `;
 
-const Landing = styled(motion.div)`
+const FullScreenView = styled(motion.div)`
   height: 100vh;
 `;
 
@@ -29,136 +41,53 @@ const Landing = styled(motion.div)`
 //   },
 // }}
 
-const LeftSection = styled.div`
-  display: flex;
-  flex: 40%;
-  background-color: white;
-  min-height: 772px;
-  justify-content: center;
-  align-items: center;
-  color: white;
-  text-align: center;
-  align-content: center;
-`;
-
-const SecondaryLandingTextRow = styled.div`
-  min-height: 40px;
-  flex-shrink: 0;
-  max-width: 100%;
-  line-height: 40px;
-  flex-direction: row;
-  display: flex;
-`;
-
-const CompanyName = styled.h1`
-  font-family: "LemonMilkBold";
-  color: "black";
-  max-width: 240px;
-`;
-
-export const ActionTextSection = styled.h1`
-  font-family: "MontserratBold";
-  color: black;
-  text-align: center;
-  font-size: 1.5em;
-  line-height: 24px;
-`;
-
-const CompanyTagline = styled.h2`
-  font-family: "MontserratBold";
-  max-width: 80%;
-  font-size: 2em;
-  color: black;
-`;
-
-const Contact = styled.h3`
-  font-size: 0.9em;
-  font-family: "MontserratMedium";
-  max-width: 80%;
-`;
-
-const ContactContainer = styled.div`
-  padding-top: 1%;
-  max-width: 220px;
-  display: flex;
-`;
-
-const HomeNavBar = styled.div`
-  display: flex;
-  max-width: 1350px;
-  justify-content: space-between;
-  padding-left: 4%;
-  padding-right: 4%;
-`;
-
-const TagLineContainer = styled.div`
-  width: 100%;
-  height: 40vh;
-  align-items: center;
-  justify-content: center;
-  display: flex;
-  padding-top: 5%;
-`;
-
-const CompanyNameContainer = styled.div``;
-
-const ArrowContainer = styled.div``;
-
-const Circle = styled(motion.div)`
-  width: "40px";
-  height: "40px";
-  border-radius: "100px";
-  border-color: "black";
-  border-style: "solid";
-  display: "flex";
-  flex-direction: "row";
-  justify-content: "center";
-  align-items: "center";
-  &:hover {
-    cursor: pointer;
-  }
-`;
-
-const BackArrowContainer = styled(ContactContainer)`
-  padding-top: 3%;
-  &:hover {
-    cursor: pointer;
-  }
-`;
-
-const BackArrow = styled(motion.i)`
-  width: 0;
-  height: 0;
-  border-top: 10px solid transparent;
-  border-bottom: 10px solid transparent;
-
-  border-right: 10px solid white;
-`;
-
 const Home: NextPage = () => {
-  const [isLandingSection1Visible, setIsLandingSection1Visible] =
-    useState("flex");
-  const [isLandingSection2Visible, setIsLandingSection2Visible] =
-    useState("none");
-  const [isLandingSection3Visible, setIsLandingSection3Visible] =
-    useState("none");
+  const [isSection1Visible, setIsSection1Visible] = useState("flex");
+  const [isSection2Visible, setIsSection2Visible] = useState("none");
 
-  const HomeSection = styled(LandingSection)`
-    display: ${isLandingSection1Visible};
+  const Section1 = styled(LandingSection)`
+    display: ${isSection1Visible};
     background-color: white;
     width: 100vw;
     height: 200vh;
     justify-content: flex-start;
     flex-direction: column;
   `;
+
+  const Section2 = styled(LandingSection)`
+    display: ${isSection2Visible};
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+  `;
+
+  const Section2TopBar = styled(motion.div)`
+    display: flex;
+    width: 92%;
+    padding-left: 4%;
+    padding-right: 4%;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-end;
+  `;
+
+  const Section2Content = styled(motion.div)`
+    color: white;
+    font-family: "MontserratBold";
+    max-width: 700px;
+    padding-top: 64px;
+    text-align: center;
+    font-weight: bold;
+  `;
+
   return (
-    <HomeContainer className={styles.quartzoBold}>
-      <HomeSection
-        whileInView={{ opacity: 1 }}
-        initial={{ opacity: 0 }}
-        transition={{ duration: 4, type: "spring" }}
-      >
-        <Landing>
+    <OuterContainer className={styles.quartzoBold}>
+      <Section1>
+        <FullScreenView
+          whileInView={{ opacity: 1 }}
+          initial={{ opacity: 0 }}
+          transition={{ duration: 4, type: "spring" }}
+        >
           <div>
             <HomeNavBar>
               <CompanyNameContainer>
@@ -206,8 +135,8 @@ const Home: NextPage = () => {
             </Circle>
           </ArrowContainer>
           <UnshrinkableDiv style={{ height: "10%" }} />
-        </Landing>
-        <motion.div
+        </FullScreenView>
+        <FullScreenView
           style={{
             display: "flex",
             flexDirection: "column",
@@ -223,7 +152,7 @@ const Home: NextPage = () => {
           <div
             style={{ padding: "32px", alignItems: "center", maxWidth: "440px" }}
           >
-            <ActionTextSection
+            <InfoText
               style={{
                 fontSize: "1.1em",
                 textAlign: "left",
@@ -235,7 +164,7 @@ const Home: NextPage = () => {
               new companies. As a hands-on creative partner, were big on
               collaborating and prototyping. With experience in multiple
               disciplines we help our clients earn their spot in peoples lives.
-            </ActionTextSection>
+            </InfoText>
           </div>
 
           <div style={{ width: "100%" }}>
@@ -251,8 +180,8 @@ const Home: NextPage = () => {
             >
               <SecondaryButton
                 onClick={() => {
-                  setIsLandingSection1Visible("none");
-                  setIsLandingSection2Visible("flex");
+                  setIsSection1Visible("none");
+                  setIsSection2Visible("flex");
                 }}
                 style={{ marginBottom: "16px" }}
               >
@@ -271,65 +200,33 @@ const Home: NextPage = () => {
               </a>
             </motion.div>
           </div>
-        </motion.div>
-      </HomeSection>
-      <LandingSection
+        </FullScreenView>
+      </Section1>
+      <Section2
         whileInView={{ opacity: 1 }}
         initial={{ opacity: 0 }}
         transition={{ duration: 4, type: "spring" }}
-        style={{
-          display: isLandingSection2Visible,
-          flexDirection: "column",
-          alignItems: "center",
-          justifyContent: "flex-start",
-        }}
       >
-        <motion.div
-          style={{
-            display: "flex",
-            width: "92%",
-            paddingLeft: "4%",
-            paddingRight: "4%",
-            flexDirection: "row",
-            justifyContent: "space-between",
-            alignItems: "flex-end",
-          }}
+        <Section2TopBar
           whileInView={{ opacity: 1 }}
           initial={{ opacity: 0 }}
           transition={{ duration: 4, delay: 3, type: "spring" }}
         >
-          <div
-            style={{
-              width: "100vw",
-              display: "flex",
-              justifyContent: "space-between",
-            }}
-          >
-            <BackArrowContainer>
-              <BackArrow
-                onClick={() => {
-                  setIsLandingSection1Visible("flex");
-                  setIsLandingSection2Visible("none");
-                }}
-              />
-            </BackArrowContainer>
-
-            <ContactContainer>
-              <Contact style={{ color: "white" }}>
-                will@webexpertstudios.com
-              </Contact>
-            </ContactContainer>
-          </div>
-        </motion.div>
-        <motion.div
-          style={{
-            color: "white",
-            fontFamily: "MontserratBold",
-            maxWidth: "700px",
-            paddingTop: "64px",
-            textAlign: "center",
-            fontWeight: "bold",
-          }}
+          <BackArrowContainer>
+            <BackArrow
+              onClick={() => {
+                setIsSection1Visible("flex");
+                setIsSection2Visible("none");
+              }}
+            />
+          </BackArrowContainer>
+          <ContactContainer>
+            <Contact style={{ color: "white" }}>
+              will@webexpertstudios.com
+            </Contact>
+          </ContactContainer>
+        </Section2TopBar>
+        <Section2Content
           whileInView={{ opacity: 1 }}
           initial={{ opacity: 0 }}
           transition={{ duration: 4, type: "spring" }}
@@ -372,9 +269,9 @@ const Home: NextPage = () => {
               </SecondaryButton>
             </a>
           </motion.div>
-        </motion.div>
-      </LandingSection>
-    </HomeContainer>
+        </Section2Content>
+      </Section2>
+    </OuterContainer>
   );
 };
 
