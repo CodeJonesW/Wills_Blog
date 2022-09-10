@@ -1,7 +1,14 @@
 import styled from "styled-components";
-import { Button } from "@mui/material";
 import { motion } from "framer-motion";
-import styles from "../../styles/Home.module.css";
+
+export const OuterContainer = styled(motion.div)`
+  background-color: black;
+  height: 100vh;
+`;
+
+export const FullScreenView = styled(motion.div)`
+  height: 100vh;
+`;
 
 export const LandingSection = styled(motion.div)`
   min-height: 100vh;
@@ -75,15 +82,15 @@ export const MonterratMedium = { fontFamily: "MontserratMedium" };
 export const ArrowContainer = styled.div``;
 
 export const Circle = styled(motion.div)`
-  width: "40px";
-  height: "40px";
-  border-radius: "100px";
-  border-color: "black";
-  border-style: "solid";
-  display: "flex";
-  flex-direction: "row";
-  justify-content: "center";
-  align-items: "center";
+  width: 40px;
+  height: 40px;
+  border-radius: 100px;
+  border-color: black;
+  border-style: solid;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
   &:hover {
     cursor: pointer;
   }
@@ -155,3 +162,29 @@ export const TagLineContainer = styled.div`
 `;
 
 export const CompanyNameContainer = styled.div``;
+
+export const FlexColumnCenter = styled(motion.div)`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+`;
+
+export const Section2TopBar = styled(motion.div)`
+  display: flex;
+  width: 92%;
+  padding-left: 4%;
+  padding-right: 4%;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: flex-end;
+`;
+
+export const Section2Content = styled(motion.div)`
+  color: white;
+  font-family: "MontserratBold";
+  max-width: 700px;
+  padding-top: 64px;
+  text-align: center;
+  font-weight: bold;
+`;
