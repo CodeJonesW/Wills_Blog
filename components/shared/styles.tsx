@@ -44,6 +44,8 @@ export const SecondaryButton = styled(motion.div)`
   }
   border-radius: 16px;
   font-family: "LemonMilkBold";
+  touch-action: none;
+  user-select: none;
 `;
 
 export const PrimaryButton = styled(motion.div)`
@@ -69,6 +71,8 @@ export const PrimaryButton = styled(motion.div)`
   }
   border-radius: 16px;
   font-family: "LemonMilkBold";
+  user-select: none;
+  touch-action: none;
 `;
 
 export const UnshrinkableDiv = styled.div`
