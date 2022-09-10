@@ -232,7 +232,7 @@ const Home: NextPage = () => {
               A website's design is the #1 factor in determining the credibility
               of a business.
             </h3>
-            <UnshrinkableDiv style={{ height: 64 }} />
+            <UnshrinkableDiv style={{ height: screen.height * 0.05 }} />
             <FlexColumnCenter
               whileInView={{ opacity: 1 }}
               initial={{ opacity: 0 }}
