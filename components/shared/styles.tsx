@@ -3,7 +3,6 @@ import { motion } from "framer-motion";
 
 export const OuterContainer = styled(motion.div)`
   background-color: black;
-  height: 100vh;
 `;
 
 export const FullScreenView = styled(motion.div)`
