@@ -70,24 +70,22 @@ const Home: NextPage = () => {
             initial={{ opacity: 0 }}
             transition={{ duration: 4, type: "spring" }}
           >
-            <div>
-              <HomeNavBar>
-                <CompanyNameContainer>
-                  <CompanyName>Web Expert Studios</CompanyName>
-                </CompanyNameContainer>
+            <HomeNavBar>
+              <CompanyNameContainer>
+                <CompanyName>Web Expert Studios</CompanyName>
+              </CompanyNameContainer>
 
-                <ContactContainer>
-                  <MailLink
-                    style={{ textDecoration: "none" }}
-                    href="mailto:will@webexpertstudios.com?subject=Website%20Interest"
-                    target="_blank"
-                    rel="noreferrer"
-                  >
-                    <Contact>will@webexpertstudios.com</Contact>
-                  </MailLink>
-                </ContactContainer>
-              </HomeNavBar>
-            </div>
+              <ContactContainer>
+                <MailLink
+                  style={{ textDecoration: "none" }}
+                  href="mailto:will@webexpertstudios.com?subject=Website%20Interest"
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  <Contact>will@webexpertstudios.com</Contact>
+                </MailLink>
+              </ContactContainer>
+            </HomeNavBar>
             <TagLineContainer>
               <CompanyTagline>
                 We create dynamic websites to help companies grow their brand.
@@ -232,7 +230,7 @@ const Home: NextPage = () => {
               A websites design is the #1 factor in determining the credibility
               of a business.
             </h3>
-            <UnshrinkableDiv style={{ height: "20px" }} />
+            <UnshrinkableDiv style={{ height: "5%" }} />
             <FlexColumnCenter
               whileInView={{ opacity: 1 }}
               initial={{ opacity: 0 }}
