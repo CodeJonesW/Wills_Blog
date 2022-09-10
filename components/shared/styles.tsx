@@ -22,8 +22,8 @@ export const LandingSection = styled(motion.div)`
 export const SecondaryButton = styled(motion.div)`
   display: flex;
   font-size: 1em;
-  max-width: 336px;
-  min-width: 336px;
+  max-width: 300px;
+  min-width: 300px;
   height: 104px;
   color: black;
   max-height: 144px;
@@ -49,8 +49,8 @@ export const SecondaryButton = styled(motion.div)`
 export const PrimaryButton = styled(motion.div)`
   display: flex;
   font-size: 1em;
-  max-width: 336px;
-  min-width: 336px;
+  max-width: 300px;
+  min-width: 300px;
   text-align: center;
   justify-content: center;
   align-items: center;
