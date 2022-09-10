@@ -229,7 +229,7 @@ const Home: NextPage = () => {
             transition={{ duration: 4, type: "spring" }}
           >
             <h3 style={{ fontSize: "2.2em", padding: "12px" }}>
-              A website's design is the #1 factor in determining the credibility
+              A websites design is the #1 factor in determining the credibility
               of a business.
             </h3>
             <UnshrinkableDiv style={{ height: screen.height * 0.05 }} />
