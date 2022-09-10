@@ -57,6 +57,10 @@ const Home: NextPage = () => {
     justify-content: flex-start;
   `;
 
+  const MailLink = styled.a`
+    color: black;
+  `;
+
   return (
     <AnimatePresence>
       <OuterContainer className={styles.quartzoBold}>
@@ -73,13 +77,20 @@ const Home: NextPage = () => {
                 </CompanyNameContainer>
 
                 <ContactContainer>
-                  <Contact>will@webexpertstudios.com</Contact>
+                  <MailLink
+                    style={{ textDecoration: "none" }}
+                    href="mailto:will@webexpertstudios.com?subject=Website%20Interest"
+                    target="_blank"
+                    rel="noreferrer"
+                  >
+                    <Contact>will@webexpertstudios.com</Contact>
+                  </MailLink>
                 </ContactContainer>
               </HomeNavBar>
             </div>
             <TagLineContainer>
               <CompanyTagline>
-                We create dynamic brands to help new companies grow.
+                We create dynamic websites to help companies grow their brand.
               </CompanyTagline>
             </TagLineContainer>
             <UnshrinkableDiv style={{ height: "8%" }} />
@@ -131,10 +142,10 @@ const Home: NextPage = () => {
                   color: "white",
                 }}
               >
-                Web Expert Studios specializes in creating brands and websites
-                for new companies. As a hands-on creative partner, were big on
+                Web Expert Studios specializes in creating websites for
+                companies. As a hands-on creative partner, we are big on
                 collaborating and prototyping. With experience in multiple
-                disciplines we help our clients earn their spot in peoples
+                disciplines, we help our clients earn their spot in peoples
                 lives.
               </InfoText>
             </div>
@@ -200,9 +211,16 @@ const Home: NextPage = () => {
               </Circle>
             </BackArrowContainer>
             <ContactContainer>
-              <Contact style={{ color: "white" }}>
-                will@webexpertstudios.com
-              </Contact>
+              <MailLink
+                style={{ textDecoration: "none" }}
+                href="mailto:will@webexpertstudios.com?subject=Website%20Interest"
+                target="_blank"
+                rel="noreferrer"
+              >
+                <Contact style={{ color: "white" }}>
+                  will@webexpertstudios.com
+                </Contact>
+              </MailLink>
             </ContactContainer>
           </Section2TopBar>
           <Section2Content
@@ -211,7 +229,7 @@ const Home: NextPage = () => {
             transition={{ duration: 4, type: "spring" }}
           >
             <h3 style={{ fontSize: "2.2em", padding: "12px" }}>
-              A website’s design is the #1 factor in determining the credibility
+              A website's design is the #1 factor in determining the credibility
               of a business.
             </h3>
             <UnshrinkableDiv style={{ height: 64 }} />
@@ -232,7 +250,7 @@ const Home: NextPage = () => {
                 there.
               </p>
               <UnshrinkableDiv style={{ height: "2vh" }} />
-              <a
+              <MailLink
                 style={{ textDecoration: "none" }}
                 href="mailto:will@webexpertstudios.com?subject=Website%20Interest"
                 target="_blank"
@@ -241,7 +259,7 @@ const Home: NextPage = () => {
                 <SecondaryButton>
                   <h3>Lets get in touch</h3>
                 </SecondaryButton>
-              </a>
+              </MailLink>
             </FlexColumnCenter>
           </Section2Content>
         </Section2>

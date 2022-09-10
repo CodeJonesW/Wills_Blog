@@ -126,7 +126,8 @@ export const Contact = styled.h3`
 export const CompanyName = styled.h1`
   font-family: "LemonMilkBold";
   color: "black";
-  max-width: 240px;
+  max-width: 200px;
+  user-select: none;
 `;
 
 export const InfoText = styled(motion.h1)`
