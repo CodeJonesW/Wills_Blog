@@ -1,12 +1,7 @@
 import type { NextPage } from "next";
 import styled from "styled-components";
 import styles from "../styles/Home.module.css";
-import {
-  motion,
-  useScroll,
-  useTransform,
-  useViewportScroll,
-} from "framer-motion";
+import { motion } from "framer-motion";
 import React, { useState } from "react";
 import {
   LandingSection,
@@ -14,7 +9,6 @@ import {
   SecondaryButton,
   UnshrinkableDiv,
 } from "../components/shared/styles";
-import { OutlinedCard } from "../components/shared/card";
 
 const HomeContainer = styled(motion.div)`
   background-color: black;
@@ -48,7 +42,6 @@ const LeftSection = styled.div`
 `;
 
 const SecondaryLandingTextRow = styled.div`
-  /* min-width: 200px; */
   min-height: 40px;
   flex-shrink: 0;
   max-width: 100%;
@@ -149,10 +142,6 @@ const Home: NextPage = () => {
     useState("none");
   const [isLandingSection3Visible, setIsLandingSection3Visible] =
     useState("none");
-
-  const { scrollYProgress } = useViewportScroll();
-  const scaleAnim = useTransform(scrollYProgress, [0, 0.5, 1], [1, 1, 1.5]);
-  const yPosAnim = useTransform(scrollYProgress, [0, 0.4, 1], [0, -250, -100]);
 
   const HomeSection = styled(LandingSection)`
     display: ${isLandingSection1Visible};
@@ -283,7 +272,6 @@ const Home: NextPage = () => {
             </motion.div>
           </div>
         </motion.div>
-        {/* <UnshrinkableDiv style={{ height: "1%" }} /> */}
       </HomeSection>
       <LandingSection
         whileInView={{ opacity: 1 }}
@@ -385,76 +373,6 @@ const Home: NextPage = () => {
             </a>
           </motion.div>
         </motion.div>
-      </LandingSection>
-
-      <LandingSection
-        whileInView={{ opacity: 1 }}
-        initial={{ opacity: 0 }}
-        transition={{ duration: 4, type: "spring" }}
-        style={{
-          alignContent: "flex-start",
-          flexDirection: "column",
-          alignItems: "center",
-          justifyContent: "flex-start",
-          display: isLandingSection3Visible,
-        }}
-      >
-        <UnshrinkableDiv style={{ height: "24px" }} />
-        <ActionTextSection
-          style={{ textAlign: "center", color: "white", maxWidth: "480px" }}
-        >
-          We offer 3 website packages that set you up for independent success
-        </ActionTextSection>
-        <SecondaryLandingTextRow style={{ flexWrap: "wrap" }}>
-          <OutlinedCard
-            price={"$2000"}
-            setSectionVisible={setIsLandingSection3Visible}
-            title="Basic"
-            features={[
-              "Custom domain name",
-              "Email sign uplist",
-              "6 static content pages dynamic to all screen sizes",
-              "Provide designs to match business identity and goals.",
-              "Review meeting at 60% completion",
-              "At 100% completion, we send you a link to demo and we create a final revisions list.",
-              "Documentation on how the setup works so you can continue to make updates and improve your site.",
-            ]}
-          />
-
-          <OutlinedCard
-            price={"$3000"}
-            setSectionVisible={setIsLandingSection3Visible}
-            title="Animated"
-            features={[
-              "Custom domain name",
-              "Email sign uplist",
-              "6 pages dynamic to all screen sizes",
-              "6 animated content sections",
-              "Provide designs to match business identity and goals.",
-              "2 additional features like automated booking system and contact form.",
-              "Review meeting at 75% completion",
-              "At 100% completion, we send you a link to demo and we create a final revisions list.",
-              "Documentation on how the site works so you can continue to make updates and improve your site.",
-            ]}
-          />
-          <OutlinedCard
-            price={"$4000"}
-            setSectionVisible={setIsLandingSection3Visible}
-            title="Animated Ecommerce"
-            features={[
-              "Custom domain name",
-              "Email sign uplist",
-              "6 animated content pages dynamic to all screen sizes",
-              "Provide designs to match business identity and goals.",
-              "2 additional features like automated booking system and contact form.",
-              "Ability to add and sell products on your site",
-              "Review meeting at 75% completion",
-              "At 100% completion, we send you a link to demo and we create a final revisions list.",
-              "Documentation on how the site works so you can continue to make updates and improve your site.",
-            ]}
-          />
-        </SecondaryLandingTextRow>
-        <UnshrinkableDiv style={{ height: "24px" }} />
       </LandingSection>
     </HomeContainer>
   );
