@@ -3,6 +3,7 @@ import styled from "styled-components";
 import styles from "../styles/Home.module.css";
 import { motion, AnimatePresence } from "framer-motion";
 import React, { useState } from "react";
+import Link from "next/link";
 import {
   ArrowContainer,
   BackArrow,
@@ -11,7 +12,7 @@ import {
   CompanyName,
   CompanyNameContainer,
   CompanyTagline,
-  Contact,
+  H3,
   ContactContainer,
   FlexColumnCenter,
   FullScreenView,
@@ -26,6 +27,7 @@ import {
   TagLineContainer,
   UnshrinkableDiv,
 } from "../components/shared/styles";
+import { link } from "fs/promises";
 
 // animate={{
 //   x: 0,
@@ -61,6 +63,10 @@ const Home: NextPage = () => {
     color: black;
   `;
 
+  const BlogLink = styled.a`
+    color: black;
+  `;
+
   return (
     <AnimatePresence>
       <OuterContainer className={styles.quartzoBold}>
@@ -76,13 +82,19 @@ const Home: NextPage = () => {
               </CompanyNameContainer>
 
               <ContactContainer>
+                <Link href="/blog">
+                  <BlogLink>
+                    <H3>Blog</H3>
+                  </BlogLink>
+                </Link>
+                <UnshrinkableDiv style={{ width: "16px" }} />
                 <MailLink
                   style={{ textDecoration: "none" }}
                   href="mailto:will@webexpertstudios.com?subject=Website%20Interest"
                   target="_blank"
                   rel="noreferrer"
                 >
-                  <Contact>will@webexpertstudios.com</Contact>
+                  <H3>Contact</H3>
                 </MailLink>
               </ContactContainer>
             </HomeNavBar>
@@ -215,9 +227,7 @@ const Home: NextPage = () => {
                 target="_blank"
                 rel="noreferrer"
               >
-                <Contact style={{ color: "white" }}>
-                  will@webexpertstudios.com
-                </Contact>
+                <H3 style={{ color: "white" }}>will@webexpertstudios.com</H3>
               </MailLink>
             </ContactContainer>
           </Section2TopBar>

@@ -103,6 +103,9 @@ export const ContactContainer = styled.div`
   padding-top: 1%;
   max-width: 220px;
   display: flex;
+  flex-direction: row;
+  justify-content: "center";
+  align-items: "center";
 `;
 export const BackArrowContainer = styled(ContactContainer)`
   padding-top: 3%;
@@ -120,7 +123,7 @@ export const BackArrow = styled(motion.i)`
   border-right: 10px solid white;
 `;
 
-export const Contact = styled.h3`
+export const H3 = styled.h3`
   font-size: 0.9em;
   font-family: "MontserratMedium";
   max-width: 80%;
