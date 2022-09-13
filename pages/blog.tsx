@@ -5,12 +5,21 @@ import styles from "../styles/Home.module.css";
 import fs from "fs";
 import path from "path";
 import matter from "gray-matter";
+import { motion } from "framer-motion";
+import { OutlinedCard } from "../components/shared/card";
 
 const BlogContainer = styled(FullScreenView)`
   justify-content: center;
 `;
 
 const BlogNavbar = styled(HomeNavBar)``;
+
+const PostsContainer = styled(motion.div)`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+`;
 
 interface BlogProps {
   posts: {
@@ -27,19 +36,25 @@ export default function Blog({ posts }: BlogProps) {
   console.log(posts);
   return (
     <AnimatePresence>
-      <BlogContainer className={styles.quartzoBold}>
+      <BlogContainer
+        whileInView={{ opacity: 1 }}
+        initial={{ opacity: 0 }}
+        transition={{ duration: 4, type: "spring" }}
+        className={styles.quartzoBold}
+      >
         <BlogNavbar>
           <H3>Blog</H3>
         </BlogNavbar>
-
-        {posts.map((post, index) => {
-          return (
-            <div key={index}>
-              <h1>{post.frontmatter.title}</h1>
-              <p>{post.frontmatter.excerpt}</p>
-            </div>
-          );
-        })}
+        <PostsContainer>
+          {posts.map((post, index) => {
+            return (
+              <div key={index}>
+                <h1>{post.frontmatter.title}</h1>
+                <p>{post.frontmatter.excerpt}</p>
+              </div>
+            );
+          })}
+        </PostsContainer>
       </BlogContainer>
     </AnimatePresence>
   );

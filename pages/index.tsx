@@ -39,38 +39,35 @@ import { link } from "fs/promises";
 //   },
 // }}
 
+const MailLink = styled.a`
+  color: black;
+`;
+
+const BlogLink = styled.a`
+  color: black;
+`;
+const Section1 = styled(LandingSection)`
+  background-color: white;
+  width: 100vw;
+  height: 200vh;
+  justify-content: flex-start;
+  flex-direction: column;
+`;
+
+const Section2 = styled(LandingSection)`
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+`;
+
 const Home: NextPage = () => {
   const [isSection1Visible, setIsSection1Visible] = useState("flex");
   const [isSection2Visible, setIsSection2Visible] = useState("none");
 
-  const Section1 = styled(LandingSection)`
-    display: ${isSection1Visible};
-    background-color: white;
-    width: 100vw;
-    height: 200vh;
-    justify-content: flex-start;
-    flex-direction: column;
-  `;
-
-  const Section2 = styled(LandingSection)`
-    display: ${isSection2Visible};
-    flex-direction: column;
-    align-items: center;
-    justify-content: flex-start;
-  `;
-
-  const MailLink = styled.a`
-    color: black;
-  `;
-
-  const BlogLink = styled.a`
-    color: black;
-  `;
-
   return (
     <AnimatePresence>
       <OuterContainer className={styles.quartzoBold}>
-        <Section1>
+        <Section1 style={{ display: isSection1Visible }}>
           <FullScreenView
             whileInView={{ opacity: 1 }}
             initial={{ opacity: 0 }}
@@ -196,6 +193,7 @@ const Home: NextPage = () => {
           </FullScreenView>
         </Section1>
         <Section2
+          style={{ display: isSection2Visible }}
           whileInView={{ opacity: 1 }}
           initial={{ opacity: 0 }}
           transition={{ duration: 4, type: "spring" }}
