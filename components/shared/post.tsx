@@ -13,7 +13,7 @@ const PostContainer = styled.div`
   flex-direction: column;
   align-items: flex-start;
   justify-content: flex-start;
-  max-width: 80%;
+  max-width: 100%;
   padding: 10%;
   cursor: pointer;
   transition: all 0.2s ease-in-out;
@@ -22,8 +22,8 @@ const PostContainer = styled.div`
   }
 `;
 export const PostImage = styled.img`
-  width: 20%;
-  height: 20%;
+  width: 40%;
+  height: 40%;
   max-width: 900px;
   max-height: 600px;
   object-fit: cover;
@@ -41,21 +41,21 @@ const PostInfo = styled.div`
 const PostTitle = styled(H3)`
   font-family: "LemonMilkBold";
   color: "black";
-  max-width: 200px;
+  max-width: 600px;
   user-select: none;
 `;
 
 const PostDate = styled(H4)`
   font-family: "LemonMilkBold";
   color: "black";
-  max-width: 200px;
+  max-width: 600px;
   user-select: none;
 `;
 
 const PostExcerpt = styled(H4)`
   font-family: "LemonMilkBold";
   color: "black";
-  max-width: 200px;
+  max-width: 400px;
   user-select: none;
 `;
 

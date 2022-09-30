@@ -8,13 +8,19 @@ import path from "path";
 import matter from "gray-matter";
 import router from "next/router";
 import Post from "../components/shared/post";
-import { post } from "../enums";
+import { post, routes, theme } from "../enums";
+import { Section2TopBar as TopBar } from "../components/shared/styles";
+import Back from "../components/shared/back";
 
 const BlogContainer = styled(FullScreenView)`
   justify-content: center;
 `;
 
-const BlogNavbar = styled(HomeNavBar)``;
+const BlogNavbar = styled(motion.div)`
+  padding-top: 5%;
+  padding-left: 15%;
+  width: 80%;
+`;
 
 const PostsContainer = styled(motion.div)`
   display: flex;
@@ -49,6 +55,13 @@ export default function Blog({ posts }: BlogProps) {
         transition={{ duration: 4, type: "spring" }}
         className={styles.quartzoBold}
       >
+        <TopBar
+          animate={{ opacity: 1 }}
+          initial={{ opacity: 0 }}
+          transition={{ duration: 4, type: "spring" }}
+        >
+          <Back route={routes.home} themeProp={theme.light} />
+        </TopBar>
         <BlogNavbar>
           <PageHeader style={{ fontSize: "1.2em" }}>Blog</PageHeader>
         </BlogNavbar>

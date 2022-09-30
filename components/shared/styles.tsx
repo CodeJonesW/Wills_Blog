@@ -99,7 +99,7 @@ export const Circle = styled(motion.div)`
   }
 `;
 
-export const ContactContainer = styled.div`
+export const ContactContainer = styled(motion.div)`
   padding-top: 1%;
   max-width: 220px;
   display: flex;

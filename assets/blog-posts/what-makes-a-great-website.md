@@ -2,7 +2,7 @@
 title: "What makes a great website?"
 date: "September 13, 2022"
 excerpt: "Looking at the elements that make up the sites across the web we can establish some direct corelations many if not all have in common."
-cover_image: "/images/posts/what-makes-a-great-website/styleGuide.jpeg"
+cover_image: "/images/posts/what-makes-a-great-website/colorful-computer.jpeg"
 ---
 
 ## What makes a great website?

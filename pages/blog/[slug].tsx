@@ -7,7 +7,6 @@ import Link from "next/link";
 import { post, routes, theme } from "../../enums/index";
 import Back from "../../components/shared/back";
 import styled from "styled-components";
-import { PostImage } from "../../components/shared/post";
 import { Section2TopBar as TopBar } from "../../components/shared/styles";
 import { motion } from "framer-motion";
 
@@ -22,7 +21,9 @@ const PostContainer = styled(motion.div)`
   flex-direction: column;
   align-items: flex-start;
   justify-content: flex-start;
-  padding: 10%;
+  padding-left: 10%;
+  padding-right: 10%;
+  padding-top: 5%;
 `;
 
 const PageContainer = styled.div`
@@ -30,6 +31,17 @@ const PageContainer = styled.div`
   flex-direction: column;
   align-items: flex-start;
   justify-content: center;
+`;
+
+const PostImage = styled.img`
+  width: 100%;
+  height: 100%;
+  max-width: 900px;
+  max-height: 600px;
+  min-width: 380px;
+  min-height: 320px;
+  object-fit: cover;
+  border-radius: 10px;
 `;
 
 export default function PostPage({
@@ -44,9 +56,7 @@ export default function PostPage({
         initial={{ opacity: 0 }}
         transition={{ duration: 4, type: "spring" }}
       >
-        <Link href="/blog">
-          <Back route={routes.blog} themeProp={theme.light} />
-        </Link>
+        <Back route={routes.blog} themeProp={theme.light} />
       </TopBar>
 
       <PostContainer
