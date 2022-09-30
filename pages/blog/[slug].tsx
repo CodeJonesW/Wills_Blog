@@ -4,7 +4,7 @@ import matter from "gray-matter";
 // import type { marked } from "marked";
 import { marked } from "marked";
 import Link from "next/link";
-import { post, theme } from "../../enums/index";
+import { post, routes, theme } from "../../enums/index";
 import Back from "../../components/shared/back";
 import styled from "styled-components";
 import { PostImage } from "../../components/shared/post";
@@ -45,7 +45,7 @@ export default function PostPage({
         transition={{ duration: 4, type: "spring" }}
       >
         <Link href="/blog">
-          <Back themeProp={theme.light} />
+          <Back route={routes.blog} themeProp={theme.light} />
         </Link>
       </TopBar>
 

@@ -1,18 +1,18 @@
 import Router from "next/router";
-import { theme } from "../../enums";
+import { routes, theme } from "../../enums";
 import { BackArrow, BackArrowContainer, Circle } from "./styles";
 
 interface backProps {
   themeProp: string;
-  onClick?: () => void;
+  route?: string;
 }
 
-export default function Back({ themeProp }: backProps) {
+export default function Back({ themeProp, route = "" }: backProps) {
   return (
     <BackArrowContainer>
       <Circle
         onClick={() => {
-          Router.push("/");
+          Router.push(!!route ? route : routes.home);
         }}
         style={{
           borderColor: themeProp === theme.dark ? "white" : "black",

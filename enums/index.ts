@@ -8,6 +8,11 @@ export type post = {
   };
 };
 
+export enum routes {
+  home = "/",
+  blog = "/blog",
+}
+
 export enum theme {
   light = "light",
   dark = "dark",
