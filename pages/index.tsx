@@ -45,6 +45,7 @@ const MailLink = styled.a`
 
 const BlogLink = styled.a`
   color: black;
+  cursor: pointer;
 `;
 const Section1 = styled(LandingSection)`
   background-color: white;

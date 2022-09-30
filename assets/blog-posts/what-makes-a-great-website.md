@@ -28,7 +28,9 @@ WIth all these things in mind some times it can be easy to put to much paint on 
 
 ## Use a style guide to start a webflow site
 
-it will allow us to implement a component based system and reduce complex changes.
+This advice will say you a ton of time when you are starting a new site. It is a great way to get a head start on the design process. I have found a style guide for a webflow site that you can use as a starting point for your next project. [Style guide](https://webflow.com/website/Style-Guide)
+
+It will allow us to implement a component based system and reduce complex changes.
 
 Below are great sources of inspiration. Opening various projects templates in webflow can give one an idea of how such things were built.
 

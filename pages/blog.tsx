@@ -18,10 +18,10 @@ const BlogNavbar = styled(HomeNavBar)``;
 
 const PostsContainer = styled(motion.div)`
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   align-items: flex-start;
-  justify-content: flex-start;
-  padding: 10%;
+  justify-content: center;
+  padding: 1%;
 `;
 
 export const PageHeader = styled(H3)`

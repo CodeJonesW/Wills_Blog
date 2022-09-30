@@ -8,6 +8,8 @@ import { post, theme } from "../../enums/index";
 import Back from "../../components/shared/back";
 import styled from "styled-components";
 import { PostImage } from "../../components/shared/post";
+import { Section2TopBar as TopBar } from "../../components/shared/styles";
+import { motion } from "framer-motion";
 
 interface PostProps {
   frontmatter: post["frontmatter"];
@@ -15,12 +17,19 @@ interface PostProps {
   content: string;
 }
 
-const PostContainer = styled.div`
+const PostContainer = styled(motion.div)`
   display: flex;
   flex-direction: column;
   align-items: flex-start;
   justify-content: flex-start;
   padding: 10%;
+`;
+
+const PageContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
 `;
 
 export default function PostPage({
@@ -29,12 +38,22 @@ export default function PostPage({
   content,
 }: PostProps) {
   return (
-    <div>
-      <Link href="/">
-        <Back themeProp={theme.light} />
-      </Link>
+    <PageContainer>
+      <TopBar
+        animate={{ opacity: 1 }}
+        initial={{ opacity: 0 }}
+        transition={{ duration: 4, type: "spring" }}
+      >
+        <Link href="/blog">
+          <Back themeProp={theme.light} />
+        </Link>
+      </TopBar>
 
-      <PostContainer>
+      <PostContainer
+        animate={{ opacity: 1 }}
+        initial={{ opacity: 0 }}
+        transition={{ duration: 4, type: "spring" }}
+      >
         <div>
           <PostImage
             style={{ maxWidth: "700px", maxHeight: "460px" }}
@@ -44,7 +63,7 @@ export default function PostPage({
         </div>
         <div dangerouslySetInnerHTML={{ __html: marked(content) }}></div>
       </PostContainer>
-    </div>
+    </PageContainer>
   );
 }
 

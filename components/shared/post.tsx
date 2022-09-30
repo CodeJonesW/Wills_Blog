@@ -13,6 +13,7 @@ const PostContainer = styled.div`
   flex-direction: column;
   align-items: flex-start;
   justify-content: flex-start;
+  max-width: 80%;
   padding: 10%;
   cursor: pointer;
   transition: all 0.2s ease-in-out;
@@ -21,8 +22,10 @@ const PostContainer = styled.div`
   }
 `;
 export const PostImage = styled.img`
-  width: 100%;
-  height: 100%;
+  width: 20%;
+  height: 20%;
+  max-width: 900px;
+  max-height: 600px;
   object-fit: cover;
   border-radius: 10px;
 `;
