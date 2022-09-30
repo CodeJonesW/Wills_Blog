@@ -1,0 +1,75 @@
+import Link from "next/link";
+import styled from "styled-components";
+import { post } from "../../enums";
+import { H3, H4 } from "./styles";
+import Image from "next/image";
+interface PostProps {
+  post: post;
+  selectPost: (slug: string) => void;
+}
+
+const PostContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  padding: 10%;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+  &:hover {
+    transform: scale(1.05);
+  }
+`;
+export const PostImage = styled.img`
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 10px;
+`;
+
+const PostInfo = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  padding: 10px;
+`;
+
+const PostTitle = styled(H3)`
+  font-family: "LemonMilkBold";
+  color: "black";
+  max-width: 200px;
+  user-select: none;
+`;
+
+const PostDate = styled(H4)`
+  font-family: "LemonMilkBold";
+  color: "black";
+  max-width: 200px;
+  user-select: none;
+`;
+
+const PostExcerpt = styled(H4)`
+  font-family: "LemonMilkBold";
+  color: "black";
+  max-width: 200px;
+  user-select: none;
+`;
+
+export default function Post({ post, selectPost }: PostProps) {
+  const { slug, frontmatter } = post;
+  return (
+    <Link href={`/blog/${slug}`}>
+      <a style={{ color: "inherit" }}>
+        <PostContainer>
+          <PostImage src={frontmatter.cover_image} />
+          <PostInfo>
+            <PostTitle>{frontmatter.title}</PostTitle>
+            <PostDate>{frontmatter.date}</PostDate>
+            <PostExcerpt>{frontmatter.excerpt}</PostExcerpt>
+          </PostInfo>
+        </PostContainer>
+      </a>
+    </Link>
+  );
+}

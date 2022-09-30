@@ -129,6 +129,12 @@ export const H3 = styled.h3`
   max-width: 80%;
 `;
 
+export const H4 = styled.h3`
+  font-size: 0.7em;
+  font-family: "MontserratMedium";
+  max-width: 80%;
+`;
+
 export const CompanyName = styled.h1`
   font-family: "LemonMilkBold";
   color: "black";

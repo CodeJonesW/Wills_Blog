@@ -6,6 +6,9 @@ import styles from "../styles/Home.module.css";
 import fs from "fs";
 import path from "path";
 import matter from "gray-matter";
+import router from "next/router";
+import Post from "../components/shared/post";
+import { post } from "../enums";
 
 const BlogContainer = styled(FullScreenView)`
   justify-content: center;
@@ -29,17 +32,14 @@ export const PageHeader = styled(H3)`
 `;
 
 interface BlogProps {
-  posts: {
-    slug: string;
-    frontmatter: {
-      title: string;
-      date: string;
-      excerpt: string;
-    };
-  }[];
+  posts: post[];
 }
 
 export default function Blog({ posts }: BlogProps) {
+  const selectPost = (slug: string) => {
+    router.push(`/blog/${slug}`);
+  };
+
   console.log(posts);
   return (
     <AnimatePresence>
@@ -54,12 +54,7 @@ export default function Blog({ posts }: BlogProps) {
         </BlogNavbar>
         <PostsContainer>
           {posts.map((post, index) => {
-            return (
-              <div key={index}>
-                <h1>{post.frontmatter.title}</h1>
-                <p>{post.frontmatter.excerpt}</p>
-              </div>
-            );
+            return <Post key={index} post={post} selectPost={selectPost} />;
           })}
         </PostsContainer>
       </BlogContainer>

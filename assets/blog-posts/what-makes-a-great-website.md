@@ -1,11 +1,11 @@
 ---
 title: "What makes a great website?"
 date: "September 13, 2022"
-excerpt: "Looking at the elements that make up the core of web design we can establish some direct corelations."
-cover_image: "/images/blog-posts/image1.png"
+excerpt: "Looking at the elements that make up the sites across the web we can establish some direct corelations many if not all have in common."
+cover_image: "/images/posts/what-makes-a-great-website/styleGuide.jpeg"
 ---
 
-# What makes a great website?
+## What makes a great website?
 
 ## Intro
 
@@ -20,8 +20,18 @@ cover_image: "/images/blog-posts/image1.png"
 
 ## Great photos
 
-- Undeniably greate photos add a lot of extra flavor to a website. Taking a few great photos for your brand and proper editing can go a long way. Removing the background from the central visual element of a photo is an easy way to create an effect. Remove background tools like [remove.bg](https://www.remove.bg/) make it easy. Alternatively acquiring a photo editor like [gimp](https://www.gimp.org/) is an option for those looking for a deeper dive. Gimp is fairly complicated similar to photoshop but is open source and free.
+- Undeniably great photos add a lot of extra flavor to a website. Taking a few great photos for your brand and proper editing can go a long way. Removing the background from the central visual element of a photo is an easy way to create an effect. Remove background tools like [remove.bg](https://www.remove.bg/) make it easy. Alternatively acquiring a photo editor like [gimp](https://www.gimp.org/) is an option for those looking for a deeper dive. Gimp is fairly complicated similar to photoshop but is open source and free.
 
 ## Keeping it simple
 
 WIth all these things in mind some times it can be easy to put to much paint on the canvas. Sticking to the main points you are trying to make can havea major impact as well.
+
+## Use a style guide to start a webflow site
+
+it will allow us to implement a component based system and reduce complex changes.
+
+Below are great sources of inspiration. Opening various projects templates in webflow can give one an idea of how such things were built.
+
+- [https://www.helloheco.com/](https://www.helloheco.com/)
+
+- [https://www.awwwards.com/hecopartners/](https://www.awwwards.com/hecopartners/)
