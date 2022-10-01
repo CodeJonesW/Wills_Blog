@@ -9,7 +9,7 @@ cover_image: "/images/posts/what-makes-a-great-website/colorful-computer.jpeg"
 
 ## Intro
 
-- My goal is to write about the core concepts of website design implemented widely across the internet. There are many layers that can be applied on top of the core elements to spice things up but always on a foundation of well executed principles.
+- When a website is well crafted, it displays what you have to offer, creates a connection, communicates trust. My goal is to write about the core concepts that are used by well designed user experiences all over the web. There are many layers that can be applied on top of the core elements to spice things up but always on a foundation of well executed principles.
 
 ## Visibility
 
@@ -17,6 +17,14 @@ cover_image: "/images/posts/what-makes-a-great-website/colorful-computer.jpeg"
 
 - It is surprising how easy it is for users to become confused when navigating a website. Clear call to action buttons are a must. For the simplest of implementations 2 styles of buttons can be used to distinguish between primary and secondary actions.
 - The goal is to tell a story and allow your user to experience it in a frictionless glide allowing the information to clearly be communicated beteen both entities. Creating a user flow that provides more information in every step while offering a way to take action at some point is a relatively standard way to draw in users across the web. Some websites will take you all the way through the information on a page and then present a single action button others will present it throughout the sections of the page.
+
+## Mobile First Design
+
+In a world where mobile devices are the primary way people access the internet it is important to make sure your website is optimized for mobile devices. This is not to say that desktop users should be ignored but it is important to make sure the mobile experience is as good as it can be. The idea is to design the mobile experience first and then expand it to desktop. This is great way to build a website overtime and continue to add features.
+
+## Custom Content
+
+It is also known that creating custom content for your website creates more trust between you and your users while also increasing SEO rankings. SEO is a topic that is beyond the scope of this article but it is important to understand that the more content you have the more likely you are to be found by users searching for your topic. This is a great way to build a community around your website and create a place where people can come to learn about your topic.
 
 ## Great photos
 
