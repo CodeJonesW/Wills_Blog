@@ -26,6 +26,8 @@ cover_image: "/images/posts/deep-links/deep-links-cover.jpeg"
 
 - When a user uses our website url in safari and has our application installed it opens the app instead of using the web browser.
 
+After reading Apple's ["Allowing apps and websites to link to your content"](https://developer.apple.com/documentation/xcode/allowing-apps-and-websites-to-link-to-your-content?preferredLanguage=occ). [Supporting associated Domains](https://developer.apple.com/documentation/Xcode/supporting-associated-domains) next step to support universal links in our application.
+
 [Expo AASA configuration Doc](https://docs.expo.dev/guides/linking/#aasa-configuration)
 
 - To implement universal links on iOS, you must first set up verification that you own your domain. This is done by serving an Apple App Site Association (AASA) file from your web app.The AASA must be served from the root as /apple-app-site-association (with no extension) or /.well-known/apple-app-site-association (with no extension). The AASA contains JSON which specifies your Apple app ID and a list of paths on your domain that should be handled by your mobile app.
@@ -46,7 +48,7 @@ Add the associated domains key to your expo apps's app.config - and the domain y
 
 - If your app is using react navigation you will need to create a state object to populate as your react navigation's initialState. This state object is dynamic and relative to the design of the stack navigators and tab navigators in your app. [React Navigation state reference](https://reactnavigation.org/docs/navigation-state)
 
-After reading Apple's ["Allowing apps and websites to link to your content"](https://developer.apple.com/documentation/xcode/allowing-apps-and-websites-to-link-to-your-content?preferredLanguage=occ). [Supporting associated Domains](https://developer.apple.com/documentation/Xcode/supporting-associated-domains) next step to support universal links in our application.
+https://reactnavigation.org/docs/deep-linking
 
 - Once the internal handling is setup, you will need to setup the Universal Links. This is done by adding a file to your project called `apple-app-site-association`. This file will contain the information that Apple will use to determine if the link is valid and should be passed to your app. The file should be hosted in the root of your project. When installed the iOS app will make a request to the associated domain where it will look for this file off the root route. I used the below setup for this file with success:
 
