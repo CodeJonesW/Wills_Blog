@@ -141,3 +141,7 @@ const data: FirebaseLink = await got
 - [Universal Links on iOS - Expo Docs](https://docs.expo.dev/guides/linking/#universal-links-on-ios)
 
 - [Dev Troubleshooting Resource](https://gist.github.com/anhar/6d50c023f442fb2437e1#file-setting_up_ios_universal_links-md)
+
+- [Testing Deep Liks with React Navigation](https://reactnavigation.org/docs/deep-linking/#testing-with-npx-uri-scheme)
+
+- [Handling Links into your App - Expo Docs](https://docs.expo.dev/guides/linking/?redirected#handling-links)
