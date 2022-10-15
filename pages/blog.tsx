@@ -11,6 +11,7 @@ import Post from "../components/shared/post";
 import { post, routes, theme } from "../enums";
 import { Section2TopBar as TopBar } from "../components/shared/styles";
 import Back from "../components/shared/back";
+import * as ga from "../lib/google_analytics";
 
 const BlogContainer = styled(FullScreenView)`
   justify-content: center;
@@ -43,6 +44,13 @@ interface BlogProps {
 
 export default function Blog({ posts }: BlogProps) {
   const selectPost = (slug: string) => {
+    ga.event({
+      action: "blog_view",
+      params: {
+        search_term: slug,
+      },
+    });
+
     router.push(`/blog/${slug}`);
   };
 
