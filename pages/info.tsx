@@ -70,8 +70,8 @@ export const Info: NextPage = () => {
         transition={{ duration: 4, type: "spring" }}
       >
         <h3 style={{ fontSize: "2.2em", padding: "12px" }}>
-          A websites design is the #1 factor in determining the credibility of a
-          business.
+          A website's design is the #1 factor in determining the credibility of
+          a business.
         </h3>
         <UnshrinkableDiv style={{ height: "5%" }} />
         <FlexColumnCenter
