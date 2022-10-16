@@ -26,9 +26,9 @@ cover_image: "/images/posts/deep-links/deep-links-cover.jpeg"
 
 - When a user uses our website url in safari and has our application installed it opens the app instead of using the web browser.
 
-After reading Apple's ["Allowing apps and websites to link to your content"](https://developer.apple.com/documentation/xcode/allowing-apps-and-websites-to-link-to-your-content?preferredLanguage=occ). [Supporting associated Domains](https://developer.apple.com/documentation/Xcode/supporting-associated-domains) next step to support universal links in our application.
+- After reading Apple's ["Allowing apps and websites to link to your content"](https://developer.apple.com/documentation/xcode/allowing-apps-and-websites-to-link-to-your-content?preferredLanguage=occ). [Supporting associated Domains](https://developer.apple.com/documentation/Xcode/supporting-associated-domains) next step to support universal links in our application.
 
-[Expo AASA configuration Doc](https://docs.expo.dev/guides/linking/#aasa-configuration)
+- [Expo AASA configuration Doc](https://docs.expo.dev/guides/linking/#aasa-configuration)
 
 - To implement universal links on iOS, you must first set up verification that you own your domain. This is done by serving an Apple App Site Association (AASA) file from your web app.The AASA must be served from the root as /apple-app-site-association (with no extension) or /.well-known/apple-app-site-association (with no extension). The AASA contains JSON which specifies your Apple app ID and a list of paths on your domain that should be handled by your mobile app.
 
@@ -36,48 +36,48 @@ After reading Apple's ["Allowing apps and websites to link to your content"](ht
 
 - Add the associatedDomains [configuration](https://docs.expo.dev/versions/latest/config/app/#associateddomains) to your app.json, and make sure to follow [Apple's specified format](https://developer.apple.com/documentation/bundleresources/entitlements/com_apple_developer_associated-domains). Make sure not to include the protocol (https) in your URL (this is a common mistake, and will result in your universal links not working).
 
-[associated domains](https://developer.apple.com/documentation/bundleresources/entitlements/com_apple_developer_associated-domains)
+- [Associated domains](https://developer.apple.com/documentation/bundleresources/entitlements/com_apple_developer_associated-domains)
 
 - Add the associated domains key to your expo apps's app.config - and the domain your want to associate prefixed with applinks.
 
   `associatedDomains: ["applinks:my.ponder.coach"]`
 
-[apple's supporting associated domains](https://developer.apple.com/documentation/xcode/supporting-associated-domains)
+- [apple's supporting associated domains](https://developer.apple.com/documentation/xcode/supporting-associated-domains)
 
 - With the pathConfig setup and the Linking event listener setup, you can now handle the link in your app. The link will be passed to the event listener as a string. You can then use the string to navigate to the appropriate screen.
 
 - If your app is using react navigation you will need to create a state object to populate as your react navigation's initialState. This state object is dynamic and relative to the design of the stack navigators and tab navigators in your app. [React Navigation state reference](https://reactnavigation.org/docs/navigation-state)
 
-<https://reactnavigation.org/docs/deep-linking>
+- [React Navigation deep linking reference](https://reactnavigation.org/docs/deep-linking)
 
 - Once the internal handling is setup, you will need to setup the Universal Links. This is done by adding a file to your project called `apple-app-site-association`. This file will contain the information that Apple will use to determine if the link is valid and should be passed to your app. The file should be hosted in the root of your project. When installed the iOS app will make a request to the associated domain where it will look for this file off the root route. I used the below setup for this file with success:
 
-```json
-{
-  "applinks": {
-    "apps": [],
-    "details": [
-      {
-        "appID": "TEAM_ID.BUNDLE_ID",
-        "components": [
-          {
-            "/": "/home",
-            "comment": "Matches URL whose path is /home"
-          },
-          {
-            "/": "/metrics",
-            "comment": "Matches URL whose path is /metrics"
-          },
-          {
-            "/": "/profile",
-            "comment": "Matches URL whose path is /profile"
-          }
-        ]
-      }
-    ]
+  ```json
+  {
+    "applinks": {
+      "apps": [],
+      "details": [
+        {
+          "appID": "TEAM_ID.BUNDLE_ID",
+          "components": [
+            {
+              "/": "/home",
+              "comment": "Matches URL whose path is /home"
+            },
+            {
+              "/": "/metrics",
+              "comment": "Matches URL whose path is /metrics"
+            },
+            {
+              "/": "/profile",
+              "comment": "Matches URL whose path is /profile"
+            }
+          ]
+        }
+      ]
+    }
   }
-}
-```
+  ```
 
 - There are multiple configuration types for setting up this file as it has changed over time from Apple. If there are many routes that need to be handled, you can use the `paths` key instead of the `components` key. The `paths` key will allow you to specify a regex pattern to match against the path of the URL. The `components` key will allow you to specify the path exactly. I used the `components` key as I only had a few routes to handle.
 
@@ -97,36 +97,36 @@ After reading Apple's ["Allowing apps and websites to link to your content"](ht
 
 - Once you have the web api key you can make a request to the firebase dynamic links api to generate a dynamic link. The config will look something like this:
 
-```json
-{
-  "dynamicLinkInfo": {
-    "domainUriPrefix": "https://example.page.link",
-    "link": "https://example.com/home",
-    "iosInfo": {
-      "iosBundleId": "com.example.ios",
-      "iosAppStoreId": "123456789"
+  ```json
+  {
+    "dynamicLinkInfo": {
+      "domainUriPrefix": "https://example.page.link",
+      "link": "https://example.com/home",
+      "iosInfo": {
+        "iosBundleId": "com.example.ios",
+        "iosAppStoreId": "123456789"
+      }
     }
   }
-}
-```
+  ```
 
 - Then a post request can be made to the firebase dynamic links api with the config and the web api key in the header. The response will contain the dynamic link that can be used to redirect the user to the app.
 
-```ts
-interface FirebaseLink {
-  shortLink?: string;
-  warning?: object[];
-  previewLink?: string;
-  error?: any;
-}
+  ```ts
+  interface FirebaseLink {
+    shortLink?: string;
+    warning?: object[];
+    previewLink?: string;
+    error?: any;
+  }
 
-const data: FirebaseLink = await got
-  .post(
-    `https://firebasedynamiclinks.googleapis.com/v1/shortLinks?key=${webAPiKey}`,
-    { json: config }
-  )
-  .json();
-```
+  const data: FirebaseLink = await got
+    .post(
+      `https://firebasedynamiclinks.googleapis.com/v1/shortLinks?key=${webAPiKey}`,
+      { json: config }
+    )
+    .json();
+  ```
 
 - One can add ?d=1 to the end of the returned dyanmic link to see the preview of the link. This is useful for testing the link and making sure it is working as expected. [Debugging Dynamic links](https://firebase.google.com/docs/dynamic-links/debug)
 
