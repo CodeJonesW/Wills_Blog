@@ -28,7 +28,8 @@ cover_image: "/images/posts/deep-links/deep-links-cover.jpeg"
 
 - [Expo AASA configuration Doc](https://docs.expo.dev/guides/linking/#aasa-configuration)
 
-- To implement universal links on iOS, you must first set up verification that you own your domain. This is done by serving an Apple App Site Association (AASA) file from your web app.The AASA must be served from the root as /apple-app-site-association (with no extension) or /.well-known/apple-app-site-association (with no extension). The AASA contains JSON which specifies your Apple app ID and a list of paths on your domain that should be handled by your mobile app.
+- To implement universal links on iOS, you must first set up verification that you own your domain. This is done by serving an Apple App Site Association (AASA) file from your web app.
+- The AASA must be served from the root as /apple-app-site-association (with no extension) or /.well-known/apple-app-site-association (with no extension). The AASA contains JSON which specifies your Apple app ID and a list of paths on your domain that should be handled by your mobile app.
 
 - If using Nextjs one can just put the AASA file in the public folder with no extension.
 
