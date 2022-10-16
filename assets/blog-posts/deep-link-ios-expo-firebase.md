@@ -164,7 +164,7 @@ cover_image: "/images/posts/deep-links/deep-links-cover.jpeg"
 
 - [React Navigation Linking](https://reactnavigation.org/docs/configuring-links/)
 
-- [Testing Deep Liks with React Navigation](https://reactnavigation.org/docs/deep-linking/#testing-with-npx-uri-scheme)
+- [Testing Deep Links with React Navigation](https://reactnavigation.org/docs/deep-linking/#testing-with-npx-uri-scheme)
 
 - [React Navigation deep linking reference](https://reactnavigation.org/docs/deep-linking)
 
