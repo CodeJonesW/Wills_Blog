@@ -38,9 +38,9 @@ After reading Apple's ["Allowing apps and websites to link to your content"](ht
 
 [associated domains](https://developer.apple.com/documentation/bundleresources/entitlements/com_apple_developer_associated-domains)
 
-Add the associated domains key to your expo apps's app.config - and the domain your want to associate prefixed with applinks.
+- Add the associated domains key to your expo apps's app.config - and the domain your want to associate prefixed with applinks.
 
-    `associatedDomains: ["applinks:my.ponder.coach"]`
+  `associatedDomains: ["applinks:my.ponder.coach"]`
 
 [apple's supporting associated domains](https://developer.apple.com/documentation/xcode/supporting-associated-domains)
 
@@ -48,7 +48,7 @@ Add the associated domains key to your expo apps's app.config - and the domain y
 
 - If your app is using react navigation you will need to create a state object to populate as your react navigation's initialState. This state object is dynamic and relative to the design of the stack navigators and tab navigators in your app. [React Navigation state reference](https://reactnavigation.org/docs/navigation-state)
 
-https://reactnavigation.org/docs/deep-linking
+<https://reactnavigation.org/docs/deep-linking>
 
 - Once the internal handling is setup, you will need to setup the Universal Links. This is done by adding a file to your project called `apple-app-site-association`. This file will contain the information that Apple will use to determine if the link is valid and should be passed to your app. The file should be hosted in the root of your project. When installed the iOS app will make a request to the associated domain where it will look for this file off the root route. I used the below setup for this file with success:
 
