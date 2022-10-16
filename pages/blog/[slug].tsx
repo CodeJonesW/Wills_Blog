@@ -1,9 +1,7 @@
 import fs from "fs";
 import path from "path";
 import matter from "gray-matter";
-// import type { marked } from "marked";
 import { marked } from "marked";
-import Link from "next/link";
 import { post, routes, theme } from "../../enums/index";
 import Back from "../../components/shared/back";
 import styled from "styled-components";
