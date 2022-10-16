@@ -8,7 +8,7 @@ import { useRouter } from "next/router";
 import {
   ArrowContainer,
   Circle,
-  CompanyName,
+  H1,
   CompanyNameContainer,
   CompanyTagline,
   H3,
@@ -35,6 +35,10 @@ const Section1 = styled(LandingSection)`
   height: 200vh;
   justify-content: flex-start;
   flex-direction: column;
+`;
+
+const CompanyName = styled(H1)`
+  max-width: 200px;
 `;
 
 const Home: NextPage = () => {

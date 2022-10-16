@@ -32,7 +32,7 @@ export default class MyDocument extends Document {
     return (
       <Html lang="en">
         <Head></Head>
-        <body style={{ margin: 0 }}>
+        <body>
           <noscript>
             <iframe
               src={`https://www.googletagmanager.com/ns.html?id=${process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS}`}

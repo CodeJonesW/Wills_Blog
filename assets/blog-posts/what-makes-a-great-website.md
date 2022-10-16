@@ -5,7 +5,7 @@ excerpt: "Looking at the elements that make up the sites across the web we can e
 cover_image: "/images/posts/what-makes-a-great-website/colorful-computer.jpeg"
 ---
 
-## What makes a great website?
+ <!-- <link href="../../styles//Home.module.css" rel="stylesheet"></link> -->
 
 ## Intro
 
@@ -15,9 +15,10 @@ cover_image: "/images/posts/what-makes-a-great-website/colorful-computer.jpeg"
 
 - In a world where mobile devices are the primary way people access the internet it is important to make sure your website is optimized for mobile devices. This is not to say that desktop users should be ignored but it is important to make sure the mobile experience is as good as it can be. The idea is to design the mobile experience first and then expand it to desktop. This is great way to build a website overtime and continue to add features.
 
-## Use a style guide to start
+## Use a style guide
 
-- This advice will say you a ton of time when you are starting a new site. It is a great way to get a head start on the design process. I have found a style guide for a webflow site that you can use as a starting point for your next project. [Style guide](https://webflow.com/website/Style-Guide)
+- This advice will save a ton of time when building sites that intend to be maintained well into the future. If you percieve to have to recreate elements of the same style more than once throughout your design that is the moment when creating reusable components will start to show true benefit.
+- I have found a style guide for a webflow site that you can use as a starting point for your next project. [Style guide](https://webflow.com/website/Style-Guide)
 
 - It will allow us to implement a component based system and reduce complex changes.
 

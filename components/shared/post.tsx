@@ -14,7 +14,7 @@ const PostContainer = styled.div`
   align-items: flex-start;
   justify-content: flex-start;
   max-width: 100%;
-  padding: 10%;
+  padding-top: 24px;
   cursor: pointer;
   transition: all 0.2s ease-in-out;
   &:hover {
@@ -62,17 +62,17 @@ const PostExcerpt = styled(H4)`
 export default function Post({ post, selectPost }: PostProps) {
   const { slug, frontmatter } = post;
   return (
-    <Link href={`/blog/${slug}`}>
-      <a style={{ color: "inherit" }}>
-        <PostContainer>
+    <PostContainer>
+      <Link href={`/blog/${slug}`}>
+        <a style={{ color: "inherit" }}>
           <PostImage src={frontmatter.cover_image} />
           <PostInfo>
             <PostTitle>{frontmatter.title}</PostTitle>
             <PostDate>{frontmatter.date}</PostDate>
             <PostExcerpt>{frontmatter.excerpt}</PostExcerpt>
           </PostInfo>
-        </PostContainer>
-      </a>
-    </Link>
+        </a>
+      </Link>
+    </PostContainer>
   );
 }

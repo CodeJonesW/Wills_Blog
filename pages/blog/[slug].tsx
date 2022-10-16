@@ -1,13 +1,11 @@
 import fs from "fs";
 import path from "path";
 import matter from "gray-matter";
-// import type { marked } from "marked";
 import { marked } from "marked";
-import Link from "next/link";
 import { post, routes, theme } from "../../enums/index";
 import Back from "../../components/shared/back";
 import styled from "styled-components";
-import { Section2TopBar as TopBar } from "../../components/shared/styles";
+import { H1, Section2TopBar as TopBar } from "../../components/shared/styles";
 import { motion } from "framer-motion";
 
 interface PostProps {
@@ -64,11 +62,12 @@ export default function PostPage({
         initial={{ opacity: 0 }}
         transition={{ duration: 4, type: "spring" }}
       >
+        <H1>{title}</H1>
         <div>
           <PostImage
-            style={{ maxWidth: "700px", maxHeight: "460px" }}
+            style={{ maxWidth: "300px", maxHeight: "230px" }}
             src={cover_image}
-            alt=""
+            alt={title}
           />
         </div>
         <div dangerouslySetInnerHTML={{ __html: marked(content) }}></div>

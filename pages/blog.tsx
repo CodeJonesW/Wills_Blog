@@ -15,6 +15,7 @@ import { sendAnalyticsEvent } from "../lib/google_analytics";
 
 const BlogContainer = styled(FullScreenView)`
   justify-content: center;
+  background-color: white;
 `;
 
 const BlogNavbar = styled(motion.div)`
@@ -25,10 +26,10 @@ const BlogNavbar = styled(motion.div)`
 
 const PostsContainer = styled(motion.div)`
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   align-items: flex-start;
-  justify-content: center;
-  padding: 1%;
+  justify-content: flex-start;
+  padding-left: 15%;
 `;
 
 export const PageHeader = styled(H3)`
