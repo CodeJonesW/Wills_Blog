@@ -201,3 +201,7 @@ export const Section2Content = styled(motion.div)`
   text-align: center;
   font-weight: bold;
 `;
+
+export const MailLink = styled.a`
+  color: black;
+`;
