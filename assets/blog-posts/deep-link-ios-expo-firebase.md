@@ -172,6 +172,8 @@ cover_image: "/images/posts/deep-links/deep-links-cover.jpeg"
 
 - [Allowing apps and websites to link to your content](https://developer.apple.com/documentation/xcode/allowing-apps-and-websites-to-link-to-your-content?preferredLanguage=occ)
 
+- [Supporting Universal Links](https://developer.apple.com/library/archive/documentation/General/Conceptual/AppSearch/UniversalLinks.html)
+
 - [Supporting associated Domains](https://developer.apple.com/documentation/Xcode/supporting-associated-domains)
 
 - [Associated domains - Entitlements](https://developer.apple.com/documentation/bundleresources/entitlements/com_apple_developer_associated-domains)
@@ -187,6 +189,8 @@ cover_image: "/images/posts/deep-links/deep-links-cover.jpeg"
 - [Open Dynamic links in app](https://firebase.google.com/docs/dynamic-links/ios/receive#open-dynamic-links-in-your-app)
 
 - [Debugging Dynamic links](https://firebase.google.com/docs/dynamic-links/debug)
+
+- [Analytics for Dynamic Links](https://firebase.google.com/docs/dynamic-links/analytics?authuser=0)
 
 ### Misc
 
