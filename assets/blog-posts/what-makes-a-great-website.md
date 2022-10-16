@@ -20,11 +20,11 @@ cover_image: "/images/posts/what-makes-a-great-website/colorful-computer.jpeg"
 
 ## Mobile First Design
 
-In a world where mobile devices are the primary way people access the internet it is important to make sure your website is optimized for mobile devices. This is not to say that desktop users should be ignored but it is important to make sure the mobile experience is as good as it can be. The idea is to design the mobile experience first and then expand it to desktop. This is great way to build a website overtime and continue to add features.
+- In a world where mobile devices are the primary way people access the internet it is important to make sure your website is optimized for mobile devices. This is not to say that desktop users should be ignored but it is important to make sure the mobile experience is as good as it can be. The idea is to design the mobile experience first and then expand it to desktop. This is great way to build a website overtime and continue to add features.
 
 ## Custom Content
 
-It is also known that creating custom content for your website creates more trust between you and your users while also increasing SEO rankings. SEO is a topic that is beyond the scope of this article but it is important to understand that the more content you have the more likely you are to be found by users searching for your topic. This is a great way to build a community around your website and create a place where people can come to learn about your topic.
+- It is also known that creating custom content for your website creates more trust between you and your users while also increasing SEO rankings. SEO is a topic that is beyond the scope of this article but it is important to understand that the more content you have the more likely you are to be found by users searching for your topic. This is a great way to build a community around your website and create a place where people can come to learn about your topic.
 
 ## Great photos
 
@@ -32,15 +32,15 @@ It is also known that creating custom content for your website creates more trus
 
 ## Keeping it simple
 
-WIth all these things in mind some times it can be easy to put to much paint on the canvas. Sticking to the main points you are trying to make can havea major impact as well.
+- WIth all these things in mind some times it can be easy to put to much paint on the canvas. Sticking to the main points you are trying to make can havea major impact as well.
 
 ## Use a style guide to start a webflow site
 
-This advice will say you a ton of time when you are starting a new site. It is a great way to get a head start on the design process. I have found a style guide for a webflow site that you can use as a starting point for your next project. [Style guide](https://webflow.com/website/Style-Guide)
+- This advice will say you a ton of time when you are starting a new site. It is a great way to get a head start on the design process. I have found a style guide for a webflow site that you can use as a starting point for your next project. [Style guide](https://webflow.com/website/Style-Guide)
 
-It will allow us to implement a component based system and reduce complex changes.
+- It will allow us to implement a component based system and reduce complex changes.
 
-Below are great sources of inspiration. Opening various projects templates in webflow can give one an idea of how such things were built.
+- Below are great sources of inspiration. Opening various projects templates in webflow can give one an idea of how such things were built.
 
 - [https://www.helloheco.com/](https://www.helloheco.com/)
 
