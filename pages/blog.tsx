@@ -44,10 +44,10 @@ interface BlogProps {
 
 export default function Blog({ posts }: BlogProps) {
   const selectPost = (slug: string) => {
-    sendAnalyticsEvent({
-      action: "blog_view",
+    sendAnalyticsEvent("blogView", {
+      action: "select_post",
       params: {
-        search_term: slug,
+        post: slug,
       },
     });
 
