@@ -18,6 +18,7 @@ import {
 } from "../components/shared/styles";
 
 const Section2 = styled(LandingSection)`
+  height: 100vh;
   flex-direction: column;
   align-items: center;
   justify-content: flex-start;
