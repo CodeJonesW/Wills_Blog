@@ -135,10 +135,9 @@ export const H4 = styled.h3`
   max-width: 80%;
 `;
 
-export const CompanyName = styled.h1`
+export const H1 = styled.h1`
   font-family: "LemonMilkBold";
   color: "black";
-  max-width: 200px;
   user-select: none;
 `;
 

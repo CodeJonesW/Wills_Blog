@@ -7,8 +7,6 @@ cover_image: "/images/posts/what-makes-a-great-website/colorful-computer.jpeg"
 
  <!-- <link href="../../styles//Home.module.css" rel="stylesheet"></link> -->
 
-## What makes a great website?
-
 ## Intro
 
 - When a website is well crafted, it displays what you have to offer, creates a connection, communicates trust. My goal is to write about the core concepts that are used by well designed user experiences all over the web. There are many layers that can be applied on top of the core elements to spice things up but always on a foundation of well executed principles.
