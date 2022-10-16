@@ -64,11 +64,7 @@ export default function PostPage({
       >
         <H1>{title}</H1>
         <div>
-          <PostImage
-            style={{ maxWidth: "300px", maxHeight: "230px" }}
-            src={cover_image}
-            alt={title}
-          />
+          <PostImage src={cover_image} alt={title} />
         </div>
         <div dangerouslySetInnerHTML={{ __html: marked(content) }}></div>
       </PostContainer>
