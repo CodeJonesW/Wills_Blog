@@ -11,7 +11,7 @@ cover_image: "/images/posts/deep-links/deep-links-cover.jpeg"
 
 ## Terminology
 
-- In this articles there are various pieces of the linking implementation with their own specific names. My experience reading various articles led me to define the terms as below.
+- In this article there are various pieces of the linking implementation with their own specific names. My experience reading various articles has led me to define the terms as below.
 - Deep links - general term to describe links that will navigate into the relative app when the user is on a mobile device.
 - Universal Links - Apple's setup for how an iOS app knows about its deep link configuration
 - Dynamic Links - Firebase's setup for allowing an app to dynamically decide where to go pending the operating system.
@@ -42,12 +42,6 @@ cover_image: "/images/posts/deep-links/deep-links-cover.jpeg"
   `associatedDomains: ["applinks:my.ponder.coach"]`
 
 - [apple's supporting associated domains](https://developer.apple.com/documentation/xcode/supporting-associated-domains)
-
-- With the pathConfig setup and the Linking event listener setup, you can now handle the link in your app. The link will be passed to the event listener as a string. You can then use the string to navigate to the appropriate screen.
-
-- If your app is using react navigation you will need to create a state object to populate as your react navigation's initialState. This state object is dynamic and relative to the design of the stack navigators and tab navigators in your app. [React Navigation state reference](https://reactnavigation.org/docs/navigation-state)
-
-- [React Navigation deep linking reference](https://reactnavigation.org/docs/deep-linking)
 
 - Once the internal handling is setup, you will need to setup the Universal Links. This is done by adding a file to your project called `apple-app-site-association`. This file will contain the information that Apple will use to determine if the link is valid and should be passed to your app. The file should be hosted in the root of your project. When installed the iOS app will make a request to the associated domain where it will look for this file off the root route. I used the below setup for this file with success:
 
@@ -84,9 +78,17 @@ cover_image: "/images/posts/deep-links/deep-links-cover.jpeg"
 
 - Once your AASA file is setup and hosted on your associated domain, reinstalling your testflight application will allow it to fetch the new file config and anticipate the deep links pushing users to the app. At this point the expo linking configuration should be working and you should be able to navigate to the appropriate screen when the app is opened from a deep link.
 
+- With the pathConfig setup and the Linking event listener setup, you can now handle the link in your app. The link will be passed to the event listener as a string. You can then use the string to navigate to the appropriate screen.
+
+- If your app is using react navigation you will need to create a state object to populate as your react navigation's initialState. This state object is dynamic and relative to the design of the stack navigators and tab navigators in your app. [React Navigation state reference](https://reactnavigation.org/docs/navigation-state)
+
+- [React Navigation deep linking reference](https://reactnavigation.org/docs/deep-linking)
+
 ## Firebase Dynamic Links
 
-- I implemnented deep links with an expo managed workflow app deployed to the Apple app store. Due to the managed workflow I was not able to use things like [React Native Firebase](https://rnfirebase.io/dynamic-links/usage) to implement dynamic links. This is an option for developers not using Expo.
+- Now that we have users being able to deep link into the application when it is installed, it is time to setup the dynamic links. This will redirect users to install the application from the app store when the app is not present on the device. The user will then be able to install the app and open it with the dynamic link.
+
+- I implemented deep links with an expo managed workflow app deployed to the Apple app store. Due to the managed workflow I was not able to use things like [React Native Firebase](https://rnfirebase.io/dynamic-links/usage) to implement dynamic links. This is an option for developers not using Expo.
 
 - Using the [Firebase Dynamic Links REST API](https://firebase.google.com/docs/dynamic-links/rest) to implement the dynamic links was the next best option. For this you will need to create a firebase project that has dynamic links enabled and the iOS app properly configured in the project. This can be done navigating to the project general settings and adding the iOS bundle ID, app store ID, and team id.
 
@@ -110,6 +112,7 @@ cover_image: "/images/posts/deep-links/deep-links-cover.jpeg"
   ```
 
 - Then a post request can be made to the firebase dynamic links api with the config and the web api key in the header. The response will contain the dynamic link that can be used to redirect the user to the app.
+- For my implementation this was all done sever side. Whenever the frontend app would need a deep link it could make a request to the firebase link route on the server, make the api calls and return the dynamic link in the response. In order to preserve extra deep link creations I would store the dynamic link in a database and return the stored link if it existed.
 
   ```ts
   interface FirebaseLink {
