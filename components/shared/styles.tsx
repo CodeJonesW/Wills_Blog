@@ -6,7 +6,7 @@ export const OuterContainer = styled(motion.div)`
 `;
 
 export const FullScreenView = styled(motion.div)`
-  height: 130vh;
+  height: 100vh;
 `;
 
 export const LandingSection = styled(motion.div)`
