@@ -76,7 +76,7 @@ const Home: NextPage = () => {
               </ContactContainer>
             </HomeNavBar>
             <TagLineContainer>
-              <CompanyTagline>Technical Creativity applied.</CompanyTagline>
+              <CompanyTagline>Technical creativity applied.</CompanyTagline>
             </TagLineContainer>
             <UnshrinkableDiv style={{ height: "8%" }} />
             <ArrowContainer
