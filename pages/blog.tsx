@@ -15,6 +15,7 @@ import { sendAnalyticsEvent } from "../lib/google_analytics";
 
 const BlogContainer = styled(FullScreenView)`
   justify-content: center;
+  background-color: white;
 `;
 
 const BlogNavbar = styled(motion.div)`

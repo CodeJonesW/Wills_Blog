@@ -6,11 +6,11 @@ export const OuterContainer = styled(motion.div)`
 `;
 
 export const FullScreenView = styled(motion.div)`
-  height: 100vh;
+  height: 130vh;
 `;
 
 export const LandingSection = styled(motion.div)`
-  min-height: 100vh;
+  min-height: 100;
   width: 100vw;
   display: flex;
   justify-content: center;
