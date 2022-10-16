@@ -97,9 +97,7 @@ const Home: NextPage = () => {
               </ContactContainer>
             </HomeNavBar>
             <TagLineContainer>
-              <CompanyTagline>
-                We create dynamic websites to help companies grow their brand.
-              </CompanyTagline>
+              <CompanyTagline>Technical Creativity applied.</CompanyTagline>
             </TagLineContainer>
             <UnshrinkableDiv style={{ height: "8%" }} />
             <ArrowContainer
