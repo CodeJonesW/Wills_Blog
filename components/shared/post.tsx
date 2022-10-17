@@ -10,11 +10,10 @@ interface PostProps {
 
 const PostContainer = styled.div`
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   align-items: flex-start;
   justify-content: flex-start;
-  max-width: 100%;
-  padding-top: 24px;
+  padding-bottom: 24px;
   cursor: pointer;
   transition: all 0.2s ease-in-out;
   &:hover {
@@ -24,7 +23,7 @@ const PostContainer = styled.div`
 export const PostImage = styled.img`
   width: 40%;
   height: 40%;
-  max-width: 900px;
+  max-width: 300px;
   max-height: 600px;
   object-fit: cover;
   border-radius: 10px;
@@ -35,7 +34,8 @@ const PostInfo = styled.div`
   flex-direction: column;
   align-items: flex-start;
   justify-content: flex-start;
-  padding: 10px;
+  padding-left: 16px;
+  padding-right: 16px;
 `;
 
 const PostTitle = styled(H3)`
@@ -64,7 +64,7 @@ export default function Post({ post, selectPost }: PostProps) {
   return (
     <PostContainer>
       <Link href={`/blog/${slug}`}>
-        <a style={{ color: "inherit" }}>
+        <a style={{ color: "inherit", display: "flex", flexDirection: "row" }}>
           <PostImage src={frontmatter.cover_image} />
           <PostInfo>
             <PostTitle>{frontmatter.title}</PostTitle>

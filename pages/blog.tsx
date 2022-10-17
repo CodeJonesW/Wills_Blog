@@ -30,6 +30,7 @@ const PostsContainer = styled(motion.div)`
   align-items: flex-start;
   justify-content: flex-start;
   padding-left: 15%;
+  padding-top: 24px;
 `;
 
 export const PageHeader = styled(H3)`
