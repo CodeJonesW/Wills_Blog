@@ -128,7 +128,7 @@ const Home: NextPage = () => {
                 }}
               >
                 Offering years of professional insight into the the building of
-                systems and the teams that build.
+                systems and the teams that build them.
               </InfoText>
             </div>
 
