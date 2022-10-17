@@ -28,6 +28,8 @@ cover_image: "/images/posts/deep-links/deep-links-cover.jpeg"
 
 - When combining with a login a new stack navigation, it is possible to store the initial url in state management and use useEffect to listen for the loading state to change and then parse and navigate to the deep link.
 
+## Apple Universal Links
+
 - To implement universal links on iOS, you must first set up verification that you own your domain. This is done by serving an Apple App Site Association (AASA) file from your web app.
 - The AASA must be served from the root as /apple-app-site-association (with no extension) or /.well-known/apple-app-site-association (with no extension). The AASA contains JSON which specifies your Apple app ID and a list of paths on your domain that should be handled by your mobile app.
 
