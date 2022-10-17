@@ -127,11 +127,8 @@ const Home: NextPage = () => {
                   color: "white",
                 }}
               >
-                Web Expert Studios specializes in creating websites for
-                companies. As a hands-on creative partner, we are big on
-                collaborating and prototyping. With experience in multiple
-                disciplines, we help our clients earn their spot in peoples
-                lives.
+                Offering years of professional insight into the the building of
+                systems and the teams that build.
               </InfoText>
             </div>
 
@@ -152,10 +149,10 @@ const Home: NextPage = () => {
                   }}
                   style={{ marginBottom: "16px" }}
                 >
-                  <h3>Learn how we can expand your business</h3>
+                  <h3>Learn more</h3>
                 </SecondaryButton>
                 <UnshrinkableDiv style={{ width: "10px", height: "10px" }} />
-                <a
+                {/* <a
                   style={{ textDecoration: "none" }}
                   href="https://calendly.com/webexpertstudios/30min?back=1&month=2022-09"
                   target="_blank"
@@ -164,7 +161,7 @@ const Home: NextPage = () => {
                   <PrimaryButton style={{ marginBottom: "16px" }}>
                     <h3>Book a free consultation</h3>
                   </PrimaryButton>
-                </a>
+                </a> */}
               </motion.div>
             </div>
           </FullScreenView>

@@ -70,8 +70,7 @@ export const Info: NextPage = () => {
         transition={{ duration: 4, type: "spring" }}
       >
         <h3 style={{ fontSize: "2.2em", padding: "12px" }}>
-          A website&apos;`s design is the #1 factor in determining the
-          credibility of a business.
+          Designing high functioning systems is tough. We can help.
         </h3>
         <UnshrinkableDiv style={{ height: "5%" }} />
         <FlexColumnCenter
@@ -97,7 +96,7 @@ export const Info: NextPage = () => {
             rel="noreferrer"
           >
             <SecondaryButton>
-              <h3>Lets get in touch</h3>
+              <h3>Get in touch</h3>
             </SecondaryButton>
           </MailLink>
         </FlexColumnCenter>
