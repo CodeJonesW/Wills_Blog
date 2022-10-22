@@ -31,17 +31,8 @@ cover_image: "/images/posts/deep-links/deep-links-cover.jpeg"
 ## Apple Universal Links
 
 - To implement universal links on iOS, you must first set up verification that you own your domain. This is done by serving an Apple App Site Association (AASA) file from your web app.
-- The AASA must be served from the root as /apple-app-site-association (with no extension) or /.well-known/apple-app-site-association (with no extension). The AASA contains JSON which specifies your Apple app ID and a list of paths on your domain that should be handled by your mobile app.
 
-- If using Nextjs one can just put the AASA file in the public folder with no extension.
-
-- Add the associatedDomains [configuration](https://docs.expo.dev/versions/latest/config/app/#associateddomains) to your app.json, and make sure to follow [Apple's specified format](https://developer.apple.com/documentation/bundleresources/entitlements/com_apple_developer_associated-domains). Make sure not to include the protocol (https) in your URL (this is a common mistake, and will result in your universal links not working).
-
-- Add the associated domains key to your expo apps's app.config - and the domain your want to associate prefixed with applinks.
-
-  `associatedDomains: ["applinks:www.example.com"]`
-
-- Once the internal handling is setup, you will need to setup the Universal Links. This is done by adding a file to your project called `apple-app-site-association`. This file will contain the information that Apple will use to determine if the link is valid and should be passed to your app. The file should be hosted in the root of your project. When installed the iOS app will make a request to the associated domain where it will look for this file off the root route. I used the below setup for this file with success:
+- This file will contain the information that Apple will use to determine if the link is valid and should be passed to your app. The file should be hosted in the root of your project. When installed the iOS app will make a request to the associated domain where it will look for this file off the root route. I used the below setup for this file with success:
 
   ```json
   {
@@ -69,6 +60,16 @@ cover_image: "/images/posts/deep-links/deep-links-cover.jpeg"
     }
   }
   ```
+
+- The AASA must be served from the root as /apple-app-site-association (with no extension) or /.well-known/apple-app-site-association (with no extension). The AASA contains JSON which specifies your Apple app ID and a list of paths on your domain that should be handled by your mobile app.
+
+- If using Nextjs one can just put the AASA file in the public folder with no extension.
+
+- Add the associatedDomains [configuration](https://docs.expo.dev/versions/latest/config/app/#associateddomains) to your app.json, and make sure to follow [Apple's specified format](https://developer.apple.com/documentation/bundleresources/entitlements/com_apple_developer_associated-domains). Make sure not to include the protocol (https) in your URL (this is a common mistake, and will result in your universal links not working).
+
+- Add the associated domains key to your expo apps's app.config - and the domain your want to associate prefixed with applinks.
+
+  `associatedDomains: ["applinks:www.example.com"]`
 
 - There are multiple configuration types for setting up this file as it has changed over time from Apple. If there are many routes that need to be handled, you can use the `paths` key instead of the `components` key. The `paths` key will allow you to specify a regex pattern to match against the path of the URL. The `components` key will allow you to specify the path exactly. I used the `components` key as I only had a few routes to handle.
 
