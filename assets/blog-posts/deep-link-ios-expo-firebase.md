@@ -86,7 +86,7 @@ cover_image: "/images/posts/deep-links/deep-links-cover.jpeg"
 
 - Now that we have users being able to deep link into the application when it is installed, it is time to setup the dynamic links. This will redirect users to install the application from the app store when the app is not present on the device. The user will then be able to install the app and open it with the dynamic link.
 
-- It is possible to [create a custom native module](https://rnfirebase.io/#expo) to support the usage of [React Native Firebase](https://rnfirebase.io/dynamic-links/usage) wehn implementing dynamic links. I chose to not take this route at the time and instead generated them via the Firebase REST api on the project's server.
+- It is possible to [create a custom native module](https://rnfirebase.io/#expo) to support the usage of [React Native Firebase](https://rnfirebase.io/dynamic-links/usage) when implementing dynamic links. I chose to not take this route at the time and instead generated them via the Firebase REST api on the project's server.
 
 - Using the [Firebase Dynamic Links REST API](https://firebase.google.com/docs/dynamic-links/rest) to implement the dynamic links was the next best option. For this you will need to create a firebase project that has dynamic links enabled and the iOS app properly configured in the project. This can be done navigating to the project general settings and adding the iOS bundle ID, app store ID, and team id.
 
