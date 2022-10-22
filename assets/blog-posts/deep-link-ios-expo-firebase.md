@@ -39,7 +39,7 @@ cover_image: "/images/posts/deep-links/deep-links-cover.jpeg"
 
 - Add the associated domains key to your expo apps's app.config - and the domain your want to associate prefixed with applinks.
 
-  `associatedDomains: ["applinks:my.ponder.coach"]`
+  `associatedDomains: ["applinks:www.example.com"]`
 
 - Once the internal handling is setup, you will need to setup the Universal Links. This is done by adding a file to your project called `apple-app-site-association`. This file will contain the information that Apple will use to determine if the link is valid and should be passed to your app. The file should be hosted in the root of your project. When installed the iOS app will make a request to the associated domain where it will look for this file off the root route. I used the below setup for this file with success:
 
