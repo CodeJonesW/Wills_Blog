@@ -138,7 +138,7 @@ cover_image: "/images/posts/deep-links/deep-links-cover.jpeg"
 
 - With the short link and full link information stored, the frontend can use make a lookup request to the server to get the full link and then use the link to redirect the user to internal page the app.
 
-- One can add ?d=1 to the end of the returned dyanmic link to see the preview of the link. This is useful for testing the link and making sure it is working as expected. [Debugging Dynamic links](https://firebase.google.com/docs/dynamic-links/debug)
+- One can add ?d=1 to the end of the returned dynamic link to see the preview of the link. This is useful for testing the link and making sure it is working as expected. [Debugging Dynamic links](https://firebase.google.com/docs/dynamic-links/debug)
 
 - After the dynamic link is returned I would save a new db entry with the newly created shortLink and full url. This will allow me to use the shortLink as an unguessable and then fetch the full url from the db and pass into our internal linking configuration.
 
