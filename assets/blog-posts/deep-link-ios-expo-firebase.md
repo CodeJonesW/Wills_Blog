@@ -148,10 +148,6 @@ cover_image: "/images/posts/deep-links/deep-links-cover.jpeg"
 
   will@webexpertstudios.com
 
-## Alternatives
-
-- [Branch.io](https://help.branch.io/developers-hub/docs/react-native) works to provide a way to create dynamic links that will use a unique url for different devices if app is installed or not. Unfortunately not available for expo managed projects.
-
 ## Resources
 
 ### Expo
