@@ -7,7 +7,7 @@ cover_image: "/images/posts/deep-links/deep-links-cover.jpeg"
 
 ## Intro 🔗📲
 
-- My first time implementing a deep linking solution with iOS, expo, and firebase was a bit of a challenge. I had to do a lot of research and trial and error to get it working. I hope this article can help you get started with your own deep linking solution. I will also be discussing various layers of technology to support this implementation which may be useful even if we are not using the exact same stack.
+- My first time implementing a deep linking solution with iOS, expo, and firebase was a challenge. Lots of research and trial and error were the main themes of getting it working. I hope this article can help you get started with your own deep linking solution. I will also be discussing various layers of technology to support this implementation which may be useful even if we are not using the exact same stack.
 
 ## Terminology
 
