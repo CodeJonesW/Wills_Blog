@@ -116,7 +116,7 @@ cover_image: "/images/posts/deep-links/deep-links-cover.jpeg"
     error?: any;
   }
 
-  const data: FirebaseLink = await got
+  const data: FirebaseLink = await axios
     .post(
       `https://firebasedynamiclinks.googleapis.com/v1/shortLinks?key=${webAPiKey}`,
       { json: config }
