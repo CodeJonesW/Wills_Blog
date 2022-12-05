@@ -1,8 +1,8 @@
 ---
 title: "Creating an Online Ordering Menu in 2022"
 date: "November 27, 2022"
-excerpt: "."
-cover_image: "/images/posts/online-ordering-menu/jotform-integration-options.png"
+excerpt: "Lets make it fast"
+cover_image: "/images/posts/online-ordering-menu/food.jpg"
 ---
 
 There are many ways to create an online ordering menu, and the best approach will depend on your specific needs and preferences. This implementation will use a variety of SaaS tools to create a fully functional online ordering menu that can be used by customers to place orders and pay for them online.
@@ -24,6 +24,8 @@ Form builder platforms, such as JotForm, offer tools and features that can be us
 In general, the best way to create an online ordering menu will depend on your specific needs and preferences. It may be helpful to compare different options and consider factors such as cost, ease of use, and the features and tools offered by each platform before making a decision.
 
 ### What is Jotform?
+
+![jotform logo](/images/posts/online-ordering-menu/jotform-logo.png "jotform logo")
 
 JotForm is an online platform that allows users to create and publish web-based forms. It provides a wide range of tools and features that make it easy to create and customize forms for a variety of purposes, such as surveys, polls, order forms, and more. JotForm also offers integrations with other platforms and services, such as payment processors, email marketing tools, and social media networks, to help users collect and manage their data more efficiently.
 
@@ -103,4 +105,4 @@ To send emails to users who abandon a form, you can follow these steps:
 
 By using JotForm's form abandonment email feature, you can remind people to complete your form and provide them with additional information that may be relevant to their decision-making process. This can help increase the completion rate of your forms and improve the overall user experience.
 
-Check out this example menu [here](http://localhost:3000/blog/how-to-create-an-onine-ordering-menu)
+Check out this example menu [here](http://localhost:3000/menu)
