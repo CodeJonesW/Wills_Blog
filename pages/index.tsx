@@ -121,14 +121,15 @@ const Home: NextPage = () => {
             >
               <InfoText
                 style={{
-                  fontSize: "1.1em",
+                  fontSize: "1.8em",
                   textAlign: "left",
                   maxWidth: "600px",
+                  lineHeight: "1.5em",
                   color: "white",
                 }}
               >
-                Offering years of professional insight into the the building of
-                systems and the teams that build them.
+                Attempting to share my knowledge and experience. I hope you find
+                it useful.
               </InfoText>
             </div>
 
@@ -149,7 +150,7 @@ const Home: NextPage = () => {
                   }}
                   style={{ marginBottom: "16px" }}
                 >
-                  <h3>Learn more</h3>
+                  <h3>Want to chat?</h3>
                 </SecondaryButton>
                 <UnshrinkableDiv style={{ width: "10px", height: "10px" }} />
                 {/* <a
