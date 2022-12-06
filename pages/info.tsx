@@ -86,7 +86,7 @@ export const Info: NextPage = () => {
               fontSize: "1.3em",
             }}
           >
-            I'&quot;m a software engineer with a passion for building them. Get
+            I&apos;m a software engineer with a passion for building them. Get
             in contact with me and lets exchange ideas.
           </p>
           <UnshrinkableDiv style={{ height: "2vh" }} />
