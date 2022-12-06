@@ -23,9 +23,8 @@ My goal is to write about several core concepts that make websites both great fo
 ### Style guides
 
 - This advice will save a ton of time when building sites that intend to be maintained well into the future. If you percieve to have to recreate elements of the same style more than once throughout your design that is the moment when creating reusable components will start to show true benefit.
-- I have found a style guide for a webflow site that you can use as a starting point for your next project. [Style guide](https://webflow.com/website/Style-Guide)
 
-- It will allow us to implement a component based system and reduce complex changes.
+- It will allow us to implement a component based design system and reduce complex changes.
 
 - Below are great sources of inspiration. Opening various projects templates in webflow can give one an idea of how such things were built.
 
@@ -42,6 +41,8 @@ My goal is to write about several core concepts that make websites both great fo
 - Creating a mobile first design and expanding to desktop can be a good way to cover a large range of devices expanding out from small mobile views. A common mistake by beginners is to use static styles to implement a first draft which can create a lot of redundant work later on. This simple decision can prevent a lot of headache.
 
 - This is not to say that desktop users should be ignored but it is important to make sure the mobile experience is as good as it can be as that is where the majority of users will come from.
+
+- This benefits both developers and users.
 
 ## What makes a great website for users?
 
