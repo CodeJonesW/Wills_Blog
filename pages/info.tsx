@@ -70,7 +70,7 @@ export const Info: NextPage = () => {
         transition={{ duration: 4, type: "spring" }}
       >
         <h3 style={{ fontSize: "2.2em", padding: "12px" }}>
-          Designing high functioning systems is tough. We can help.
+          Designing high functioning systems is tough.
         </h3>
         <UnshrinkableDiv style={{ height: "5%" }} />
         <FlexColumnCenter
@@ -86,7 +86,8 @@ export const Info: NextPage = () => {
               fontSize: "1.3em",
             }}
           >
-            Lets define what success looks like and work backwards from there.
+            I'm a software engineer with a passion for building them. Get in
+            contact with me and lets exchange ideas.
           </p>
           <UnshrinkableDiv style={{ height: "2vh" }} />
           <MailLink
@@ -96,7 +97,7 @@ export const Info: NextPage = () => {
             rel="noreferrer"
           >
             <SecondaryButton>
-              <h3>Get in touch</h3>
+              <h3>Email me</h3>
             </SecondaryButton>
           </MailLink>
         </FlexColumnCenter>
