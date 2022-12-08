@@ -77,9 +77,16 @@ export default function Blog({ posts }: BlogProps) {
           <PageHeader style={{ fontSize: "1.2em" }}>Blog</PageHeader>
         </BlogNavbar>
         <PostsContainer>
-          {posts.map((post, index) => {
-            return <Post key={index} post={post} selectPost={selectPost} />;
-          })}
+          {posts
+            .map((post, index) => {
+              return <Post key={index} post={post} selectPost={selectPost} />;
+            })
+            .sort((a, b) => {
+              return (
+                new Date(b.props.post.frontmatter.date).getTime() -
+                new Date(a.props.post.frontmatter.date).getTime()
+              );
+            })}
         </PostsContainer>
       </BlogContainer>
     </AnimatePresence>
