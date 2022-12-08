@@ -13,9 +13,11 @@ import { Section2TopBar as TopBar } from "../components/shared/styles";
 import Back from "../components/shared/back";
 import { sendAnalyticsEvent } from "../lib/google_analytics";
 
-const BlogContainer = styled(FullScreenView)`
+const BlogContainer = styled(motion.div)`
   justify-content: center;
   background-color: white;
+  min-height: 100vh;
+  width: 100%;
 `;
 
 const BlogNavbar = styled(motion.div)`
