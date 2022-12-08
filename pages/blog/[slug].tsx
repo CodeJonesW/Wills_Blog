@@ -17,11 +17,11 @@ interface PostProps {
 const PostContainer = styled(motion.div)`
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
-  justify-content: flex-start;
-  padding-left: 10%;
-  padding-right: 10%;
-  padding-top: 5%;
+  align-items: center;
+  justify-content: center;
+  padding-left: 5%;
+  padding-right: 5%;
+  padding-top: 2%;
 `;
 
 const PageContainer = styled.div`
@@ -32,14 +32,15 @@ const PageContainer = styled.div`
 `;
 
 const PostImage = styled.img`
-  width: 100%;
+  width: 50%;
   height: 100%;
   max-width: 900px;
   max-height: 600px;
-  min-width: 380px;
+  min-width: 360px;
   min-height: 320px;
   object-fit: cover;
-  border-radius: 10px;
+  border-radius: 40px;
+  padding: 16px;
 `;
 
 export default function PostPage({
@@ -63,10 +64,27 @@ export default function PostPage({
         transition={{ duration: 4, type: "spring" }}
       >
         <H1>{title}</H1>
-        <div>
-          <PostImage src={cover_image} alt={title} />
+        <div
+          style={{
+            display: "flex-wrap",
+            justifyContent: "center",
+            flexDirection: "row",
+          }}
+        >
+          <div
+            style={{
+              float: "left",
+              paddingRight: "16px",
+              maxWidth: "400px",
+            }}
+          >
+            <PostImage src={cover_image} alt={title} />
+          </div>
+          <div
+            style={{ paddingLeft: "16px" }}
+            dangerouslySetInnerHTML={{ __html: marked(content) }}
+          ></div>
         </div>
-        <div dangerouslySetInnerHTML={{ __html: marked(content) }}></div>
       </PostContainer>
     </PageContainer>
   );
