@@ -145,9 +145,7 @@ cover_image: "/images/posts/deep-links/deep-links-cover.jpeg"
 
 ## Conclusion
 
-- I hope this has given you an idea of how one could combine these services in order to provide a solution for deep linking. I would be happy to hear any feedback or suggestions on how to improve this solution. I would also be happy to answer any questions you may have. Thanks for reading!
-
-  will@webexpertstudios.com
+- I hope this has given you an idea of how one could combine these services in order to provide a solution for deep linking.
 
 ## Resources
 

@@ -17,8 +17,8 @@ interface PostProps {
 const PostContainer = styled(motion.div)`
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
-  justify-content: flex-start;
+  align-items: center;
+  justify-content: center;
   padding-left: 5%;
   padding-right: 5%;
   padding-top: 2%;
