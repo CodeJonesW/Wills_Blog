@@ -7,8 +7,6 @@ cover_image: "/images/posts/analyze-stocks-with-python/stocks.jpg"
 
 There are many ways to analyze stock trends using Python. One way is to use a package like Pandas to retrieve financial data from sources like Yahoo Finance, and then use a library like matplotlib to create visualizations of the data. This can help you see trends and patterns in the stock data, and can be a useful tool for making investment decisions. Other Python packages that are useful for analyzing stock trends include NumPy and scikit-learn.
 
-[data:image/svg+xml,%3csvg%20xmlns=%27http://www.w3.org/2000/svg%27%20version=%271.1%27%20width=%2730%27%20height=%2730%27/%3e](data:image/svg+xml,%3csvg%20xmlns=%27http://www.w3.org/2000/svg%27%20version=%271.1%27%20width=%2730%27%20height=%2730%27/%3e)
-
 ### what are some ways to design a stock trading algorithm
 
 To design a stock trading algorithm, you'll need to follow a few steps:
@@ -65,7 +63,6 @@ This is just a simple example of how a mean reversion algorithm might work in Py
 If we wanted to write a script to pull financial data from Yahoo! Finance using the **`yfinance`** library in Python. Here is an example script that gets the current price of a stock for a given ticker symbol:
 
 ```
-Copy code
 import yfinance as yf
 
 # Get the stock info
@@ -81,3 +78,97 @@ print(f"The current price of {ticker} is {price}.")
 One can then modify this script to pull other information from Yahoo! Finance, such as the company's market capitalization, earnings per share, or dividend yield. You can also use the **`yfinance`** library to download historical data for a stock and perform analyses on it.
 
 If you want to learn more about the **`yfinance`** library and what it can do, you can check out the official documentation at **[https://pypi.org/project/yfinance/](https://pypi.org/project/yfinance/)**.
+
+here is a simple Python script that you can use to get historical stock data for a single ticker over the last 20 years:
+
+```
+import csv
+import datetime
+import requests
+
+# Set the start and end dates for the data
+start_date = datetime.date(2000, 1, 1)
+end_date = datetime.date.today()
+
+# Set the ticker symbol
+ticker = "GOOGL"
+
+# Construct the URL for the Yahoo Finance API
+url = f"https://finance.yahoo.com/quote/{ticker}/history?period1={start_date.timestamp()}&period2={end_date.timestamp()}&interval=1d&filter=history&frequency=1d"
+
+# Send a request to the Yahoo Finance API and get the response
+response = requests.get(url)
+
+# Parse the response as CSV
+reader = csv.DictReader(response.text.splitlines())
+
+# Print the header row
+print(",".join(reader.fieldnames))
+
+# Print the data rows
+for row in reader:
+    print(",".join([row[field] for field in reader.fieldnames]))
+
+```
+
+This script uses the **`requests`** library to send a request to the Yahoo Finance API and retrieve the historical stock data for the specified ticker. It then parses the response as a CSV file and prints out the data rows.
+
+Note that this script is only intended as a simple example, and it may not work as expected in all cases. Additionally, the Yahoo Finance API is not officially supported by Yahoo and is subject to change, so it may not always be available.
+
+To apply mean reversion to the historical stock data that you obtained using the Python script in the previous answer, you can use the following steps:
+
+1. Calculate the average price of the stock over a certain time period, such as the last 20 days or the last 100 days. This will be the "mean" or "average" price that you will compare the current price to.
+2. Calculate the current price of the stock.
+3. Compare the current price to the average price. If the current price is lower than the average price, then the stock may be considered to be "undervalued" and is potentially a good buy. If the current price is higher than the average price, then the stock may be considered to be "overvalued" and is potentially a good sell.
+4. Use this information to make a decision about whether to buy or sell the stock. Keep in mind that mean reversion is only one way to analyze stock data, and it is not a guarantee of future performance. It is always important to do your own research and make investment decisions based on your own goals and risk tolerance.
+
+Here is an example of how you might incorporate these steps into the Python script from the previous answer:
+
+```
+import csv
+import datetime
+import requests
+
+# Set the start and end dates for the data
+start_date = datetime.date(2000, 1, 1)
+end_date = datetime.date.today()
+
+# Set the ticker symbol
+ticker = "GOOGL"
+
+# Set the time period for calculating the average price
+time_period = 20
+
+# Construct the URL for the Yahoo Finance API
+url = f"https://finance.yahoo.com/quote/{ticker}/history?period1={start_date.timestamp()}&period2={end_date.timestamp()}&interval=1d&filter=history&frequency=1d"
+
+# Send a request to the Yahoo Finance API and get the response
+response = requests.get(url)
+
+# Parse the response as CSV
+reader = csv.DictReader(response.text.splitlines())
+
+# Calculate the average price
+total_price = 0
+count = 0
+for row in reader:
+    total_price += float(row["Close"])
+    count += 1
+    if count == time_period:
+        break
+average_price = total_price / time_period
+
+# Calculate the current price
+for row in reader:
+    current_price = float(row["Close"])
+    break
+
+# Compare the current price to the average price
+if current_price < average_price:
+    print(f"{ticker} is undervalued and may be a good buy")
+else:
+    print(f"{ticker} is overvalued and may be a good sell")
+
+```
+
+In this example, we are using a time period of 20 days to calculate the average price, but you can change this value to whatever you like. Also, keep in mind that this is only a very basic example of how mean reversion can be applied to stock data, and it is not intended as a complete or definitive investment strategy. It is always important to do your own research and make investment decisions based on your own goals and risk tolerance.
