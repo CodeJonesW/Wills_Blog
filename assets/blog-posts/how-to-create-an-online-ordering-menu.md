@@ -105,4 +105,4 @@ To send emails to users who abandon a form, you can follow these steps:
 
 By using JotForm's form abandonment email feature, you can remind people to complete your form and provide them with additional information that may be relevant to their decision-making process. This can help increase the completion rate of your forms and improve the overall user experience.
 
-Check out this example menu [here](http://localhost:3000/menu)
+Check out this example menu [here](https://www.webexpertstudios.com/menu)
