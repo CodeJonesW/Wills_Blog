@@ -9,7 +9,7 @@ cover_image: "/images/posts/aeropress-ai/aeropress.jpg"
 
 Last week GPTChat was released by OpenAi and since the internet has been going a bit crazy for a good reason. This technology will disrupt many industries in the coming years as well as empower humans to become super learners. Today I wanted to become better at making coffee and expresso with an aeropress. Here is what I learned.
 
-## What is the best to get delicious coffee from an aero press
+## How to get delicious coffee from an aero press
 
 There are many ways to make delicious coffee using an AeroPress. Some people prefer to use a medium-fine grind, while others like a finer grind. Generally, it is best to experiment and find the method that works best for your taste preferences.
 To make coffee with an AeroPress, follow these steps:

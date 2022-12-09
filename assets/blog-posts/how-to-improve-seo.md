@@ -5,8 +5,6 @@ excerpt: "Everyone wants to rank higher in search engines, but how do you do it?
 cover_image: "/images/posts/improve-seo/search.jpg"
 ---
 
-## how do i improve my websites seo
-
 There are many factors that can impact a website's search engine optimization (SEO). Here are a few things you can do to improve your website's SEO:
 
 1. Make sure your website is mobile-friendly and loads quickly.
@@ -75,7 +73,7 @@ It's important to note that submitting a sitemap to Google is not a guarantee th
 
 ## when developing mobile friendly websites is there a best practice for using flexbox that will keep developers out of trouble?
 
-### Yes, there are a few best practices for using flexbox when developing mobile-friendly websites. These include:
+Yes, there are a few best practices for using flexbox when developing mobile-friendly websites. These include:
 
 1. Use flexbox for layout, not for styling: Flexbox is a powerful tool for creating flexible and responsive layouts. However, it should not be used for styling elements, such as changing the color or font size of text. Instead, use CSS styles for this purpose.
 2. Avoid using absolute values: Flexbox uses relative values, such as percentages, to determine the size and position of elements. Using absolute values, such as pixels, can prevent elements from being flexible and can cause layout issues on different devices.
