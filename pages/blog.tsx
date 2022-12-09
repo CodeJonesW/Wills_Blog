@@ -77,16 +77,9 @@ export default function Blog({ posts }: BlogProps) {
           <PageHeader style={{ fontSize: "1.2em" }}>Blog</PageHeader>
         </BlogNavbar>
         <PostsContainer>
-          {posts
-            .map((post, index) => {
-              return <Post key={index} post={post} selectPost={selectPost} />;
-            })
-            .sort((a, b) => {
-              return (
-                new Date(b.props.post.frontmatter.date).getTime() -
-                new Date(a.props.post.frontmatter.date).getTime()
-              );
-            })}
+          {posts.map((post, index) => {
+            return <Post key={index} post={post} selectPost={selectPost} />;
+          })}
         </PostsContainer>
       </BlogContainer>
     </AnimatePresence>
@@ -96,18 +89,25 @@ export default function Blog({ posts }: BlogProps) {
 export async function getStaticProps() {
   const files = fs.readdirSync(path.join("assets/blog-posts"));
 
-  const posts = files.map((filename) => {
-    const slug = filename.replace(".md", "");
+  const posts = files
+    .map((filename) => {
+      const slug = filename.replace(".md", "");
 
-    const markdownWithMeta = fs.readFileSync(
-      path.join("assets/blog-posts", filename),
-      "utf-8"
-    );
+      const markdownWithMeta = fs.readFileSync(
+        path.join("assets/blog-posts", filename),
+        "utf-8"
+      );
 
-    const { data: frontmatter } = matter(markdownWithMeta);
+      const { data: frontmatter } = matter(markdownWithMeta);
 
-    return { slug, frontmatter };
-  });
+      return { slug, frontmatter };
+    })
+    .sort((a, b) => {
+      return (
+        new Date(b.frontmatter.date).getTime() -
+        new Date(a.frontmatter.date).getTime()
+      );
+    });
 
   return {
     props: {
