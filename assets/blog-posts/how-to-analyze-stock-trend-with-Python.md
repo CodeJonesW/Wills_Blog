@@ -1,5 +1,5 @@
 ---
-title: "whats the best way to analyze stock trends with python"
+title: "What are the best ways to analyze stock trends with python?"
 date: "Dec 7, 2022"
 excerpt: "To the moon!"
 cover_image: "/images/posts/analyze-stocks-with-python/stocks.jpg"
@@ -7,7 +7,7 @@ cover_image: "/images/posts/analyze-stocks-with-python/stocks.jpg"
 
 There are many ways to analyze stock trends using Python. One way is to use a package like Pandas to retrieve financial data from sources like Yahoo Finance, and then use a library like matplotlib to create visualizations of the data. This can help you see trends and patterns in the stock data, and can be a useful tool for making investment decisions. Other Python packages that are useful for analyzing stock trends include NumPy and scikit-learn.
 
-### what are some ways to design a stock trading algorithm
+### what are some ways to design a stock trading algorithm?
 
 To design a stock trading algorithm, you'll need to follow a few steps:
 
