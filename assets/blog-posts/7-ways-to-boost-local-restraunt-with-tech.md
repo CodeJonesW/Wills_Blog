@@ -1,8 +1,8 @@
 ---
-title: "7 Ways Technology Can Boost Your Local Restraunt"
+title: "7 Ways Technology Can Boost Your Local restaurant"
 date: "Dec 13, 2022"
 excerpt: "Maximizing Efficiency with Automation"
-cover_image: "/images/posts/7-ways-to-boost-local-restraunt-with-tech/restraunt.jpg"
+cover_image: "/images/posts/7-ways-to-boost-local-restaurant-with-tech/restaurant.jpg"
 ---
 
 ## Maximizing Efficiency with Automation
@@ -25,4 +25,4 @@ Another benefit of technology in small businesses is the ability to expand their
 
 Overall, the key to success with an online ordering menu is to make it easy and convenient for customers to order from your restaurant, and to offer a variety of options and deals that will appeal to them. By implementing these ideas, you can help to increase customer satisfaction and drive more business to your restaurant.
 
-Web Expert Studios specializes in providing these types of solutions for online ordering menus and advancing businesse operations through technology. Our team of experts has extensive experience in helping restaurants and other small businesses implement effective online ordering systems that improve customer satisfaction and drive more business. We offer a range of services, including website design, social media integration, and custom online ordering menus that are tailored to the unique needs of your business. With our help, you can easily streamline your operations, increase your reach, and provide a better experience for your customers. Contact us today to learn more about how we can help your small business succeed.
+Web Expert Studios specializes in providing these types of solutions for online ordering menus and advancing business operations through technology. Our team of experts has extensive experience in helping restaurants and other small businesses implement effective online ordering systems that improve customer satisfaction and drive more business. We offer a range of services, including website design, social media integration, and custom online ordering menus that are tailored to the unique needs of your business. With our help, you can easily streamline your operations, increase your reach, and provide a better experience for your customers. Contact us today to learn more about how we can help your small business succeed.

@@ -128,8 +128,9 @@ const Home: NextPage = () => {
                   color: "white",
                 }}
               >
-                Attempting to share my knowledge and experience. I hope you find
-                it useful.
+                Effective business solutions can make a real difference, and I
+                am always looking for new opportunities to help people reach
+                their full potential.
               </InfoText>
             </div>
 
