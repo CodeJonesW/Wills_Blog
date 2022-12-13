@@ -78,7 +78,7 @@ export default function PostPage({
               maxWidth: "400px",
             }}
           >
-            <PostImage src={cover_image} alt={title} />
+            <PostImage loading="lazy" src={cover_image} alt={title} />
           </div>
           <div
             style={{ paddingLeft: "16px" }}
