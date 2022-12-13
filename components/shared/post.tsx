@@ -65,7 +65,7 @@ export default function Post({ post, selectPost }: PostProps) {
     <PostContainer>
       <Link href={`/blog/${slug}`}>
         <a style={{ color: "inherit", display: "flex", flexDirection: "row" }}>
-          <PostImage src={frontmatter.cover_image} />
+          <PostImage loading="lazy" src={frontmatter.cover_image} />
           <PostInfo>
             <PostTitle>{frontmatter.title}</PostTitle>
             <PostDate>{frontmatter.date}</PostDate>
