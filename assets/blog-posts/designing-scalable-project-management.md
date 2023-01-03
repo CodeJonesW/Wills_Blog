@@ -83,7 +83,7 @@ Creating detailed documentation can be an effective way to make processes clear 
 
 ## Involve the Team
 
-One last thing to consider is involving your team in the design process. This can help ensure that the project management system meets the team's specific needs and goals. Consider holding a brainstorming session or workshop to gather input from team members on what they need from the system and how it should work.
+Consider sending group message or creating a channel to asynchronously gather input from team members on what they need from the system and how it should work.
 
 ## Conclusion
 
