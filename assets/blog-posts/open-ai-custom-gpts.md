@@ -21,10 +21,14 @@ cover_image: "/images/posts/open-ai-custom-gpts/ss_4.png"
 - Soon GPT 4 turbo will be much faster. Solved price problem and now moving to speed.
 - Later this month GPT Store - opportunity to share custom GPTs and earn $$
 
-I am personally really excited about creating custom GPTs for myself. Today I began by creating a fitness GPT based on data from the National Library of Medicine and some of my favorite weightlifting resources. My goal to create a healthy approach to weight lifting that is sustainable over the course of life.
+I am really excited about creating custom GPTs for myself. Today I began by creating a fitness GPT based on data from the National Library of Medicine and some of my favorite weightlifting resources. My goal to create a healthy approach to weight lifting that is sustainable over the course of life. With the new feature users can directly attach a file in the conversation with ChatGPT and it will absorb the data. Trying to copy and paste 300 pages of a book does not work quite as well. Thankful for the attaching feature.
 
-With the new feature users can directly attach a file in the conversation with ChatGPT and it will absorb the data. Trying to copy and paste 300 pages of a book does not work quite as well.
+I am constantly trying to find ways to increase my knowledge intake. While doing dishes, running, driving, or any boring task. What if I could create custom like podcasts from books and articles that are not widely available as audio books. I could then listen to them while doing other tasks. It could even become two way voice communication allowing users to ask questions.
 
-Chaining a custom GPT with Zapier and one other tool could be a really powerful. I am constantly trying to find ways to increase my knowledge intake. While doing dishes, running, driving, or any boring task. What if I could create custom like podcasts from books and articles that are not widely available as audio books. I could then listen to them while doing other tasks. It could even become two way voice communication allowing users to ask questions.
+The idea of being able to hold a conversation with the AI while multi tasking and not having to read or type is pretty epic for a person always trying to learn. I am not sure if someone has already done this or not. The application would take advantage of voice to text, text to voice and text generation. A web app would be nice for simplicity although dealing with different browswers for audio recording can be a technical pain so it may call for a mobile app. The mobile app would allow the possibility of incoporating OpenAI's new vision api functionalities. I am imagining a person trying to fix their sink and asking the AI for help and providing a picture to assist.
+
+Planning on continuing to update this article with new thoughts until I have new subject to write about. 🚀
+
+Will
 
 <!-- ![custom gpts](/images/posts/open-ai-custom-gpts/ss_4.png "Custom GPT UI") -->
