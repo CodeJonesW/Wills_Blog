@@ -25,8 +25,6 @@ I am personally really excited about creating custom GPTs for myself. Today I be
 
 With the new feature users can directly attach a file in the conversation with ChatGPT and it will absorb the data. Trying to copy and paste 300 pages of a book does not work quite as well.
 
-I am excited to continue to add to my custom GPT and see how it improves over time. Sam also announced that users will be able to publish them for others to use.
-
 Chaining a custom GPT with Zapier and one other tool could be a really powerful. I am constantly trying to find ways to increase my knowledge intake. While doing dishes, running, driving, or any boring task. What if I could create custom like podcasts from books and articles that are not widely available as audio books. I could then listen to them while doing other tasks. It could even become two way voice communication allowing users to ask questions.
 
 <!-- ![custom gpts](/images/posts/open-ai-custom-gpts/ss_4.png "Custom GPT UI") -->
