@@ -101,8 +101,7 @@ export const Circle = styled(motion.div)`
 `;
 
 export const ContactContainer = styled(motion.div)`
-  padding-top: 1%;
-  max-width: 220px;
+  max-width: 400px;
   display: flex;
   flex-direction: row;
   justify-content: "center";

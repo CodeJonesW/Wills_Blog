@@ -63,7 +63,7 @@ export const Info: NextPage = () => {
         transition={{ duration: 4, type: "spring" }}
       >
         <h3 style={{ fontSize: "2.2em", padding: "12px" }}>
-          Designing systems is tough.
+          Information about me
         </h3>
         <UnshrinkableDiv style={{ height: "5%" }} />
         <FlexColumnCenter

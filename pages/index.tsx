@@ -10,27 +10,18 @@ import path from "path";
 import matter from "gray-matter";
 import { post, routes, theme } from "../enums";
 import { sendAnalyticsEvent } from "../lib/google_analytics";
+import Post from "../components/shared/post";
 import {
-  ArrowContainer,
-  Circle,
-  H4,
   CompanyNameContainer,
-  CompanyTagline,
   H3,
   ContactContainer,
-  FullScreenView,
   HomeNavBar,
-  InfoText,
   LandingSection,
   OuterContainer,
-  PrimaryButton,
-  SecondaryButton,
-  TagLineContainer,
-  MailLink,
   UnshrinkableDiv,
 } from "../components/shared/styles";
-import Post from "../components/shared/post";
-const BlogLink = styled.a`
+
+const NavLink = styled.a`
   color: black;
   cursor: pointer;
 `;
@@ -50,12 +41,7 @@ const PostsContainer = styled(motion.div)`
   padding-left: 15%;
   padding-top: 24px;
 `;
-const BlogContainer = styled(motion.div)`
-  justify-content: center;
-  background-color: white;
-  min-height: 100vh;
-  width: 100%;
-`;
+
 const CompanyName = styled(H3)`
   max-width: 200px;
 `;
@@ -83,14 +69,19 @@ export default function Home({ posts }: BlogProps) {
         <Section1>
           <HomeNavBar>
             <CompanyNameContainer>
-              <CompanyName>Living Learning, Refactoring</CompanyName>
+              <CompanyName>Living, Learning, Refactoring</CompanyName>
             </CompanyNameContainer>
 
             <ContactContainer>
               <Link href="/info">
-                <BlogLink>
-                  <H3>About</H3>
-                </BlogLink>
+                <NavLink>
+                  <H3 style={{ marginRight: 4 }}>About</H3>
+                </NavLink>
+              </Link>
+              <Link href="/resume">
+                <NavLink>
+                  <H3 style={{ marginLeft: 4 }}>Resume</H3>
+                </NavLink>
               </Link>
               <UnshrinkableDiv style={{ width: "16px" }} />
             </ContactContainer>
@@ -101,8 +92,6 @@ export default function Home({ posts }: BlogProps) {
               return <Post key={index} post={post} selectPost={selectPost} />;
             })}
           </PostsContainer>
-
-          <UnshrinkableDiv style={{ height: "10%" }} />
         </Section1>
       </OuterContainer>
     </AnimatePresence>
