@@ -54,14 +54,7 @@ export const Info: NextPage = () => {
           </Circle>
         </BackArrowContainer>
         <ContactContainer>
-          <MailLink
-            style={{ textDecoration: "none" }}
-            href="mailto:will@webexpertstudios.com?subject=Website%20Interest"
-            target="_blank"
-            rel="noreferrer"
-          >
-            <H3 style={{ color: "white" }}>will@webexpertstudios.com</H3>
-          </MailLink>
+          <H3 style={{ color: "white" }}>williamjonescodes@gmail.com</H3>
         </ContactContainer>
       </Section2TopBar>
       <Section2Content
@@ -90,16 +83,9 @@ export const Info: NextPage = () => {
             I&apos;m a software engineer with a passion for solving problems.
           </p>
           <UnshrinkableDiv style={{ height: "2vh" }} />
-          <MailLink
-            style={{ textDecoration: "none" }}
-            href="mailto:will@webexpertstudios.com?subject=Website%20Interest"
-            target="_blank"
-            rel="noreferrer"
-          >
-            <SecondaryButton>
-              <h3>Email me</h3>
-            </SecondaryButton>
-          </MailLink>
+          <SecondaryButton>
+            <h3>Email me</h3>
+          </SecondaryButton>
         </FlexColumnCenter>
       </Section2Content>
     </Section2>

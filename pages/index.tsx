@@ -5,10 +5,15 @@ import { motion, AnimatePresence } from "framer-motion";
 import React from "react";
 import Link from "next/link";
 import { useRouter } from "next/router";
+import fs from "fs";
+import path from "path";
+import matter from "gray-matter";
+import { post, routes, theme } from "../enums";
+import { sendAnalyticsEvent } from "../lib/google_analytics";
 import {
   ArrowContainer,
   Circle,
-  H1,
+  H4,
   CompanyNameContainer,
   CompanyTagline,
   H3,
@@ -24,7 +29,7 @@ import {
   MailLink,
   UnshrinkableDiv,
 } from "../components/shared/styles";
-
+import Post from "../components/shared/post";
 const BlogLink = styled.a`
   color: black;
   cursor: pointer;
@@ -32,144 +37,104 @@ const BlogLink = styled.a`
 const Section1 = styled(LandingSection)`
   background-color: white;
   width: 100vw;
-  height: 200vh;
+  height: 100vh;
   justify-content: flex-start;
   flex-direction: column;
 `;
 
-const CompanyName = styled(H1)`
+const PostsContainer = styled(motion.div)`
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  padding-left: 15%;
+  padding-top: 24px;
+`;
+const BlogContainer = styled(motion.div)`
+  justify-content: center;
+  background-color: white;
+  min-height: 100vh;
+  width: 100%;
+`;
+const CompanyName = styled(H3)`
   max-width: 200px;
 `;
 
-const Home: NextPage = () => {
+interface BlogProps {
+  posts: post[];
+}
+
+export default function Home({ posts }: BlogProps) {
   const router = useRouter();
+  const selectPost = (slug: string) => {
+    sendAnalyticsEvent("blogView", {
+      action: "select_post",
+      params: {
+        post: slug,
+      },
+    });
+
+    router.push(`/blog/${slug}`);
+  };
 
   return (
     <AnimatePresence>
       <OuterContainer className={styles.quartzoBold}>
         <Section1>
-          <FullScreenView
-            whileInView={{ opacity: 1 }}
-            initial={{ opacity: 0 }}
-            transition={{ duration: 4, type: "spring" }}
-          >
-            <HomeNavBar>
-              <CompanyNameContainer>
-                <CompanyName>Web Expert Studios</CompanyName>
-              </CompanyNameContainer>
+          <HomeNavBar>
+            <CompanyNameContainer>
+              <CompanyName>Living Learning, Refactoring</CompanyName>
+            </CompanyNameContainer>
 
-              <ContactContainer>
-                <Link href="/blog">
-                  <BlogLink>
-                    <H3>Blog</H3>
-                  </BlogLink>
-                </Link>
-                <UnshrinkableDiv style={{ width: "16px" }} />
-                <MailLink
-                  style={{ textDecoration: "none" }}
-                  href="mailto:will@webexpertstudios.com?subject=Website%20Interest"
-                  target="_blank"
-                  rel="noreferrer"
-                >
-                  <H3>Contact</H3>
-                </MailLink>
-              </ContactContainer>
-            </HomeNavBar>
-            <TagLineContainer>
-              <CompanyTagline>Technical creativity applied.</CompanyTagline>
-            </TagLineContainer>
-            <UnshrinkableDiv style={{ height: "8%" }} />
-            <ArrowContainer
-              style={{
-                flexDirection: "row",
-                display: "flex",
-                justifyContent: "center",
-              }}
-            >
-              <Circle
-                onClick={() => {
-                  window.scrollTo({
-                    top: 1500,
-                    behavior: "smooth",
-                  });
-                }}
-              >
-                <p>⬇</p>
-              </Circle>
-            </ArrowContainer>
-            <UnshrinkableDiv style={{ height: "10%" }} />
-          </FullScreenView>
-          <FullScreenView
-            style={{
-              display: "flex",
-              flexDirection: "column",
-              alignItems: "center",
-              backgroundColor: "black",
-              height: "100vh",
-            }}
-            whileInView={{ opacity: 1 }}
-            initial={{ opacity: 0 }}
-            transition={{ duration: 6, type: "spring" }}
-          >
-            <UnshrinkableDiv style={{ height: "10%" }} />
-            <div
-              style={{
-                padding: "32px",
-                alignItems: "center",
-                maxWidth: "440px",
-              }}
-            >
-              <InfoText
-                style={{
-                  fontSize: "1.8em",
-                  textAlign: "left",
-                  maxWidth: "600px",
-                  lineHeight: "1.5em",
-                  color: "white",
-                }}
-              >
-                I have created this site to share my knowledge and experience
-                with the world. I hope you find it useful.
-              </InfoText>
-            </div>
+            <ContactContainer>
+              <Link href="/info">
+                <BlogLink>
+                  <H3>About</H3>
+                </BlogLink>
+              </Link>
+              <UnshrinkableDiv style={{ width: "16px" }} />
+            </ContactContainer>
+          </HomeNavBar>
 
-            <div style={{ width: "100%" }}>
-              <motion.div
-                style={{
-                  display: "flex",
-                  flexDirection: "column",
-                  padding: "4px",
-                  alignItems: "center",
-                  justifyContent: "center",
-                  flexWrap: "wrap",
-                }}
-              >
-                <SecondaryButton
-                  onClick={() => {
-                    router.push("/info");
-                  }}
-                  style={{ marginBottom: "16px" }}
-                >
-                  <h3>Want to chat?</h3>
-                </SecondaryButton>
-                <UnshrinkableDiv style={{ width: "10px", height: "10px" }} />
-                {/* <a
-                  style={{ textDecoration: "none" }}
-                  href="https://calendly.com/webexpertstudios/30min?back=1&month=2022-09"
-                  target="_blank"
-                  rel="noreferrer"
-                >
-                  <PrimaryButton style={{ marginBottom: "16px" }}>
-                    <h3>Book a free consultation</h3>
-                  </PrimaryButton>
-                </a> */}
-              </motion.div>
-            </div>
-          </FullScreenView>
+          <PostsContainer>
+            {posts.map((post, index) => {
+              return <Post key={index} post={post} selectPost={selectPost} />;
+            })}
+          </PostsContainer>
+
+          <UnshrinkableDiv style={{ height: "10%" }} />
         </Section1>
       </OuterContainer>
     </AnimatePresence>
   );
-};
+}
 
-export default Home;
+export async function getStaticProps() {
+  const files = fs.readdirSync(path.join("assets/blog-posts"));
+
+  const posts = files
+    .map((filename) => {
+      const slug = filename.replace(".md", "");
+
+      const markdownWithMeta = fs.readFileSync(
+        path.join("assets/blog-posts", filename),
+        "utf-8"
+      );
+
+      const { data: frontmatter } = matter(markdownWithMeta);
+
+      return { slug, frontmatter };
+    })
+    .sort((a, b) => {
+      return (
+        new Date(b.frontmatter.date).getTime() -
+        new Date(a.frontmatter.date).getTime()
+      );
+    });
+
+  return {
+    props: {
+      posts: posts,
+    },
+  };
+}
