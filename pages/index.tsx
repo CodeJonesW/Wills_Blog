@@ -38,7 +38,15 @@ const PostsContainer = styled(motion.div)`
   flex-direction: column;
   align-items: flex-start;
   justify-content: flex-start;
-  padding-left: 15%;
+  padding-top: 24px;
+  width: 80%;
+`;
+
+const Body = styled(motion.div)`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
   padding-top: 24px;
 `;
 
@@ -86,12 +94,13 @@ export default function Home({ posts }: BlogProps) {
               <UnshrinkableDiv style={{ width: "16px" }} />
             </ContactContainer>
           </HomeNavBar>
-
-          <PostsContainer>
-            {posts.map((post, index) => {
-              return <Post key={index} post={post} selectPost={selectPost} />;
-            })}
-          </PostsContainer>
+          <Body>
+            <PostsContainer>
+              {posts.map((post, index) => {
+                return <Post key={index} post={post} selectPost={selectPost} />;
+              })}
+            </PostsContainer>
+          </Body>
         </Section1>
       </OuterContainer>
     </AnimatePresence>

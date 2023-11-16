@@ -129,14 +129,20 @@ export const H3 = styled.h3`
   max-width: 80%;
 `;
 
-export const H4 = styled.h3`
-  font-size: 0.7em;
+export const H5 = styled.h5`
+  font-size: 0.6em;
   font-family: "MontserratMedium";
   max-width: 80%;
 `;
 
+export const H4 = styled.h3`
+  font-size: 0.7em;
+  font-family: "MontserratBold";
+  max-width: 80%;
+`;
+
 export const H1 = styled.h1`
-  font-family: "LemonMilkBold";
+  font-family: "MontserratBold";
   color: "black";
   user-select: none;
 `;
