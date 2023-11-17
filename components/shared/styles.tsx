@@ -137,7 +137,7 @@ export const H4 = styled.h3`
 `;
 
 export const H1 = styled.h1`
-  font-family: "LemonMilkBold";
+  font-family: "MontserratBold";
   color: "black";
   user-select: none;
 `;
