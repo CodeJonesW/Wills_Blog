@@ -63,19 +63,20 @@ export default function Post({ post, selectPost }: PostProps) {
   const { slug, frontmatter } = post;
   return (
     <PostContainer>
-      <Link href={`/blog/${slug}`}>
-        <a style={{ color: "inherit", display: "flex", flexDirection: "row" }}>
-          <PostImage
-            style={{ width: "64px", height: "64px", marginTop: "16px" }}
-            loading="lazy"
-            src={frontmatter.cover_image}
-          />
-          <PostInfo>
-            <PostTitle>{frontmatter.title}</PostTitle>
-            <PostDate>{frontmatter.date}</PostDate>
-            {/* <PostExcerpt>{frontmatter.excerpt}</PostExcerpt> */}
-          </PostInfo>
-        </a>
+      <Link
+        style={{ color: "inherit", display: "flex", flexDirection: "row" }}
+        href={`/blog/${slug}`}
+      >
+        <PostImage
+          style={{ width: "64px", height: "64px", marginTop: "16px" }}
+          loading="lazy"
+          src={frontmatter.cover_image}
+        />
+        <PostInfo>
+          <PostTitle>{frontmatter.title}</PostTitle>
+          <PostDate>{frontmatter.date}</PostDate>
+          {/* <PostExcerpt>{frontmatter.excerpt}</PostExcerpt> */}
+        </PostInfo>
       </Link>
     </PostContainer>
   );

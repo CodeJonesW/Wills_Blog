@@ -74,14 +74,10 @@ export default function Home({ posts }: BlogProps) {
             </Div>
             <ContactContainer>
               <Link href="/info">
-                <NavLink>
-                  <H3 style={{ marginRight: 4 }}>About</H3>
-                </NavLink>
+                <H3 style={{ marginRight: 4 }}>About</H3>
               </Link>
               <Link href="/resume">
-                <NavLink>
-                  <H3 style={{ marginLeft: 4 }}>Resume</H3>
-                </NavLink>
+                <H3 style={{ marginLeft: 4 }}>Resume</H3>
               </Link>
               <UnshrinkableDiv style={{ width: "16px" }} />
             </ContactContainer>

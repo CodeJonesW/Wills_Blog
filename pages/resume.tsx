@@ -39,9 +39,7 @@ export default function Resume({ posts }: BlogProps) {
       <HomeNavBar>
         <CompanyName>Resume</CompanyName>
         <Link href={routes.home}>
-          <NavLink>
-            <CompanyName>Home</CompanyName>
-          </NavLink>
+          <CompanyName>Home</CompanyName>
         </Link>
       </HomeNavBar>
     </FullScreenColumn>
