@@ -1,13 +1,14 @@
 import { AnimatePresence } from "framer-motion";
 import { motion } from "framer-motion";
 import {
-  CompanyNameContainer,
+  Div,
   ContactContainer,
   FullScreenView,
   H3,
   HomeNavBar,
   InfoText,
   UnshrinkableDiv,
+  FullScreenColumn,
 } from "../components/shared/styles";
 import styled from "styled-components";
 import styles from "../styles/Home.module.css";
@@ -34,26 +35,15 @@ const NavLink = styled.a`
 
 export default function Resume({ posts }: BlogProps) {
   return (
-    <div>
-      <div
-        style={{
-          display: "flex",
-          flexDirection: "row",
-          justifyContent: "space-between",
-          width: "100vw",
-        }}
-      >
-        <div>
-          <CompanyName>Resume</CompanyName>
-        </div>
-        <div>
-          <Link href={routes.home}>
-            <NavLink>
-              <CompanyName>Home</CompanyName>
-            </NavLink>
-          </Link>
-        </div>
-      </div>
-    </div>
+    <FullScreenColumn>
+      <HomeNavBar>
+        <CompanyName>Resume</CompanyName>
+        <Link href={routes.home}>
+          <NavLink>
+            <CompanyName>Home</CompanyName>
+          </NavLink>
+        </Link>
+      </HomeNavBar>
+    </FullScreenColumn>
   );
 }

@@ -12,25 +12,18 @@ import { post, routes, theme } from "../enums";
 import { sendAnalyticsEvent } from "../lib/google_analytics";
 import Post from "../components/shared/post";
 import {
-  CompanyNameContainer,
+  Div,
   H3,
   ContactContainer,
   HomeNavBar,
-  LandingSection,
   OuterContainer,
   UnshrinkableDiv,
+  FullScreenColumn,
 } from "../components/shared/styles";
 
 const NavLink = styled.a`
   color: black;
   cursor: pointer;
-`;
-const Section1 = styled(LandingSection)`
-  background-color: white;
-  width: 100vw;
-  height: 100vh;
-  justify-content: flex-start;
-  flex-direction: column;
 `;
 
 const PostsContainer = styled(motion.div)`
@@ -50,7 +43,7 @@ const Body = styled(motion.div)`
   padding-top: 24px;
 `;
 
-const CompanyName = styled(H3)`
+const TopLeftTitle = styled(H3)`
   max-width: 200px;
 `;
 
@@ -74,12 +67,11 @@ export default function Home({ posts }: BlogProps) {
   return (
     <AnimatePresence>
       <OuterContainer className={styles.quartzoBold}>
-        <Section1>
+        <FullScreenColumn>
           <HomeNavBar>
-            <CompanyNameContainer>
-              <CompanyName>Living, Learning, Refactoring</CompanyName>
-            </CompanyNameContainer>
-
+            <Div>
+              <TopLeftTitle>Living, Learning, Refactoring</TopLeftTitle>
+            </Div>
             <ContactContainer>
               <Link href="/info">
                 <NavLink>
@@ -101,7 +93,7 @@ export default function Home({ posts }: BlogProps) {
               })}
             </PostsContainer>
           </Body>
-        </Section1>
+        </FullScreenColumn>
       </OuterContainer>
     </AnimatePresence>
   );

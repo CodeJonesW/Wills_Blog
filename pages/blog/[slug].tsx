@@ -55,7 +55,7 @@ export default function PostPage({
         initial={{ opacity: 0 }}
         transition={{ duration: 4, type: "spring" }}
       >
-        <Back route={routes.blog} themeProp={theme.light} />
+        <Back route={routes.home} themeProp={theme.light} />
       </TopBar>
 
       <PostContainer

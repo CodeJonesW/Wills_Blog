@@ -7,17 +7,15 @@ export const OuterContainer = styled(motion.div)`
 
 export const FullScreenView = styled(motion.div)`
   height: 100vh;
-  width: 100%;
+  width: 100vw;
 `;
 
-export const LandingSection = styled(motion.div)`
-  min-height: 100;
+export const FullScreenColumn = styled(motion.div)`
+  background-color: white;
   width: 100vw;
-  display: flex;
-  justify-content: center;
-  flex-direction: row;
-  background-color: black;
-  /* color: white; */
+  height: 100vh;
+  justify-content: flex-start;
+  flex-direction: column;
 `;
 
 export const SecondaryButton = styled(motion.div)`
@@ -179,7 +177,9 @@ export const TagLineContainer = styled.div`
   padding-top: 5%;
 `;
 
-export const CompanyNameContainer = styled.div``;
+export const Div = styled.div`
+  display: flex;
+`;
 
 export const FlexColumnCenter = styled(motion.div)`
   display: flex;
