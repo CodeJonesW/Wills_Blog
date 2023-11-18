@@ -9,7 +9,7 @@ import {
   H3,
   ContactContainer,
   FlexColumnCenter,
-  LandingSection,
+  FullScreenColumn,
   SecondaryButton,
   Section2Content,
   Section2TopBar,
@@ -17,7 +17,7 @@ import {
   MailLink,
 } from "../components/shared/styles";
 
-const Section2 = styled(LandingSection)`
+const Section2 = styled(FullScreenColumn)`
   height: 100vh;
   flex-direction: column;
   align-items: center;
