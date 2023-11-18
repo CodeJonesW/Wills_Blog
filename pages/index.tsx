@@ -73,7 +73,7 @@ export default function Home({ posts }: BlogProps) {
               <TopLeftTitle>Living, Learning, Refactoring</TopLeftTitle>
             </Div>
             <ContactContainer>
-              <Link href="/info">
+              <Link href="/">
                 <H3 style={{ marginRight: 4 }}>About</H3>
               </Link>
               <Link href="/resume">
