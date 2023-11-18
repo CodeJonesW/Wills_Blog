@@ -21,7 +21,7 @@ I am doing website maintenance on a few personal domains I have had hosted for s
 
 I needed to transfer content on website 'A' to domain 'B' and take down the current content being served by domain B. I was pleasantly surprised by the lack of pain. The first few times setting up DNS records was not intuitive but now having done it a few times its not as intimidating.
 
-I needed to update my computer's node version so that I could update the Next.js and subsequently start to use material UI. The joy of updates, always one thing leading to another. I want to use MUI's grid component because I'm tired of setting max width values for things while trying to get responsive screens to work on everything from Mobile to a big desktop screen. The more time I spend programming the happier I am too assign some complexity to a popular solution.
+I needed to update my computer's node version so that I could update the Next.js and subsequently start to use material UI. The joy of updates, always one thing leading to another. I want to use MUI's grid component because I'm tired of setting max width values for things while trying to get responsive screens to work on everything from Mobile to a big desktop screens. The more time I spend programming the happier I am too assign unnecessary complexity to popular solutions.
 
 Updating my node version and packages has never been something I looked forward to. I was happy to find that I was able to use NVM to install the recommended version of node without an issue.
 
