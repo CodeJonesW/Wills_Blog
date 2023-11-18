@@ -5,7 +5,7 @@ excerpt: ""
 cover_image: "/images/posts/friday-night-node-update/node.png"
 ---
 
-It's Friday evening and part of me wants to be out meeting people and having fun but my recurring desire for adventuring out for social interaction rarely matches up with my ideal. So I am home thinking about how I can improve my personal blog website and aiming for a good nights rest. I love how I can build tools that serve a personal use case such as building a website to process my thoughts and learn more about technology.
+It's Friday evening and part of me wants to be out meeting people and having fun but my recurring desire to adventure out for social interaction rarely matches up with my ideal. So I am home thinking about how I can improve my personal blog website and aiming for a good nights rest. I love how I can build tools that serve a personal use case such as building a website to process my thoughts and learn more about technology.
 
 The articles I've written so far they are mostly thought experiments about how I would plan and execute a technical project. I believe I enjoy this because I can experience possibilities without having to invest the time to actually required to see the end result. I go through the steps and place myself at the end of the projects timeline, imagine the potential problems, and reflect. This could be applied to running a business, planning a website, or cooking a meal.
 
