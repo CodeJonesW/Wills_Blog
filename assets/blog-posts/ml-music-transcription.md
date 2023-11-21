@@ -47,9 +47,8 @@ There are several different methods of spectral analysis that can be used, depen
 ```python
 import numpy as np
 
-def detect_pitch(audio_signal, sample_rate):
-    # Compute the STFT of the audio signal
-    stft = np.fft.stft(audio_signal)
+def detect_pitch(audio_signal, sample_rate): # Compute the STFT of the audio signal
+stft = np.fft.stft(audio_signal)
 
     # Compute the magnitudes of the complex STFT coefficients
     magnitudes = np.abs(stft)

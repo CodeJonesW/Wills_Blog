@@ -1,7 +1,6 @@
 import { AnimatePresence } from "framer-motion";
 import { motion } from "framer-motion";
 import {
-  Div,
   ContactContainer,
   FullScreenView,
   H3,
@@ -21,11 +20,12 @@ import { post, routes, theme } from "../enums";
 import { Section2TopBar as TopBar } from "../components/shared/styles";
 import Back from "../components/shared/back";
 import { sendAnalyticsEvent } from "../lib/google_analytics";
+import { Box, Divider, List, ListItem, Grid } from "@mui/material";
 import Link from "next/link";
 interface BlogProps {
   posts: post[];
 }
-const CompanyName = styled(H3)`
+const NavbarTitle = styled(H3)`
   max-width: 200px;
 `;
 const NavLink = styled.a`
@@ -37,11 +37,60 @@ export default function Resume({ posts }: BlogProps) {
   return (
     <FullScreenColumn>
       <HomeNavBar>
-        <CompanyName>Resume</CompanyName>
+        <NavbarTitle>Resume</NavbarTitle>
         <Link href={routes.home}>
-          <CompanyName>Home</CompanyName>
+          <NavbarTitle>Home</NavbarTitle>
         </Link>
       </HomeNavBar>
+      <div>
+        <div
+          style={{
+            display: "flex",
+            alignItems: "center",
+            flexDirection: "row",
+            justifyContent: "center",
+          }}
+        >
+          <h2>William Jones</h2>
+        </div>
+        <div
+          style={{
+            display: "flex",
+            alignItems: "center",
+            flexDirection: "row",
+            justifyContent: "flex-start",
+            paddingLeft: "32px",
+          }}
+        >
+          <h5>Experience</h5>
+        </div>
+        <Divider sx={{ mr: "24px", ml: "24px" }} />
+        <Grid
+          style={{
+            display: "flex",
+            alignItems: "center",
+            flexDirection: "row",
+            justifyContent: "flex-start",
+            paddingLeft: "32px",
+          }}
+        >
+          <Grid item xs={12}>
+            <h5 style={{ marginBottom: "4px", marginTop: "8px" }}>
+              Software Engineer 2
+            </h5>
+            <p style={{ margin: 0, padding: 0 }}>Nimbio | Remote</p>
+            <List>
+              <ListItem>
+                <p style={{ margin: 0, padding: 0 }}>
+                  - Developed a new feature for the Nimbio platform that allows
+                  users to create custom forms for their organization to use
+                  when collecting data.
+                </p>
+              </ListItem>
+            </List>
+          </Grid>
+        </Grid>
+      </div>
     </FullScreenColumn>
   );
 }

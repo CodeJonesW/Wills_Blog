@@ -81,7 +81,7 @@ export default function PostPage({
             <PostImage loading="lazy" src={cover_image} alt={title} />
           </div>
           <div
-            style={{ paddingLeft: "16px" }}
+            style={{ paddingLeft: "16px", paddingRight: "16px" }}
             dangerouslySetInnerHTML={{ __html: marked(content) }}
           ></div>
         </div>
