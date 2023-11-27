@@ -8,7 +8,7 @@ import { useRouter } from "next/router";
 import fs from "fs";
 import path from "path";
 import matter from "gray-matter";
-import { post, routes, theme } from "../enums";
+import { post } from "../enums";
 import { sendAnalyticsEvent } from "../lib/google_analytics";
 import Post from "../components/shared/post";
 import {
@@ -77,7 +77,7 @@ export default function Home({ posts }: BlogProps) {
               <TopLeftTitle>Living, Learning, Refactoring</TopLeftTitle>
             </Div>
             <ContactContainer>
-              <Link style={{ color: "black" }} href="/">
+              <Link style={{ color: "black" }} href="/about">
                 <H3 style={{ marginRight: 4 }}>About</H3>
               </Link>
               <Link style={{ color: "black" }} href="/resume">
