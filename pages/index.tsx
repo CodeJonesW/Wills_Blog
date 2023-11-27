@@ -1,11 +1,12 @@
 import type { NextPage } from "next";
+import Link from "next/link";
 import styled from "styled-components";
 import styles from "../styles/Home.module.css";
-import { motion, AnimatePresence } from "framer-motion";
+import { AnimatePresence } from "framer-motion";
 import React from "react";
-import Link from "next/link";
 import { useRouter } from "next/router";
 import fs from "fs";
+import { motion } from "framer-motion";
 import path from "path";
 import matter from "gray-matter";
 import { post } from "../enums";
