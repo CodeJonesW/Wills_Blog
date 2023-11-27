@@ -14,6 +14,7 @@ interface ExperienceSectionProps {
   company: string;
   location: string;
   bullets: string[];
+  date: string;
 }
 
 export default function ExperienceSection({
@@ -21,6 +22,7 @@ export default function ExperienceSection({
   bullets,
   company,
   location,
+  date,
 }: ExperienceSectionProps) {
   return (
     <Box
@@ -33,10 +35,24 @@ export default function ExperienceSection({
       }}
     >
       <Grid item xs={12}>
-        <h5 style={{ marginBottom: "4px", marginTop: "8px" }}>{title}</h5>
-        <p style={{ margin: 0, padding: 0 }}>
-          {company} | {location}
-        </p>
+        <Box
+          sx={{
+            display: "flex",
+            flexDirection: "row",
+            justifyContent: "space-between",
+            width: "95vw",
+          }}
+        >
+          <Box sx={{ flexDirection: "column" }}>
+            <h5 style={{ marginBottom: "4px", marginTop: "8px" }}>{title}</h5>
+            <p style={{ margin: 0, padding: 0 }}>
+              {company} | {location}
+            </p>
+          </Box>
+          <Box sx={{ mr: "32px" }}>
+            <p>{date}</p>
+          </Box>
+        </Box>
         <List>
           {bullets.map((bullet) => {
             return (
