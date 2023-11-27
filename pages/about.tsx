@@ -21,6 +21,7 @@ import { AnimatePresence } from "framer-motion";
 
 const Section2 = styled(FullScreenColumn)`
   height: 100vh;
+  display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: flex-start;
