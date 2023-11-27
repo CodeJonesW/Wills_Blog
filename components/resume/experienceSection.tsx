@@ -56,7 +56,7 @@ export default function ExperienceSection({
         <List>
           {bullets.map((bullet) => {
             return (
-              <ListItem>
+              <ListItem key={bullet[0]}>
                 <p style={{ margin: 0, padding: 0 }}>- {bullet}</p>
               </ListItem>
             );
