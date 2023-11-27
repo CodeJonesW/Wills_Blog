@@ -35,11 +35,11 @@ const PostInfo = styled.div`
   align-items: flex-start;
   justify-content: flex-start;
   padding-left: 16px;
-  padding-right: 16px;
+  padding-right: 8px;
 `;
 
 const PostTitle = styled(H3)`
-  font-family: "LemonMilkBold";
+  font-family: "MontserratBold";
   color: "black";
   max-width: 600px;
   user-select: none;
@@ -63,15 +63,20 @@ export default function Post({ post, selectPost }: PostProps) {
   const { slug, frontmatter } = post;
   return (
     <PostContainer>
-      <Link href={`/blog/${slug}`}>
-        <a style={{ color: "inherit", display: "flex", flexDirection: "row" }}>
-          <PostImage loading="lazy" src={frontmatter.cover_image} />
-          <PostInfo>
-            <PostTitle>{frontmatter.title}</PostTitle>
-            <PostDate>{frontmatter.date}</PostDate>
-            <PostExcerpt>{frontmatter.excerpt}</PostExcerpt>
-          </PostInfo>
-        </a>
+      <Link
+        style={{ color: "inherit", display: "flex", flexDirection: "row" }}
+        href={`/blog/${slug}`}
+      >
+        <PostImage
+          style={{ width: "64px", height: "64px", marginTop: "16px" }}
+          loading="lazy"
+          src={frontmatter.cover_image}
+        />
+        <PostInfo>
+          <PostTitle>{frontmatter.title}</PostTitle>
+          <PostDate>{frontmatter.date}</PostDate>
+          {/* <PostExcerpt>{frontmatter.excerpt}</PostExcerpt> */}
+        </PostInfo>
       </Link>
     </PostContainer>
   );

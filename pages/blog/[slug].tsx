@@ -55,7 +55,7 @@ export default function PostPage({
         initial={{ opacity: 0 }}
         transition={{ duration: 4, type: "spring" }}
       >
-        <Back route={routes.blog} themeProp={theme.light} />
+        <Back route={routes.home} themeProp={theme.light} />
       </TopBar>
 
       <PostContainer
@@ -81,7 +81,7 @@ export default function PostPage({
             <PostImage loading="lazy" src={cover_image} alt={title} />
           </div>
           <div
-            style={{ paddingLeft: "16px" }}
+            style={{ paddingLeft: "16px", paddingRight: "16px" }}
             dangerouslySetInnerHTML={{ __html: marked(content) }}
           ></div>
         </div>

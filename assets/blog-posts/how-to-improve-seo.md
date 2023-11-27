@@ -5,6 +5,12 @@ excerpt: "Everyone wants to rank higher in search engines, but how do you do it?
 cover_image: "/images/posts/improve-seo/search.jpg"
 ---
 
+## Exercise in using ChatGPT to do things we previously did not know how to do
+
+Today we are going to use ChatGPT to learn what we can do to increase our website's SEO. Seems like a straightforward task but maybe we can unlock some secrets or new ideas by asking a machine to help us. The following is a is a gently edited conversation with ChatGPT.
+
+## What facotrs impact a website's SEO?
+
 There are many factors that can impact a website's search engine optimization (SEO). Here are a few things you can do to improve your website's SEO:
 
 1. Make sure your website is mobile-friendly and loads quickly.

@@ -7,17 +7,15 @@ export const OuterContainer = styled(motion.div)`
 
 export const FullScreenView = styled(motion.div)`
   height: 100vh;
-  width: 100%;
+  width: 100vw;
 `;
 
-export const LandingSection = styled(motion.div)`
-  min-height: 100;
+export const FullScreenColumn = styled(motion.div)`
+  background-color: white;
   width: 100vw;
-  display: flex;
-  justify-content: center;
-  flex-direction: row;
-  background-color: black;
-  /* color: white; */
+  height: 100vh;
+  justify-content: flex-start;
+  flex-direction: column;
 `;
 
 export const SecondaryButton = styled(motion.div)`
@@ -101,8 +99,7 @@ export const Circle = styled(motion.div)`
 `;
 
 export const ContactContainer = styled(motion.div)`
-  padding-top: 1%;
-  max-width: 220px;
+  max-width: 400px;
   display: flex;
   flex-direction: row;
   justify-content: "center";
@@ -130,9 +127,15 @@ export const H3 = styled.h3`
   max-width: 80%;
 `;
 
+export const H5 = styled.h5`
+  font-size: 0.6em;
+  font-family: "MontserratMedium";
+  max-width: 80%;
+`;
+
 export const H4 = styled.h3`
   font-size: 0.7em;
-  font-family: "MontserratMedium";
+  font-family: "MontserratBold";
   max-width: 80%;
 `;
 
@@ -174,7 +177,9 @@ export const TagLineContainer = styled.div`
   padding-top: 5%;
 `;
 
-export const CompanyNameContainer = styled.div``;
+export const Div = styled.div`
+  display: flex;
+`;
 
 export const FlexColumnCenter = styled(motion.div)`
   display: flex;

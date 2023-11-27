@@ -5,6 +5,10 @@ excerpt: "Let the music play"
 cover_image: "/images/posts/ml-music-transcription/mic.jpg"
 ---
 
+## Exercise in using ChatGPT to do things we previously did not know how to do
+
+Today we are going to use ChatGPT to train a machine learning model that can transcribe music. All in all a pretty lofty task but lets see how far we can get. I will be asking questions and showing gently edited responses for the sake of the article.
+
 ## What are some steps we can take to train a machine learning model to transcribe music by audio?
 
 Training a machine learning model to transcribe music by audio is a complex task that would likely require a significant amount of time, expertise, and resources. Here are some steps you could take to get started:
@@ -43,9 +47,8 @@ There are several different methods of spectral analysis that can be used, depen
 ```python
 import numpy as np
 
-def detect_pitch(audio_signal, sample_rate):
-    # Compute the STFT of the audio signal
-    stft = np.fft.stft(audio_signal)
+def detect_pitch(audio_signal, sample_rate): # Compute the STFT of the audio signal
+stft = np.fft.stft(audio_signal)
 
     # Compute the magnitudes of the complex STFT coefficients
     magnitudes = np.abs(stft)
@@ -321,4 +324,11 @@ This will start the Flask app, which will be available at the local URL **`http:
 
 There are many other ways to deploy a machine learning model as a web service, and the specific approach will depend on the requirements and constraints of the project. For example, if the model needs to be accessed by multiple users concurrently, a more scalable solution such as deploying the model on a cloud platform such as AWS or GCP may be necessary.
 
-In conclusion, creating a machine learning model to transcribe music can be a challenging but rewarding task. By using supervised learning and a pitch detection algorithm, we were able to train a model on a dataset of musical audio recordings and transcriptions. By evaluating the model on a test set, we were able to assess its accuracy and make improvements to the model as needed. Once the model was trained and evaluated, we were able to save it to a file and use it to make predictions on new data. Additionally, we explored how to deploy the trained model as a web service using the Flask framework, making it available for use by others. Overall, creating a machine learning model for transcribing music can provide valuable insights and improve our understanding of musical patterns and structures.
+In conclusion, creating a machine learning model to transcribe music would likely be a challenging task.
+
+- By using supervised learning and a pitch detection algorithm, we were able to train a model on a dataset of musical audio recordings and transcriptions.
+- By evaluating the model on a test set, we were able to assess its accuracy and make improvements to the model as needed.
+- Once the model was trained and evaluated, we were able to save it to a file and use it to make predictions on new data.
+- Additionally, we explored how to deploy the trained model as a web service using the Flask framework, making it available for use by others. Overall, creating a machine learning model for transcribing music can provide valuable insights and improve our understanding of musical patterns and structures.
+
+Overall the complexity of this project would probably make for long timeline if executed by one developer. This is coming from a 5 year experienced dev perspective. Accurately training the model sounds like a very difficult task with a lot of trial and error. Monetizing the project would be difficult as well. Would musicians pay for a subscription to transcribe X number of audios? For how long? Single payment? How much? There are a lot of questions that would need to be answered before taking this project with any expectation of a return. From a non capitalistic perspective, it would be an excellent learning experience and would span a wide range of technologies. I would love to see the end result of this project.
