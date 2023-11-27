@@ -67,16 +67,20 @@ export default function Home({ posts }: BlogProps) {
   return (
     <AnimatePresence>
       <OuterContainer className={styles.quartzoBold}>
-        <FullScreenColumn>
+        <FullScreenColumn
+          whileInView={{ opacity: 1 }}
+          initial={{ opacity: 0 }}
+          transition={{ duration: 2, type: "spring" }}
+        >
           <HomeNavBar>
             <Div>
               <TopLeftTitle>Living, Learning, Refactoring</TopLeftTitle>
             </Div>
             <ContactContainer>
-              <Link href="/">
+              <Link style={{ color: "black" }} href="/">
                 <H3 style={{ marginRight: 4 }}>About</H3>
               </Link>
-              <Link href="/resume">
+              <Link style={{ color: "black" }} href="/resume">
                 <H3 style={{ marginLeft: 4 }}>Resume</H3>
               </Link>
               <UnshrinkableDiv style={{ width: "16px" }} />

@@ -1,27 +1,9 @@
-import { AnimatePresence } from "framer-motion";
-import { motion } from "framer-motion";
-import {
-  ContactContainer,
-  FullScreenView,
-  H3,
-  HomeNavBar,
-  InfoText,
-  UnshrinkableDiv,
-  FullScreenColumn,
-} from "../components/shared/styles";
+import { H3, HomeNavBar, FullScreenColumn } from "../components/shared/styles";
 import styled from "styled-components";
-import styles from "../styles/Home.module.css";
-import fs from "fs";
-import path from "path";
-import matter from "gray-matter";
-import router from "next/router";
-import Post from "../components/shared/post";
 import { post, routes, theme } from "../enums";
-import { Section2TopBar as TopBar } from "../components/shared/styles";
-import Back from "../components/shared/back";
-import { sendAnalyticsEvent } from "../lib/google_analytics";
 import { Box, Divider, List, ListItem, Grid } from "@mui/material";
 import Link from "next/link";
+import ExperienceSection from "../components/resume/experienceSection";
 interface BlogProps {
   posts: post[];
 }
@@ -35,10 +17,14 @@ const NavLink = styled.a`
 
 export default function Resume({ posts }: BlogProps) {
   return (
-    <FullScreenColumn>
+    <FullScreenColumn
+      whileInView={{ opacity: 1 }}
+      initial={{ opacity: 0 }}
+      transition={{ duration: 4, type: "spring" }}
+    >
       <HomeNavBar>
         <NavbarTitle>Resume</NavbarTitle>
-        <Link href={routes.home}>
+        <Link style={{ color: "black" }} href={routes.home}>
           <NavbarTitle>Home</NavbarTitle>
         </Link>
       </HomeNavBar>
@@ -82,14 +68,48 @@ export default function Resume({ posts }: BlogProps) {
             <List>
               <ListItem>
                 <p style={{ margin: 0, padding: 0 }}>
-                  - Developed a new feature for the Nimbio platform that allows
-                  users to create custom forms for their organization to use
-                  when collecting data.
+                  - Currently I work as Nimbio's primary backend engineer using
+                  python. My work supports features related to our mobile, web,
+                  and firmware applications.
                 </p>
               </ListItem>
             </List>
           </Grid>
         </Grid>
+        <ExperienceSection
+          title="Lead Software Engineer"
+          company="Ponder"
+          location="Remote"
+          bullets={[
+            "Develop a full redesign of our React Native application using audio recording and playback features",
+            "Collaborate with product team to develop designs and roadmaps",
+            "Lead weekly sprint meetings, manage application deployments, and define development processes",
+            "Implemented deep linking solution for React Native application",
+            "Implemented use of OpenAi library as a resource to support features using Ai speech to text summarization",
+          ]}
+        />
+        <ExperienceSection
+          title="Software Engineer"
+          company="ArchetypeSC Technology Consulting"
+          location="Remote"
+          bullets={[
+            "Develop and manage all aspects of the company's React projects.",
+            "Work with a team to develop features for a travel site built with .NET framework",
+            "Develop features, provide application support, and deploy new versions for a client/'s internal tool built with Angular ",
+            "Provide consulting on technical solutions for the team’s new projects in React",
+          ]}
+        />
+        <ExperienceSection
+          title="Senior Technical Learning Facilitator "
+          company="Trilogy Education Services (2U)"
+          location="Remote"
+          bullets={[
+            "Manage a roster of over 30 students weekly tutorial scheduling. ",
+            "Provide one on one assistance to students learning programming concepts and developing applications",
+            "Completed over 800 tutoring sessions with an average 4.8/5.0 student review rating",
+            "Analyze homework assignments and provide well written critiques as to why the application was successful, what bugs exist and how to implement solutions.",
+          ]}
+        />
       </div>
     </FullScreenColumn>
   );

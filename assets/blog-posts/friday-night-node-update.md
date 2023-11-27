@@ -7,9 +7,9 @@ cover_image: "/images/posts/friday-night-node-update/node.png"
 
 ### It's Friday evening
 
-and part of me wants to be out meeting people and having fun but my recurring desire to adventure out for find social interaction rarely is as fruitful as I would hope. So I am home thinking about how I can improve my personal blog website and aiming for a good nights rest. I love how I can build tools that serve a personal use case such as building a website to process my thoughts and learn more about technology.
+and I am home thinking about how I can improve my personal blog website and aiming for a good nights rest. Exciting times. I love how I can build tools that serve a personal use case such as building a website to process my thoughts and learn more about technology.
 
-The articles I've written so far they are mostly thought experiments about how I would plan and execute a technical project. I believe I enjoy this because I can experience possibilities without having to invest the time to actually required to see the end result. I go through the steps and place myself at the end of the projects timeline, imagine the potential problems, and reflect. This could be applied to running a business, planning a website, or cooking a meal.
+The articles I've written so far are mostly thought experiments about how I would plan and execute a technical project. I believe I enjoy this because I can experience possibilities without having to invest the time to actually required to see the end result. I go through the steps and place myself at the end of the projects timeline, imagine the potential problems, and reflect. This could be applied to running a business, planning a website, or cooking a meal.
 
 Tonight I am going to try something different.
 
@@ -27,6 +27,6 @@ Updating my node version and packages has never been something I looked forward 
 
 The thought of not being stressed out by breaking something is a nice change of pace. The next task on my list is to create a resume page, about page, and post this blog.
 
-This was a fun experiment. I feelx`` I might continue the pattern.
+This was a fun experiment. I feel I might continue the pattern.
 
 Will
