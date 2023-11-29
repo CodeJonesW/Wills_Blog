@@ -18,7 +18,7 @@ const NavLink = styled.a`
 export default function Resume({ posts }: BlogProps) {
   return (
     <FullScreenColumn
-      whileInView={{ opacity: 1 }}
+      animate={{ opacity: 1 }}
       initial={{ opacity: 0 }}
       transition={{ duration: 4, type: "spring" }}
     >
