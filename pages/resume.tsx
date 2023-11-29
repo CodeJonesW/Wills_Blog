@@ -57,10 +57,9 @@ export default function Resume({ posts }: BlogProps) {
             company="Nimbio"
             location="Remote"
             bullets={[
-              "Currently I work as Nimbio's primary backend engineer using python. My work supports features related to our mobile, web, and firmware applications.",
-              "Developed Python backend infrastructure connecting door opening firmware to update live status of gates when moving.",
+              "Developed backend feature connecting door opening firmware to update live status of gates when changing status.",
               "Developed mobile and backend for controlling recurring key access to doors and gates at specific times.",
-              "Lead a successful integration project with an external company allowing for usage of smart locks in our mobile/web apps.",
+              "Lead a successful integration project with an external company allowing for usage of smart locks in mobile/web apps.",
               "Developed many features and bug fixes crossing web, mobile, and backend projects in the last year.",
             ]}
             date={"Oct 2022 - Present"}

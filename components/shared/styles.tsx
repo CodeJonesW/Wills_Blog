@@ -105,11 +105,16 @@ export const ContactContainer = styled(motion.div)`
   justify-content: "center";
   align-items: "center";
 `;
-export const BackArrowContainer = styled(ContactContainer)`
+export const BackArrowContainer = styled(motion.div)`
   padding-top: 3%;
   &:hover {
     cursor: pointer;
   }
+  max-width: 400px;
+  display: flex;
+  flex-direction: row;
+  justify-content: "center";
+  align-items: "center";
 `;
 
 export const BackArrow = styled(motion.i)`
