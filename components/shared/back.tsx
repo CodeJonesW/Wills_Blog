@@ -15,6 +15,7 @@ export default function Back({ themeProp, route = "" }: backProps) {
         animate={{ opacity: 1 }}
         initial={{ opacity: 0 }}
         transition={{ duration: 2, type: "spring" }}
+        style={{ paddingTop: "16px" }}
       >
         <Circle
           style={{

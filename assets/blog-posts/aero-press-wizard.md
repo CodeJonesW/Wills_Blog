@@ -2,12 +2,16 @@
 title: "How to become a wizard with an Aeropress 🧙‍♂️☕️"
 date: "Dec 8, 2022"
 excerpt: "I got rid of my coffee maker."
-cover_image: "/images/posts/aeropress-ai/aeropress.jpg"
+cover_image: "/images/posts/aeropress/aeropress.jpg"
 ---
+
+## Coding and coffee
+
+to me... go hand in hand. And since its a recurring practice why not dial it the execution. Today Im going to write about the aero press and how one can get the optimal coffee expereince.
 
 ## History
 
-The Aeropress is a coffee brewing device invented by Alan Adler, an American inventor and aerodynamics expert, in 2005. Adler was an avid coffee lover and was dissatisfied with the taste and quality of the coffee he brewed at home. He set out to create a coffee maker that was simple to use, easy to clean, and produced high-quality coffee.
+The Aeropress is a coffee brewing device invented by [Alan Adler](https://en.wikipedia.org/wiki/Alan_Adler), an American inventor and aerodynamics expert, in 2005. Adler was an avid coffee lover and was dissatisfied with the taste and quality of the coffee he brewed at home. He set out to create a coffee maker that was simple to use, easy to clean, and produced high-quality coffee.
 
 After several years of experimentation, Adler developed the Aeropress, a unique coffee maker that uses air pressure to extract the full flavor from coffee grounds. The Aeropress consists of a plastic chamber with a metal filter, a rubber plunger, and a coffee scoop. To brew coffee, the user places a filter in the chamber, adds coffee grounds and hot water, stirs, and then presses the plunger down to extract the coffee. The whole process takes just a few minutes and produces a rich, smooth, and full-bodied cup of coffee.
 
@@ -77,7 +81,7 @@ Espresso quickly became popular in Italy and eventually spread to other parts of
 
 The exact origins of coffee drinking are not well-known, but it is believed that people have been consuming coffee for at least 500 years. The first known evidence of coffee drinking comes from the 15th century, when coffee was consumed in the Sufi monasteries of Yemen.
 According to legend, coffee was discovered by a goatherder named Kaldi, who noticed that his goats became more energetic and alert after eating the berries from a certain tree. Kaldi tried the berries himself and found that they had a similar effect on him. He shared the berries with the monks at a nearby monastery, who brewed a drink from the berries and found that it kept them awake and alert during their long hours of prayer.
-From Yemen, the use of coffee spread to other parts of the Middle East and eventually to Europe and the Americas. Today, coffee is one of the most popular beverages in the world, consumed by millions of people every day.
+From Yemen, the use of coffee spread to other parts of the Middle East and eventually to Europe and the Americas. Today, coffee is one of the most popular beverages in the world, consumed by millions of people every day. [source](https://www.ncausa.org/about-coffee/history-of-coffee)
 
 ## Enjoy
 
