@@ -75,7 +75,7 @@ export default function Home({ posts }: BlogProps) {
         >
           <HomeNavBar>
             <Div>
-              <TopLeftTitle>Will's Blog</TopLeftTitle>
+              <TopLeftTitle>{"Will's Blog"}</TopLeftTitle>
             </Div>
             <ContactContainer>
               <Link style={{ color: "black" }} href="/about">
