@@ -23,12 +23,12 @@ export default function Resume({ posts }: BlogProps) {
       transition={{ duration: 4, type: "spring" }}
     >
       <HomeNavBar>
-        <NavbarTitle>Resume</NavbarTitle>
+        <NavbarTitle>Will Jones</NavbarTitle>
         <Link style={{ color: "black" }} href={routes.home}>
           <NavbarTitle>Home</NavbarTitle>
         </Link>
       </HomeNavBar>
-      <div>
+      <div style={{ maxWidth: "1350px" }}>
         <div
           style={{
             display: "flex",
@@ -36,9 +36,7 @@ export default function Resume({ posts }: BlogProps) {
             flexDirection: "row",
             justifyContent: "center",
           }}
-        >
-          <h2>William Jones</h2>
-        </div>
+        ></div>
         <div
           style={{
             display: "flex",
