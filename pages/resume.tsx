@@ -23,12 +23,12 @@ export default function Resume({ posts }: BlogProps) {
       transition={{ duration: 4, type: "spring" }}
     >
       <HomeNavBar>
-        <NavbarTitle>Resume</NavbarTitle>
+        <NavbarTitle>Will Jones</NavbarTitle>
         <Link style={{ color: "black" }} href={routes.home}>
           <NavbarTitle>Home</NavbarTitle>
         </Link>
       </HomeNavBar>
-      <div>
+      <div style={{ maxWidth: "1350px" }}>
         <div
           style={{
             display: "flex",
@@ -36,9 +36,7 @@ export default function Resume({ posts }: BlogProps) {
             flexDirection: "row",
             justifyContent: "center",
           }}
-        >
-          <h2>William Jones</h2>
-        </div>
+        ></div>
         <div
           style={{
             display: "flex",
@@ -57,9 +55,9 @@ export default function Resume({ posts }: BlogProps) {
             company="Nimbio"
             location="Remote"
             bullets={[
-              "Developed backend feature connecting door opening firmware to update live status of gates when changing status.",
+              "Developed backend feature to update status of gates in real time.",
               "Developed mobile and backend for controlling recurring key access to doors and gates at specific times.",
-              "Lead a successful integration project with an external company allowing for usage of smart locks in mobile/web apps.",
+              "Lead integration project with an external company allowing for usage of smart locks in mobile/web apps.",
               "Developed many features and bug fixes crossing web, mobile, and backend projects in the last year.",
             ]}
             date={"Oct 2022 - Present"}

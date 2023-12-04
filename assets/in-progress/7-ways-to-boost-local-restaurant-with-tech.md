@@ -7,11 +7,7 @@ cover_image: "/images/posts/7-ways-to-boost-local-restaurant-with-tech/restauran
 
 ## Maximizing Efficiency with Automation
 
-In today's digital world, technology plays a critical role in the success of small businesses. By adopting the right technology solutions, small businesses can improve their operations, increase their reach, and compete with larger companies.
-
-One of the key benefits of using technology in small businesses is the ability to automate and streamline processes. With the help of technology, small businesses can reduce manual tasks, minimize errors, and save time. For example, a small retail store can use a point-of-sale system to manage sales transactions, inventory, and customer data, which can improve efficiency and accuracy in the front and back of the house. A small restaurant can use an online ordering system to accept orders from customers, which can reduce wait times and improve the customer experience.
-
-Another benefit of technology in small businesses is the ability to expand their reach and customer base. With the help of the internet and social media, small businesses can connect with customers and potential customers anywhere in the world. For example, a small bakery can use a website and social media to showcase their products and accept orders online, which can increase their visibility and sales.
+In today's digital world, technology plays a critical role in the success of small businesses. By adopting the right technology solutions, small businesses can improve their operations, increase their reach, and compete with larger companies. I have been very curious about how one would streamline the process of creating an online ordering menu specifically for restaurants.
 
 ### Here are some potential integration ideas for an online ordering menu that could help a restaurant succeed:
 
