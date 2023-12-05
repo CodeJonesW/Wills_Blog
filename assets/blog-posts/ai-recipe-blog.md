@@ -139,9 +139,46 @@ Time Estimates
 
 ---
 
-## Total estimated time for the entire project
+## Total estimated time and cost
 
 Approximately 1,800 hours or 45 weeks. This estimate is based on an average work week of 40 hours and the time allocations provided for each task. Actual hours may vary based on team efficiency, unforeseen challenges, and project scope adjustments.
+
+To estimate the cost of AWS bills for the project over its 45-week timeline, we need to consider several factors. AWS pricing is complex and varies based on the services used, the scale of those services, and the region in which they are deployed. For a project like an AI-driven recipe blog, the following AWS services might be utilized:
+
+EC2 (Elastic Compute Cloud): For running servers.
+RDS (Relational Database Service): For the PostgreSQL database.
+S3 (Simple Storage Service): For storing static files like images.
+Route 53: For DNS and domain management.
+Elastic Load Balancing: To distribute traffic.
+Lambda: For serverless functions.
+CloudFront: For content delivery network services.
+AWS Support Plan: For technical support.
+
+### Assuming a moderate usage scenario for a medium-traffic blog, let's make some ballpark estimates:
+
+EC2: A t3.medium instance for 24/7 operation might cost around $70/month.
+RDS: A db.t3.medium instance, roughly $100/month.
+S3: Costs depend heavily on usage but let's estimate $30/month for moderate usage.
+Route 53: Around $1/month for domain management, plus a small charge per DNS query.
+Elastic Load Balancing: Around $20/month assuming moderate traffic.
+Lambda: Charges are per-request and compute time, but for moderate usage, let's estimate $20/month.
+CloudFront: Costs vary, but for moderate traffic, let's estimate $50/month.
+AWS Support Plan: The "Developer" plan is $29/month.
+Now, let's calculate the total estimated monthly cost and then extend it to the project timeline of 45 weeks:
+
+## Total Monthly Cost
+
+A minimal setup with a small to medium-sized EC2 instance, a corresponding RDS instance, and moderate use of S3 might cost around $100 to $200 per month. However, this is a very rough estimate and can vary significantly.
+
+The estimated AWS cost for supporting the AI-driven recipe blog over a 45-week period could range from approximately $1,038 to $2,077.
+
+## What if there is no traffic?
+
+In this scenario, the cost would likely skew towards the lower end of the previously estimated range ($100 per month) or even less, as you wouldn't need a highly capable infrastructure for handling traffic. However, some costs, like those for database storage and minimal server requirements, remain unavoidable.
+
+Let's recalculate the total cost for a 45-week duration with a lower monthly estimate, assuming minimal traffic-related expenses.
+
+With no traffic, the estimated AWS cost for supporting the AI-driven recipe blog over a 45-week period would be approximately $1,038.
 
 ## Do I actually think this is viable?
 
