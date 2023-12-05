@@ -11,7 +11,7 @@ Today's thought experiment will be about an AI blog that requests information fr
 
 ### What sets this aside from other blogs?
 
-The idea is to have an AI create new unique recipes from the information stored in books. Obviously the recipes must be delicious. The current form of the idea no one would be cooking the recipes before being posted which invites a fair bit of risk..
+The idea is to have an AI create new unique recipes from the information stored in books. Obviously the recipes must be delicious. The current form of the idea has no one cooking the recipes before being posted which invites a fair bit of risk.. or maybe excitement?
 
 The custom GPT would be built upon cooking books that I pick out by hand and will need to be continually fed new information in order to stay interesting and unique for extended periods of time.
 
@@ -34,7 +34,7 @@ The custom GPT would be built upon cooking books that I pick out by hand and wil
 
 ### Server Infrastructure
 
-Cloud Hosting: Utilize a cloud service provider like AWS for hosting our server. This provides scalability and reliability.
+Cloud Hosting: Utilize a cloud service provider like AWS for hosting our server.
 
 ### API Integration
 
@@ -42,11 +42,11 @@ Integrate with OpenAI's API to access our custom GPT model and develop API endpo
 
 ### Database
 
-Set up PostgreSQL
+Set up database using PostgreSQL
 
 ### Custom GPT
 
-Need to train a custom GPT model on cooking books
+Train a custom GPT model on cooking books
 
 ### Admin Panel
 
