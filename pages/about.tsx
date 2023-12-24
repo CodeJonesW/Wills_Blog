@@ -28,6 +28,15 @@ const Section2 = styled(FullScreenColumn)`
   background-color: black;
 `;
 
+const section3 = styled(FullScreenColumn)`
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  background-color: black;
+`;
+
 export const Info: NextPage = () => {
   const router = useRouter();
 
