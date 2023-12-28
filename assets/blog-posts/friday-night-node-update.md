@@ -19,7 +19,7 @@ A new style of writing Im calling a technical reflection. (working title) Simply
 
 I am doing website maintenance on a few personal domains I have had hosted for some time. I would like to shut down one react project and move my next.js project under the react project's domain. Additionally the Nextx.js project has not been touched in about a year so updates and changes are inevitable.
 
-I needed to transfer content on website 'A' to domain 'B' and take down the current content being served by domain B. I was pleasantly surprised by the lack of pain. The first few times setting up DNS records was not intuitive but now having done it a few times its not as intimidating.
+I needed to transfer content on website 'A' to domain 'B' and take down the current content being served by domain B. I was pleasantly surprised by the lack of pain.
 
 I needed to update my computer's node version so that I could update the Next.js and subsequently start to use material UI. The joy of updates, always one thing leading to another. I want to use MUI's grid component because I'm tired of setting max width values for things while trying to get responsive screens to work on everything from Mobile to a big desktop screens. The more time I spend programming the happier I am too assign unnecessary complexity to popular solutions.
 

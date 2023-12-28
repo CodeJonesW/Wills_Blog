@@ -7,7 +7,9 @@ cover_image: "/images/posts/ai-recipe-blog/ai-recipe.png"
 
 ## AI Daily Recipe Blog
 
-Today's thought experiment will be about an AI blog that requests information from an OpenAi GPT and writes daily recipe articles. I am imagining a lively voice that speaks about its sources and conveys an excitement for cooking. Our Ai friend writes clear concise recipes with minimal fluff.
+Today's thought experiment will be about an AI blog that requests information from an OpenAi GPT and writes daily recipe articles. I am imagining a lively voice that speaks about its sources and conveys an excitement for cooking. Our Ai friend writes clear concise recipes with minimal fluff. The inspiration for this idea comes from the many recipes I find on google that are often crowded with extra information in order to make the user view more advertisements 😕. My goal is to work through the design of a scalable system that would support such a product and to explore the viability of the idea.
+
+A critical decision in this project would be... is the blog going to generate a recipe each day, each hour, or whenever the user wants? The choice significantly changes the product and expectations around costs. As we continue to explore the idea we will assume that the blog will generate a recipe each day.
 
 ### What sets this aside from other blogs?
 
@@ -81,19 +83,21 @@ Load Balancing: Prepare for load balancing to handle high traffic. Auto-Scaling:
 ## What technologies will be used?
 
 - Backend: Node.js, Express.js, PostgreSQL
-- Frontend: React.js, Redux, CSS
+- Frontend: React, Redux
 - API: OpenAI API
 - Hosting: AWS
 
-## how will this sustain itself?
+## How will this sustain itself?
 
-Subscription Model: Offer premium content or features to subscribers, such as exclusive recipes, advanced search options, personalized recipe recommendations, or ad-free browsing.
+A few potential ideas are
 
-Advertising: Display targeted advertisements on the blog. This could include banner ads, sponsored content, or affiliate marketing, where you earn a commission for promoting kitchen tools, ingredients, or related products.
+- Subscription Model: Offer ablity to generate recipes on command for a monthly fee.
 
-Sponsored Content and Partnerships: Collaborate with food brands, kitchen appliance manufacturers, or culinary schools for sponsored posts or content series. This could involve using specific products in your AI-generated recipes or co-branding certain blog sections.
+- Advertising: Display targeted advertisements on the blog. This could include banner ads, sponsored content, or affiliate marketing, where you earn a commission for promoting kitchen tools, ingredients, or related products. This is against my original idea of providing an ad free experience but it is an option.
 
-Cookbooks and E-books: Compile the most popular AI-generated recipes into digital or printed cookbooks. These could be themed (e.g., seasonal recipes, special diets) and sold online.
+Sponsored Content and Partnerships: Collaborate with food brands, kitchen appliance manufacturers, or culinary schools for sponsored posts or content series. This would require a substantial amount of work to build up a large enough audience to attract sponsors.
+
+Cookbooks and E-books: Compile the most popular AI-generated recipes into digital or printed cookbooks. These could be themed (e.g., seasonal recipes, special diets) and sold online. This would have to come later in the products life after enough quality recipes have been generated.
 
 ---
 
@@ -156,15 +160,16 @@ AWS Support Plan: For technical support.
 
 ### Assuming a moderate usage scenario for a medium-traffic blog, let's make some ballpark estimates:
 
-EC2: A t3.medium instance for 24/7 operation might cost around $70/month.
-RDS: A db.t3.medium instance, roughly $100/month.
-S3: Costs depend heavily on usage but let's estimate $30/month for moderate usage.
-Route 53: Around $1/month for domain management, plus a small charge per DNS query.
-Elastic Load Balancing: Around $20/month assuming moderate traffic.
-Lambda: Charges are per-request and compute time, but for moderate usage, let's estimate $20/month.
-CloudFront: Costs vary, but for moderate traffic, let's estimate $50/month.
-AWS Support Plan: The "Developer" plan is $29/month.
-Now, let's calculate the total estimated monthly cost and then extend it to the project timeline of 45 weeks:
+| Service                          | Description                     | Cost/Month |
+| :------------------------------- | :------------------------------ | :--------- |
+| **EC2**                          | t3.medium instance              | $70        |
+| **RDS**                          | db.t3.medium instance           | $100       |
+| **S3**                           | Moderate usage                  | $30        |
+| **Route 53**                     | Domain management + DNS queries | $1         |
+| **Elastic Load Balancing**&emsp; | Moderate traffic                | $20        |
+| **Lambda**                       | Moderate usage                  | $20        |
+| **CloudFront**                   | Moderate traffic                | $50        |
+| **AWS Support Plan**             | "Developer" plan                | $29        |
 
 ## Total Monthly Cost
 
@@ -174,16 +179,10 @@ The estimated AWS cost for supporting the AI-driven recipe blog over a 45-week p
 
 ## What if there is no traffic?
 
-In this scenario, the cost would likely skew towards the lower end of the previously estimated range ($100 per month) or even less, as you wouldn't need a highly capable infrastructure for handling traffic. However, some costs, like those for database storage and minimal server requirements, remain unavoidable.
-
-Let's recalculate the total cost for a 45-week duration with a lower monthly estimate, assuming minimal traffic-related expenses.
-
-With no traffic, the estimated AWS cost for supporting the AI-driven recipe blog over a 45-week period would be approximately $1,038.
+In this scenario, the cost would likely skew towards the lower end of the previously estimated range ($100 per month) or even less, as you wouldn't need a highly capable infrastructure for handling traffic. However, some costs, like those for database storage and minimal server requirements, remain unavoidable. In an effort to support desiging scalable systems, we will assume that the blog will have some traffic.
 
 ## Do I actually think this is viable?
 
-There is a large concern around actual quality of recipes that are generated. Lots of testing will have to happen before this is a viable product. I think that the idea is interesting and could be a fun project to work on. I am not sure if it is a viable business idea. Instead of developing this out as we have discussed, testing recipe generation by the custom GPT and seeing if they are quality will be a real eye opener.
-
-Maybe I will give testing the custom recipe GPT a try! I do not see myself investing a year of life into this project although I do think it would be fun to work on.
+There is a large concern around actual quality of recipes that are generated. Lots of testing will have to happen before this is a viable product. I think that the idea is interesting and could be a fun project to work on. I am not sure if it is a viable business idea. Instead of developing this out as we have discussed, testing recipe generation by the custom GPT and seeing if they are quality will be a real eye opener. As with many tech product ideas it would be wise to ask as many people about the idea as possible and see if there is a market for it. My intuition says that people would be skeptical of the quality of the recipes and would not be willing to pay for a subscription. I think that the idea is interesting and could be a fun project to work on. I am not sure if it is a viable business idea.
 
 Will
