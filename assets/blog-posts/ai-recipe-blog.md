@@ -95,9 +95,9 @@ A few potential ideas are
 
 - Advertising: Display targeted advertisements on the blog. This could include banner ads, sponsored content, or affiliate marketing, where you earn a commission for promoting kitchen tools, ingredients, or related products. This is against my original idea of providing an ad free experience but it is an option.
 
-Sponsored Content and Partnerships: Collaborate with food brands, kitchen appliance manufacturers, or culinary schools for sponsored posts or content series. This would require a substantial amount of work to build up a large enough audience to attract sponsors.
+- Sponsored Content and Partnerships: Collaborate with food brands, kitchen appliance manufacturers, or culinary schools for sponsored posts or content series. This would require a substantial amount of work to build up a large enough audience to attract sponsors.
 
-Cookbooks and E-books: Compile the most popular AI-generated recipes into digital or printed cookbooks. These could be themed (e.g., seasonal recipes, special diets) and sold online. This would have to come later in the products life after enough quality recipes have been generated.
+- Cookbooks and E-books: Compile the most popular AI-generated recipes into digital or printed cookbooks. These could be themed (e.g., seasonal recipes, special diets) and sold online. This would have to come later in the products life after enough quality recipes have been generated.
 
 ---
 
