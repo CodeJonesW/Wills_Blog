@@ -83,7 +83,7 @@ Load Balancing: Prepare for load balancing to handle high traffic. Auto-Scaling:
 ## What technologies will be used?
 
 - Backend: Node.js, Express.js, PostgreSQL
-- Frontend: React.js, Redux, CSS
+- Frontend: React, Redux
 - API: OpenAI API
 - Hosting: AWS
 
@@ -91,13 +91,13 @@ Load Balancing: Prepare for load balancing to handle high traffic. Auto-Scaling:
 
 A few potential ideas are
 
-- Subscription Model: Offer premium content or features to subscribers, such as exclusive recipes, advanced search options, personalized recipe recommendations, or ad-free browsing.
+- Subscription Model: Offer ablity to generate recipes on command for a monthly fee.
 
 - Advertising: Display targeted advertisements on the blog. This could include banner ads, sponsored content, or affiliate marketing, where you earn a commission for promoting kitchen tools, ingredients, or related products. This is against my original idea of providing an ad free experience but it is an option.
 
 Sponsored Content and Partnerships: Collaborate with food brands, kitchen appliance manufacturers, or culinary schools for sponsored posts or content series. This would require a substantial amount of work to build up a large enough audience to attract sponsors.
 
-Cookbooks and E-books: Compile the most popular AI-generated recipes into digital or printed cookbooks. These could be themed (e.g., seasonal recipes, special diets) and sold online.
+Cookbooks and E-books: Compile the most popular AI-generated recipes into digital or printed cookbooks. These could be themed (e.g., seasonal recipes, special diets) and sold online. This would have to come later in the products life after enough quality recipes have been generated.
 
 ---
 
