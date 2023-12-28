@@ -7,7 +7,9 @@ cover_image: "/images/posts/ai-recipe-blog/ai-recipe.png"
 
 ## AI Daily Recipe Blog
 
-Today's thought experiment will be about an AI blog that requests information from an OpenAi GPT and writes daily recipe articles. I am imagining a lively voice that speaks about its sources and conveys an excitement for cooking. Our Ai friend writes clear concise recipes with minimal fluff. The inspiration for this idea comes from the many recipes I find on google that are often crowded with extra information in order to make the user view more advertisements 😕.
+Today's thought experiment will be about an AI blog that requests information from an OpenAi GPT and writes daily recipe articles. I am imagining a lively voice that speaks about its sources and conveys an excitement for cooking. Our Ai friend writes clear concise recipes with minimal fluff. The inspiration for this idea comes from the many recipes I find on google that are often crowded with extra information in order to make the user view more advertisements 😕. My goal is to work through the design of a scalable system that would support such a product and to explore the viability of the idea.
+
+A critical decision in this project would be... is the blog going to generate a recipe each day, each hour, or whenever the user wants? The choice significantly changes the product and expectations around costs. As we continue to explore the idea we will assume that the blog will generate a recipe each day.
 
 ### What sets this aside from other blogs?
 
@@ -178,8 +180,6 @@ The estimated AWS cost for supporting the AI-driven recipe blog over a 45-week p
 ## What if there is no traffic?
 
 In this scenario, the cost would likely skew towards the lower end of the previously estimated range ($100 per month) or even less, as you wouldn't need a highly capable infrastructure for handling traffic. However, some costs, like those for database storage and minimal server requirements, remain unavoidable. In an effort to support desiging scalable systems, we will assume that the blog will have some traffic.
-
-A critical decision in this project would be... is the blog going to generate a recipe each day, each hour, or whenever the user wants? The choice significantly changes the product and expectations around costs.
 
 ## Do I actually think this is viable?
 
