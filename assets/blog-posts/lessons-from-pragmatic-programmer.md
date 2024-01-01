@@ -16,7 +16,7 @@ This post will be short and sweet. I personally enjoyed [The Pragmatic Programme
 2. Project psychology - Don't let broken windows go unrepaired - It will reinforce the patterns throughout the team and start the decline
 3. Remember the big picture
 4. Make quality a requirements issue
-5. Invest regularly in knowledge portfolio Technical books Non tech / soft skills communicating with people Stay current read blogs 1 new programming language per year
+5. Invest regularly in knowledge portfolio. Technical books, Non tech / soft skills, communicating with people. Stay current, read blogs, learn 1 new programming language per year.
 6. Use the reoccuring why's to drill down into problems
 7. Communicate via documentation Embrace docs Know what you want to say Choose your moment Make it look good Involve audience Get back to people Keep code and docs together
 8. Emails are forever give them attention and care
