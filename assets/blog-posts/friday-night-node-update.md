@@ -23,7 +23,7 @@ I needed to transfer content on website 'A' to domain 'B' and take down the curr
 
 I needed to update my computer's node version so that I could update the Next.js and subsequently start to use material UI. The joy of updates, always one thing leading to another. I want to use MUI's grid component and simplify my solution towards responsive screens.
 
-In previous years updating my node version and packages has never been something I looked forward to. I was happy to find that using nvm to install the recommended version of node went smoothly.
+Updating my node version and packages has never been something I look forward to. I was happy to find that using nvm to install the recommended version of node went smoothly.
 
 The next task on my list is to create a resume page, about page, and post this blog.
 
