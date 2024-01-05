@@ -19,13 +19,13 @@ A new style of writing Im calling a technical reflection. (working title) Simply
 
 I am doing website maintenance on a few personal domains I have had hosted for some time. I would like to shut down one react project and move my next.js project under the react project's domain. Additionally the Nextx.js project has not been touched in about a year so updates and changes are inevitable.
 
-I needed to transfer content on website 'A' to domain 'B' and take down the current content being served by domain B. I was pleasantly surprised by the lack of pain.
+I needed to transfer content on website 'A' to domain 'B' and take down the current content being served by domain B. I was pleasantly surprised by the lack of pain. Vercel made it easy to grab my DNS records and update in google domains.
 
-I needed to update my computer's node version so that I could update the Next.js and subsequently start to use material UI. The joy of updates, always one thing leading to another. I want to use MUI's grid component because I'm tired of setting max width values for things while trying to get responsive screens to work on everything from Mobile to a big desktop screens. The more time I spend programming the happier I am too assign unnecessary complexity to popular solutions.
+I needed to update my computer's node version so that I could update the Next.js and subsequently start to use material UI. The joy of updates, always one thing leading to another. I want to use MUI's grid component and simplify my solution towards responsive screens.
 
-Updating my node version and packages has never been something I looked forward to. I was happy to find that I was able to use NVM to install the recommended version of node without an issue.
+Updating my node version and packages has never been something I look forward to. I was happy to find that using nvm to install the recommended version of node went smoothly.
 
-The thought of not being stressed out by breaking something is a nice change of pace. The next task on my list is to create a resume page, about page, and post this blog.
+The next task on my list is to create a resume page, about page, and post this blog.
 
 This was a fun experiment. I feel I might continue the pattern.
 
