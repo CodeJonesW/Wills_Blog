@@ -5,7 +5,7 @@ excerpt: "Loading data in chunks to support search functionality."
 cover_image: "/images/posts/loading-data/loading-data.webp"
 ---
 
-Context: Let's say I have a React web app that allows users to view different large lists of data. The data retrieved from an API and we could imagine it be an array of objects with keys and values describing a user. The user has the ability to search the list of data and show individual results. In order for the search to work efficently and quickly all the data needs to be populated into the web app state. After some time the web app grows and the data in the list expands.
+Context: Let's say I have admin interface that allows users to view different large lists of data. The data is retrieved from an API and we could imagine it be an array of objects and each object has keys and values describing a person. The user has the ability to search the list of data and show individual results. In order for the search to work efficently and quickly all the data needs to be populated into the web app state. After some time the web app grows and the data in the list expands.
 
 I recently had to deal with an issue where the data in situation I described above began to exceed the designed payload limit of the server response. In order to support the front end UI, I updated the route to use pagination on the data and implemented pagination ui on the front end.
 

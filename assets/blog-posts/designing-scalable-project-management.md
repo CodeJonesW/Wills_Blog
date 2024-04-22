@@ -1,90 +1,34 @@
 ---
-title: "How to design a scalable project management system for software development teams"
+title: "Managing Software Development Projects and Small Teams"
 date: "Dec 29, 2022"
-excerpt: "From Small Teams to Big Projects: A Guide to Designing a Scalable Project Management System"
-cover_image: "/images/posts/project-management/software_dev_team.png"
+excerpt: ""
+cover_image: "/images/posts/project-management/software_dev_team.webp"
 ---
 
-Effective project management is crucial for the success of any software development team. A scalable project management system can help teams stay organized, track progress, and identify and resolve issues in a timely manner. In this blog, we'll explore how to design a scalable project management system for software development teams, including key factors to consider and best practices for implementation. Whether you're working with a small team or a large one, these tips can help you ensure that your project management system is effective and well-suited to your needs.
+Imagine a group of talented musicians, each skilled in their own right, who come together to form an orchestra. However, instead of working from a shared, carefully composed piece of music, they each play their favorite songs, in their preferred styles and at their own tempos. The concert hall is filled with sound, but instead of a harmonious symphony, there's a cacophony of disjointed melodies. No conductor is there to guide them, no common score to follow. The musicians, despite their individual talents, fail to create something beautiful together. This scenario mirrors a software team not communicating. The a lack of organization and coordination turns potential harmony into disorderly noise.
 
-## Things to Consider
+Whether one is a solo developer, 5 man team, of 100 man team, effectively planning tasks is crucial for the success of the endeavor. Designing a project management system is a difficult task because different team sizes call for different patterns and procedures. From what I have seen in the wild the smaller the team the less procedure and patterns. I would vote for using patterns even when working alone because it can provide a metaphorical filing cabinet to look up past events and changes even when the software developer has trouble remembering the exact issue or change. Using patterns when working alone will also have future benefits when/if the team size changes.
 
-There are several main factors to consider when designing a scalable project management system for a software development team:
+In my experience getting a group of people to suddenly change their develoment patterns can be tough. Establishing patterns early the projects history and onboarding of new team members with accesible and correct information is important to keep consistency high through various aspects of the software project.
 
-1. Team size and structure: The size and structure of the team will influence the type of project management system that is appropriate. For example, a large team may require a more complex system with more features, while a small team may be able to get by with a simpler system.
-2. Project complexity: The complexity of the project will also impact the project management system. A simple project may only require a basic task management tool, while a more complex project may require a system with more advanced features such as resource and time tracking, budget management, and risk assessment.
-3. Team workflow and processes: It is important to consider the team's existing workflow and processes when designing a project management system. The system should support and enhance the team's existing processes, rather than requiring them to change their workflow to fit the system.
-4. Collaboration and communication: A project management system should facilitate effective collaboration and communication among team members. This may include features such as shared calendars, task assignments, and real-time communication tools.
-5. Scalability: The project management system should be able to accommodate the team as it grows and the project evolves. This may involve adding new features or integrating with other tools as needed.
-6. Cost and resources: The cost and resources required to implement and maintain the project management system should be considered. It is important to choose a system that is within the team's budget and that does not require a significant investment of time and effort to set up and maintain.
+In an early stage startup it makes sense to begin with the simplest system and then make additions and improvements as the team grows.
 
-By considering these factors, teams can choose a project management system that is well-suited to their specific needs and goals, and that can scale with the team as it grows and the project evolves.
+## Things to Consider for Small Team Project Management
 
-## Sprints
+1. Kanban-style task tracker and Sprints
+2. Issue reporting, tracking
+3. Tagging code changes to issues and branch names
+4. Code Releases
+5. Documentation
 
-In Agile software development, a sprint is a set period of time during which a specific set of work, known as the sprint backlog, is completed. The length of a sprint is determined by the team and is typically between one and four weeks.
+A Kanban-style task tracker is a tool that allows teams to track and manage their work using a visual representation of their tasks. It typically consists of a board with columns that represent different stages of the work process and cards that represent individual tasks. Typical columns include To Do, In Progress, Done, Blocked, Review, Approved, and Live. Additional columns may be added depending on the specific needs of the team and the project.
 
-There are pros and cons to having weekly sprints versus biweekly sprints.
+Using this style task tracker creates an organized todo list for developers and provide visibility into task progress for the team. Teams can decide on sprint length and plan tasks accordingly. I prefer bi weekly sprints because it gives me enough time to complete tasks and also allows for some flexibility in case of unexpected issues. This also prevents to many or to few tasks from being assigned to a sprint.
 
-Pros of weekly sprints:
+Issue reporting and tracking is important for keeping track of bugs and feature requests. This can be done using a tool like Jetbrains Space Issues or Github Issues. Tagging code changes to issues and branch names can help keep track of what changes are being made and why. When a bug occurs, it is easier to track down the origin and fix it. This can also provide context around the original change and provide perspective so that best decisions can be make in regards to the fix.
 
-- Faster feedback and adaptation: With shorter sprints, there is less time for work to go off track or for changes in priorities to occur. This means that teams can get feedback on their work more quickly and can adapt their plans accordingly.
-- Increased focus and productivity: Short sprints can help teams stay focused on their work and avoid distractions. This can lead to increased productivity as teams are able to complete more work in a shorter period of time.
-- Better coordination with external stakeholders: If a team is working closely with external stakeholders or partners, shorter sprints can help ensure that everyone is on the same page and can make adjustments to their plans as needed.
+When a team member creates a branch or a merge request I prefer the pattern username/issue-#. When looking back at solved issues to find changes searching the ticket and having direct links to the code changes is very helpful. This also helps to keep the branches organized and easy to find.
 
-Cons of weekly sprints:
+When it is time for a release all the code changes above can be linked in the release merge request and provide a nice summary of the changes that are being released and can easily be copied into a release notes document for the internal team.
 
-- Higher overhead and coordination costs: Shorter sprints may require more frequent planning and review meetings, which can increase the overhead and coordination costs for the team.
-- Greater risk of burnout: With shorter sprints, team members may feel pressure to work longer hours or take on more work in order to meet their commitments. This can lead to burnout and may negatively impact team morale.
-
-Pros of biweekly sprints:
-
-- Lower overhead and coordination costs: Biweekly sprints may require fewer planning and review meetings, which can reduce the overhead and coordination costs for the team.
-- More time for deep work: Biweekly sprints allow team members more time to focus on their work and engage in deep, focused work without the pressure of a shorter timeline. This can lead to higher quality work and increased innovation.
-- Reduced risk of burnout: With longer sprints, team members may have more time to rest and recharge between sprints, reducing the risk of burnout.
-
-Cons of biweekly sprints:
-
-- Slower feedback and adaptation: With longer sprints, there is more time for work to go off track or for changes in priorities to occur. This means that it may take longer for teams to get feedback on their work and adapt their plans accordingly.
-- Reduced focus and productivity: Longer sprints may lead to reduced focus and productivity as team members become less focused on their work and more prone to distractions.
-- Poor coordination with external stakeholders: If a team is working closely with external stakeholders or partners, longer sprints may make it more difficult to coordinate plans and make adjustments as needed.
-
-Ultimately, the decision of whether to use weekly or biweekly sprints will depend on the specific needs and goals of the team and the project. It may be helpful for teams to experiment with different sprint lengths to find the one that works best for them.
-
-## Task Tracking
-
-When managing tasks during sprints teams often use a Kanban-style task tracker.
-
-A Kanban-style task tracker is a tool that allows teams to track and manage their work using a visual representation of their tasks. It typically consists of a board with columns that represent different stages of the work process and cards that represent individual tasks.
-
-Here are some common columns that may be included in a Kanban-style task tracker:
-
-- To Do: This column represents tasks that have not yet been started.
-- In Progress: This column represents tasks that are currently being worked on.
-- Done: This column represents tasks that have been completed.
-- Blocked: This column represents tasks that are unable to be worked on due to some kind of obstacle or issue.
-- Review: This column represents tasks that are ready for review by a team member or manager.
-- Approved: This column represents tasks that have been approved and are ready to be implemented.
-- Live: This column represents tasks that have been implemented and are live in the product or system.
-
-Additional columns may be added depending on the specific needs of the team and the project. For example, a team may want to include a column for tasks that are waiting on external dependencies, or a column for tasks that require additional testing or QA.
-
-By using a Kanban-style task tracker, teams can get a clear visual representation of their work and track the progress of tasks as they move through different stages of the work process. This can help teams stay organized, identify bottlenecks, and improve their workflow.
-
-As a software developer, I have found that being able to look at prior weekly sprints helps me understand how I am progressing over time. Each week, I review the tasks that I have completed as well as any issues or challenges that I have encountered. By looking at the tasks and issues from previous weeks, I am able to see how my work has evolved and identify any patterns or trends.
-
-For example, I may notice that I am consistently completing a certain type of task faster than others, or that I am encountering the same types of issues repeatedly. This information can help me understand where I am excelling and where I may need to focus my efforts in order to improve.
-
-Overall, being able to review my progress on a weekly basis has been a valuable tool for helping me understand how I am progressing over time and identify areas for improvement. It has allowed me to stay on track and ensure that I am meeting my goals and objectives as a software developer.
-
-## Document your Processes
-
-Creating detailed documentation can be an effective way to make processes clear and onboard new members to a team. By documenting processes, teams can provide clear and concise instructions on how to complete tasks and accomplish goals a standardized fashion. This can help new team members understand their roles and responsibilities and get up to speed more quickly. Detailed documentation can also help existing team members refresh their memory on specific processes and ensure that everyone is on the same page.
-
-## Involve the Team
-
-Consider sending group message or creating a channel to asynchronously gather input from team members on what they need from the system and how it should work.
-
-## Conclusion
-
-In conclusion, designing a scalable project management system for software development teams is crucial for ensuring that the team is able to meet its goals and deliver high-quality software. There are several key factors to consider, including team size and structure, project complexity, team workflow and processes, collaboration and communication, and scalability. By taking the time to carefully consider these factors and choose a project management system that meets the team's specific needs and goals, teams can improve their productivity and efficiency, and better manage the complexities of software development.
+Finally regardless of the patterns a team decides to use, documentation is crucial. Simple documentation around these patterns can help new team members get up to speed quickly and provide a reference for existing team members.
