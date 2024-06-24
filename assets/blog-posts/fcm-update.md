@@ -25,7 +25,7 @@ There are at least two ways to do this in my case. Either update the http reques
 
 ##### Summary
 
-Overall this was a fairly simple process but a requirement for continuing to use FCM. Writing unit tests to confirm each change was a critical part being confident in my work. When initially writing the code it is a great way to test actual apis supported by test instances and mock data. Once Ive done some testing and either have sourced the response data types from documentation or actual experience I can then mock the responses in order to not call the api every time I run unit tests. Leaving a flag can be useful to switch between the two modes.
+Overall this was a fairly simple process but a requirement for continuing to use FCM. Writing unit tests to confirm each change was a critical part being confident in my work, When initially writing code involving http requests creating tests is a great way to test actual apis and improve ones understanding of the data structure returned. Sometimes documentation will provide this accurately but it you cannot argue with the actual data.
 
 Resources
 
