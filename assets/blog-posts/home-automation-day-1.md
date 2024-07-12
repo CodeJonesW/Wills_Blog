@@ -22,16 +22,16 @@ There are several hardware components that will be required to complete the proj
 
 Some other components that will be required are
 
-- Magnetic Contact Switch11
-- Ultrasonic Distance Sensor
-- Passive Infrared Sensor
+- [Magnetic Contact Switch](https://www.adafruit.com/product/375)
+- [Ultrasonic Distance Sensor](https://www.sparkfun.com/products/15569)
+- [Passive Infrared Sensor](https://chicagodist.com/products/adjustable-infrared-pir-motion-sensor)
 - Hue Lightstrip Plus Base Kit
 - Hue Starter Kit
-- Raspberry Pi Camera Module 21
+- [Raspberry Pi Camera Module 21](https://www.raspberrypi.com/products/camera-module-v2/)
 - Female-to-Female Jumper Wires13
 - Optional - Solderless Headers for Pi Zero W14
 
-I already have a raspberry pi 3 model b but the book says a minimum of 4 model b + so I ordered a Raspberry Pi 5 - 8GB which is the best option at the moment.
+I already have a raspberry pi 3 model b but the book says a minimum of 4 model b + so I ordered a [Raspberry Pi 5 - 8GB](https://www.raspberrypi.com/products/raspberry-pi-5/) which is the best option at the moment.
 
 Since I dont have my new raspberry pi yet, I followed the instructions on my mac to create a simple rest server with GO. The server is initially setup with two routes. One shows a simple message with the name of the server and the other returns the current datetime.
 
