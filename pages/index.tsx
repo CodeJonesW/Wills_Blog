@@ -75,7 +75,7 @@ export default function Home({ posts }: BlogProps) {
         >
           <HomeNavBar>
             <Div>
-              <TopLeftTitle>{"Will's Blog"}</TopLeftTitle>
+              <TopLeftTitle>{"williamjonescodes.com"}</TopLeftTitle>
             </Div>
             <ContactContainer>
               <Link style={{ color: "black" }} href="/about">
@@ -89,6 +89,7 @@ export default function Home({ posts }: BlogProps) {
           </HomeNavBar>
           <Body>
             <PostsContainer>
+              <H3>{"Blog"}</H3>
               {posts.map((post, index) => {
                 return <Post key={index} post={post} selectPost={selectPost} />;
               })}
