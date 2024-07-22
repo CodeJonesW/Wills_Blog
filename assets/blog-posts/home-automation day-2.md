@@ -1,9 +1,11 @@
 ---
-title: "The Raspberry Pi 5 Arrived"
+title: "Home Automation: The Raspberry Pi 5 Arrived"
 date: "July 21, 2024"
 excerpt: ""
 cover_image: "/images/posts/home-auto-day-2/raspberry-pi.webp"
 ---
+
+This is a continuation of me writing about my experience setting up a raspberry pi to do several home automation projects. My previous post can be found [here](/blog/home-automation-day-1).
 
 My Raspberry Pi arrived as expected on July 12th but I had to wait a few extra days to receive my micro hdmi cable and usb c power supply. A few things I learned about the raspberry pi 5 when ordering the needed parts
 
@@ -34,7 +36,8 @@ The next step is to set up [Prometheus](https://prometheus.io/docs/introduction/
 
 Things I learned more about
 
-- how to use package manager apt
-- raspberry pi os file system structure and file locations
-- how to install Gitea and Postgres on raspberry pi
-- increased familiarity with docker commands
+- How to use package manager apt
+- Raspberry Pi OS file system structure and file locations
+- How to install Gitea and Postgres on raspberry pi and run them as containers
+- Increased familiarity with docker commands
+- briefly looked at the Prometheus documentation
