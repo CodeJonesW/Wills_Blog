@@ -27,7 +27,7 @@ Some other components that will be required are
 - [Passive Infrared Sensor](https://chicagodist.com/products/adjustable-infrared-pir-motion-sensor)
 - Hue Lightstrip Plus Base Kit
 - Hue Starter Kit
-- [Raspberry Pi Camera Module 21](https://www.raspberrypi.com/products/camera-module-v2/)
+- [Raspberry Pi Camera Module 2](https://www.raspberrypi.com/products/camera-module-v2/)
 - Female-to-Female Jumper Wires13
 - Optional - Solderless Headers for Pi Zero W14
 
