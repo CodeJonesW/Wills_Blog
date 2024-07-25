@@ -1,5 +1,5 @@
 ---
-title: "Home Automation Day 1 - July 11, 2024"
+title: "Home Automation Day 1"
 date: "July 11, 2024"
 excerpt: ""
 cover_image: "/images/posts/home-automation-day-1/home-auto-1.webp"
