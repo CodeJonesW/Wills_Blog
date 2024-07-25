@@ -46,7 +46,7 @@ export default function Resume({ posts }: BlogProps) {
             paddingLeft: "32px",
           }}
         >
-          <h5>Experience</h5>
+          <h5>Resume</h5>
         </div>
         <Divider sx={{ mr: "24px", ml: "24px" }} />
         <Grid>

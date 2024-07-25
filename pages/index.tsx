@@ -69,8 +69,8 @@ export default function Home({ posts }: BlogProps) {
     <AnimatePresence>
       <OuterContainer className={styles.quartzoBold}>
         <FullScreenColumn
-          whileInView={{ opacity: 1 }}
           initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
           transition={{ duration: 2, type: "spring" }}
         >
           <HomeNavBar>
