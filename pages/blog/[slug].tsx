@@ -64,6 +64,12 @@ export default function PostPage({
         transition={{ duration: 4, type: "spring" }}
       >
         <H1>{title}</H1>
+        <PostImage
+          style={{ width: "300px", height: "300px" }}
+          loading="lazy"
+          src={cover_image}
+          alt={title}
+        />
         <div
           style={{
             display: "flex-wrap",
@@ -71,15 +77,6 @@ export default function PostPage({
             flexDirection: "row",
           }}
         >
-          <div
-            style={{
-              float: "left",
-              paddingRight: "16px",
-              maxWidth: "400px",
-            }}
-          >
-            <PostImage loading="lazy" src={cover_image} alt={title} />
-          </div>
           <div
             style={{ paddingLeft: "16px", paddingRight: "16px" }}
             dangerouslySetInnerHTML={{ __html: marked(content) }}
