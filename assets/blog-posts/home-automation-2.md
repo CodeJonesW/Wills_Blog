@@ -5,7 +5,7 @@ excerpt: ""
 cover_image: "/images/posts/home-auto-day-2/raspberry-pi.webp"
 ---
 
-This is a continuation of me writing about my experience setting up a raspberry pi to do several home automation projects. My previous post can be found [here](/blog/home-automation-day-1).
+This is a continuation of me writing about my experience setting up a raspberry pi to do several home automation projects.
 
 My Raspberry Pi arrived as expected on July 12th but I had to wait a few extra days to receive my micro hdmi cable and usb c power supply. A few things I learned about the raspberry pi 5 when ordering the needed parts
 
