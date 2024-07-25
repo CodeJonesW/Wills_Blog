@@ -1,20 +1,21 @@
 ---
-title: "Home Automation: Monitoring Services"
+title: "Home Automation: Setting up Monitoring Services"
 date: "July 24, 2024"
 excerpt: ""
-cover_image: "/images/posts/home-auto-3/grafna_dashboard.png"
+cover_image: "/images/posts/home-auto-3/abstract-it-infa.webp"
 ---
 
-Previously I set up a service running Gitea locally. I am still in the process of setting up the environment to building out projects on the raspberry pi. This article will be about setting up Prometheus and Grafana to monitor the services I set up.
+In my previous article I set up my raspberry pi, some basic applications, and a docker service running Gitea locally. Today I am continuing the process of setting up the environment and server that will support future home automation projects. This article will be about setting up Prometheus and Grafana to monitor the services I set up on the raspberry pi.
 
 Prometheus is an open-source systems monitoring and alerting toolkit originally built at SoundCloud. Its components are written in Go and since its inception in 2012, many companies and organizations have adopted Prometheus
 [Source](https://prometheus.io/docs/introduction/overview/)
 
 Prometheus works by scraping metrics on a fixed schedule and offers a query language to filter and aggregate the data.
 
-Today I will be setting up docker containers for Prometheus and a default node-exporter to collect metrics from the Raspberry Pi host. I will be using docker compose to manage both containers. via [Docker Compose](https://docs.docker.com/compose/)
+My first step will be to set up docker containers for Prometheus and a default node-exporter in order to collect metrics from the Raspberry Pi host. I will be using docker compose to manage both containers. via [Docker Compose](https://docs.docker.com/compose/)
 
 Inside the infrabox/prometheus directory I will be creating a prometheus.yml file to configure the Prometheus server. The configuration file will be used to scrape the node-exporter metrics. Inside the prometheus.yml file I will add the following configuration.
+<br>
 
 ```yaml
 infrabox/prometheus/prometheus.yml
@@ -53,7 +54,10 @@ scrape_configs:
           - "/prometheus/sd_*.json"
 ```
 
+<br>
+
 With this configuration I can add new target systems by creating a new job file using the prefix sd\_ and the file extension .json. The file will contain the target system's IP address and port. Below is an example of a job file for a node-exporter running on a Raspberry Pi.
+<br>
 
 ```yml
 infrabox/prometheus/sd_node01.yml
@@ -64,7 +68,10 @@ infrabox/prometheus/sd_node01.yml
     - "rpi-host:9100"
 ```
 
+<br>
+
 Here is the docker-compose file that will be used to start the Prometheus and node-exporter containers. The node-exporter container will be running in host network mode to collect metrics from the Raspberry Pi host.
+<br>
 
 ```yml
 infrabox/prometheus/docker-compose.yml
@@ -107,6 +114,8 @@ networks:
           gateway: 192.168.38.1
 ```
 
+<br>
+
 I realize it is a bit dry to include all these configuration files but I wanted to give the details. 🙂
 
 Once we start the containers I can check out the Prometheus web interface at http://localhost:9090. Until I run a command to copy the node-exporter job file to the Prometheus container I will not see any metrics. I will run the following command to copy the job file to the Prometheus container and wait for the service to appear.
@@ -117,7 +126,7 @@ docker cp sd_node01.yml prometheus-prometheus-1:/prometheus
 
 With the command running I can now see the new target in the Prometheus interface. In Prometheus one can search through the array of metrics gathered by the node-exporter but the data is hard to navigate. Prometheus does offer some graphs to display metrics but Grafana is a better tool for data visualization.
 
-![Prometheus Interface](/images/posts/home-auto-3/prometheus_dashboard.png "Prometheus Dashboard")
+<img src="/images/posts/home-auto-3/prometheus_dashboard.png" alt="Prometheus Dashboard" title="Prometheus Dashboard" width="600" />
 
 Grafana is an open-source tool for visualizing data developed in Go. It can be used to create dashboards with graphs and tables to display metrics. Grafana allows users to install pre made dashboards from JSON configuration files which is what I will be doing today.
 
@@ -136,7 +145,7 @@ After adjusting the Grafana configuration to connect to the Prometheus server I 
 
 I will be using [this pre-made dashboard for node-exporter](https://github.com/rfmoz/grafana-dashboards/blob/master/prometheus/node-exporter-full.json) to display the collected metrics.
 
-![Grafna Dashboard](/images/posts/home-auto-3/grafna_dashboard.png "Grafna Dashboard")
+<img src="/images/posts/home-auto-3/grafna_dashboard.png" alt="Grafna Dashboard" title="Grafna Dashboard" width="600" />
 
 At this point I have my basic IT infrastructure setup and the book informs me that I can continue to run containers to support my future projects. The first project is a temperature monitor to send alerts anytime it gets too hot or too cold in a certain setting. Excited for the first project! Temperature Monitor 🌡️
 
