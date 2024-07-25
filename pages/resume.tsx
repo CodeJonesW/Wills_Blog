@@ -46,7 +46,7 @@ export default function Resume({ posts }: BlogProps) {
             paddingLeft: "32px",
           }}
         >
-          <h5>Experience</h5>
+          <h5>Resume</h5>
         </div>
         <Divider sx={{ mr: "24px", ml: "24px" }} />
         <Grid>
@@ -58,7 +58,7 @@ export default function Resume({ posts }: BlogProps) {
               "Developed backend feature to update status of gates in real time.",
               "Developed mobile and backend for controlling recurring key access to doors and gates at specific times.",
               "Lead integration project with an external company allowing for usage of smart locks in mobile/web apps.",
-              "Developed many features and bug fixes crossing web, mobile, and backend projects in the last year.",
+              "Developed many features and bug fixes crossing web, mobile, and backend projects",
             ]}
             date={"Oct 2022 - Present"}
           />

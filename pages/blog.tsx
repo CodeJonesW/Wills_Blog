@@ -59,30 +59,28 @@ export default function Blog({ posts }: BlogProps) {
   };
 
   return (
-    <AnimatePresence>
-      <BlogContainer
-        whileInView={{ opacity: 1 }}
+    <BlogContainer
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      transition={{ duration: 4, type: "spring" }}
+      className={styles.quartzoBold}
+    >
+      <TopBar
+        animate={{ opacity: 1 }}
         initial={{ opacity: 0 }}
         transition={{ duration: 4, type: "spring" }}
-        className={styles.quartzoBold}
       >
-        <TopBar
-          animate={{ opacity: 1 }}
-          initial={{ opacity: 0 }}
-          transition={{ duration: 4, type: "spring" }}
-        >
-          <Back route={routes.home} themeProp={theme.light} />
-        </TopBar>
-        <BlogNavbar>
-          <PageHeader style={{ fontSize: "1.2em" }}>Blog</PageHeader>
-        </BlogNavbar>
-        <PostsContainer>
-          {posts.map((post, index) => {
-            return <Post key={index} post={post} selectPost={selectPost} />;
-          })}
-        </PostsContainer>
-      </BlogContainer>
-    </AnimatePresence>
+        <Back route={routes.home} themeProp={theme.light} />
+      </TopBar>
+      <BlogNavbar>
+        <PageHeader style={{ fontSize: "1.2em" }}>Blog</PageHeader>
+      </BlogNavbar>
+      <PostsContainer>
+        {posts.map((post, index) => {
+          return <Post key={index} post={post} selectPost={selectPost} />;
+        })}
+      </PostsContainer>
+    </BlogContainer>
   );
 }
 
