@@ -139,3 +139,7 @@ I will be using [this pre-made dashboard for node-exporter](https://github.com/r
 ![Grafna Dashboard](/images/posts/home-auto-3/grafna_dashboard.png "Grafna Dashboard")
 
 At this point I have my basic IT infrastructure setup and the book informs me that I can continue to run containers to support my future projects. The first project is a temperature monitor to send alerts anytime it gets too hot or too cold in a certain setting. Excited for the next step. 🚀
+
+Thankful for the exercise of technical writing. This helps me clear up my own thoughts and develop a deeper understanding for the topics I am learning. 🙏
+
+Until next time. 🤘
