@@ -23,7 +23,7 @@ export default function Resume({ posts }: BlogProps) {
       transition={{ duration: 4, type: "spring" }}
     >
       <HomeNavBar>
-        <NavbarTitle>Will Jones</NavbarTitle>
+        <NavbarTitle>williamjonescodes.com</NavbarTitle>
         <Link style={{ color: "black" }} href={routes.home}>
           <NavbarTitle>Home</NavbarTitle>
         </Link>
