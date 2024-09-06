@@ -116,3 +116,47 @@ Get Temperature
 - Same function as the one we covered earlier. This function will be used to read the temperature from the onboard sensor.
 
 <img src="/images/posts/home-auto-4/getTempfunc.png" alt="Get Temperature function" title="Get Temperature" width="600" />
+
+---
+
+HTTP Handler
+
+- a function to handle the incoming HTTP requests for the temperature data. This functionality is supported by the seqs/httpx library to define http headers for the response and the encoding/json library to encode the temperature data in JSON format.
+
+## <img src="/images/posts/home-auto-4/http_handler.png" alt="Get Temperature function" title="Get Temperature" width="600" />
+
+---
+
+handleConnection
+
+A function that will respond with the temperature data. The author notes that because this is a small device, we need to define some buffer that can be reused for all connections in order to avoid memory allocations. This function also takes a channel parameter. This channel will cause the blink goroutine to blink indicating it is processing a connection.
+
+<img src="/images/posts/home-auto-4/handle_connection.png" alt="Get Temperature function" title="Get Temperature" width="600" />
+
+When working with embedded devices like the Raspberry Pi Pico W, resources like memory are very limited compared to typical computers. To optimize memory usage, one common strategy is to reuse buffers for tasks like reading and writing data over a network connection, rather than allocating new memory every time a new connection or request is handled. This is particularly important in environments where you want to avoid frequent memory allocations and deallocations, which can cause fragmentation and increase the risk of memory exhaustion or performance degradation.
+
+A buffer is a block of memory used to store data temporarily while it's being transferred from one place to another. For example, when receiving data from a network socket, you might read chunks of data into a buffer before processing them. In Go, you can use the bufio package to work with buffered I/O efficiently.
+
+Instead of allocating a new buffer every time a new connection is accepted, one can define a fixed-size buffer once and reuse it for all subsequent connections. This prevents frequent allocations on the heap and reduces garbage collection overhead, which is especially useful on memory-constrained devices.
+
+In the function above, I am using bufio.NewReaderSize to create a buffered reader. The size of the buffer is defined as 1024 bytes, and it is reused for each connection. By resetting the buffer (buf.Reset(conn)) for each new connection, we can avoid reallocating new memory each time.
+
+Finally all of the components come together in the main function. At the end, the function uses an infinite loop with a blocking select statement to prevent the program from terminating while the goroutines run in the background.
+
+<img src="/images/posts/home-auto-4/main.png" alt="main function" title="Get Temperature" width="600" />
+
+At this point I am ready to write the program to the Pico W. I use the below tiny go command to build the program.
+
+`tinygo build -target=pico -opt=1 -stack-size=8kb -size=short -o main.uf2 .`
+
+After copying the main.uf2 file to the Pico W, the device will start restart and run the program. We can use `tinygo monitor` to view the device logs.
+
+In the logs we find the ip address assigned to the device by the router and then curl that address to receive the response below.
+
+{"tempC": 25.6, "tempF": 78.08}%
+
+At this point I was able to disconnect the Pico W from the computer and power it using a USB power adapter. The device restarted and connected to the Wi-Fi network. I was able to curl the device and receive the temperature data.
+
+The next step is building the Prometheus exporter that will poll the Pico W’s assigned IP address every 10 seconds to capture the temperature data. The data will eventually be processed by Grafana to visualize the ambient temperature around the Pico W.
+
+I learned a lot in this chapter of the book. 🙂
