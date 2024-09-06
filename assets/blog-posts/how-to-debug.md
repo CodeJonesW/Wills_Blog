@@ -7,8 +7,6 @@ cover_image: "/images/posts/how-to-debug/debugging.webp"
 
 ### Question Fractals
 
-In my opinion, debugging is about continually digging and finding the next answer.
-
 When debugging a full stack web application, I like to think of the process as a fractal of questions. I start with a high level question and then drill down into the specifics. For example, let's say we have a bug in our application. The first question I would ask is, "What is the bug?" This is a high level question that doesn't give us much information, but it is vital to start off investigating the correct issue. From here, I would start to drill down into the specifics.
 
 So, let's say a button is broken, for a simple example. When I click the button, is the event firing in the Handler? If so, is the internal functionality working as expected? Let's assume that the internal functionality has an asynchronous API call inside. Is that API call returning a proper response? Let's say that we're not getting a response. At this point, we should check the server logs to see if the API call is being registered. Hopefully, there's good logging, and you can see that the API call is going through initially. Hopefully, this hypothetical server has error handling, and if something is going wrong, the exception or error is being properly caught and not causing the server to stop running properly. At this point, if there is no error handling, we could likely see an exception in the logs. Is the exception related to a utility function that supports the API route? Here, we need to check the internal functionality and see if there's an error in our code, or maybe this functionality interacts with the database, in which case there is another area to check.
