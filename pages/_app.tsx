@@ -1,12 +1,16 @@
 import type { AppProps } from "next/app";
-// import GoogleAnalytics from "../lib/google_analytics";
 import "../styles/globals.css";
 import { GoogleAnalytics } from "@next/third-parties/google";
+import { useEffect, useState } from "react";
 
 function MyApp({ Component, pageProps }: AppProps) {
-  const gaId = process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS_ID
-    ? process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS_ID
-    : "";
+  const [gaId, setGaId] = useState("");
+
+  useEffect(() => {
+    if (process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS) {
+      setGaId(process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS);
+    }
+  }, [process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS]);
 
   return (
     <>
