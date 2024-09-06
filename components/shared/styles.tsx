@@ -102,7 +102,7 @@ export const ContactContainer = styled(motion.div)`
   max-width: 400px;
   display: flex;
   flex-direction: row;
-  justify-content: "center";
+  justify-content: "flex-end";
   align-items: "center";
 `;
 export const BackArrowContainer = styled(motion.div)`

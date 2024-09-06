@@ -79,10 +79,7 @@ export default function Home({ posts }: BlogProps) {
             </Div>
             <ContactContainer>
               <Link style={{ color: "black" }} href="/about">
-                <H3 style={{ marginRight: 4 }}>About</H3>
-              </Link>
-              <Link style={{ color: "black" }} href="/resume">
-                <H3 style={{ marginLeft: 4 }}>Resume</H3>
+                <H3 style={{}}>About</H3>
               </Link>
               <UnshrinkableDiv style={{ width: "16px" }} />
             </ContactContainer>
