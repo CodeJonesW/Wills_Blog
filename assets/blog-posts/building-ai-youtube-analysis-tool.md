@@ -33,7 +33,7 @@ Task Processing - Celery: I used Celery for managing the background tasks of dow
 
 Database - PostgreSQL: I chose PostgreSQL for its reliability and support for structured data. This made it suitable for storing user data, video information, and task statuses.
 
-Cloud Storage - Google Cloud Storage: I used Google Cloud Storage to store the downloaded videos, which facilitated scalable and secure data management.
+Cloud Storage - Google Cloud Storage: I used Google Cloud Storage to store the downloaded audio files, which facilitated scalable and secure data management.
 
 Transcription and Analysis - Google Cloud Speech-to-Text API: I leveraged Google Cloud’s Speech-to-Text API for accurate transcriptions of the video content. It integrates seamlessly with the rest of the Google Cloud ecosystem.
 
@@ -55,7 +55,7 @@ One of the reasons I chose yt-dlp was its ability to handle a wide range of vide
 
 Integrating yt-dlp significantly streamlined the workflow of fetching YouTube content, making it an essential component of the project’s infrastructure.
 
-## Improving Speech-to-Text Transcription Efficiency
+## Speech-to-Text Transcription
 
 Initially, I implemented the Google Cloud Speech-to-Text API using the long-running asynchronous method to handle video transcriptions. This approach involved uploading the audio files to a Google Cloud Storage bucket, initiating the transcription process via the GCP Speech to Text API, and then cleaning up by deleting the files in the bucket once transcribed. While effective, it was slow, introduced unnecessary complexity, and added costs.
 
@@ -66,6 +66,12 @@ To streamline the process, I switched to the synchronous Speech-to-Text API, whi
 One challenge with the synchronous API was handling long audio files efficiently. To address this, I modified the code to implement chunking, breaking the audio into smaller, manageable segments. Each chunk was then processed independently, allowing for much faster transcription response times. This chunking method significantly improved the overall transcription speed and made the synchronous API a more practical solution for handling larger videos.
 
 This optimization was a pivotal step in enhancing the performance and cost-efficiency of the service, ensuring that users received transcription results in a timely manner without the need for additional cloud storage resources.
+
+## Using the OpenAI API for Transcript Analysis
+
+To analyze the transcribed audio from YouTube videos, I integrated the OpenAI API into the backend. This API allowed me to leverage advanced AI capabilities to generate meaningful insights based on the user-provided prompts. After transcribing the video content, the transcript is sent to OpenAI’s API, along with the user's prompt, where it performs natural language processing to analyze and extract relevant information.
+
+The simplicity and power of the OpenAI API made it an ideal choice for this project, as it provided high-quality analysis without requiring extensive custom model training. This integration enabled the application to quickly deliver AI-generated insights, making the user experience seamless and engaging.
 
 ## Deploying to Google Cloud Platform
 
@@ -103,6 +109,6 @@ yt-dlp issue related to YouTube blocking IPs - [here](https://github.com/yt-dlp/
 
 ## Conclusion
 
-I have enjoyed developing and deploying this YouTube analysis tool. From choosing the right technologies to overcoming deployment issues and dealing with YouTube’s access restrictions, this project has reinforced the importance of adaptability and problem-solving in software development.
+I have enjoyed developing and deploying this YouTube analysis tool. From choosing the right technologies to overcoming deployment issues and dealing with YouTube’s access restrictions, I have learned some valuable insights.
 
-As I continue to refine the tool, my next steps will involve optimizing the current setup and exploring alternative solutions to the YouTube IP-blocking issue. I’m excited to see how this project evolves.
+I plan to continue investigate the youtube ip blockiing issue but felt this was a excellent time to stop and review my experience.
