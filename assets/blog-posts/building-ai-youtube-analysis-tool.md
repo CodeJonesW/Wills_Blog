@@ -1,7 +1,7 @@
 ---
 title: "Building an AI-Powered YouTube Analysis Tool: A Journey from Development to Deployment"
-date: "Sep 123, 2024"
-excerpt: "How to implement a full deep linking in your iOS app using Expo and Firebase."
+date: "Sep 23, 2024"
+excerpt: "Developing an AI-driven tool that extracts, transcribes, and analyzes YouTube videos has been both a challenging and rewarding experience. In this blog post, I’ll walk you through my entire journey, from selecting the technologies and architecture to deploying on Google Cloud Console, and share some insights into overcoming unexpected challenges along the way."
 cover_image: "/images/posts/tubescriptai/tubescriptai.webp"
 ---
 
@@ -11,9 +11,13 @@ Github Repos: [Backend](https://github.com/CodeJonesW/tubeScriptAiServer), [Fron
 
 Developing an AI-driven tool that extracts, transcribes, and analyzes YouTube videos has been both a challenging and rewarding experience. In this blog post, I’ll walk you through my entire journey, from selecting the technologies and architecture to deploying on Google Cloud Console, and share some insights into overcoming unexpected challenges along the way.
 
+<img src="/images/posts/tubescriptai/ui-1.png" alt="web app ui" title="Login" width="600" />
+
 ## Project Overview
 
 My goal was to create a web-based application where users could input a YouTube video URL and a prompt, allowing them to receive an AI-generated analysis of the video’s content. The solution would involve downloading the video, transcribing the audio, and applying an AI model to analyze the transcript.
+
+<img src="/images/posts/tubescriptai/ui-2.png" alt="web app ui" title="Login" width="600" />
 
 ## Technology Stack
 
@@ -53,7 +57,7 @@ Integrating yt-dlp significantly streamlined the workflow of fetching YouTube co
 
 ## Improving Speech-to-Text Transcription Efficiency
 
-Initially, I implemented the Google Cloud Speech-to-Text API using the long-running asynchronous method to handle video transcriptions. This approach involved uploading the audio files to a Google Cloud Storage bucket, initiating the transcription process via the GCP Speech to Text api, and then cleaning up by deleting the files in the bucket once transcribed. While effective, it was slow and introduced unnecessary complexity, and added costs since it required additional storage and management overhead.
+Initially, I implemented the Google Cloud Speech-to-Text API using the long-running asynchronous method to handle video transcriptions. This approach involved uploading the audio files to a Google Cloud Storage bucket, initiating the transcription process via the GCP Speech to Text API, and then cleaning up by deleting the files in the bucket once transcribed. While effective, it was slow, introduced unnecessary complexity, and added costs.
 
 To streamline the process, I switched to the synchronous Speech-to-Text API, which allowed me to keep the audio files locally on the server during transcription. This change eliminated the need for an external storage bucket, simplifying the workflow and reducing costs. Once the transcription completes, the local file is immediately deleted, ensuring no unnecessary storage usage.
 
@@ -63,18 +67,20 @@ One challenge with the synchronous API was handling long audio files efficiently
 
 This optimization was a pivotal step in enhancing the performance and cost-efficiency of the service, ensuring that users received transcription results in a timely manner without the need for additional cloud storage resources.
 
+## Deploying to Google Cloud Platform
+
 1. Setting Up the Backend and Celery Worker
-   I deployed my Flask backend and Celery worker using Google App Engine. This managed service enabled me to focus on my application without worrying about infrastructure management.
-   I used Google Cloud SQL for PostgreSQL to manage my database. The integration with App Engine made connecting the backend to the database straightforward.
-   I configured Cloud Memory Store for Redis to serve as the Celery broker and result backend. This allowed my Celery worker to handle background tasks efficiently.
+   - I deployed my Flask backend and Celery worker using Google App Engine. This managed service enabled me to focus on my application without worrying about infrastructure management.
+   - I used Google Cloud SQL for PostgreSQL to manage my database. The integration with App Engine made connecting the backend to the database straightforward.
+   - I configured Cloud Memory Store for Redis to serve as the Celery broker and result backend. This allowed my Celery worker to handle background tasks efficiently.
 2. Setting Up Frontend Deployment
-   The frontend was built using React and deployed to Google Cloud Storage as a static site, then served through Google Cloud CDN, ensuring low latency and high availability.
+   - The frontend was built using React and deployed to Google Cloud Storage as a static site, then served through Google Cloud CDN, ensuring low latency and high availability.
 3. Managing Secrets and Configuration
-   I used Google Cloud Secret Manager to manage API keys and other sensitive information securely. This ensured that my application could access secrets without exposing them in the codebase.
+   - I used Google Cloud Secret Manager to manage API keys and other sensitive information securely. This ensured that my application could access secrets without exposing them in the codebase.
 4. Configuring VPC and Private IPs
-   To ensure secure communication between the backend services and the Cloud SQL instance, I configured a Virtual Private Cloud (VPC) connector. This allowed my services to connect to the database using private IP addresses.
+   - To ensure secure communication between the backend services and the Cloud SQL instance, I configured a Virtual Private Cloud (VPC) connector. This allowed my services to connect to the database using private IP addresses.
 5. Handling Worker Instances and Scaling
-   I set the instance_class and scaling settings in my app.yaml and worker.yaml files, allowing me to control the number of instances based on load, ensuring cost-efficiency.
+   - I set the instance_class and scaling settings in app.yaml and worker.yaml, allowing control over the number of instances based on load for cost-efficiency.
 
 ## Challenges Faced
 
@@ -97,6 +103,6 @@ yt-dlp issue related to YouTube blocking IPs - [here](https://github.com/yt-dlp/
 
 ## Conclusion
 
-Developing and deploying this YouTube analysis tool has been filled with learning experiences, technical challenges, and rewarding milestones. From choosing the right technologies to overcoming deployment issues and dealing with YouTube’s access restrictions, this project has reinforced the importance of adaptability and problem-solving in software development.
+I have enjoyed developing and deploying this YouTube analysis tool. From choosing the right technologies to overcoming deployment issues and dealing with YouTube’s access restrictions, this project has reinforced the importance of adaptability and problem-solving in software development.
 
 As I continue to refine the tool, my next steps will involve optimizing the current setup and exploring alternative solutions to the YouTube IP-blocking issue. I’m excited to see how this project evolves.
