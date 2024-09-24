@@ -117,3 +117,5 @@ Interestingly vimeo worked without issue.
 I have enjoyed developing and deploying this YouTube analysis tool. From choosing the right technologies to overcoming deployment issues and dealing with YouTube’s access restrictions, I have learned some valuable insights.
 
 I plan to continue investigate the youtube ip blockiing issue but felt this was a excellent time to stop and review my experience.
+
+If you are interested in trying the current version of the tool, you can access it [here](https://tubescriptai.uc.r.appspot.com/)
