@@ -18,6 +18,7 @@ Developing an AI-driven tool that extracts, transcribes, and analyzes YouTube vi
 My goal was to create a web-based application where users could input a YouTube video URL and a prompt, allowing them to receive an AI-generated analysis of the video’s content. The solution would involve downloading the video, transcribing the audio, and applying an AI model to analyze the transcript.
 
 <img src="/images/posts/tubescriptai/ui-2.png" alt="web app ui" title="Login" width="600" />
+<img src="/images/posts/tubescriptai/ui-3.png" alt="web app ui" title="analysis" width="600" />
 
 ## Technology Stack
 
