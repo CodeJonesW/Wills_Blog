@@ -34,7 +34,7 @@ Task Processing - Celery: I used Celery for managing the background tasks of dow
 
 Database - PostgreSQL: I chose PostgreSQL for its reliability and support for structured data. This made it suitable for storing user data, video information, and task statuses.
 
-Cloud Storage - Google Cloud Storage: I used Google Cloud Storage to store the downloaded audio files, which facilitated scalable and secure data management.
+Cloud Storage - Google Cloud Storage: I used Google Cloud Storage to store the downloaded audio files, which facilitated scalable and secure data management. (Later removed)
 
 Transcription and Analysis - Google Cloud Speech-to-Text API: I leveraged Google Cloud’s Speech-to-Text API for accurate transcriptions of the video content. It integrates seamlessly with the rest of the Google Cloud ecosystem.
 
@@ -94,7 +94,7 @@ The simplicity and power of the OpenAI API made it an ideal choice for this proj
 
 ### YouTube Blocking IPs
 
-One of the biggest blockers I encountered was YouTube restricting access to videos from my deployed server’s IP range. This resulted in the tool being unable to download certain videos that required verification or CAPTCHA checks, which was not an issue when running the application locally.
+The largest blockers I encountered was YouTube restricting access to videos from my deployed server’s IP range. This resulted in the tool being unable to download certain videos that required verification or CAPTCHA checks, which was not an issue when running the application locally.
 
 This challenge brought the project to a halt temporarily, and potential solutions include:
 
@@ -102,6 +102,8 @@ This challenge brought the project to a halt temporarily, and potential solution
 - Moving to Cloud Functions or Serverless Approaches: Deploying to serverless environments that dynamically change IPs might help circumvent restrictions.
 
 yt-dlp issue related to YouTube blocking IPs - [here](https://github.com/yt-dlp/yt-dlp/issues/10085)
+
+Interestingly vimeo worked without issue.
 
 ## Lessons Learned
 
