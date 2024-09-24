@@ -86,7 +86,10 @@ The simplicity and power of the OpenAI API made it an ideal choice for this proj
 4. Configuring VPC and Private IPs
    - To ensure secure communication between the backend services and the Cloud SQL instance, I configured a Virtual Private Cloud (VPC) connector. This allowed my services to connect to the database using private IP addresses.
 5. Handling Worker Instances and Scaling
+
    - I set the instance_class and scaling settings in app.yaml and worker.yaml, allowing control over the number of instances based on load for cost-efficiency.
+
+<img src="/images/posts/tubescriptai/ui-3.png" alt="web app ui" title="analysis" width="600" />
 
 ## Challenges Faced
 
@@ -106,6 +109,7 @@ yt-dlp issue related to YouTube blocking IPs - [here](https://github.com/yt-dlp/
 - The Importance of Infrastructure Planning: Setting up secure connections using VPCs, configuring service accounts, and managing cloud resources were critical to ensuring that the deployment was seamless and scalable.
 - Dealing with Rate Limits and Access Restrictions: Understanding that external services might have limitations or IP restrictions taught me to prepare for such issues ahead of time.
 - Keeping Costs in Check: By monitoring services like Cloud Memory Store, I learned to identify and adjust configurations to reduce unnecessary expenses.
+- The importance of thoroughly researching the terms of use for third-party products and services that I plan to integrate into web applications. The challenge with YouTube's IP restrictions and their policy on video downloading highlighted how essential it is to understand the legal and technical limitations imposed by these services.
 
 ## Conclusion
 
