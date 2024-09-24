@@ -90,8 +90,6 @@ The simplicity and power of the OpenAI API made it an ideal choice for this proj
 
    - I set the instance_class and scaling settings in app.yaml and worker.yaml, allowing control over the number of instances based on load for cost-efficiency.
 
-<img src="/images/posts/tubescriptai/ui-3.png" alt="web app ui" title="analysis" width="600" />
-
 ## Challenges Faced
 
 ### YouTube Blocking IPs
