@@ -57,6 +57,32 @@ const Content = styled.div`
     border-radius: 10px;
     margin: 16px 0;
   }
+  pre {
+    background-color: #f5f5f5; /* Background color for better contrast */
+    padding: 16px; /* Padding around the code block */
+    border-radius: 8px; /* Rounded corners */
+    overflow-x: auto; /* Enable horizontal scrolling */
+    font-size: 0.9rem; /* Adjust font size for readability */
+    line-height: 1.4;
+    max-width: 100%; /* Ensure code blocks don't overflow */
+  }
+
+  code {
+    font-family: monospace; /* Use monospace font for code */
+    display: block;
+    white-space: pre-wrap; /* Allows line breaks in long code samples */
+    word-break: break-word; /* Break long words for better responsiveness */
+  }
+
+  @media (max-width: 768px) {
+    font-size: 1rem;
+    line-height: 1.4;
+
+    pre {
+      padding: 12px; /* Adjust padding for smaller screens */
+      font-size: 0.8rem; /* Slightly smaller font size on mobile */
+    }
+  }
 `;
 
 const PostImage = styled.img`
