@@ -19,10 +19,12 @@ const PostContainer = styled(motion.div)`
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  padding-left: 5%;
-  padding-right: 5%;
-  padding-top: 24px;
+  padding: 16px;
   padding-bottom: 400px;
+
+  @media (max-width: 768px) {
+    padding: 8px;
+  }
 `;
 
 const PageContainer = styled.div`
@@ -30,6 +32,31 @@ const PageContainer = styled.div`
   flex-direction: column;
   align-items: flex-start;
   justify-content: center;
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 16px;
+
+  @media (max-width: 768px) {
+    padding: 8px;
+  }
+`;
+
+const Content = styled.div`
+  padding-left: 16px;
+  padding-right: 16px;
+  font-size: 1.2rem;
+  line-height: 1.6;
+
+  @media (max-width: 768px) {
+    font-size: 1rem;
+    line-height: 1.4;
+  }
+  img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+    margin: 16px 0;
+  }
 `;
 
 const PostImage = styled.img`
@@ -78,10 +105,10 @@ export default function PostPage({
             flexDirection: "row",
           }}
         >
-          <div
+          <Content
             style={{ paddingLeft: "16px", paddingRight: "16px" }}
             dangerouslySetInnerHTML={{ __html: marked(content) }}
-          ></div>
+          ></Content>
         </div>
       </PostContainer>
     </PageContainer>

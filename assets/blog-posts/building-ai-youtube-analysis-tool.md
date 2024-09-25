@@ -11,14 +11,14 @@ Github Repos: [Backend](https://github.com/CodeJonesW/tubeScriptAiServer), [Fron
 
 Developing an AI-driven tool that extracts, transcribes, and analyzes YouTube videos has been both a challenging and rewarding experience. In this blog post, I’ll walk you through my entire journey, from selecting the technologies and architecture to deploying on Google Cloud Console, and share some insights into overcoming unexpected challenges along the way.
 
-<img src="/images/posts/tubescriptai/ui-1.png" alt="web app ui" title="Login" width="600" />
+<img src="/images/posts/tubescriptai/ui-1.png" alt="web app ui" title="Login"  />
 
 ## Project Overview
 
 My goal was to create a web-based application where users could input a YouTube video URL and a prompt, allowing them to receive an AI-generated analysis of the video’s content. The solution would involve downloading the video, transcribing the audio, and applying an AI model to analyze the transcript.
 
-<img src="/images/posts/tubescriptai/ui-2.png" alt="web app ui" title="Login" width="600" />
-<img src="/images/posts/tubescriptai/ui-3.png" alt="web app ui" title="analysis" width="600" />
+<img src="/images/posts/tubescriptai/ui-2.png" alt="web app ui" title="Login"  />
+<img src="/images/posts/tubescriptai/ui-3.png" alt="web app ui" title="analysis" />
 
 ## Technology Stack
 
