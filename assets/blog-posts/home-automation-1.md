@@ -7,7 +7,7 @@ cover_image: "/images/posts/home-automation-day-1/home-auto-1.webp"
 
 Yesterday I purchased [Automate Your Home Using Go](https://pragprog.com/titles/gohome/automate-your-home-using-go/) while looking for something to read on my plane ride home.
 
-Not knowing if I would fully embark on the instructions I was excited to read and see if I found the book interesting. After diving in while crusing through the air I decided I would follow along and do the projects. My thought is it will help me learn more about managing and monitoring services and integrating software with hardware while also having some fun. There is a lot of potential for tweaking the projects to make them my own and support my own use cases.
+Not knowing if I would fully embark on the instructions I was excited to read and see if I found the book interesting. After diving in while cruising through the air I decided I would follow along and do the projects. My thought is it will help me learn more about managing and monitoring services and integrating software with hardware while also having some fun. There is a lot of potential for tweaking the projects to make them my own and support my own use cases.
 
 One use that comes to mind is being alerted with my cat is at the sliding glass door.
 
