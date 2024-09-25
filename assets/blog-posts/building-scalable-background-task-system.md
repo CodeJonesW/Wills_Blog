@@ -1,7 +1,7 @@
 ---
 title: "Technical Reflection - Building a Scalable Background Task System with Flask, Celery, and Google Cloud Memory Store"
 date: "September 25, 2024"
-excerpt: "Managing background process in a scalable way"
+excerpt: "Managing background processes in a scalable way"
 cover_image: "/images/posts/building-a-scalable-background-task-system/redis.png"
 ---
 
@@ -41,14 +41,14 @@ Now, instead of managing Redis on my own, I opted to use **Google Cloud Memory S
 
 ## Keeping Costs in Check
 
-Initially, I was hit with a suprise – running the default setup for Google Cloud Memory Store cost me about $70 per month. That was pretty steep for a new project, so I needed to make some adjustments. Here’s what I did:
+Initially, I was hit with a surprise – running the default setup for Google Cloud Memory Store cost me about $70 per month. That was pretty steep for a new project, so I needed to make some adjustments. Here’s what I did:
 
 - Reduced the Instance Size: I adjusted the Redis instance capacity to a smaller size, opting for a 1 GB capacity tier instead of something larger. This reduction alone significantly lowered the monthly cost to about $35.77/month, which is a considerable saving for a small project. This capacity matched my app's current demands, ensuring I wasn't paying for unused resources. Just for reference increasing the max capacity to 300 GB cost $3,504.00/month
 
 - Tweaked Celery Settings: By optimizing Celery's configuration, I reduced the load on Redis. Specifically, I:
 
   - Adjusted the concurrency level to match the available resources, ensuring workers weren’t overwhelming the Redis instance with too many simultaneous tasks.
-  - Reduced the task result expiration time to minimize the memory usage within Redis. This prevented unnecessary accumulation of completed task data, allowing Redis to operate more efficiently with the limited capacity.
+  - Reduced the task result expiration time to minimize the memory usage within Redis. This prevented the unnecessary accumulation of completed task data, allowing Redis to operate more efficiently with the limited capacity.
 
 While Google Cloud Memory Store with Redis is incredibly powerful, it can be pricey if you’re not careful. I recommend starting with a smaller instance and adjusting settings based on actual usage to avoid unnecessary costs.
 
