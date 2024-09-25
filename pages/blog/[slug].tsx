@@ -51,6 +51,12 @@ const Content = styled.div`
     font-size: 1rem;
     line-height: 1.4;
   }
+  img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+    margin: 16px 0;
+  }
 `;
 
 const PostImage = styled.img`
