@@ -9,7 +9,7 @@ Github Repos: [Backend](https://github.com/CodeJonesW/tubeScriptAiServer), [Fron
 
 ## Introduction
 
-Developing an AI-driven tool that extracts, transcribes, and analyzes YouTube videos has been both a challenging and rewarding experience. In this blog post, I’ll walk you through my entire journey, from selecting the technologies and architecture to deploying on Google Cloud Console, and share some insights into overcoming unexpected challenges along the way.
+Developing an AI-driven tool that extracts, transcribes, and analyzes YouTube videos has been a rewarding experience. In this blog post, I’ll walk you through my entire journey, from selecting the technologies and architecture to deploying on Google Cloud Console.
 
 <img src="/images/posts/tubescriptai/ui-1.png" alt="web app ui" title="Login"  />
 
@@ -24,19 +24,17 @@ My goal was to create a web-based application where users could input a YouTube 
 
 ### Frontend
 
-React: I chose React for its flexibility, component-based structure, and rich ecosystem. It’s an ideal fit for building dynamic and interactive user interfaces.
+React: I chose React for its ability to be deployed on many platforms, familiarity, and fast development timeline. My goal was to build a minimalistic, clean, and responsive UI that clearly communicated the intention of the tool.
 
 ### Backend
 
-REST Server Framework - Flask: Flask is lightweight and allowed me to set up RESTful API endpoints quickly. It also integrates well with Celery for handling background tasks.
+REST Server Framework - Flask: It is lightweight, allowed for quick set up of RESTful API endpoints and integrated well with Celery.
 
-Task Processing - Celery: I used Celery for managing the background tasks of downloading, transcribing, and analyzing videos. This choice allowed me to handle long-running processes asynchronously, ensuring that the web app remains responsive.
+Task Processing - Celery: used for managing the background tasks such as downloading video, transcribing, and analyzing. This choice allowed me to handle long-running processes asynchronously, ensuring that the web app remained responsive.
 
-Database - PostgreSQL: I chose PostgreSQL for its reliability and support for structured data. This made it suitable for storing user data, video information, and task statuses.
+Database - PostgreSQL: Widely used, easy to set up, and familiar. Pairs well with SQLAlchemy for ORM capabilities.
 
-Cloud Storage - Google Cloud Storage: I used Google Cloud Storage to store the downloaded audio files, which facilitated scalable and secure data management. (Later removed)
-
-Transcription and Analysis - Google Cloud Speech-to-Text API: I leveraged Google Cloud’s Speech-to-Text API for accurate transcriptions of the video content. It integrates seamlessly with the rest of the Google Cloud ecosystem.
+Transcription and Analysis - Google Cloud Speech-to-Text API: Easy to integrate, accurate, and integrates well with other Google Cloud services.
 
 AI Analysis - OpenAI API: This was used for analyzing transcripts based on user prompts, offering advanced AI capabilities to generate insights.
 
