@@ -116,4 +116,6 @@ I have enjoyed developing and deploying this YouTube analysis tool. From choosin
 
 I plan to continue investigate the youtube ip blockiing issue but felt this was a excellent time to stop and review my experience.
 
-If you are interested in trying the current version of the tool, you can access it [here](https://tubescriptai.uc.r.appspot.com/) (Note: The tool may not work for all YouTube videos due to the IP blocking issue). Here is a short vimeo video that works [here](https://vimeo.com/61695274)
+Due to the YouTube IP blocking issue, I have decided to remove the project from the public domain in order to focus on other learning objectives. However, I am happy to share the codebase with anyone interested. The project's Readme.md contains detailed instructions on how to set up the application locally.
+
+Github Repos: [Backend](https://github.com/CodeJonesW/tubeScriptAiServer), [Frontend](https://github.com/CodeJonesW/tubeScriptAiWebApp)
