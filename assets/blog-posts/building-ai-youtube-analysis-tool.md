@@ -50,7 +50,7 @@ To download the audio from specific YouTube videos, I integrated the [yt-dlp lib
 
 The process starts when a user inputs a YouTube URL. The backend then invokes yt-dlp to extract and download the audio stream from the video. This approach ensures that the audio is directly available for transcription, eliminating the need for video-to-audio conversion.
 
-One of the reasons I chose yt-dlp was its ability to handle a wide range of video formats and quality settings, making it flexible for different use cases. Additionally, yt-dlp has options to download only the audio, reducing bandwidth usage and storage needs, which is crucial for keeping the process efficient and cost-effective.
+I chose yt-dlp for its ability to download only the audio from video urls while having a large community of ongoing support. This choice also reduced storage needs, in an attempt to keep the process efficient and cost-effective.
 
 Integrating yt-dlp significantly streamlined the workflow of fetching YouTube content, making it an essential component of the project’s infrastructure.
 
@@ -204,7 +204,7 @@ def convert_mp3_to_wav(mp3_file_path):
 
 ## Using the OpenAI API for Transcript Analysis
 
-To analyze the transcribed audio from YouTube videos, I integrated the OpenAI API into the backend. This API allowed me to leverage advanced AI capabilities to generate meaningful insights based on the user-provided prompts. After transcribing the video content, the transcript is sent to OpenAI’s API, along with the user's prompt, where it performs natural language processing to analyze and extract relevant information.
+To analyze the transcribed audio from YouTube videos, I integrated the OpenAI API into the backend. This API allowed me to leverage AI capabilities to generate meaningful insights based on the user-provided prompts. After transcribing the video content, the transcript is sent to OpenAI’s API, along with the user's prompt, where it performs natural language processing to analyze and extract relevant information.
 
 The simplicity and power of the OpenAI API made it an ideal choice for this project, as it provided high-quality analysis without requiring extensive custom model training. This integration enabled the application to quickly deliver AI-generated insights, making the user experience seamless and engaging.
 
@@ -270,7 +270,7 @@ def analyze_text(transcript, user_prompt):
 
 ### YouTube Blocking IPs
 
-The largest blockers I encountered was YouTube restricting access to videos from my deployed server’s IP range. This resulted in the tool being unable to download certain videos that required verification or CAPTCHA checks, which was not an issue when running the application locally.
+The largest blocker I encountered was YouTube restricting access to videos from my deployed server’s IP range. This resulted in the tool being unable to download certain videos that required verification or CAPTCHA checks, which was not an issue when running the application locally.
 
 This challenge brought the project to a halt temporarily, and potential solutions include:
 
@@ -290,7 +290,7 @@ Interestingly vimeo worked without issue.
 
 ## Conclusion
 
-I have enjoyed developing and deploying this YouTube analysis tool. From choosing technologies to overcoming deployment issues and dealing with YouTube’s access restrictions, I have learned some valuable insights.
+I have enjoyed developing and deploying this YouTube analysis tool. From choosing technologies to overcoming deployment issues and dealing with YouTube’s access restrictions, I have learned some valuable insights. A final note - unit tests are awesome for rapid continuous development.
 
 Will
 
