@@ -98,7 +98,7 @@ const PostImage = styled.img`
 `;
 
 export default function PostPage({
-  frontmatter: { title, date, cover_image },
+  frontmatter: { title, date, cover_image, hide_image_in_slug },
   slug,
   content,
 }: PostProps) {
@@ -118,12 +118,14 @@ export default function PostPage({
         transition={{ duration: 4, type: "spring" }}
       >
         <H1>{title}</H1>
-        <PostImage
-          style={{ width: "300px", height: "300px" }}
-          loading="lazy"
-          src={cover_image}
-          alt={title}
-        />
+        {!hide_image_in_slug ? (
+          <PostImage
+            style={{ width: "300px", height: "300px" }}
+            loading="lazy"
+            src={cover_image}
+            alt={title}
+          />
+        ) : null}
         <div
           style={{
             display: "flex-wrap",

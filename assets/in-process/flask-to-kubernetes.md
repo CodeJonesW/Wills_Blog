@@ -1,15 +1,16 @@
 ---
 title: "From Flask to Kubernetes: Switching Gears ⚙️"
-date: "Sep 26, 2024"
+date: "September 26, 2024"
 excerpt: "Redirecting my efforts"
 cover_image: "/images/posts/flask-to-kubernetes/main1.png"
+hide_image_in_slug: true
 ---
+
+<img src="/images/posts/flask-to-kubernetes/docker_kubernetes.png" alt="web app ui" title="Login"  />
 
 Embarking on a project to analyze YouTube videos using AI was both exciting and challenging. I learned a lot about Flask, Celery, and Google Cloud Platform along the way. However, a roadblock with YouTube's terms of service forced me to pivot my approach.
 
 I am happy to say I can now evolve the project into a new opportunity to learn. This article will cover containerization, cloud deployment, and Kubernetes orchestration.
-
-<img src="/images/posts/flask-to-kubernetes/docker_kubernetes.png" alt="web app ui" title="Login"  />
 
 ## Building the YouTube Analysis Tool
 

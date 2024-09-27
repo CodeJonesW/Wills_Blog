@@ -5,6 +5,7 @@ export type post = {
     date: string;
     excerpt: string;
     cover_image: string;
+    hide_image_in_slug?: string;
   };
 };
 

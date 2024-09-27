@@ -71,7 +71,7 @@ Here’s a simple rundown of how everything ties together:
 
 - **No Headaches with Infrastructure**: I didn’t have to worry about managing Redis myself.
 - **High Performance**: Tasks get processed quickly thanks to Redis’s in-memory capabilities.
-- **Flexible Costs**: I could scale my Memory Store instance up or down depending on usage
+- **Flexible**: I could scale my Memory Store instance up or down depending on usage
 - **Cost**: It can get expensive if you’re not careful with the instance size and configuration.
 
 ## Final Thoughts

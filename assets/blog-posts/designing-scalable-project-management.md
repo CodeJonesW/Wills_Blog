@@ -1,6 +1,6 @@
 ---
 title: "Managing Software Development Projects and Small Teams"
-date: "Dec 29, 2022"
+date: "December 29, 2022"
 excerpt: ""
 cover_image: "/images/posts/project-management/software_dev_team.webp"
 ---
