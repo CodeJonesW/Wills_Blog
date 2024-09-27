@@ -1,6 +1,6 @@
 ---
 title: "From Flask to Kubernetes: Switching Gears ⚙️"
-date: "Sep 26, 2024"
+date: "September 26, 2024"
 excerpt: "Redirecting my efforts"
 cover_image: "/images/posts/flask-to-kubernetes/main1.png"
 hide_image_in_slug: true

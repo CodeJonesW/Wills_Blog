@@ -1,6 +1,6 @@
 ---
 title: "Home Automation: Networking a Temperature Monitor"
-date: "Aug 4, 2024"
+date: "August 4, 2024"
 excerpt: ""
 cover_image: "/images/posts/home-auto-4/temp.webp"
 ---
