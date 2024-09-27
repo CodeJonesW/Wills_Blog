@@ -5,7 +5,9 @@ excerpt: "Redirecting my efforts"
 cover_image: "/images/posts/flask-to-kubernetes/main1.png"
 ---
 
-Embarking on a project to analyze YouTube videos using AI was both exciting and challenging. What started as a simple Flask server evolved into a comprehensive learning experience involving containerization, cloud deployment, and Kubernetes orchestration. I want to share my journey, the hurdles I faced, and how I pivoted to embrace new technologies.
+Embarking on a project to analyze YouTube videos using AI was both exciting and challenging. I learned a lot about Flask, Celery, and Google Cloud Platform along the way. However, a roadblock with YouTube's terms of service forced me to pivot my approach.
+
+I am happy to say I can now evolve the project into a new opportunity to learn. This article will cover containerization, cloud deployment, and Kubernetes orchestration.
 
 <img src="/images/posts/flask-to-kubernetes/docker_kubernetes.png" alt="web app ui" title="Login"  />
 
@@ -13,14 +15,7 @@ Embarking on a project to analyze YouTube videos using AI was both exciting and 
 
 My initial goal was straightforward: create a web application that accepts YouTube URLs, transcribes the videos, and runs AI analyses based on user prompts. To handle the intensive background tasks of video transcription and AI processing, I chose to use **Celery** alongside a **Flask** server. **Redis** served as the message broker for Celery, efficiently managing task queues and ensuring smooth asynchronous operations.
 
-## Deploying to Google Cloud Platform
-
-With the basic setup working locally, I decided to deploy the app to the internet using **Google Cloud Platform (GCP)**. I had two services on **App Engine**—the Flask server and the Celery worker. The React front-end was deployed via **Google Cloud Storage**.
-
-To support the application's infrastructure, I leveraged GCP's managed services:
-
-- **Memorystore for Redis**: Used as the message broker, providing a scalable and secure Redis service without the overhead of managing the underlying infrastructure.
-- **Cloud SQL for PostgreSQL**: Served as the database, offering automated backups, replication, and seamless integration with other GCP services.
+If interested read more about the initial project [here](https://www.williamjonescodes.com/blog/building-ai-youtube-analysis-tool)
 
 ## Hitting a Roadblock with YouTube
 
@@ -30,7 +25,7 @@ I considered various workarounds, like rotating proxies to bypass the restrictio
 
 ## Embracing Containerization and Kubernetes
 
-Rather than viewing this setback as a defeat, I saw it as an opportunity to deepen my understanding of containerization and Kubernetes. My app, with its multiple components, was a great candidate for this exploration.
+Rather than viewing this setback as a defeat, I saw it as an opportunity to deepen my understanding of containerization and Kubernetes. My app, with its multiple components, seemed like a great candidate for this exploration.
 
 ### Creating Docker Images
 
@@ -108,8 +103,6 @@ I'm excited to continue exploring:
 - **Further Cloud Integrations**: Experimenting with other GCP services to enhance application performance and resilience.
 
 ## Conclusion
-
-Setbacks are inevitable in any development journey, but they often pave the way for growth and new opportunities. By embracing containerization and Kubernetes, I transformed a project roadblock into a valuable learning experience. I hope my story inspires others to view challenges not as dead-ends but as detours leading to greater knowledge.
 
 ---
 

@@ -262,9 +262,8 @@ def analyze_text(transcript, user_prompt):
 3. Managing Secrets and Configuration
    - I used Google Cloud Secret Manager to manage API keys and other sensitive information securely. This ensured that my application could access secrets without exposing them in the codebase.
 4. Configuring VPC and Private IPs
-   - To ensure secure communication between the backend services and the Cloud SQL instance, I configured a Virtual Private Cloud (VPC) connector. This allowed my services to connect to the database using private IP addresses.
+   - To ensure secure communication between the backend services and the Cloud SQL instance, I configured a Virtual Private Cloud (VPC) connector. This allowed my services to connect to the each other using private IP addresses.
 5. Handling Worker Instances and Scaling
-
    - I set the instance_class and scaling settings in app.yaml and worker.yaml, allowing control over the number of instances based on load for cost-efficiency.
 
 ## Challenges Faced
@@ -291,9 +290,13 @@ Interestingly vimeo worked without issue.
 
 ## Conclusion
 
-I have enjoyed developing and deploying this YouTube analysis tool. From choosing the right technologies to overcoming deployment issues and dealing with YouTube’s access restrictions, I have learned some valuable insights.
+I have enjoyed developing and deploying this YouTube analysis tool. From choosing technologies to overcoming deployment issues and dealing with YouTube’s access restrictions, I have learned some valuable insights.
 
-I plan to continue investigate the youtube ip blockiing issue but felt this was a excellent time to stop and review my experience.
+Will
+
+---
+
+## Update
 
 Due to the YouTube IP blocking issue, I have decided to remove the project from the public domain in order to focus on other learning objectives. However, I am happy to share the codebase with anyone interested. The project's Readme.md contains detailed instructions on how to set up the application locally.
 

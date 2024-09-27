@@ -1,5 +1,5 @@
 ---
-title: "Technical Reflection - Building a Scalable Background Task System with Flask, Celery, and Google Cloud Memory Store for Redis"
+title: "Building a Scalable Background Task System with Flask, Celery, and Redis"
 date: "September 25, 2024"
 excerpt: "Managing background processes in a scalable way"
 cover_image: "/images/posts/building-a-scalable-background-task-system/redis.png"
@@ -7,7 +7,7 @@ cover_image: "/images/posts/building-a-scalable-background-task-system/redis.png
 
 Github Repo: [AI-powered YouTube Analysis Tool - Backend](https://github.com/CodeJonesW/tubeScriptAiServer)
 
-In this post, I want to dive into how I set up the backend infrastructure for my AI-powered YouTube Analysis Tool using Flask, Celery, and Google Cloud Memory Store with Redis. If you've ever wondered how to efficiently handle long-running tasks in a web application, this reflection will walk you through my journey and share some insights I learned along the way.
+In this post, I want to dive into how I set up the backend infrastructure for my AI-powered YouTube Analysis Tool using Flask, Celery, and Redis. If you've ever wondered how to efficiently handle long-running tasks in a web application, this reflection will walk you through my journey and share some insights I learned along the way.
 
 ## Why Celery and Flask?
 
@@ -33,7 +33,7 @@ Other message brokers like RabbitMQ or Amazon SQS are also popular choices, but 
 
 ## Using Google Cloud Memory Store for Redis
 
-Now, instead of managing Redis on my own, I opted to use **Google Cloud Memory Store**. It’s a managed service that lets you use Redis without worrying about the nitty-gritty details of setup and maintenance. Here’s why I went this route:
+Instead of managing Redis on my own in the cloud, I opted to use **Google Cloud Memory Store**. It’s a managed service that lets you use Redis without worrying about the details of setup and maintenance. Here’s why I went this route:
 
 - **No Infrastructure Hassle**: Google handles all the backend management, so I didn’t have to worry about setting up, patching, or maintaining Redis.
 - **Scalability**: As my app grows, Memory Store can easily scale to handle more tasks by adjusting the configuration.
@@ -56,7 +56,7 @@ While Google Cloud Memory Store with Redis is powerful, it can be pricey if you�
 
 I needed a database in order to store user information for logging in and tracking the minutes each user has used. I chose to use a PostgreSQL database because it is a familiar, widely used, and easy to setup. In combination with SQLAlchemy, I was able to quickly define a user model that fit my needs.
 
-Once movign to the cloud I used Google Cloud SQL to host my PostgreSQL database. This allowed me to easily scale my database as needed and keep it separate from my application server. I opted for the smallest instance size to keep costs low.
+Once moving to the cloud I used Google Cloud SQL to host my PostgreSQL database. This allowed me to easily scale my database as needed and keep it separate from my application server. I opted for the smallest instance size to keep costs low.
 
 ## How It All Works Together
 
@@ -74,12 +74,6 @@ Here’s a simple rundown of how everything ties together:
 - **Flexible Costs**: I could scale my Memory Store instance up or down depending on usage
 - **Cost**: It can get expensive if you’re not careful with the instance size and configuration.
 
-## When Should You Consider Using Google Cloud Memory Store with Redis?
-
-- If you need a managed, scalable solution for handling background tasks (perfect for Celery).
-- For real-time data processing, where speed is crucial.
-- When you want seamless integration with other Google Cloud services.
-
 ## Final Thoughts
 
 Using Celery and Flask deployed to Google App Engine, and Google Cloud Memory Store for Redis was an interesting experience. I would have loved to test the system under heavy load to see how it scaled. (a task for another day).
@@ -88,4 +82,4 @@ However, I was able to learn a lot about how to manage background tasks in a sca
 
 I hope this reflection gives you some insight into you might approach building your next application with background tasks in mind.
 
-Will Jones
+Will
