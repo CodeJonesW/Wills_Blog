@@ -1,5 +1,5 @@
 ---
-title: "Building an AI-Powered YouTube Analysis Tool: A Journey from Development to Deployment"
+title: "Building an AI-Powered YouTube Analysis Tool and Deploying on Google Cloud Platform"
 date: "Sep 23, 2024"
 excerpt: "Developing an AI-driven tool that extracts, transcribes, and analyzes YouTube videos has been both a challenging and rewarding experience. In this blog post, I’ll walk you through my entire journey, from selecting the technologies and architecture to deploying on Google Cloud Console, and share some insights into overcoming unexpected challenges along the way."
 cover_image: "/images/posts/tubescriptai/tubescriptai.webp"
