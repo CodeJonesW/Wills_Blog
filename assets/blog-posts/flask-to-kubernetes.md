@@ -1,5 +1,5 @@
 ---
-title: "From Flask to Kubernetes: My Journey in Deploying a Scalable Web App on GCP"
+title: "From Flask to Kubernetes: Switching Gears ⚙️"
 date: "Sep 26, 2024"
 excerpt: "Redirecting my efforts"
 cover_image: "/images/posts/flask-to-kubernetes/main1.png"
