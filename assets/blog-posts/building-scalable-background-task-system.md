@@ -1,5 +1,5 @@
 ---
-title: "Technical Reflection - Building a Scalable Background Task System with Flask, Celery, and Google Cloud Memory Store"
+title: "Technical Reflection - Building a Scalable Background Task System with Flask, Celery, and Google Cloud Memory Store for Redis"
 date: "September 25, 2024"
 excerpt: "Managing background processes in a scalable way"
 cover_image: "/images/posts/building-a-scalable-background-task-system/redis.png"
