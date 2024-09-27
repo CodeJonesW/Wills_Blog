@@ -132,7 +132,11 @@ export default function PostPage({
           }}
         >
           <Content
-            style={{ paddingLeft: "16px", paddingRight: "16px" }}
+            style={{
+              paddingLeft: "16px",
+              paddingRight: "16px",
+              marginBottom: "200px",
+            }}
             dangerouslySetInnerHTML={{ __html: marked(content) }}
           ></Content>
         </div>
