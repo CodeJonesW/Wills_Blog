@@ -80,6 +80,6 @@ Using Celery and Flask deployed to Google App Engine, and Google Cloud Memory St
 
 However, I was able to learn a lot about how to manage background tasks in a scalable way. I also learned a lot about how to manage costs when using managed services like App Engine, Google Cloud Memory Store, and Cloud SQL.
 
-I hope this reflection gives you some insight into you might approach building your next application with background tasks in mind.
+I hope this reflection gives insight into how you might approach building your next application with background tasks in mind.
 
 Will
