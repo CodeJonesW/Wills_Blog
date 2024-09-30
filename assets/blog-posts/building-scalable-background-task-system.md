@@ -13,7 +13,7 @@ In this post, I want to dive into how I set up the backend infrastructure for my
 
 When building my app, I needed a way to handle time-consuming tasks like downloading YouTube videos, transcribing audio, and analyzing transcripts without slowing down the user experience. This is why I chose Celery.
 
-**Celery** is like a task manager for your app – it lets you run tasks in the background, so your web app doesn't get stuck waiting for them to finish. It integrates with **Flask**, a lightweight web framework that I used for building the backend. This combination allowed my app to stay responsive, even when dealing with heavy processing. When moving to the cloud, I used Google App Engine to host my Flask application and Celery workers. This allowed me to easily scale my instances as dynamically pending on traffic.
+**Celery** is like a task manager for your app – it lets you run tasks in the background, so your web app doesn't get stuck waiting for them to finish. It integrates with **Flask**, a lightweight web framework that I used for building the backend. This combination allowed my app to stay responsive, even when dealing with heavy processing. When moving to the cloud, I used Google App Engine to host my Flask application and Celery workers. This allowed me to easily scale my instances as dynamically depending on traffic.
 
 ## Why Do We Need Redis?
 
@@ -23,7 +23,7 @@ To make Celery work, you need something called a **message broker**. Think of it
 - **Reliability**: Redis is known for its stability, making it a dependable choice for task management.
 - **Simplicity**: It’s easy to set up and works well with Celery out of the box.
 
-Other message brokers like RabbitMQ or Amazon SQS are also popular choices, but I choose Redis due to its speed, simplicity and to gain experience.
+Other message brokers like RabbitMQ or Amazon SQS are also popular choices, but I chose Redis due to its speed, simplicity, and to gain experience.
 
 ## Why Celery Needs a Message Broker
 
@@ -35,7 +35,7 @@ Other message brokers like RabbitMQ or Amazon SQS are also popular choices, but 
 
 Instead of managing Redis on my own in the cloud, I opted to use **Google Cloud Memory Store**. It’s a managed service that lets you use Redis without worrying about the details of setup and maintenance. Here’s why I went this route:
 
-- **No Infrastructure Hassle**: Google handles all the backend management, so I didn’t have to worry about setting up, patching, or maintaining Redis.
+- **No Infrastructure Hassle**: Google handles all the backend management, so I didn’t have to worry about setup, patching, or maintaining Redis.
 - **Scalability**: As my app grows, Memory Store can easily scale to handle more tasks by adjusting the configuration.
 - **Seamless Integration**: Since my entire app was hosted on Google Cloud, using Memory Store was the obvious choice.
 
@@ -54,9 +54,9 @@ While Google Cloud Memory Store with Redis is powerful, it can be pricey if you�
 
 ## PSQL Database
 
-I needed a database in order to store user information for logging in and tracking the minutes each user has used. I chose to use a PostgreSQL database because it is a familiar, widely used, and easy to setup. In combination with SQLAlchemy, I was able to quickly define a user model that fit my needs.
+I needed a database in order to store user information for logging in and tracking the minutes each user has used. I chose to use a PostgreSQL database because it is a familiar, widely used, and easy to setup. With SQLAlchemy, I was able to quickly define a user model that fit my needs.
 
-Once moving to the cloud I used Google Cloud SQL to host my PostgreSQL database. This allowed me to easily scale my database as needed and keep it separate from my application server. I opted for the smallest instance size to keep costs low.
+Once I moved to the cloud, I used Google Cloud SQL to host my PostgreSQL database. This allowed me to easily scale my database as needed and keep it separate from my application server. I opted for the smallest instance size to keep costs low.
 
 ## How It All Works Together
 
@@ -78,8 +78,8 @@ Here’s a simple rundown of how everything ties together:
 
 Using Celery and Flask deployed to Google App Engine, and Google Cloud Memory Store for Redis was an interesting experience. I would have loved to test the system under heavy load to see how it scaled. (a task for another day).
 
-However, I was able to learn a lot about how to manage background tasks in a scalable way. I also learned a lot about how to manage costs when using managed services like App Engine, Google Cloud Memory Store, and Cloud SQL.
+Overall, I learned a lot about managing background tasks in a scalable way. I also learned a lot about how to manage costs when using managed services like App Engine, Google Cloud Memory Store, and Cloud SQL.
 
-I hope this reflection gives you some insight into you might approach building your next application with background tasks in mind.
+I hope this reflection gives you some insight into how you might approach building your next application with background tasks in mind.
 
 Will

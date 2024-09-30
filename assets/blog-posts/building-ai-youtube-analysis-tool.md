@@ -17,8 +17,8 @@ Developing an AI-driven tool that extracts, transcribes, and analyzes YouTube vi
 
 My goal was to create a web-based application where users could input a YouTube video URL and a prompt, allowing them to receive an AI-generated analysis of the video’s content. The solution would involve downloading the video, transcribing the audio, and applying an AI model to analyze the transcript.
 
-<img src="/images/posts/tubescriptai/ui-2.png" alt="web app ui" title="Login"  />
-<img src="/images/posts/tubescriptai/ui-3.png" alt="web app ui" title="analysis" />
+<img src="/images/posts/tubescriptai/ui-2.png" alt="web app ui" title="analyze"  />
+<img src="/images/posts/tubescriptai/ui-3.png" alt="web app ui" title="results" />
 
 ## Technology Stack
 
@@ -28,13 +28,13 @@ React: I chose React for its ability to be deployed on many platforms, familiari
 
 ### Backend
 
-REST Server Framework - Flask: It is lightweight, allowed for quick set up of REST API endpoints and integrated well with Celery.
+REST Server Framework - Flask: It is lightweight, allowed for quick setup of REST API endpoints and integrated well with Celery.
 
-Task Processing - Celery: Used for managing the background tasks such as downloading video, transcribing, and analyzing. This choice allowed me to handle long-running processes asynchronously, ensuring that the web app remained responsive.
+Task Processing - Celery: Used for managing the background tasks such as downloading videos, transcribing, and analyzing. This choice allowed me to handle long-running processes asynchronously, ensuring that the web app remained responsive.
 
-Database - PostgreSQL: Widely used, easy to set up, and familiar. Pairs well with SQLAlchemy for ORM capabilities.
+Database - PostgreSQL: Widely used, easy to set up, and familiar. It pairs well with SQLAlchemy for ORM capabilities.
 
-Transcription and Analysis - Google Cloud Speech-to-Text API: Easy to integrate, accurate, and integrates well with other Google Cloud services.
+Transcription and Analysis - Google Cloud Speech-to-Text API: Easy to integrate, accurate, and works with other Google Cloud services.
 
 AI Analysis - OpenAI API: This was used for analyzing transcripts based on user prompts, offering advanced AI capabilities to generate insights.
 
@@ -48,9 +48,9 @@ Why These Technologies?
 
 To download the audio from specific YouTube videos, I integrated the [yt-dlp library](https://github.com/yt-dlp/yt-dlp), a popular tool for handling video downloads from various platforms. yt-dlp is a fork of the well-known youtube-dl project but comes with enhanced features, performance improvements, and better support for handling YouTube's frequent changes.
 
-The process starts when a user inputs a YouTube URL. The backend then invokes yt-dlp to extract and download the audio stream from the video. This approach ensures that the audio is directly available for transcription, eliminating the need for video-to-audio conversion.
+The process starts when a user inputs a YouTube URL. The backend then invokes yt-dlp to extract and download the audio stream from the video. This approach ensured that the audio was directly available for transcription, eliminating the need for video-to-audio conversion.
 
-I chose yt-dlp for its ability to download only the audio from video urls while having a large community of ongoing support. This choice also reduced storage needs, in an attempt to keep the process efficient and cost-effective.
+I chose yt-dlp for its ability to download only the audio from video URLs and its large, active community providing ongoing support. This choice also reduced storage needs, in an attempt to keep the process efficient and cost-effective.
 
 Integrating yt-dlp significantly streamlined the workflow of fetching YouTube content, making it an essential component of the project’s infrastructure.
 
@@ -100,9 +100,9 @@ To streamline the process, I switched to the synchronous Speech-to-Text API, whi
 
 ### Implementing Chunking for Faster Transcription
 
-One challenge with the synchronous API was handling long audio files efficiently. To address this, I modified the code to implement chunking, breaking the audio into smaller, manageable segments. Each chunk was then processed independently, allowing for much faster transcription response times. This chunking method significantly improved the overall transcription speed and made the synchronous API a more practical solution for handling larger videos.
+One challenge with the synchronous API was handling long audio files efficiently. To address this, I modified the code to implement chunking, breaking the audio into smaller, manageable segments. Each chunk is then processed independently, allowing for much faster transcription response times. This method significantly improved the overall transcription speed and made the synchronous API a more practical solution for handling larger videos.
 
-This optimization was a pivotal step in enhancing the performance and cost-efficiency of the service, ensuring that users received transcription results in a timely manner without the need for additional cloud storage resources.
+This optimization was a pivotal step in enhancing the performance and cost-efficiency of the service, ensuring that users received transcription results promptly without the need for additional cloud storage resources.
 
 ```python
 import os
@@ -262,9 +262,9 @@ def analyze_text(transcript, user_prompt):
 3. Managing Secrets and Configuration
    - I used Google Cloud Secret Manager to manage API keys and other sensitive information securely. This ensured that my application could access secrets without exposing them in the codebase.
 4. Configuring VPC and Private IPs
-   - To ensure secure communication between the backend services and the Cloud SQL instance, I configured a Virtual Private Cloud (VPC) connector. This allowed my services to connect to the each other using private IP addresses.
+   - To ensure secure communication between the backend services and the Cloud SQL instance, I configured a Virtual Private Cloud (VPC) connector. This allowed my services to connect using private IP addresses.
 5. Handling Worker Instances and Scaling
-   - I set the instance_class and scaling settings in app.yaml and worker.yaml, allowing control over the number of instances based on load for cost-efficiency.
+   - I set instance_class and scaling settings in app.yaml and worker.yaml, enabling load-based instance scaling for cost-efficiency..
 
 ## Challenges Faced
 
@@ -279,7 +279,7 @@ This challenge brought the project to a halt temporarily, and potential solution
 
 yt-dlp issue related to YouTube blocking IPs - [here](https://github.com/yt-dlp/yt-dlp/issues/10085)
 
-Interestingly vimeo worked without issue.
+Interestingly, Vimeo worked without issue.
 
 ## Lessons Learned
 
