@@ -101,10 +101,6 @@ Throughout this project, the most significant advantage was how Cloudflare's ser
 - **Global Scalability**: My app was instantly available worldwide, with minimal latency, thanks to Cloudflare's extensive edge network.
 - **Unified Development**: With Pages, Workers, and D1 working together seamlessly, I was able to maintain a unified codebase for both frontend and backend logic.
 
-## Domain Registration
-
-I was able to register a domain directly through Cloudflare and assign to my Pages project. This was a seamless process and allowed me to manage everything in one place.
-
 ## Environment Variables
 
 I was able to easily create environment variables in the Cloudflare dashboard and access them in my Workers code. On the Frontend I had to create a way to check the projects current domain in order to select the correct environment variables which seemed like a workaround. The env variables would compiled in the build process and I did not have to use cloudflaore secrets. Possible I may change this to hide my functions API urls in the future.
