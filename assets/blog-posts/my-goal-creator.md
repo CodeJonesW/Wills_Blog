@@ -1,6 +1,6 @@
 ---
 title: "Building a Fullstack Web App with Cloudflare Pages and Workers"
-date: "Sep 23, 2024"
+date: "Sep 30, 2024"
 excerpt: "Leveraging Cloudflare's serverless platform to create a powerful, scalable, and efficient full-stack web application."
 cover_image: "/images/posts/my-goal-creator/mygoalcreator.webp"
 ---
