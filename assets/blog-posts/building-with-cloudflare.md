@@ -43,7 +43,7 @@ brew install cloudflare-wrangler
 yarn create cloudflare@latest my-first-worker
 ```
 
-The above commands set up everything I needed to start working with Cloudflare Workers. It only took a few minutes to be up and running. With Wrangler’s `wrangler.toml` configuration file, I could customize settings for my Worker, such as environment variables, and binding to external APIs or databases.
+The above commands set up everything I needed to start working with Cloudflare Workers. It only took a few minutes to be up and running. With Wrangler’s wrangler.toml configuration file, I could customize settings for my Worker, such as environment variables, and binding to external APIs or databases.
 
 ### Key Commands That Made My Workflow Smoother
 
