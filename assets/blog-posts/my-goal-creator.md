@@ -23,29 +23,37 @@ A colleague recommended Cloudflare, and its simplicity allowed me to deploy my a
 
 ## Setting Up Cloudflare Pages and Workers
 
-Cloudflare Pages provided instant deployment for my React frontend, while Workers handled the backend logic including user authentication and integrations with external APIs. I Typescript to write the worker code. Python workers are still in beta at this time. [source](https://developers.cloudflare.com/workers/languages/python/#_top)
+Cloudflare Pages provided instant deployment for my React frontend, while Workers handled the backend logic including user authentication and integrations with external APIs. I choose Typescript to write the worker code. Python workers are still in beta at this time. [source](https://developers.cloudflare.com/workers/languages/python/#_top)
+
+Pages allow developers to link a git repository for automatic deployments based on branch rules. This made it easy to set up a CI/CD pipeline for my frontend code, ensuring that changes were deployed automatically when pushed to the repository. Developing pages locally did not seem to support hot reloading due to relying on the react app to be build prior to running wrangler. This added extra time to the development process but was not a deal breaker.
+
+```bash
+- npm run build
+- npx wrangler pages dev ./build --port 8788
+```
 
 ### Managing Workers with Wrangler
 
 Wrangler, Cloudflare’s CLI, made deploying and managing Workers straightforward, supporting quick setup, local development, and seamless deployment.
 
-#### How Wrangler Made My Life Easier
+- **Quick Setup**: Getting started with Wrangler was as simple as running
 
-1. **Quick Setup**: Getting started with Wrangler was as simple as running `brew install cloudflare-wrangler` in my terminal. After that, I could initialize my project with `yarn create cloudflare@latest my-first-worker`, which set up everything I needed to start working with Cloudflare Workers. It took just a few minutes to be up and running.
+```bash
+brew install cloudflare-wrangler
+yarn create cloudflare@latest my-first-worker
+```
 
-2. **Development Mode**: While building my app, I used `npx wrangler dev`, which allowed me to run my Workers locally and see changes instantly.
-
-3. **Seamless Deployment**: Once I was happy with my code, deploying it was as simple as running `npx wrangler deploy`. This streamlined the deployment process and made it easy to push updates to production.
-
-4. **Configuration Flexibility**: With Wrangler’s `wrangler.toml` configuration file, I could customize settings for my Worker, such as environment variables, and binding to external APIs or databases.
+The above commands set up everything I needed to start working with Cloudflare Workers. It only took a few minutes to be up and running. With Wrangler’s `wrangler.toml` configuration file, I could customize settings for my Worker, such as environment variables, and binding to external APIs or databases.
 
 #### Key Commands That Made My Workflow Smoother
 
 Here are some of the Wrangler commands that were indispensable during my project:
 
-- `npx wrangler dev`: Run your Worker in a local development environment.
-- `npx wrangler deploy`: Deploy your Worker to the Cloudflare network.
-- `npx wrangler tail`: Stream real-time logs from your Worker
+```bash
+ npx wrangler dev: # Run your Worker in a local development environment.
+ npx wrangler deploy # Deploy your Worker to the Cloudflare network.
+ npx wrangler tail # Stream real-time logs from your Worker
+```
 
 ### Leveraging D1 for Serverless SQL Databases
 
