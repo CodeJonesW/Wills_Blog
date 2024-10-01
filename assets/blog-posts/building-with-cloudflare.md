@@ -65,7 +65,7 @@ I was able to easily create environment variables in the Cloudflare dashboard an
 
 ### What I built
 
-I built [My Goal Creator](https://mygoalcreator.com), a web application that helps users set, track, and achieve their goals. The app was built using React for the frontend, leveraging the flexibility and performance that Cloudflare Pages offers. To generate personalized goal plans, I integrated OpenAI for natural language processing, allowing users to receive actionable steps tailored to their objectives.
+I built [My Goal Creator](https://mygoalcreator.com), a web application that helps users plan the route to achieve their goals. The app was built using React for the frontend, leveraging the flexibility and performance that Cloudflare Pages offers. To generate personalized goal plans, I integrated OpenAI for natural language processing, allowing users to receive actionable steps tailored to their objectives.
 
 Cloudflare’s platform simplified the entire process of deploying and scaling this app. By using Cloudflare Workers, I could handle user authentication, data management, and interactions with the OpenAI API without setting up complex backend infrastructure. Cloudflare D1 allowed me to storie user information, goals, and track usage. This combination allowed me to focus on building the core features without getting bogged down by server management, ensuring a smooth and responsive experience for users.
 
