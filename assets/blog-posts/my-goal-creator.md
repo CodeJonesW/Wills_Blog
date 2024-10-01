@@ -1,5 +1,5 @@
 ---
-title: "Building a Fullstack Web App with Cloudflare Pages and Workers"
+title: "Building a Fullstack Web App with Cloudflare Pages, Workers, and D1 SQL Database"
 date: "Sep 30, 2024"
 excerpt: "Leveraging Cloudflare's serverless platform to create a powerful, scalable, and efficient full-stack web application."
 cover_image: "/images/posts/my-goal-creator/mygoalcreator.webp"
