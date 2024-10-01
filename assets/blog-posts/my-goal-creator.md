@@ -5,6 +5,8 @@ excerpt: "Leveraging Cloudflare's serverless platform to create a powerful, scal
 cover_image: "/images/posts/my-goal-creator/mygoalcreator.webp"
 ---
 
+Applicaition: [My Goal Creator](https://mygoalcreator.com)
+
 ### Introduction
 
 In the ever-evolving world of web development, the demand for scalable, high-performing, and cost-efficient solutions is constantly growing. Serverless architecture has emerged as a revolutionary approach to building and deploying modern applications without the need to manage traditional infrastructure. This paradigm shift allows developers to focus on writing code, leaving infrastructure concerns such as scaling, provisioning, and maintenance to the serverless provider.
