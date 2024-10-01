@@ -81,10 +81,6 @@ Here are some of the Wrangler commands that were indispensable during my project
 - `npx wrangler deploy`: Deploy your Worker to the Cloudflare network.
 - `npx wrangler tail`: Stream real-time logs from your Worker
 
-#### Why Wrangler Is a Game-Changer
-
-Wrangler took away the pain points of deploying serverless functions. Instead of navigating through a web interface or handling complex deployment scripts, everything was done via the command line.
-
 ### Leveraging D1 for Serverless SQL Databases
 
 D1 is Cloudflare's **native serverless SQL database** that integrates seamlessly with Workers and Pages. It allowed me to store and manage user data, goals, and other application-specific information without having to worry about traditional database management tasks. I believe setup was around 4 lines of code included in the wrangler.toml file.
@@ -111,9 +107,18 @@ I was able to register a domain directly through Cloudflare and assign to my Pag
 
 I was able to easily create environment variables in the Cloudflare dashboard and access them in my Workers code. On the Frontend I had to create a way to check the projects current domain in order to select the correct environment variables which seemed like a workaround. The env variables would compiled in the build process and I did not have to use cloudflaore secrets. Possible I may change this to hide my functions API urls in the future.
 
+## What I built
+
+I built [My Goal Creator](https://mygoalcreator.com), a web application that helps users set, track, and achieve their goals. The app allows users to simply state their goal, areas of focus, and a timeline for completion and then use AI to generate a plan to achieve the goal. Users can save their goals and check them later. The MVP has been deployed and I look forward to adding more features in the future. As someone who I always looking to improve and set goals, I found this project to be very rewarding.
+
 ### Conclusion
 
 Cloudflare's serverless platform, with its combination of Pages, Workers, and D1, provided everything I needed to build a full-stack web application quickly and efficiently. By leveraging Cloudflare's global network, I was able to deliver a responsive, scalable, and reliable app to users around the world. If you’re looking for a modern solution to building and deploying web applications, Cloudflare's serverless technologies offer a powerful and developer-friendly option.
+
+### Repos
+
+[Worker](https://github.com/CodeJonesW/MyGoalCreator-worker)
+[Frontend](https://github.com/CodeJonesW/MyGoalCreator)
 
 ### Further Learning and Resources
 
