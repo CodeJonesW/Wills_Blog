@@ -122,8 +122,8 @@ Cloudflare's serverless platform, with its combination of Pages, Workers, and D1
 
 ### Repos
 
-[Worker](https://github.com/CodeJonesW/MyGoalCreator-worker)
-[Frontend](https://github.com/CodeJonesW/MyGoalCreator)
+[My Goal Creator - Worker](https://github.com/CodeJonesW/MyGoalCreator-worker)
+[My Goal Creator - Frontend](https://github.com/CodeJonesW/MyGoalCreator)
 
 ### Further Learning and Resources
 
