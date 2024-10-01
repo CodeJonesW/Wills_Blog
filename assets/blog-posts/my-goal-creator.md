@@ -37,11 +37,11 @@ Wrangler is like your personal assistant for interacting with Cloudflare Workers
 
 #### How Wrangler Made My Life Easier
 
-1. **Quick Setup**: Getting started with Wrangler was as simple as running `npm install -g wrangler` in my terminal. After that, I could initialize my project with `wrangler init`, which set up everything I needed to start working with Cloudflare Workers. It took just a few minutes to be up and running.
+1. **Quick Setup**: Getting started with Wrangler was as simple as running `brew install cloudflare-wrangler` in my terminal. After that, I could initialize my project with `yarn create cloudflare@latest my-first-worker`, which set up everything I needed to start working with Cloudflare Workers. It took just a few minutes to be up and running.
 
-2. **Development Mode**: While building my app, I used `wrangler dev`, which allowed me to run my Workers locally and see changes instantly. It even emulates the Cloudflare edge environment, so I could test how my code would behave in production without leaving my local machine.
+2. **Development Mode**: While building my app, I used `npx wrangler dev`, which allowed me to run my Workers locally and see changes instantly. It even emulates the Cloudflare edge environment, so I could test how my code would behave in production without leaving my local machine.
 
-3. **Seamless Deployment**: Once I was happy with my code, deploying it was as simple as running `wrangler deploy`. Within seconds, my Worker was live and running on Cloudflare's global network. No need to worry about infrastructure, servers, or complicated deployment pipelines—Wrangler handled it all.
+3. **Seamless Deployment**: Once I was happy with my code, deploying it was as simple as running `npx wrangler deploy`. Within seconds, my Worker was live and running on Cloudflare's global network. No need to worry about infrastructure, servers, or complicated deployment pipelines—Wrangler handled it all.
 
 4. **Configuration Flexibility**: With Wrangler’s `wrangler.toml` configuration file, I could customize settings for my Worker, such as environment variables, and binding to external APIs or databases. This made integrating my Worker with other parts of my application much more manageable.
 
