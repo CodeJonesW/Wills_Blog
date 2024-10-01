@@ -45,7 +45,7 @@ yarn create cloudflare@latest my-first-worker
 
 The above commands set up everything I needed to start working with Cloudflare Workers. It only took a few minutes to be up and running. With Wrangler’s `wrangler.toml` configuration file, I could customize settings for my Worker, such as environment variables, and binding to external APIs or databases.
 
-#### Key Commands That Made My Workflow Smoother
+### Key Commands That Made My Workflow Smoother
 
 Here are some of the Wrangler commands that were indispensable during my project:
 
@@ -59,17 +59,17 @@ Here are some of the Wrangler commands that were indispensable during my project
 
 D1 is Cloudflare's **native serverless SQL database** that integrates seamlessly with Workers and Pages. It allowed me to store and manage user data, goals, and other application-specific information without having to worry about traditional database management tasks. The setup was around 4 lines of code included in the wrangler.toml file.
 
-## Environment Variables
+### Environment Variables
 
 I was able to easily create environment variables in the Cloudflare dashboard and access them in my Workers code. On the Frontend I had to create a way to check the projects current domain in order to select the correct environment variables which seemed like a workaround. The environment variables were compiled during the build process, which meant I didn’t need to use Cloudflare Secrets for them. However, I might adjust this setup in the future to better secure my function API URLs.
 
-## What I built
+### What I built
 
 I built [My Goal Creator](https://www.mygoalcreator.com), a web application that helps users set, track, and achieve their goals. The app was built using React for the frontend, leveraging the flexibility and performance that Cloudflare Pages offers. To generate personalized goal plans, I integrated OpenAI for natural language processing, allowing users to receive actionable steps tailored to their objectives.
 
 Cloudflare’s platform simplified the entire process of deploying and scaling this app. By using Cloudflare Workers, I could handle user authentication, data management, and interactions with the OpenAI API without setting up complex backend infrastructure. Cloudflare D1 was instrumental in storing user goals and tracking their progress, seamlessly integrating with the rest of my tech stack. This combination allowed me to focus on building the core features without getting bogged down by server management, ensuring a smooth and responsive experience for users.
 
-## My Goal Creator Future Improvements
+### My Goal Creator Future Improvements
 
 - Implementing routing and state management like Redux.
 - Refactor the UI to use Material UI for consistent styling and improved user experience.
