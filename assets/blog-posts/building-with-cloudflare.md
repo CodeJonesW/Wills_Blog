@@ -9,11 +9,11 @@ Live Application: [My Goal Creator](https://mygoalcreator.com)
 
 ### Introduction
 
-The demand for scalable, high-performing, and cost-efficient solutions is constantly growing. Serverless architecture has revolutionized how developers build and deploy modern applications, eliminating the need to manage infrastructure and enabling a focus on writing code. Cloudflare offers a comprehensive platform, and in this article, I'll cover how I used Pages, Workers, and D1 to build my application.
+The demand for scalable, high-performing, and cost-efficient solutions is constantly growing. Serverless architecture has revolutionized how developers build and deploy modern applications, eliminating the need to manage infrastructure and enabling a focus on writing code. My goal is to find the best way to quickly deploy scalable applications to the web. Cloudflare offers a comprehensive platform, and in this article, I'll cover my experience using Pages, Workers, and D1 to build my application.
 
 ### Why Use Cloudflare's Serverless Platform?
 
-A colleague recommended Cloudflare, and its simplicity allowed me to deploy my app within minutes, compared to complexities of AWS and GCP.
+A colleague recommended Cloudflare for its high quality developer experience. Taking this path allowed me to deploy my app within a few hours. When compared to complexities of AWS and GCP, Cloudflare was a great choice. A few notable points that made Cloudflare stand out were:
 
 1. **Global Distribution**: Cloudflare Workers execute your code in data centers close to the user, reducing latency significantly. This is particularly valuable for applications that require real-time interactions or need to deliver content quickly.
 
@@ -25,7 +25,7 @@ A colleague recommended Cloudflare, and its simplicity allowed me to deploy my a
 
 Cloudflare Pages provided instant deployment for my React frontend, while Workers handled the backend logic including user authentication and integrations with external APIs. I choose Typescript to write the worker code. Python workers are still in beta at this time. [source](https://developers.cloudflare.com/workers/languages/python/#_top)
 
-Pages allow developers to link a git repository for automatic deployments based on branch rules. This made it easy to set up a deployment pipeline for my frontend code. Developing pages locally did not seem to support hot reloading due to relying on the react app to be build prior to running wrangler. This added extra time to the development process but was not a deal breaker.
+Pages allow developers to link a git repository for automatic deployments based on branch rules. This made it easy to set up a deployment pipeline for my frontend code. Developing pages locally did not seem to support hot reloading due to relying on the react app to be build prior to running wrangler. This added extra time to the frontend development process but was not a deal breaker. When making code changes to the worker, wrangler would automatically reload the changes without having to stop and start the process.
 
 ```bash
 - npm run build
@@ -34,7 +34,7 @@ Pages allow developers to link a git repository for automatic deployments based 
 
 ### Managing Workers with Wrangler
 
-Wrangler, Cloudflare’s CLI, made deploying and managing Workers straightforward, supporting quick setup, local development, and seamless deployment.
+Wrangler, Cloudflare’s CLI, made deploying and managing Workers straightforward, supporting quick setup, local development, and deployment.
 
 Getting started with Wrangler was as simple as running
 
@@ -57,17 +57,17 @@ Here are some of the Wrangler commands that were indispensable during my project
 
 ### Leveraging D1 for Serverless SQL Databases
 
-D1 is Cloudflare's **native serverless SQL database** that integrates seamlessly with Workers and Pages. It allowed me to store and manage user data, goals, and other application-specific information without having to worry about traditional database management tasks. The setup was around 4 lines of code included in the wrangler.toml file.
+D1 is Cloudflare's **native serverless SQL database** that integrates with Workers and Pages. It allowed me to store and manage user data, goals, and other application-specific information without having to worry about traditional database management tasks. The setup involved around 4 lines of code included in the wrangler.toml file and a traditional SQL schema file.
 
 ### Environment Variables
 
-I was able to easily create environment variables in the Cloudflare dashboard and access them in my Workers code. On the Frontend I had to create a way to check the projects current domain in order to select the correct environment variables which seemed like a workaround. The environment variables were compiled during the build process, which meant I didn’t need to use Cloudflare Secrets for them. However, I might adjust this setup in the future to better secure my worker API URLs when called in Page functions.
+I was able to easily create environment variables in the Cloudflare dashboard and access them in my Workers code. The React applications environment variables were compiled during the build process, which meant I could not to use Cloudflare Secrets for them.
 
 ### What I built
 
-I built [My Goal Creator](https://mygoalcreator.com), a web application that helps users plan the route to achieve their goals. The app was built using React for the frontend, leveraging the flexibility and performance that Cloudflare Pages offers. To generate personalized goal plans, I integrated OpenAI for natural language processing, allowing users to receive actionable steps tailored to their objectives.
+I built [My Goal Creator](https://mygoalcreator.com), a web application that helps users generate a plan to achieve their goals.
 
-Cloudflare’s platform simplified the entire process of deploying and scaling this app. By using Cloudflare Workers, I could handle user authentication, data management, and interactions with the OpenAI API without setting up complex backend infrastructure. Cloudflare D1 allowed me to storie user information, goals, and track usage. This combination allowed me to focus on building the core features without getting bogged down by server management, ensuring a smooth and responsive experience for users.
+By using Cloudflare Workers, I could handle user authentication, data management, and interactions with the OpenAI API without setting up complex backend infrastructure. This combination allowed me to focus on building the core features without getting bogged down by server management, ensuring a smooth and responsive experience for users.
 
 ### My Goal Creator Future Improvements
 
@@ -75,10 +75,11 @@ Cloudflare’s platform simplified the entire process of deploying and scaling t
 - Refactor the UI to use Material UI for consistent styling and improved user experience.
 - Ability for users to edit their goals generated by AI and save them to the database.
 - Ability to continue the conversation about a particular goal and save any notes or updates.
+- Goal tracking and analytics to help users stay on track and motivated.
 
 ### Conclusion
 
-Overall I have really enjoyed working with Cloudflare's serverless platform. As I continue to explore Cloudflare’s capabilities, I’m excited to see how I they can support future projects.
+This project was a great way to get introduced to Cloudflare products. Overall I have really enjoyed working with their serverless platform and will likely choose it again to support future endeavors.
 
 ### Repos
 
@@ -94,3 +95,7 @@ Overall I have really enjoyed working with Cloudflare's serverless platform. As 
 - [Cloudflare Pages Documentation](https://developers.cloudflare.com/pages/)
 - [Cloudflare Workers Documentation](https://developers.cloudflare.com/workers/)
 - [Cloudflare D1 Documentation](https://developers.cloudflare.com/d1/)
+
+```
+
+```
