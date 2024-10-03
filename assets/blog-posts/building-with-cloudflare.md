@@ -19,7 +19,9 @@ A colleague recommended Cloudflare for its high quality developer experience. Ta
 
 2. **Integrated Development**: Cloudflare offers seamless integration between Pages, Workers, and D1, making it easy to build full-stack applications.
 
-3. **Cost-Effective**: Cloudflare’s pay-as-you-go pricing model ensures you only pay for what you use, making it a cost-effective solution for startups and small businesses.
+3. **Cost-Effective**:
+   - Cloudflare Workers's free plan gets 100,0000 requests a day, no charge for duration, 10 milliseconds of CPU time per invocation. [source](https://developers.cloudflare.com/workers/platform/pricing/)
+   - Cloudflare Pages free plan gets 1 build at a time, 500 builds per month, and unlimited requests and bandwidth. [source](https://www.cloudflare.com/plans/developer-platform/)
 
 ## Setting Up Cloudflare Pages and Workers
 
