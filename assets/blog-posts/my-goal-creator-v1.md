@@ -14,7 +14,7 @@ Personal Update:
 
 On September 1, 2024, I was laid off from my position at Nimbio due to budget cuts. Since then, I have focused my efforts on applying for new software engineering roles and advancing my goal creator project. Over the past month, I have successfully developed this web application from inception to a functioning minimum viable product (MVP).
 
-To date, I have submitted over 100 job applications and participated in two interviews. Additionally, I completed my first half marathon with a time of 2:16:48 yesterday. I maintain a structured daily routine to meet my job application targets, utilizing running, coding, and continuous learning to stay focused and motivated.
+To date, I have submitted over 100 job applications and participated in two interviews. Additionally, I completed my first half marathon with a time of 2:16:48 yesterday. I maintain a structured daily routine to meet my job application targets and utilize running, coding, and continuous learning to stay focused and motivated.
 
 <img src="/images/posts/mgc_v1/contributions.png" alt="web app ui" title="analyze"  />
 
@@ -66,4 +66,4 @@ Will Jones
 - A few of this month's goals
   - Eliminate any markdown parsing bugs
   - Organize backend routes and add in a web framework like [Hono](https://hono.dev/docs/)
-  - Refactor worker code to use Cloudflare Durable Objects
+  - Refactor worker code to use Cloudflare [Durable Objects](https://developers.cloudflare.com/durable-objects/)
