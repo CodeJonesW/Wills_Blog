@@ -8,7 +8,7 @@ hide_image_in_slug: true
 
 <img src="/images/posts/mgc_v1/mgc-ui-2.png" alt="landing page" title="my goal creator"  />
 
-It has been 27 days since I wrote my first [article](https://www.williamjonescodes.com/blog/building-with-cloudflare) about [My Goal Creater](https://mygoalcreator.com).
+It has been 27 days since I wrote my first [article](https://www.williamjonescodes.com/blog/building-with-cloudflare) about [My Goal Creator](https://mygoalcreator.com).
 
 Personal Update:
 
