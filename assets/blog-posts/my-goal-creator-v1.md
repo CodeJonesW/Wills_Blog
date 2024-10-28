@@ -56,7 +56,7 @@ Surprisingly the most challenging part about working with the openai completion 
 
 ## Database structure and interaction
 
-After playing with the database schema over several weeks I decided on a design where clicking on a line of text within a goal creates a new goal referencing the previous via its parent_goal_id. This allows for a tree like structure of goals to be created and queried. Combining this style of data creation with responsive UI animations allow for me to create a fairly engaging user experience. The design supports a simple routing and component implementation. I can continually navigate to each new piece of content with a new goal id reusing the same component. There are definitely improvements to be made but I am happy with the progress so far.
+After playing with the database schema, I decided on a design where clicking on a line of text within a goal creates a new goal referencing the previous via its parent_goal_id. This allows for a tree like structure of goals to be created and queried. Combining this style of data creation with responsive UI animations allow for me to create a fairly engaging user experience. The design supports a simple routing and component implementation. I can continually navigate to each new piece of content with a new goal id reusing the same component. There are definitely improvements to be made but I am happy with the progress so far.
 
 ## AI Prompting Challenges
 
