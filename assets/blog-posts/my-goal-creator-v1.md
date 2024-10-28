@@ -12,7 +12,7 @@ It has been 27 days since I wrote my first [article](https://www.williamjonescod
 
 Personal Update:
 
-I completed my first half marathon yesterday, finishing with a time of 2:16:48! 🏃‍♂️
+I completed my first half marathon yesterday, finishing with a time of 2:16:26! 🏃‍♂️
 <img src="/images/posts/mgc_v1/marathon.jpg" alt="marathon" title="marathon"  />
 
 The commits have been steady!
