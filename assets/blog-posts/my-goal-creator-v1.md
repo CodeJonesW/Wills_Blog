@@ -6,14 +6,14 @@ cover_image: "/images/posts/mgc_v1/mgc-landing.png"
 hide_image_in_slug: true
 ---
 
-<img src="/images/posts/mgc_v1/mgc-ui-2.png" alt="web app ui" title="analyze"  />
+<img src="/images/posts/mgc_v1/mgc-ui-2.png" alt="landing page" title="my goal creator"  />
 
 It has been 27 days since I wrote my first [article](https://www.williamjonescodes.com/blog/building-with-cloudflare) about [My Goal Creater](https://mygoalcreator.com).
 
 Personal Update:
 
 I completed my first half marathon yesterday, finishing with a time of 2:16:48! 🏃‍♂️
-<img src="/images/posts/mgc_v1/marathon.jpg" alt="web app ui" title="analyze"  />
+<img src="/images/posts/mgc_v1/marathon.jpg" alt="marathon" title="marathon"  />
 
 The commits have been steady!
 
@@ -55,9 +55,9 @@ The app acts like a reader where the user can ask how to achieve a goal or task 
   - Refactor worker code to use Cloudflare [Durable Objects](https://developers.cloudflare.com/durable-objects/)
   - improve tracker board mobile experience
 
-<img src="/images/posts/mgc_v1/mgc-ui-1.png" alt="web app ui" title="analyze"  />
+<img src="/images/posts/mgc_v1/mgc-ui-1.png" alt="web app ui" title="enter goal"  />
 
-<img src="/images/posts/mgc_v1/mgc-ui-4.png" alt="web app ui" title="analyze"  />
+<img src="/images/posts/mgc_v1/mgc-ui-4.png" alt="web app ui" title="plan"  />
 
 ## Implementation of OpenAI Completion Streaming
 
@@ -77,7 +77,7 @@ Prompting the AI to consistently produce reliable, structured markdown was anoth
 
 I’m also developing a kanban board feature for tracking goals and progress. Currently, a working prototype allows users to drag sub-tasks between columns, providing a visual and interactive way to manage tasks.
 
-<img src="/images/posts/mgc_v1/mgc-ui-3.png" alt="web app ui" title="analyze"  />
+<img src="/images/posts/mgc_v1/mgc-ui-3.png" alt="web app ui" title="goal tracker"  />
 
 ## Future Plans
 
