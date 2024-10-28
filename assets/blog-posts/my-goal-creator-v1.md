@@ -55,7 +55,7 @@ I have also been working on a kanban board to track goals and their progress. Th
 
 I have been referring to this as 'diving' and allows users to quickly generate new reading material without having to think of new topics or questions to ask.
 
-My plan is to build a product that I can continually interate on until I find a use case that resonates with users. During this time I aim to keep the product flexible enough so that I can leverage it as a base for a rebranded product using similar or the same technology if needed.
+My plan is to build a product that I can continually iterate on until I find a use case that resonates with users. During this time I aim to keep the product flexible enough so that I can leverage it as a base for a rebranded product using similar or the same technology if needed.
 
 If you are reading this and have any feedback or ideas please reach out to me williamjonescodes@gmail.com
 
