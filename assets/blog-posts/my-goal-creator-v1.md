@@ -27,6 +27,12 @@ The app acts like a reader where the user can ask how to achieve a goal or task 
 
 ### New Features Since Last Update
 
+- Dev Stuff
+
+  - redux
+  - material ui
+  - react router
+
 - Frontend
   - users can create a goal and stream the response
   - users can click on text within a goal to create a new sub goal and stream the response
