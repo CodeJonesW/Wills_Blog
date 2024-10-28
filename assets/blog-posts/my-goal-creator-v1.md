@@ -52,11 +52,11 @@ The app acts like a reader where the user can ask how to achieve a goal or task 
 
 On first pass I used the simple approach of awaiting the full response from open ai. This left the user waiting with a loading spinner. I decided to implement openai chat completion streaming to provide the user with instant feedback. In order to pipe the completions from openai to my web app I used [Readable streams](https://nodejs.org/api/stream.html#readable-streams).
 
-Surprisingly the most challenging part about working with the openai completion stream was making sure that the markdown syntax was parsed correctly during the stream as incomplete markdown lines can cause formatting inconsistentsies. To add to this the way new lines were parsed in the production deployed application varied from the development environment. I was able to improve my markdown parsing logic to handle the most edge cases but a few still exist.
+Surprisingly the most challenging part about working with the openai completion stream was making sure that the markdown syntax was parsed correctly during the stream as incomplete markdown lines can cause formatting inconsistencies. To add to this the way new lines were parsed in the production deployed application varied from the development environment. I was able to improve my markdown parsing logic to handle the most edge cases but a few still exist.
 
 ## Database structure and interaction
 
-After playing with the database schema over several weeks I decided on a design where clicking on a line of text within a goal creates a new goal referencing the previous via its parent_goal_id. This allows for a tree like structure of goals to be created and queried. Combining this style of data creation with responsive UI animations allow for me to create a fairly engaging user experience. The design supports a simple routing and component implementation. I can continually navigate to each new piece of content with a new goal id reusing the same component. There are definitely improvements to be made but I am happy with the progress so far.
+After playing with the database schema, I decided on a design where clicking on a line of text within a goal creates a new goal referencing the previous via its parent_goal_id. This allows for a tree like structure of goals to be created and queried. Combining this style of data creation with responsive UI animations allow for me to create a fairly engaging user experience. The design supports a simple routing and component implementation. I can continually navigate to each new piece of content with a new goal id reusing the same component. There are definitely improvements to be made but I am happy with the progress so far.
 
 ## AI Prompting Challenges
 
