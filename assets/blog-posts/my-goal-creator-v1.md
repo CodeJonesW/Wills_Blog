@@ -49,6 +49,7 @@ The app acts like a reader where the user can ask how to achieve a goal or task 
   - Eliminate any markdown parsing bugs
   - Organize backend routes and add in a web framework like [Hono](https://hono.dev/docs/)
   - Refactor worker code to use Cloudflare [Durable Objects](https://developers.cloudflare.com/durable-objects/)
+  - improve tracker board mobile experience
 
 <img src="/images/posts/mgc_v1/mgc-ui-1.png" alt="web app ui" title="analyze"  />
 
