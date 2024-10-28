@@ -25,6 +25,10 @@ My Goal Creator is a web application designed to help users set, track, and refi
 
 The app acts like a reader where the user can ask how to achieve a goal or task and recieve a detailed plan. Once a plan has been generated the user has the ability to easily select a line from the text and dive deeper into that subject. This recursive style of research allows for users to find sub topics of interest and quickly generate information about them. I have been referring to this as 'diving'. It allows users to quickly generate new reading material without having to type.
 
+[My Goal Creator - Worker](https://github.com/CodeJonesW/MyGoalCreator-worker)
+
+[My Goal Creator - Frontend](https://github.com/CodeJonesW/MyGoalCreator)
+
 ### New Features Since Last Update
 
 - Dev Stuff
