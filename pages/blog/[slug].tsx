@@ -57,6 +57,12 @@ const Content = styled.div`
     border-radius: 10px;
     margin: 16px 0;
   }
+  video {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+    margin: 16px 0;
+  }
   pre {
     background-color: #f5f5f5; /* Background color for better contrast */
     padding: 16px; /* Padding around the code block */
