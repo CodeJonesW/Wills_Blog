@@ -17,6 +17,7 @@ On September 1, 2024, I was laid off from my position at Nimbio due to budget cu
 To date, I have submitted over 100 job applications and participated in two interviews. Additionally, I completed my first half marathon with a time of 2:16:48 yesterday. I maintain a structured daily routine to meet my job application targets and utilize running, coding, and continuous learning to stay focused and motivated.
 
 <img src="/images/posts/mgc_v1/contributions.png" alt="web app ui" title="analyze"  />
+<img src="/images/posts/mgc_v1/marathon.jpg" alt="web app ui" title="analyze"  />
 
 Quick recap: My Goal Creator is a web application built with React, TypeScript, Node.js, SQL, and Cloudflare services such as Pages and Workers. The backend uses OpenAi to stream chat completions from users inputs.
 
