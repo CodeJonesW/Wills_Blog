@@ -89,27 +89,6 @@ export const Info: NextPage = () => {
                 love to learn and build new skills. Some of my personal
                 interests are playing music, exercising, and cooking.
               </p>
-              <p
-                style={{
-                  fontFamily: "MontserratMedium",
-                  textAlign: "center",
-                  fontSize: "1.3em",
-                  lineHeight: "1.5em",
-                  paddingLeft: "24px",
-                  paddingRight: "24px",
-                  marginBottom: "200px",
-                }}
-              >
-                Over the past 5 years of my career, I have worked on a variety
-                projects across different technology stacks. My experience with
-                React, React Native, and Redux has given me the confidence to
-                build, fix, and maintain production web and mobile applications.
-                Over the last 2 years, I have loved writing Python code to
-                create robust backend systems. I plan to continue developing
-                across technology stacks with a focus on building scalable
-                applications using cloud services. These experiences have given
-                me the confidence that I can learn anything I put my mind to.
-              </p>
               <UnshrinkableDiv style={{ height: "2vh" }} />
             </FlexColumnCenter>
           </Section2Content>
