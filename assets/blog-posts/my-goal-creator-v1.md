@@ -8,63 +8,72 @@ hide_image_in_slug: true
 
 <img src="/images/posts/mgc_v1/mgc-ui-2.png" alt="web app ui" title="analyze"  />
 
-It has been 27 days since I wrote my first article about https://mygoalcreator.com - [here](https://www.williamjonescodes.com/blog/building-with-cloudflare).
+It has been 27 days since I wrote my first [article](https://www.williamjonescodes.com/blog/building-with-cloudflare) about [My Goal Creater](https://mygoalcreator.com).
 
 Personal Update:
 
-On September 1, 2024, I was laid off from my position at Nimbio due to budget cuts. Since then, I have focused my efforts on applying for new software engineering roles and advancing my goal creator project. Over the past month, I have successfully developed this web application from inception to a functioning minimum viable product (MVP).
-
-To date, I have submitted over 100 job applications and participated in two interviews. Additionally, I completed my first half marathon with a time of 2:16:48 yesterday. I maintain a structured daily routine to meet my job application targets and utilize running, coding, and continuous learning to stay focused and motivated.
-
-<img src="/images/posts/mgc_v1/contributions.png" alt="web app ui" title="analyze"  />
+I completed my first half marathon yesterday, finishing with a time of 2:16:48! 🏃‍♂️
 <img src="/images/posts/mgc_v1/marathon.jpg" alt="web app ui" title="analyze"  />
 
-Quick recap: My Goal Creator is a web application built with React, TypeScript, Node.js, SQL, and Cloudflare services such as Pages and Workers. The backend uses OpenAi to stream chat completions from users inputs.
+The commits have been steady!
 
-Features added since the last article:
+<img src="/images/posts/mgc_v1/contributions.png" alt="github history" title="commit history"  />
 
-- frontend
-  - user registration and login
+## Project Recap
+
+My Goal Creator is a web application designed to help users set, track, and refine their goals. Built with React, TypeScript, Node.js, SQL, and Cloudflare services, it uses OpenAI on the backend to dynamically stream responses to users' inputs.
+
+The app acts like a reader where the user can ask how to achieve a goal or task and recieve a detailed plan. Once a plan has been generated the user has the ability to easily select a line from the text and dive deeper into that subject. This recursive style of research allows for users to find sub topics of interest and quickly generate information about them. I have been referring to this as 'diving'. It allows users to quickly generate new reading material without having to type.
+
+### New Features Since Last Update
+
+- Frontend
   - users can create a goal and stream the response
   - users can click on text within a goal to create a new sub goal and stream the response
-  - users can view their generated goals and subgoals
+  - users can view their generated goals and any topics they have dived into
   - users can track goals and see their progress via a kanban board
-- backend
-  - user authentication
+- Backend
+
   - open ai completion streaming
   - database schema for goals and tracking
   - markdown parsing and dynamic query generation
-  - unit tests for all current routes
+  - unit tests
+
+- Goals for the month
+  - Eliminate any markdown parsing bugs
+  - Organize backend routes and add in a web framework like [Hono](https://hono.dev/docs/)
+  - Refactor worker code to use Cloudflare [Durable Objects](https://developers.cloudflare.com/durable-objects/)
 
 <img src="/images/posts/mgc_v1/mgc-ui-1.png" alt="web app ui" title="analyze"  />
 
-Once a response has been generated the user has the ability to select text from the response and dive deeper into that subject. This recursive style of research allows for users to find sub topics of interest and quickly generate information about them.
-
 <img src="/images/posts/mgc_v1/mgc-ui-4.png" alt="web app ui" title="analyze"  />
 
-After playing with the database schema over several weeks I decided on a fairly simple design where clicking on a line of text within a goal creates a new goal referencing the previous via its parent_goal_id. This allows for a tree like structure of goals to be created and queried. Combining this style of data creation with responsive UI animations allow for me to create a fun and engaging user experience.
+## Implementation of OpenAI Completion Streaming
 
-I decided to implement openai chat completion streaming to provide the user with instant feedback. In order to pipe the completions from openai to my web app I used [Readable streams](https://nodejs.org/api/stream.html#readable-streams) in Nodejs with my cloudflare worker.
+On first pass I used the simple approach of awaiting the full response from open ai. This left the user waiting with a loading spinner. I decided to implement openai chat completion streaming to provide the user with instant feedback. In order to pipe the completions from openai to my web app I used [Readable streams](https://nodejs.org/api/stream.html#readable-streams).
 
 Surprisingly the most challenging part about working with the openai completion stream was making sure that the markdown syntax was parsed correctly during the stream as incomplete markdown lines can cause formatting inconsistentsies. To add to this the way new lines were parsed in the production deployed application varied from the development environment. I was able to improve my markdown parsing logic to handle the most edge cases but a few still exist.
 
-Another challenge was prompting the AI to consistently provide quality results. I wanted to generate markdown in a pattern that I could rely on for splitting a goal's plan into a specific timeline and sub tasks. After some experimentation I have improved my results to where I could plan a expected format. I then parse the markdown into data I can properly query via my SQL DB.
+## Database structure and interaction
 
-I have also been working on a kanban board to track goals and their progress. This feature is still in development but I have a working prototype that allows users to drag goal sub tasks from one column to another.
+After playing with the database schema over several weeks I decided on a design where clicking on a line of text within a goal creates a new goal referencing the previous via its parent_goal_id. This allows for a tree like structure of goals to be created and queried. Combining this style of data creation with responsive UI animations allow for me to create a fairly engaging user experience. The design supports a simple routing and component implementation. I can continually navigate to each new piece of content with a new goal id reusing the same component. There are definitely improvements to be made but I am happy with the progress so far.
+
+## AI Prompting Challenges
+
+Prompting the AI to consistently produce reliable, structured markdown was another challenge. I aimed for a specific markdown pattern that I could use to split goal plans into timelines and subtasks. After extensive experimentation, I refined my prompts to achieve a predictable format, which I now parse and store in a SQL database for easy querying.
+
+## Kanban Board for Tracking
+
+I’m also developing a kanban board feature for tracking goals and progress. Currently, a working prototype allows users to drag sub-tasks between columns, providing a visual and interactive way to manage tasks.
 
 <img src="/images/posts/mgc_v1/mgc-ui-3.png" alt="web app ui" title="analyze"  />
 
-I have been referring to this as 'diving' and allows users to quickly generate new reading material without having to think of new topics or questions to ask.
+## Future Plans
 
-My plan is to build a product that I can continually iterate on until I find a use case that resonates with users. During this time I aim to keep the product flexible enough so that I can leverage it as a base for a rebranded product using similar or the same technology if needed.
+My plan is to keep refining My Goal Creator until I find a use case that truly resonates with users. The platform’s flexibility should allow it to serve as a foundation for future, rebranded products if necessary.
 
-If you are reading this and have any feedback or ideas please reach out to me williamjonescodes@gmail.com
+If you have any feedback or ideas, feel free to reach out at williamjonescodes@gmail.com.
 
 Cheers,
 
 Will Jones
-
-- A few of this month's goals
-  - Eliminate any markdown parsing bugs
-  - Organize backend routes and add in a web framework like [Hono](https://hono.dev/docs/)
-  - Refactor worker code to use Cloudflare [Durable Objects](https://developers.cloudflare.com/durable-objects/)
