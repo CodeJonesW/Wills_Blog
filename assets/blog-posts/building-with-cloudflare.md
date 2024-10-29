@@ -9,7 +9,7 @@ Live Application: [My Goal Creator](https://mygoalcreator.com)
 
 ### Introduction
 
-The demand for scalable, high-performing, and cost-efficient solutions is constantly growing. Serverless architecture has revolutionized how developers build and deploy modern applications, eliminating the need to manage infrastructure and enabling a focus on writing code. My goal is to find the best way to quickly deploy scalable applications to the web. Cloudflare offers a comprehensive platform, and in this article, I'll cover my experience using Pages, Workers, and D1 to build my application.
+My goal is to find the best way to quickly deploy scalable applications to the web. Cloudflare offers a variety of products to help developers do just that. I'll cover my experience using Pages, Workers, and D1 to build my application.
 
 ### Why Use Cloudflare's Serverless Platform?
 

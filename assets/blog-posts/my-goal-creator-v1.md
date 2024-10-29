@@ -63,7 +63,7 @@ The app acts like a reader where the user can ask how to achieve a goal or task 
 
 On first pass I used the simple approach of awaiting the full response from open ai. This left the user waiting with a loading spinner. I decided to implement openai chat completion streaming to provide the user with instant feedback. In order to pipe the completions from openai to my web app I used [Readable streams](https://nodejs.org/api/stream.html#readable-streams).
 
-Surprisingly the most challenging part about working with the openai completion stream was making sure that the markdown syntax was parsed correctly during the stream as incomplete markdown lines can cause formatting inconsistencies. To add to this the way new lines were parsed in the production deployed application varied from the development environment. I was able to improve my markdown parsing logic to handle the most edge cases but a few still exist.
+Surprisingly a challenging part about working with the openai completion stream was making sure that the markdown syntax was parsed correctly during the stream as incomplete markdown lines can cause formatting inconsistencies. To add to this the way new lines were parsed in the production deployed application varied from the development environment. After refactoring my initial implementation I found the issue was with the combination of the actual newline characters in the response and the newline character at the end of the string signaling the end of a "message" in a server-sent events stream.
 
 ## Database structure and interaction
 
