@@ -47,8 +47,8 @@ The app acts like a reader where the user can ask how to achieve a goal or task 
   - open ai completion streaming
   - database schema for goals and tracking
   - markdown parsing and dynamic query generation
-  - unit tests
-  - implement web applications framework [Hono](https://hono.dev/docs/)
+  - unit test coverage up to 70%
+  - web applications framework [Hono](https://hono.dev/docs/)
 
 - Goals for the month
   - Refactor worker code to use Cloudflare [Durable Objects](https://developers.cloudflare.com/durable-objects/)
