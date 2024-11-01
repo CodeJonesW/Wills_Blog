@@ -31,13 +31,10 @@ The app acts like a reader where the user can ask how to achieve a goal or task 
 
 ### New Features Since Last Update 🚀
 
-- Dev Stuff
-
+- Frontend
   - redux
   - material ui
   - react router
-
-- Frontend
   - users can create a goal and stream the response
   - users can click on text within a goal to create a new sub goal and stream the response
   - users can view their generated goals and any topics they have dived into
@@ -48,7 +45,7 @@ The app acts like a reader where the user can ask how to achieve a goal or task 
   - database schema for goals and tracking
   - markdown parsing and dynamic query generation
   - unit test coverage up to 70%
-  - web applications framework [Hono](https://hono.dev/docs/)
+  - convert to use [Hono](https://hono.dev/docs/) web application framework
 
 - Goals for the month
   - Refactor worker code to use Cloudflare [Durable Objects](https://developers.cloudflare.com/durable-objects/)
