@@ -47,11 +47,6 @@ The app acts like a reader where the user can ask how to achieve a goal or task 
   - unit test coverage up to 70%
   - convert to use [Hono](https://hono.dev/docs/) web application framework
 
-- Goals for the month
-  - Refactor worker code to use Cloudflare [Durable Objects](https://developers.cloudflare.com/durable-objects/)
-  - improve how goal data is split and stored into tasks for the goal tracker
-  -
-
 <img src="/images/posts/mgc_v1/mgc-ui-1.png" alt="web app ui" title="enter goal"  />
 
 <img src="/images/posts/mgc_v1/mgc-ui-4.png" alt="web app ui" title="plan"  />
@@ -79,6 +74,14 @@ I’m also developing a kanban board feature for tracking goals and progress. Cu
 ## Future Plans 📜
 
 My plan is to keep refining My Goal Creator until I find a use case that truly resonates with users. The platform’s flexibility should allow it to serve as a foundation for future, rebranded products if necessary.
+
+I would like to implement a way to understand the underlying AI model's performance in regards to generating accurate responses. This would allow me to establish a baseline for the quality of responses and track changes over time. This would allow me to fine tune or switch models and remain confident.
+
+I thought this [article](https://about.gitlab.com/blog/2024/05/09/developing-gitlab-duo-how-we-validate-and-test-ai-models-at-scale/) by Gitlab was interesting and offered insight into how they approach testing AI models.
+
+- Goals for the month
+  - Refactor worker code to use Cloudflare [Durable Objects](https://developers.cloudflare.com/durable-objects/)
+  - improve how goal data is split and stored into tasks for the goal tracker
 
 If you have any feedback or ideas, feel free to reach out at williamjonescodes@gmail.com.
 
