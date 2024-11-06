@@ -97,7 +97,3 @@ This project was a great introduction to Cloudflare products. Overall I have rea
 - [Cloudflare Pages Documentation](https://developers.cloudflare.com/pages/)
 - [Cloudflare Workers Documentation](https://developers.cloudflare.com/workers/)
 - [Cloudflare D1 Documentation](https://developers.cloudflare.com/d1/)
-
-```
-
-```

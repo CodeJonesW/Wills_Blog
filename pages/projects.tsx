@@ -3,14 +3,7 @@ import styled from "styled-components";
 import styles from "../styles/Home.module.css";
 import { AnimatePresence } from "framer-motion";
 import React from "react";
-import { useRouter } from "next/router";
-import fs from "fs";
 import { motion } from "framer-motion";
-import path from "path";
-import matter from "gray-matter";
-import { post } from "../enums";
-import { sendAnalyticsEvent } from "../lib/google_analytics";
-import Post from "../components/shared/post";
 import {
   Div,
   H3,
@@ -63,34 +56,4 @@ export default function Projects() {
       </OuterContainer>
     </AnimatePresence>
   );
-}
-
-export async function getStaticProps() {
-  const files = fs.readdirSync(path.join("assets/blog-posts"));
-
-  const posts = files
-    .map((filename) => {
-      const slug = filename.replace(".md", "");
-
-      const markdownWithMeta = fs.readFileSync(
-        path.join("assets/blog-posts", filename),
-        "utf-8"
-      );
-
-      const { data: frontmatter } = matter(markdownWithMeta);
-
-      return { slug, frontmatter };
-    })
-    .sort((a, b) => {
-      return (
-        new Date(b.frontmatter.date).getTime() -
-        new Date(a.frontmatter.date).getTime()
-      );
-    });
-
-  return {
-    props: {
-      posts: posts,
-    },
-  };
 }
