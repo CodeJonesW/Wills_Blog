@@ -83,7 +83,7 @@ I thought this [article](https://about.gitlab.com/blog/2024/05/09/developing-git
 
 - Refactor worker code to use Cloudflare [Durable Objects](https://developers.cloudflare.com/durable-objects/)
 - improve how goal data is split and stored into tasks for the goal tracker
-- implement a way to track the quality of responses from the AI model
+- implement a way to test and track the quality of responses from the AI model
 
 If you have any feedback or ideas, feel free to reach out at williamjonescodes@gmail.com.
 
@@ -95,3 +95,5 @@ Will Jones
 
 - https://www.evidentlyai.com/blog/llm-regression-testing-tutorial
 - https://about.gitlab.com/blog/2024/05/09/developing-gitlab-duo-how-we-validate-and-test-ai-models-at-scale/
+- https://github.com/CircleCI-Public/intro-to-hallucination-detection/blob/main/test_hallucinations.py
+
