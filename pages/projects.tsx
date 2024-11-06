@@ -1,4 +1,3 @@
-import type { NextPage } from "next";
 import Link from "next/link";
 import styled from "styled-components";
 import styles from "../styles/Home.module.css";
@@ -22,49 +21,19 @@ import {
   FullScreenColumn,
 } from "../components/shared/styles";
 
-const NavLink = styled.a`
-  color: black;
-  cursor: pointer;
-`;
-
-const PostsContainer = styled(motion.div)`
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  justify-content: flex-start;
-  padding-top: 24px;
-  width: 80%;
-`;
-
 const Body = styled(motion.div)`
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  padding-top: 24px;
+  padding: 24px;
 `;
 
 const TopLeftTitle = styled(H3)`
   max-width: 200px;
 `;
 
-interface BlogProps {
-  posts: post[];
-}
-
-export default function Home({ posts }: BlogProps) {
-  const router = useRouter();
-  const selectPost = (slug: string) => {
-    sendAnalyticsEvent("blogView", {
-      action: "select_post",
-      params: {
-        post: slug,
-      },
-    });
-
-    router.push(`/blog/${slug}`);
-  };
-
+export default function Projects() {
   return (
     <AnimatePresence>
       <OuterContainer className={styles.quartzoBold}>
@@ -78,22 +47,17 @@ export default function Home({ posts }: BlogProps) {
               <TopLeftTitle>{"williamjonescodes.com"}</TopLeftTitle>
             </Div>
             <ContactContainer>
-              <Link style={{ color: "black" }} href="/about">
-                <H3 style={{}}>About</H3>
+              <Link style={{ color: "black" }} href="/">
+                <H3 style={{}}>Blog</H3>
               </Link>
               <UnshrinkableDiv style={{ width: "16px" }} />
-              <Link style={{ color: "black" }} href="/projects">
-                <H3>Projects</H3>
-              </Link>
             </ContactContainer>
           </HomeNavBar>
           <Body>
-            <PostsContainer>
-              <H3>{"Blog"}</H3>
-              {posts.map((post, index) => {
-                return <Post key={index} post={post} selectPost={selectPost} />;
-              })}
-            </PostsContainer>
+            <li>
+              <a href="https://www.mygoalcreator.com">My Goal Creator</a> - A
+              goal setting app that helps you set and track your goals with AI.
+            </li>
           </Body>
         </FullScreenColumn>
       </OuterContainer>
