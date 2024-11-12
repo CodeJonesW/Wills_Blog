@@ -36,7 +36,7 @@ const PostsContainer = styled(motion.div)`
 `;
 
 export const PageHeader = styled(H3)`
-  font-family: "LemonMilkBold";
+  font-family: "AngleterreBook";
   color: "black";
   max-width: 200px;
   user-select: none;
@@ -63,7 +63,7 @@ export default function Blog({ posts }: BlogProps) {
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       transition={{ duration: 4, type: "spring" }}
-      className={styles.quartzoBold}
+      className={styles.AngleterreBook}
     >
       <TopBar
         animate={{ opacity: 1 }}

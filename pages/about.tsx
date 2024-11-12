@@ -34,9 +34,9 @@ export const Info: NextPage = () => {
 
   return (
     <AnimatePresence>
-      <OuterContainer className={styles.quartzoBold}>
+      <OuterContainer className={styles.AngleterreBook}>
         <Section2
-          className={styles.quartzoBold}
+          className={styles.AngleterreBook}
           whileInView={{ opacity: 1 }}
           initial={{ opacity: 0 }}
           transition={{ duration: 4, type: "spring" }}
@@ -78,7 +78,7 @@ export const Info: NextPage = () => {
             >
               <p
                 style={{
-                  fontFamily: "MontserratMedium",
+                  fontFamily: "AngleterreBook",
                   textAlign: "center",
                   maxWidth: "320px",
                   fontSize: "1.3em",

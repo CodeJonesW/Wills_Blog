@@ -67,7 +67,7 @@ export default function Home({ posts }: BlogProps) {
 
   return (
     <AnimatePresence>
-      <OuterContainer className={styles.quartzoBold}>
+      <OuterContainer className={styles.AngleterreBook}>
         <FullScreenColumn
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}

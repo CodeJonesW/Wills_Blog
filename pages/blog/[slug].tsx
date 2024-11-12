@@ -19,12 +19,8 @@ const PostContainer = styled(motion.div)`
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  padding: 16px;
+  padding: 32px;
   padding-bottom: 400px;
-
-  @media (max-width: 768px) {
-    padding: 8px;
-  }
 `;
 
 const PageContainer = styled.div`
@@ -34,16 +30,9 @@ const PageContainer = styled.div`
   justify-content: center;
   max-width: 900px;
   margin: 0 auto;
-  padding: 16px;
-
-  @media (max-width: 768px) {
-    padding: 8px;
-  }
 `;
 
 const Content = styled.div`
-  padding-left: 16px;
-  padding-right: 16px;
   font-size: 1.2rem;
   line-height: 1.6;
 
@@ -140,11 +129,6 @@ export default function PostPage({
           }}
         >
           <Content
-            style={{
-              paddingLeft: "16px",
-              paddingRight: "16px",
-              marginBottom: "200px",
-            }}
             dangerouslySetInnerHTML={{ __html: marked(content) }}
           ></Content>
         </div>

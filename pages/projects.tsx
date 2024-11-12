@@ -29,7 +29,7 @@ const TopLeftTitle = styled(H3)`
 export default function Projects() {
   return (
     <AnimatePresence>
-      <OuterContainer className={styles.quartzoBold}>
+      <OuterContainer className={styles.AngleterreBook}>
         <FullScreenColumn
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}

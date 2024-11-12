@@ -41,7 +41,7 @@ export const CardModal: FC<ModalProps> = ({
         width: "100vw",
         height: "100vh",
       }}
-      className={style.QuartzoBold}
+      className={style.AngleterreBook}
     >
       <motion.div
         whileInView={{ opacity: 1 }}

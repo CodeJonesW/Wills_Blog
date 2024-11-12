@@ -39,21 +39,21 @@ const PostInfo = styled.div`
 `;
 
 const PostTitle = styled(H3)`
-  font-family: "MontserratBold";
+  font-family: "AngleterreBook";
   color: "black";
   max-width: 600px;
   user-select: none;
 `;
 
 const PostDate = styled(H4)`
-  font-family: "LemonMilkBold";
+  font-family: "AngleterreBook";
   color: "black";
   max-width: 600px;
   user-select: none;
 `;
 
 const PostExcerpt = styled(H4)`
-  font-family: "LemonMilkBold";
+  font-family: "AngleterreBook";
   color: "black";
   max-width: 400px;
   user-select: none;
