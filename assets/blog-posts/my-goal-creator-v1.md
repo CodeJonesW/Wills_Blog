@@ -81,8 +81,8 @@ I thought this [article](https://about.gitlab.com/blog/2024/05/09/developing-git
 ### Goals for the month
 
 - Refactor worker code to use Cloudflare [Durable Objects](https://developers.cloudflare.com/durable-objects/)
-- improve how goal data is split and stored into tasks for the goal tracker
-- implement a way to test and track the quality of responses from the AI model
+- Improve how goal data is split and stored into tasks for the goal tracker
+- Implement a way to test and track the quality of responses from the AI model
 
 If you have any feedback or ideas, feel free to reach out at williamjonescodes@gmail.com.
 
