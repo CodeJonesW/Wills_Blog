@@ -16,6 +16,24 @@ interface BlogProps {
   posts: post[];
 }
 
+const ProfileImage = styled.img`
+  width: 100px;
+  height: 400px;
+  max-width: 900px;
+  max-height: 600px;
+  min-width: 360px;
+  min-height: 320px;
+  object-fit: cover;
+  border-radius: 50%;
+  padding: 16px;
+
+  @media (max-width: 768px) {
+    width: 40px;
+    height: 100px;
+    padding: 8px;
+  }
+`;
+
 export default function Home({ posts }: BlogProps) {
   const theme = useTheme();
   return (
@@ -41,16 +59,32 @@ export default function Home({ posts }: BlogProps) {
             <Typography color="text.primary">williamjonescodes.com</Typography>
           </Box>
           <Box display="flex" flexDirection={"row"}>
-            <Link href="/about">
-              <Typography color="text.primary">About</Typography>
-            </Link>
-            <UnshrinkableDiv style={{ width: "16px" }} />
             <Link href="/projects">
               <Typography color="text.primary">Projects</Typography>
             </Link>
           </Box>
         </Box>
-        <Blog posts={posts} />
+        <Box
+          sx={{
+            display: "flex",
+            flexDirection: "row",
+            justifyContent: "space-between",
+            flexWrap: "wrap",
+            padding: "24px",
+          }}
+        >
+          <Box sx={{ paddingRight: "24px" }}>
+            <ProfileImage src="selfie.jpg" />
+            <Typography
+              variant="body1"
+              sx={{ maxWidth: "400px" }}
+              color="text.primary"
+            >
+              Whats up! I'm Will Jones, a software engineer and entrepreneur.
+            </Typography>
+          </Box>
+          <Blog posts={posts} />
+        </Box>
       </motion.div>
     </AnimatePresence>
   );
