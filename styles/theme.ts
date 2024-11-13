@@ -31,7 +31,6 @@ export const theme = createTheme({
     },
     h2: {
       fontSize: "2rem",
-      letterSpacing: "0.14em",
       fontFamily: "Merriweather",
     },
     h1: {
