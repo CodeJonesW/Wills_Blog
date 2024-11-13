@@ -1,7 +1,6 @@
-import type { NextPage } from "next";
 import Link from "next/link";
 import styled from "styled-components";
-import styles from "../styles/Home.module.css";
+import { useTheme } from "@mui/material";
 import { AnimatePresence } from "framer-motion";
 import React from "react";
 import { useRouter } from "next/router";
@@ -12,20 +11,9 @@ import matter from "gray-matter";
 import { post } from "../enums";
 import { sendAnalyticsEvent } from "../lib/google_analytics";
 import Post from "../components/shared/post";
-import {
-  Div,
-  H3,
-  ContactContainer,
-  HomeNavBar,
-  OuterContainer,
-  UnshrinkableDiv,
-  FullScreenColumn,
-} from "../components/shared/styles";
-
-const NavLink = styled.a`
-  color: black;
-  cursor: pointer;
-`;
+import { Box } from "@mui/material";
+import { UnshrinkableDiv } from "../components/shared/styles";
+import { Typography } from "@mui/material";
 
 const PostsContainer = styled(motion.div)`
   display: flex;
@@ -33,19 +21,6 @@ const PostsContainer = styled(motion.div)`
   align-items: flex-start;
   justify-content: flex-start;
   padding-top: 24px;
-  width: 80%;
-`;
-
-const Body = styled(motion.div)`
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  padding-top: 24px;
-`;
-
-const TopLeftTitle = styled(H3)`
-  max-width: 200px;
 `;
 
 interface BlogProps {
@@ -53,6 +28,7 @@ interface BlogProps {
 }
 
 export default function Home({ posts }: BlogProps) {
+  const theme = useTheme();
   const router = useRouter();
   const selectPost = (slug: string) => {
     sendAnalyticsEvent("blogView", {
@@ -67,36 +43,60 @@ export default function Home({ posts }: BlogProps) {
 
   return (
     <AnimatePresence>
-      <OuterContainer className={styles.AngleterreBook}>
-        <FullScreenColumn
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ duration: 2, type: "spring" }}
+      <motion.div
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ duration: 2, type: "spring" }}
+        style={{
+          padding: "24px",
+          backgroundColor: theme.palette.background.default,
+        }}
+      >
+        <Box
+          sx={{
+            display: "flex",
+            width: "100%",
+            flexDirection: "row",
+            justifyContent: "space-between",
+          }}
         >
-          <HomeNavBar>
-            <Div>
-              <TopLeftTitle>{"williamjonescodes.com"}</TopLeftTitle>
-            </Div>
-            <ContactContainer>
-              <Link style={{ color: "black" }} href="/about">
-                <H3 style={{}}>About</H3>
-              </Link>
-              <UnshrinkableDiv style={{ width: "16px" }} />
-              <Link style={{ color: "black" }} href="/projects">
-                <H3>Projects</H3>
-              </Link>
-            </ContactContainer>
-          </HomeNavBar>
-          <Body>
-            <PostsContainer>
-              <H3>{"Blog"}</H3>
-              {posts.map((post, index) => {
-                return <Post key={index} post={post} selectPost={selectPost} />;
-              })}
-            </PostsContainer>
-          </Body>
-        </FullScreenColumn>
-      </OuterContainer>
+          <Box>
+            <Typography variant="h6" color="text.primary">
+              williamjonescodes.com
+            </Typography>
+          </Box>
+          <Box display="flex" flexDirection={"row"}>
+            <Link href="/about">
+              <Typography color="text.primary">About</Typography>
+            </Link>
+            <UnshrinkableDiv style={{ width: "16px" }} />
+            <Link href="/projects">
+              <Typography color="text.primary">Projects</Typography>
+            </Link>
+          </Box>
+        </Box>
+        <Box
+          sx={{
+            display: "flex",
+            flexDirection: "column",
+            alignItems: "center",
+            justifyContent: "center",
+            paddingTop: "24px",
+          }}
+        >
+          <PostsContainer>
+            <Typography
+              sx={{ paddingBottom: "32px", paddingLeft: "4px" }}
+              color="text.primary"
+            >
+              Blog
+            </Typography>
+            {posts.map((post, index) => {
+              return <Post key={index} post={post} selectPost={selectPost} />;
+            })}
+          </PostsContainer>
+        </Box>
+      </motion.div>
     </AnimatePresence>
   );
 }

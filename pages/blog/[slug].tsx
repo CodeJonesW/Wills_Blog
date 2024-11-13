@@ -2,11 +2,13 @@ import fs from "fs";
 import path from "path";
 import matter from "gray-matter";
 import { marked } from "marked";
-import { post, routes, theme } from "../../enums/index";
+import { post, routes, theme as themeEnum } from "../../enums/index";
 import Back from "../../components/shared/back";
 import styled from "styled-components";
 import { H1, Section2TopBar as TopBar } from "../../components/shared/styles";
 import { motion } from "framer-motion";
+import { useTheme } from "@mui/material";
+import { Typography } from "@mui/material";
 
 interface PostProps {
   frontmatter: post["frontmatter"];
@@ -97,6 +99,7 @@ export default function PostPage({
   slug,
   content,
 }: PostProps) {
+  const theme = useTheme();
   return (
     <PageContainer>
       <TopBar
@@ -104,7 +107,7 @@ export default function PostPage({
         initial={{ opacity: 0 }}
         transition={{ duration: 4, type: "spring" }}
       >
-        <Back route={routes.home} themeProp={theme.light} />
+        <Back route={routes.home} themeProp={themeEnum.dark} />
       </TopBar>
 
       <PostContainer
@@ -112,7 +115,9 @@ export default function PostPage({
         initial={{ opacity: 0 }}
         transition={{ duration: 4, type: "spring" }}
       >
-        <H1>{title}</H1>
+        <Typography variant="h4" color="text.primary">
+          {title}
+        </Typography>
         {!hide_image_in_slug ? (
           <PostImage
             style={{ width: "300px", height: "300px" }}
@@ -129,6 +134,7 @@ export default function PostPage({
           }}
         >
           <Content
+            style={{ color: theme.palette.text.primary }}
             dangerouslySetInnerHTML={{ __html: marked(content) }}
           ></Content>
         </div>

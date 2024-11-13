@@ -1,59 +1,58 @@
 import Link from "next/link";
-import styled from "styled-components";
-import styles from "../styles/Home.module.css";
 import { AnimatePresence } from "framer-motion";
 import React from "react";
 import { motion } from "framer-motion";
 import {
-  Div,
-  H3,
   ContactContainer,
   HomeNavBar,
-  OuterContainer,
   UnshrinkableDiv,
-  FullScreenColumn,
 } from "../components/shared/styles";
 
-const Body = styled(motion.div)`
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  padding: 24px;
-`;
-
-const TopLeftTitle = styled(H3)`
-  max-width: 200px;
-`;
+import { Box, List, ListItem, Typography } from "@mui/material";
 
 export default function Projects() {
   return (
     <AnimatePresence>
-      <OuterContainer className={styles.AngleterreBook}>
-        <FullScreenColumn
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ duration: 2, type: "spring" }}
+      <motion.div
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ duration: 2, type: "spring" }}
+      >
+        <HomeNavBar>
+          <Box>
+            <Typography color="text.primary">
+              {"williamjonescodes.com"}
+            </Typography>
+          </Box>
+          <ContactContainer>
+            <Link style={{ color: "black" }} href="/">
+              <Typography color="text.primary" style={{}}>
+                Blog
+              </Typography>
+            </Link>
+            <UnshrinkableDiv style={{ width: "16px" }} />
+          </ContactContainer>
+        </HomeNavBar>
+        <Box
+          sx={{
+            display: "flex",
+            flexDirection: "column",
+            alignItems: "center",
+            justifyContent: "center",
+            paddingTop: "24px",
+          }}
         >
-          <HomeNavBar>
-            <Div>
-              <TopLeftTitle>{"williamjonescodes.com"}</TopLeftTitle>
-            </Div>
-            <ContactContainer>
-              <Link style={{ color: "black" }} href="/">
-                <H3 style={{}}>Blog</H3>
-              </Link>
-              <UnshrinkableDiv style={{ width: "16px" }} />
-            </ContactContainer>
-          </HomeNavBar>
-          <Body>
-            <li>
-              <a href="https://www.mygoalcreator.com">My Goal Creator</a> - A
-              goal setting app that helps you set and track your goals with AI.
-            </li>
-          </Body>
-        </FullScreenColumn>
-      </OuterContainer>
+          <List>
+            <ListItem>
+              <Typography color="text.primary">
+                <a href="https://www.mygoalcreator.com">My Goal Creator</a> - A
+                goal setting app that helps you set and track your goals with
+                AI.
+              </Typography>
+            </ListItem>
+          </List>
+        </Box>
+      </motion.div>
     </AnimatePresence>
   );
 }

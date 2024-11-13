@@ -1,8 +1,7 @@
 import Link from "next/link";
 import styled from "styled-components";
+import { Box, Typography } from "@mui/material";
 import { post } from "../../enums";
-import { H3, H4 } from "./styles";
-import Image from "next/image";
 interface PostProps {
   post: post;
   selectPost: (slug: string) => void;
@@ -29,54 +28,24 @@ export const PostImage = styled.img`
   border-radius: 10px;
 `;
 
-const PostInfo = styled.div`
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  justify-content: flex-start;
-  padding-left: 16px;
-  padding-right: 8px;
-`;
-
-const PostTitle = styled(H3)`
-  font-family: "AngleterreBook";
-  color: "black";
-  max-width: 600px;
-  user-select: none;
-`;
-
-const PostDate = styled(H4)`
-  font-family: "AngleterreBook";
-  color: "black";
-  max-width: 600px;
-  user-select: none;
-`;
-
-const PostExcerpt = styled(H4)`
-  font-family: "AngleterreBook";
-  color: "black";
-  max-width: 400px;
-  user-select: none;
-`;
-
 export default function Post({ post, selectPost }: PostProps) {
   const { slug, frontmatter } = post;
   return (
     <PostContainer>
-      <Link
-        style={{ color: "inherit", display: "flex", flexDirection: "row" }}
-        href={`/blog/${slug}`}
-      >
-        <PostImage
-          style={{ width: "64px", height: "64px", marginTop: "16px" }}
-          loading="lazy"
-          src={frontmatter.cover_image}
-        />
-        <PostInfo>
-          <PostTitle>{frontmatter.title}</PostTitle>
-          <PostDate>{frontmatter.date}</PostDate>
-          {/* <PostExcerpt>{frontmatter.excerpt}</PostExcerpt> */}
-        </PostInfo>
+      <Link href={`/blog/${slug}`}>
+        <Box
+          sx={{ display: "flex", flexDirection: "row", alignItems: "center" }}
+        >
+          <PostImage
+            style={{ width: "64px", height: "64px", marginTop: "16px" }}
+            loading="lazy"
+            src={frontmatter.cover_image}
+          />
+          <Box sx={{ paddingLeft: "16px" }}>
+            <Typography color="text.primary">{frontmatter.title}</Typography>
+            <Typography color="text.secondary">{frontmatter.date}</Typography>
+          </Box>
+        </Box>
       </Link>
     </PostContainer>
   );

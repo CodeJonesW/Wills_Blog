@@ -6,18 +6,16 @@ import {
   BackArrow,
   BackArrowContainer,
   Circle,
-  H3,
   ContactContainer,
   FlexColumnCenter,
   FullScreenColumn,
-  SecondaryButton,
   Section2Content,
   Section2TopBar,
   UnshrinkableDiv,
-  MailLink,
   OuterContainer,
 } from "../components/shared/styles";
 import { AnimatePresence } from "framer-motion";
+import { Typography } from "@mui/material";
 
 const Section2 = styled(FullScreenColumn)`
   height: 100vh;
@@ -61,7 +59,9 @@ export const Info: NextPage = () => {
               </Circle>
             </BackArrowContainer>
             <ContactContainer>
-              <H3 style={{ color: "white" }}>williamjonescodes@gmail.com</H3>
+              <Typography color="text.primary" variant="h6">
+                williamjonescodes@gmail.com
+              </Typography>
             </ContactContainer>
           </Section2TopBar>
           <Section2Content

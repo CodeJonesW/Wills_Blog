@@ -130,6 +130,7 @@ export const H3 = styled.h3`
   font-size: 0.9em;
   font-family: "AngleterreBook";
   max-width: 80%;
+  font-weight: bold;
 `;
 
 export const H5 = styled.h5`
