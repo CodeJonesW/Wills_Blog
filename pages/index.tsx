@@ -9,7 +9,6 @@ import path from "path";
 import matter from "gray-matter";
 import { post } from "../enums";
 import { Box, Typography } from "@mui/material";
-import { UnshrinkableDiv } from "../components/shared/styles";
 import Blog from "./blog/blog";
 
 interface BlogProps {
@@ -27,6 +26,7 @@ const ProfileImage = styled.img`
   border-radius: 50%;
   padding: 16px;
   object-fit: cover;
+  margin-bottom: "16px";
 `;
 
 export default function Home({ posts }: BlogProps) {
@@ -70,13 +70,33 @@ export default function Home({ posts }: BlogProps) {
         >
           <Box>
             <ProfileImage src="selfie.jpg" />
-            <Typography
-              variant="body1"
-              sx={{ maxWidth: "400px" }}
-              color="text.primary"
+
+            <Box
+              sx={{
+                display: "flex",
+                flexDirection: "column",
+                alignItems: "center",
+                justifyContent: "center",
+                border: "1px solid",
+                borderColor: "text.primary",
+                borderRadius: "4px",
+                padding: "16px",
+              }}
             >
-              Whats up! I'm Will Jones, a software engineer and entrepreneur.
-            </Typography>
+              <Typography
+                variant="body1"
+                sx={{
+                  maxWidth: "400px",
+                }}
+                color="text.primary"
+              >
+                Whats up! I'm Will Jones, a software engineer and entrepreneur.
+                I am passionate about solving problems and creating things that
+                make the world a better place. I am currently working on a
+                project called My Goal Creator, a goal setting app that helps me
+                set and track my goals with AI.
+              </Typography>
+            </Box>
           </Box>
           <Blog posts={posts} />
         </Box>
