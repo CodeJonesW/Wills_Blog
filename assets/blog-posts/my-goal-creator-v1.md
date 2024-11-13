@@ -21,9 +21,9 @@ The commits have been steady!
 
 ## Project Recap ☕️
 
-My Goal Creator is a web application designed to help users set, track, and refine their goals. Built with React, TypeScript, Node.js, SQL, and Cloudflare services, it uses OpenAI on the backend to dynamically stream responses to users' inputs.
+My Goal Creator is a web application designed to help users set, track, and refine their goals. The app is built with React, TypeScript, Node.js, SQLite, Cloudflare Workers, and uses OpenAI to dynamically stream responses to users' inputs.
 
-The app acts like a reader where the user can ask how to achieve a goal or task and recieve a detailed plan. Once a plan has been generated the user has the ability to easily select a line from the text and dive deeper into that subject. This recursive style of research allows for users to find sub topics of interest and quickly generate information about them. I have been referring to this as 'diving'.
+The app acts like a task manager and research tool where the user can ask how to achieve a goal or task and recieve a detailed plan. Once a plan has been generated the user has the ability to easily select a line from the text and dive deeper into that subject. This recursive style of research allows for users to find sub topics of interest and quickly generate information about them. I have been referring to this as 'diving'.
 
 <img src="/images/posts/mgc_v1/mgc-ui-4.png" alt="web app ui" title="plan"  />
 
@@ -52,13 +52,13 @@ The app acts like a reader where the user can ask how to achieve a goal or task 
   - unit test coverage up to 70%
   - convert to use [Hono](https://hono.dev/docs/) web application framework
 
-<img src="/images/posts/mgc_v1/mgc-ui-1.png" alt="web app ui" title="enter goal"  />
+<img src="/images/posts/mgc_v1/mgc-ui-1.png" alt="web app ui" title="dashboard"  />
 
 ## Implementation of OpenAI Completion Streaming 💿
 
 Initially, I took a straightforward approach by awaiting the full response from OpenAI, which resulted in the user waiting with a loading spinner. To improve user experience, I implemented OpenAI’s chat completion streaming, allowing instant feedback. I used Readable Streams to handle OpenAI's chunked data and continually sent each chunk back to the client via a Server-Sent Events (SSE) connection."
 
-Surprisingly a challenging part about working with the openai completion stream was making sure that the markdown syntax was parsed correctly during the stream as incomplete markdown lines can cause formatting inconsistencies. To add to this the way new lines were parsed in the production deployed application varied from the development environment. After refactoring my initial implementation I found the issue was with the combination of the actual newline characters in the response and the newline character at the end of the string signaling the end of a "message" in a server-sent events stream.
+Surprisingly a hallenging part about working with the openai completion stream was making sure that the markdown syntax was parsed correctly during the stream as incomplete markdown lines can cause formatting inconsistencies. After refactoring my initial implementation I found the issue was with the combination of the actual newline characters in the response and the newline character at the end of the string signaling the end of a "message" in a server-sent events stream.
 
 ## Database structure and interaction 💾
 
@@ -66,11 +66,7 @@ After playing with the database schema, I decided on a design where clicking on 
 
 ## AI Prompting Challenges 💬
 
-Prompting the AI to consistently produce reliable, structured markdown was another challenge. I aimed for a specific markdown pattern that I could use to split goal plans into timelines and subtasks. After extensive experimentation, I refined my prompts to achieve a predictable format, which I now parse and store in a SQL database for easy querying.
-
-## Kanban Board for Tracking 📊
-
-I’m also developing a kanban board feature for tracking goals and progress. Currently, a working prototype allows users to drag sub-tasks between columns, providing a visual and interactive way to manage tasks. The most interesting part of this feature is the backend functionality taking the AI generated markdown and splitting it into tasks and timelines. This relies on the LLM producing consistent markdown formatting making prompting the AI a critical part of the feature.
+Prompting the AI to consistently produce reliable, structured markdown was another challenge. I aimed for a specific markdown pattern that I could use to split goal plans into timelines and subtasks. After some experimentation, I refined my prompts to achieve a predictable format, which I now parse and store in a SQL database for easy querying. This was critical for the kanban board feature I am developing as inconsistencies in responses would break the markdown parsing logic.
 
 <img src="/images/posts/mgc_v1/mgc-ui-3.png" alt="web app ui" title="goal tracker"  />
 
@@ -78,15 +74,15 @@ I’m also developing a kanban board feature for tracking goals and progress. Cu
 
 My plan is to keep refining My Goal Creator until I find a use case that truly resonates with users. The platform’s flexibility should allow it to serve as a foundation for future, rebranded products if necessary.
 
-I would like to implement a way to understand the underlying AI model's performance in regards to generating accurate responses. This would allow me to establish a baseline for the quality of responses and track changes over time. This would allow me to fine tune or switch models and remain confident.
+I want to implement regression testing for the AI model to ensure responses satisfy quality standards as the prompting continues to evolve.
 
 I thought this [article](https://about.gitlab.com/blog/2024/05/09/developing-gitlab-duo-how-we-validate-and-test-ai-models-at-scale/) by Gitlab was interesting and offered insight into how they approach testing AI models.
 
 ### Goals for the month
 
 - Refactor worker code to use Cloudflare [Durable Objects](https://developers.cloudflare.com/durable-objects/)
-- improve how goal data is split and stored into tasks for the goal tracker
-- implement a way to test and track the quality of responses from the AI model
+- Improve how goal data is split and stored into tasks for the goal tracker
+- Implement a way to test and track the quality of responses from the AI model
 
 If you have any feedback or ideas, feel free to reach out at williamjonescodes@gmail.com.
 
