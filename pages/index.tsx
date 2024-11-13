@@ -3,17 +3,13 @@ import styled from "styled-components";
 import { useTheme } from "@mui/material";
 import { AnimatePresence } from "framer-motion";
 import React from "react";
-import { useRouter } from "next/router";
 import fs from "fs";
 import { motion } from "framer-motion";
 import path from "path";
 import matter from "gray-matter";
 import { post } from "../enums";
-import { sendAnalyticsEvent } from "../lib/google_analytics";
-import Post from "../components/shared/post";
-import { Box } from "@mui/material";
+import { Box, Typography } from "@mui/material";
 import { UnshrinkableDiv } from "../components/shared/styles";
-import { Typography } from "@mui/material";
 import Blog from "./blog";
 
 const PostsContainer = styled(motion.div)`
