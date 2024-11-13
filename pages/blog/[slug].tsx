@@ -55,7 +55,7 @@ const Content = styled.div`
     margin: 16px 0;
   }
   pre {
-    background-color: #f5f5f5; /* Background color for better contrast */
+    background-color: #1d1d1d; /* Background color for better contrast */
     padding: 16px; /* Padding around the code block */
     border-radius: 8px; /* Rounded corners */
     overflow-x: auto; /* Enable horizontal scrolling */
@@ -66,6 +66,7 @@ const Content = styled.div`
 
   code {
     font-family: monospace; /* Use monospace font for code */
+    color: #f48fb1;
     display: block;
     white-space: pre-wrap; /* Allows line breaks in long code samples */
     word-break: break-word; /* Break long words for better responsiveness */

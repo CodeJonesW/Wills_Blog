@@ -14,6 +14,7 @@ import Post from "../components/shared/post";
 import { Box } from "@mui/material";
 import { UnshrinkableDiv } from "../components/shared/styles";
 import { Typography } from "@mui/material";
+import Blog from "./blog";
 
 const PostsContainer = styled(motion.div)`
   display: flex;
@@ -29,18 +30,6 @@ interface BlogProps {
 
 export default function Home({ posts }: BlogProps) {
   const theme = useTheme();
-  const router = useRouter();
-  const selectPost = (slug: string) => {
-    sendAnalyticsEvent("blogView", {
-      action: "select_post",
-      params: {
-        post: slug,
-      },
-    });
-
-    router.push(`/blog/${slug}`);
-  };
-
   return (
     <AnimatePresence>
       <motion.div
@@ -61,9 +50,7 @@ export default function Home({ posts }: BlogProps) {
           }}
         >
           <Box>
-            <Typography variant="h6" color="text.primary">
-              williamjonescodes.com
-            </Typography>
+            <Typography color="text.primary">williamjonescodes.com</Typography>
           </Box>
           <Box display="flex" flexDirection={"row"}>
             <Link href="/about">
@@ -75,27 +62,7 @@ export default function Home({ posts }: BlogProps) {
             </Link>
           </Box>
         </Box>
-        <Box
-          sx={{
-            display: "flex",
-            flexDirection: "column",
-            alignItems: "center",
-            justifyContent: "center",
-            paddingTop: "24px",
-          }}
-        >
-          <PostsContainer>
-            <Typography
-              sx={{ paddingBottom: "32px", paddingLeft: "4px" }}
-              color="text.primary"
-            >
-              Blog
-            </Typography>
-            {posts.map((post, index) => {
-              return <Post key={index} post={post} selectPost={selectPost} />;
-            })}
-          </PostsContainer>
-        </Box>
+        <Blog posts={posts} />
       </motion.div>
     </AnimatePresence>
   );
