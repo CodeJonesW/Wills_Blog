@@ -40,14 +40,17 @@ export default function Home({ posts }: BlogProps) {
         style={{
           backgroundColor: theme.palette.background.default,
           width: "100%",
+          display: "flex",
+          justifyContent: "center",
+          flexDirection: "column",
         }}
       >
         <Box
           sx={{
             display: "flex",
-            width: "100%",
             flexDirection: "row",
             justifyContent: "space-between",
+            padding: "16px",
           }}
         >
           <Typography variant="h4" color="text.primary">
