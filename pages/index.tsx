@@ -107,7 +107,7 @@ export default function Home({ posts }: BlogProps) {
                 
                 I am passionate about solving problems with software and creating things that make the world a better place. 
 
-                I love clean code, beautiful design, and fast functionality.`}
+                I love clean code, beautiful (system) design, and fast functionality.`}
               </Typography>
             </Box>
 
@@ -132,7 +132,7 @@ export default function Home({ posts }: BlogProps) {
                 }}
                 color="text.primary"
               >
-                {`Im the rare backend developer who also makes clean user interfaces.
+                {`Im the backend developer who also makes clean user interfaces.
                 
                 A few technologies I've been working with recently:
                 - React
