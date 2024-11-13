@@ -90,11 +90,11 @@ export default function Home({ posts }: BlogProps) {
                 }}
                 color="text.primary"
               >
-                Whats up! I'm Will Jones, a software engineer and entrepreneur.
-                I am passionate about solving problems and creating things that
-                make the world a better place. I am currently working on a
-                project called My Goal Creator, a goal setting app that helps me
-                set and track my goals with AI.
+                Whats up! I&apos;m Will Jones, a software engineer and
+                entrepreneur. I am passionate about solving problems and
+                creating things that make the world a better place. I am
+                currently working on a project called My Goal Creator, a goal
+                setting app that helps me set and track my goals with AI.
               </Typography>
             </Box>
           </Box>
