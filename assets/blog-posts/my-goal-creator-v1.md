@@ -78,7 +78,7 @@ I’m also developing a kanban board feature for tracking goals and progress. Cu
 
 My plan is to keep refining My Goal Creator until I find a use case that truly resonates with users. The platform’s flexibility should allow it to serve as a foundation for future, rebranded products if necessary.
 
-I would like to implement a way to understand the underlying AI model's performance in regards to generating accurate responses. This would allow me to establish a baseline for the quality of responses and track changes over time. This would allow me to fine tune or switch models and remain confident.
+I want to implement regression testing for the AI model to ensure responses satisfy quality standards as the prompting continues to evolve.
 
 I thought this [article](https://about.gitlab.com/blog/2024/05/09/developing-gitlab-duo-how-we-validate-and-test-ai-models-at-scale/) by Gitlab was interesting and offered insight into how they approach testing AI models.
 
