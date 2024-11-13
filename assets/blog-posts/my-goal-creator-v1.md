@@ -25,6 +25,10 @@ My Goal Creator is a web application designed to help users set, track, and refi
 
 The app acts like a reader where the user can ask how to achieve a goal or task and recieve a detailed plan. Once a plan has been generated the user has the ability to easily select a line from the text and dive deeper into that subject. This recursive style of research allows for users to find sub topics of interest and quickly generate information about them. I have been referring to this as 'diving'.
 
+<img src="/images/posts/mgc_v1/mgc-ui-4.png" alt="web app ui" title="plan"  />
+
+<img src="/images/posts/mgc_v1/mgc-ui-6.png" alt="web app ui" title="dive"  />
+
 [My Goal Creator - Worker](https://github.com/CodeJonesW/MyGoalCreator-worker)
 
 [My Goal Creator - Frontend](https://github.com/CodeJonesW/MyGoalCreator)
@@ -39,6 +43,7 @@ The app acts like a reader where the user can ask how to achieve a goal or task 
   - users can click on text within a goal to create a new sub goal and stream the response
   - users can view their generated goals and any topics they have dived into
   - users can track goals and see their progress via a kanban board
+  - users can create daily todos and track their progress over the month
 - Backend
 
   - open ai completion streaming
@@ -48,8 +53,6 @@ The app acts like a reader where the user can ask how to achieve a goal or task 
   - convert to use [Hono](https://hono.dev/docs/) web application framework
 
 <img src="/images/posts/mgc_v1/mgc-ui-1.png" alt="web app ui" title="enter goal"  />
-
-<img src="/images/posts/mgc_v1/mgc-ui-4.png" alt="web app ui" title="plan"  />
 
 ## Implementation of OpenAI Completion Streaming 💿
 
@@ -67,7 +70,7 @@ Prompting the AI to consistently produce reliable, structured markdown was anoth
 
 ## Kanban Board for Tracking 📊
 
-I’m also developing a kanban board feature for tracking goals and progress. Currently, a working prototype allows users to drag sub-tasks between columns, providing a visual and interactive way to manage tasks.
+I’m also developing a kanban board feature for tracking goals and progress. Currently, a working prototype allows users to drag sub-tasks between columns, providing a visual and interactive way to manage tasks. The most interesting part of this feature is the backend functionality taking the AI generated markdown and splitting it into tasks and timelines. This relies on the LLM producing consistent markdown formatting making prompting the AI a critical part of the feature.
 
 <img src="/images/posts/mgc_v1/mgc-ui-3.png" alt="web app ui" title="goal tracker"  />
 
@@ -87,13 +90,10 @@ I thought this [article](https://about.gitlab.com/blog/2024/05/09/developing-git
 
 If you have any feedback or ideas, feel free to reach out at williamjonescodes@gmail.com.
 
-Cheers,
-
-Will Jones
+Cheers!
 
 ### Resources for future me
 
 - https://www.evidentlyai.com/blog/llm-regression-testing-tutorial
 - https://about.gitlab.com/blog/2024/05/09/developing-gitlab-duo-how-we-validate-and-test-ai-models-at-scale/
 - https://github.com/CircleCI-Public/intro-to-hallucination-detection/blob/main/test_hallucinations.py
-

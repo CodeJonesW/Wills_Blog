@@ -1,96 +1,106 @@
 import Link from "next/link";
-import styled from "styled-components";
-import styles from "../styles/Home.module.css";
 import { AnimatePresence } from "framer-motion";
 import React from "react";
-import { useRouter } from "next/router";
-import fs from "fs";
 import { motion } from "framer-motion";
-import path from "path";
-import matter from "gray-matter";
-import { post } from "../enums";
-import { sendAnalyticsEvent } from "../lib/google_analytics";
-import Post from "../components/shared/post";
 import {
-  Div,
-  H3,
   ContactContainer,
   HomeNavBar,
-  OuterContainer,
   UnshrinkableDiv,
-  FullScreenColumn,
 } from "../components/shared/styles";
+import { Box, List, ListItemButton, Typography } from "@mui/material";
+import { useTheme } from "@mui/material";
 
-const Body = styled(motion.div)`
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  padding: 24px;
-`;
-
-const TopLeftTitle = styled(H3)`
-  max-width: 200px;
-`;
-
+const projects = [
+  {
+    name: "My Goal Creator",
+    description:
+      "A goal setting app that helps you set and track your goals with AI.",
+    link: "https://www.mygoalcreator.com",
+  },
+];
 export default function Projects() {
+  const theme = useTheme();
+
   return (
     <AnimatePresence>
-      <OuterContainer className={styles.quartzoBold}>
-        <FullScreenColumn
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ duration: 2, type: "spring" }}
+      <motion.div
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ duration: 2, type: "spring" }}
+      >
+        <HomeNavBar>
+          <Box>
+            <Typography color="text.primary">
+              {"williamjonescodes.com"}
+            </Typography>
+          </Box>
+          <ContactContainer>
+            <Link href="/">
+              <Typography color="text.primary">Blog</Typography>
+            </Link>
+            <UnshrinkableDiv style={{ width: "16px" }} />
+          </ContactContainer>
+        </HomeNavBar>
+
+        <Box
+          sx={{
+            padding: "32px",
+            "@media (max-width:768px)": {
+              padding: "0px",
+            },
+          }}
         >
-          <HomeNavBar>
-            <Div>
-              <TopLeftTitle>{"williamjonescodes.com"}</TopLeftTitle>
-            </Div>
-            <ContactContainer>
-              <Link style={{ color: "black" }} href="/">
-                <H3 style={{}}>Blog</H3>
-              </Link>
-              <UnshrinkableDiv style={{ width: "16px" }} />
-            </ContactContainer>
-          </HomeNavBar>
-          <Body>
-            <li>
-              <a href="https://www.mygoalcreator.com">My Goal Creator</a> - A
-              goal setting app that helps you set and track your goals with AI.
-            </li>
-          </Body>
-        </FullScreenColumn>
-      </OuterContainer>
+          <List>
+            {projects.map((project, index) => (
+              <ListItemButton
+                sx={{
+                  "@media (max-width:768px)": {
+                    padding: "8px",
+                  },
+                }}
+                href={project.link}
+                key={index}
+              >
+                <Box
+                  sx={{
+                    flex: "1",
+                    display: "flex",
+                    flexDirection: "column",
+                    alignItems: "start",
+                    padding: "16px",
+                    backgroundColor: theme.palette.background.paper,
+                    borderRadius: "8px",
+                    boxShadow: "0px 4px 12px rgba(0, 0, 0, 0.1)",
+                    "@media (max-width:768px)": {
+                      padding: "8px",
+                    },
+                  }}
+                >
+                  <Typography variant="h6" color="text.primary">
+                    {project.name}
+                  </Typography>
+                  <Typography
+                    color="text.secondary"
+                    sx={{ marginBottom: "16px" }}
+                  >
+                    {project.description}
+                  </Typography>
+                  <iframe
+                    src={project.link}
+                    style={{
+                      width: "100%",
+                      height: "500px",
+                      border: "none",
+                      borderRadius: "8px",
+                    }}
+                    title={project.name}
+                  />
+                </Box>
+              </ListItemButton>
+            ))}
+          </List>
+        </Box>
+      </motion.div>
     </AnimatePresence>
   );
-}
-
-export async function getStaticProps() {
-  const files = fs.readdirSync(path.join("assets/blog-posts"));
-
-  const posts = files
-    .map((filename) => {
-      const slug = filename.replace(".md", "");
-
-      const markdownWithMeta = fs.readFileSync(
-        path.join("assets/blog-posts", filename),
-        "utf-8"
-      );
-
-      const { data: frontmatter } = matter(markdownWithMeta);
-
-      return { slug, frontmatter };
-    })
-    .sort((a, b) => {
-      return (
-        new Date(b.frontmatter.date).getTime() -
-        new Date(a.frontmatter.date).getTime()
-      );
-    });
-
-  return {
-    props: {
-      posts: posts,
-    },
-  };
 }

@@ -1,102 +1,152 @@
-import type { NextPage } from "next";
 import Link from "next/link";
 import styled from "styled-components";
-import styles from "../styles/Home.module.css";
+import { useTheme } from "@mui/material";
 import { AnimatePresence } from "framer-motion";
 import React from "react";
-import { useRouter } from "next/router";
 import fs from "fs";
 import { motion } from "framer-motion";
 import path from "path";
 import matter from "gray-matter";
 import { post } from "../enums";
-import { sendAnalyticsEvent } from "../lib/google_analytics";
-import Post from "../components/shared/post";
-import {
-  Div,
-  H3,
-  ContactContainer,
-  HomeNavBar,
-  OuterContainer,
-  UnshrinkableDiv,
-  FullScreenColumn,
-} from "../components/shared/styles";
-
-const NavLink = styled.a`
-  color: black;
-  cursor: pointer;
-`;
-
-const PostsContainer = styled(motion.div)`
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  justify-content: flex-start;
-  padding-top: 24px;
-  width: 80%;
-`;
-
-const Body = styled(motion.div)`
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  padding-top: 24px;
-`;
-
-const TopLeftTitle = styled(H3)`
-  max-width: 200px;
-`;
+import { Box, Typography } from "@mui/material";
+import Blog from "./blog/blog";
 
 interface BlogProps {
   posts: post[];
 }
 
+const ProfileImage = styled.img`
+  width: 100px;
+  height: 400px;
+  max-width: 900px;
+  max-height: 600px;
+  min-width: 360px;
+  min-height: 320px;
+  object-fit: cover;
+  border-radius: 50%;
+  padding: 16px;
+  object-fit: cover;
+  margin-bottom: "16px";
+`;
+
 export default function Home({ posts }: BlogProps) {
-  const router = useRouter();
-  const selectPost = (slug: string) => {
-    sendAnalyticsEvent("blogView", {
-      action: "select_post",
-      params: {
-        post: slug,
-      },
-    });
-
-    router.push(`/blog/${slug}`);
-  };
-
+  const theme = useTheme();
   return (
     <AnimatePresence>
-      <OuterContainer className={styles.quartzoBold}>
-        <FullScreenColumn
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ duration: 2, type: "spring" }}
+      <motion.div
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ duration: 4, type: "spring" }}
+        style={{
+          backgroundColor: theme.palette.background.default,
+          width: "100%",
+          display: "flex",
+          justifyContent: "center",
+          flexDirection: "column",
+        }}
+      >
+        <Box
+          sx={{
+            display: "flex",
+            flexDirection: "row",
+            justifyContent: "space-between",
+            padding: "16px",
+          }}
         >
-          <HomeNavBar>
-            <Div>
-              <TopLeftTitle>{"williamjonescodes.com"}</TopLeftTitle>
-            </Div>
-            <ContactContainer>
-              <Link style={{ color: "black" }} href="/about">
-                <H3 style={{}}>About</H3>
-              </Link>
-              <UnshrinkableDiv style={{ width: "16px" }} />
-              <Link style={{ color: "black" }} href="/projects">
-                <H3>Projects</H3>
-              </Link>
-            </ContactContainer>
-          </HomeNavBar>
-          <Body>
-            <PostsContainer>
-              <H3>{"Blog"}</H3>
-              {posts.map((post, index) => {
-                return <Post key={index} post={post} selectPost={selectPost} />;
-              })}
-            </PostsContainer>
-          </Body>
-        </FullScreenColumn>
-      </OuterContainer>
+          <Typography variant="h4" color="text.primary">
+            williamjonescodes.com
+          </Typography>
+          <Link href="/projects">
+            <Typography variant="body1" color="text.primary">
+              Projects
+            </Typography>
+          </Link>
+        </Box>
+        <Box
+          sx={{
+            display: "flex",
+            flexDirection: "row",
+            justifyContent: "space-between",
+            flexWrap: "wrap",
+          }}
+        >
+          <Box
+            sx={{
+              display: "flex",
+              alignItems: "center",
+              flexDirection: "column",
+              width: "40%",
+              "@media (max-width: 768px)": {
+                width: "100%",
+              },
+            }}
+          >
+            <ProfileImage src="selfie.jpg" />
+
+            <Box
+              sx={{
+                display: "flex",
+                flexDirection: "column",
+                alignItems: "center",
+                justifyContent: "center",
+                border: "1px solid",
+                borderColor: "text.primary",
+                borderRadius: "4px",
+                padding: "16px",
+              }}
+            >
+              <Typography
+                variant="body1"
+                sx={{
+                  maxWidth: "375px",
+                  whiteSpace: "pre-line",
+                }}
+                color="text.primary"
+              >
+                {`Hi! 👋🏻 I'm Will Jones.
+                
+                I am passionate about solving problems with software and creating things that make the world a better place. 
+
+                I love clean code, beautiful design, and fast functionality.`}
+              </Typography>
+            </Box>
+
+            <Box
+              sx={{
+                display: "flex",
+                flexDirection: "column",
+                alignItems: "center",
+                justifyContent: "center",
+                border: "1px solid",
+                borderColor: "text.primary",
+                borderRadius: "4px",
+                padding: "16px",
+                marginTop: "32px",
+              }}
+            >
+              <Typography
+                variant="body1"
+                sx={{
+                  maxWidth: "375px",
+                  whiteSpace: "pre-line",
+                }}
+                color="text.primary"
+              >
+                {`Im the rare backend developer who also makes clean user interfaces.
+                
+                A few technologies I've been working with recently:
+                - React
+                - TypeScript
+                - Node.js
+                - SQLite
+                - Cloudflare Workers
+                `}
+              </Typography>
+            </Box>
+          </Box>
+          <Blog posts={posts} />
+        </Box>
+      </motion.div>
     </AnimatePresence>
   );
 }

@@ -2,11 +2,13 @@ import fs from "fs";
 import path from "path";
 import matter from "gray-matter";
 import { marked } from "marked";
-import { post, routes, theme } from "../../enums/index";
+import { post, routes, theme as themeEnum } from "../../enums/index";
 import Back from "../../components/shared/back";
 import styled from "styled-components";
 import { H1, Section2TopBar as TopBar } from "../../components/shared/styles";
 import { motion } from "framer-motion";
+import { useTheme } from "@mui/material";
+import { Typography } from "@mui/material";
 
 interface PostProps {
   frontmatter: post["frontmatter"];
@@ -19,12 +21,8 @@ const PostContainer = styled(motion.div)`
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  padding: 16px;
+  padding: 32px;
   padding-bottom: 400px;
-
-  @media (max-width: 768px) {
-    padding: 8px;
-  }
 `;
 
 const PageContainer = styled.div`
@@ -34,16 +32,9 @@ const PageContainer = styled.div`
   justify-content: center;
   max-width: 900px;
   margin: 0 auto;
-  padding: 16px;
-
-  @media (max-width: 768px) {
-    padding: 8px;
-  }
 `;
 
 const Content = styled.div`
-  padding-left: 16px;
-  padding-right: 16px;
   font-size: 1.2rem;
   line-height: 1.6;
 
@@ -64,7 +55,7 @@ const Content = styled.div`
     margin: 16px 0;
   }
   pre {
-    background-color: #f5f5f5; /* Background color for better contrast */
+    background-color: #1d1d1d; /* Background color for better contrast */
     padding: 16px; /* Padding around the code block */
     border-radius: 8px; /* Rounded corners */
     overflow-x: auto; /* Enable horizontal scrolling */
@@ -75,6 +66,7 @@ const Content = styled.div`
 
   code {
     font-family: monospace; /* Use monospace font for code */
+    color: #f48fb1;
     display: block;
     white-space: pre-wrap; /* Allows line breaks in long code samples */
     word-break: break-word; /* Break long words for better responsiveness */
@@ -108,6 +100,7 @@ export default function PostPage({
   slug,
   content,
 }: PostProps) {
+  const theme = useTheme();
   return (
     <PageContainer>
       <TopBar
@@ -115,7 +108,7 @@ export default function PostPage({
         initial={{ opacity: 0 }}
         transition={{ duration: 4, type: "spring" }}
       >
-        <Back route={routes.home} themeProp={theme.light} />
+        <Back route={routes.home} themeProp={themeEnum.dark} />
       </TopBar>
 
       <PostContainer
@@ -123,7 +116,9 @@ export default function PostPage({
         initial={{ opacity: 0 }}
         transition={{ duration: 4, type: "spring" }}
       >
-        <H1>{title}</H1>
+        <Typography variant="h2" color="text.primary">
+          {title}
+        </Typography>
         {!hide_image_in_slug ? (
           <PostImage
             style={{ width: "300px", height: "300px" }}
@@ -140,11 +135,7 @@ export default function PostPage({
           }}
         >
           <Content
-            style={{
-              paddingLeft: "16px",
-              paddingRight: "16px",
-              marginBottom: "200px",
-            }}
+            style={{ color: theme.palette.text.primary }}
             dangerouslySetInnerHTML={{ __html: marked(content) }}
           ></Content>
         </div>

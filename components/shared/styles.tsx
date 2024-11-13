@@ -42,7 +42,7 @@ export const SecondaryButton = styled(motion.div)`
     box-shadow: 0 10px 20px rgba(225, 217, 231, 0.4);
   }
   border-radius: 16px;
-  font-family: "LemonMilkBold";
+  font-family: "AngleterreBook";
   touch-action: none;
   user-select: none;
 `;
@@ -69,7 +69,7 @@ export const PrimaryButton = styled(motion.div)`
     box-shadow: 0 10px 20px rgba(225, 217, 231, 0.4);
   }
   border-radius: 16px;
-  font-family: "LemonMilkBold";
+  font-family: "AngleterreBook";
   user-select: none;
   touch-action: none;
 `;
@@ -78,8 +78,8 @@ export const UnshrinkableDiv = styled.div`
   flex-shrink: 0;
 `;
 
-export const MonterratBold = { fontFamily: "MontserratBold" };
-export const MonterratMedium = { fontFamily: "MontserratMedium" };
+export const MonterratBold = { fontFamily: "AngleterreBook" };
+export const MonterratMedium = { fontFamily: "AngleterreBook" };
 
 export const ArrowContainer = styled.div``;
 
@@ -128,30 +128,31 @@ export const BackArrow = styled(motion.i)`
 
 export const H3 = styled.h3`
   font-size: 0.9em;
-  font-family: "MontserratMedium";
+  font-family: "AngleterreBook";
   max-width: 80%;
+  font-weight: bold;
 `;
 
 export const H5 = styled.h5`
   font-size: 0.6em;
-  font-family: "MontserratMedium";
+  font-family: "AngleterreBook";
   max-width: 80%;
 `;
 
 export const H4 = styled.h3`
   font-size: 0.7em;
-  font-family: "MontserratBold";
+  font-family: "AngleterreBook";
   max-width: 80%;
 `;
 
 export const H1 = styled.h1`
-  font-family: "MontserratBold";
+  font-family: "AngleterreBook";
   color: "black";
   user-select: none;
 `;
 
 export const InfoText = styled(motion.h1)`
-  font-family: "MontserratBold";
+  font-family: "AngleterreBook";
   color: black;
   text-align: center;
   font-size: 1.5em;
@@ -159,7 +160,7 @@ export const InfoText = styled(motion.h1)`
 `;
 
 export const CompanyTagline = styled.h2`
-  font-family: "MontserratBold";
+  font-family: "AngleterreBook";
   max-width: 80%;
   font-size: 2em;
   color: black;
@@ -205,7 +206,7 @@ export const Section2TopBar = styled(motion.div)`
 
 export const Section2Content = styled(motion.div)`
   color: white;
-  font-family: "MontserratBold";
+  font-family: "AngleterreBook";
   max-width: 700px;
   padding-top: 64px;
   text-align: center;

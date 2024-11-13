@@ -18,7 +18,7 @@ export const bull = (
   </Box>
 );
 
-const fontStyle = { fontFamily: "MontserratMedium" };
+const fontStyle = { fontFamily: "AngleterreBook" };
 
 interface OutlinedCardProps {
   title: string;
@@ -43,9 +43,9 @@ export const OutlinedCard: FC<OutlinedCardProps> = ({
   return (
     <Box style={{ padding: "16px" }} sx={{ maxWidth: 304 }}>
       <Card variant="outlined">
-        <CardContent className={styles.QuartzoBold}>
+        <CardContent className={styles.AngleterreBook}>
           <Typography
-            style={{ fontFamily: "LemonMilkBold" }}
+            style={{ fontFamily: "AngleterreBook" }}
             sx={{ fontSize: 14 }}
             color="text.secondary"
             gutterBottom
@@ -54,7 +54,7 @@ export const OutlinedCard: FC<OutlinedCardProps> = ({
           </Typography>
           <Typography variant="h5" component="div"></Typography>
           <Typography
-            style={{ fontFamily: "MontserratMedium" }}
+            style={{ fontFamily: "AngleterreBook" }}
             sx={{ mb: 1.5 }}
             color="text.secondary"
           >
@@ -73,7 +73,7 @@ export const OutlinedCard: FC<OutlinedCardProps> = ({
             );
           })}
           <Typography
-            style={{ fontFamily: "MontserratMedium" }}
+            style={{ fontFamily: "AngleterreBook" }}
             sx={{ mb: 1.5 }}
             color="text.secondary"
           >

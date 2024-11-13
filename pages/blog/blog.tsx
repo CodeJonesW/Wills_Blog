@@ -1,45 +1,20 @@
-import { AnimatePresence } from "framer-motion";
 import { motion } from "framer-motion";
-import { FullScreenView, H3, HomeNavBar } from "../components/shared/styles";
 import styled from "styled-components";
-import styles from "../styles/Home.module.css";
 import fs from "fs";
 import path from "path";
 import matter from "gray-matter";
 import router from "next/router";
-import Post from "../components/shared/post";
-import { post, routes, theme } from "../enums";
-import { Section2TopBar as TopBar } from "../components/shared/styles";
-import Back from "../components/shared/back";
-import { sendAnalyticsEvent } from "../lib/google_analytics";
-
-const BlogContainer = styled(motion.div)`
-  justify-content: center;
-  background-color: white;
-  min-height: 100vh;
-  width: 100%;
-`;
-
-const BlogNavbar = styled(motion.div)`
-  padding-top: 5%;
-  padding-left: 15%;
-  width: 80%;
-`;
+import Post from "../../components/shared/post";
+import { post } from "../../enums";
+import { sendAnalyticsEvent } from "../../lib/google_analytics";
+import { Box, Typography } from "@mui/material";
 
 const PostsContainer = styled(motion.div)`
   display: flex;
   flex-direction: column;
   align-items: flex-start;
   justify-content: flex-start;
-  padding-left: 15%;
   padding-top: 24px;
-`;
-
-export const PageHeader = styled(H3)`
-  font-family: "LemonMilkBold";
-  color: "black";
-  max-width: 200px;
-  user-select: none;
 `;
 
 interface BlogProps {
@@ -59,28 +34,33 @@ export default function Blog({ posts }: BlogProps) {
   };
 
   return (
-    <BlogContainer
-      initial={{ opacity: 0 }}
-      animate={{ opacity: 1 }}
-      transition={{ duration: 4, type: "spring" }}
-      className={styles.quartzoBold}
+    <Box
+      sx={{
+        display: "flex",
+        flexDirection: "column",
+        alignItems: "center",
+        justifyContent: "center",
+        padding: "8px",
+        "@media (max-width:768px)": {
+          paddingLeft: "32px",
+          paddingRight: "32px",
+          paddingTop: "32px",
+        },
+      }}
     >
-      <TopBar
-        animate={{ opacity: 1 }}
-        initial={{ opacity: 0 }}
-        transition={{ duration: 4, type: "spring" }}
-      >
-        <Back route={routes.home} themeProp={theme.light} />
-      </TopBar>
-      <BlogNavbar>
-        <PageHeader style={{ fontSize: "1.2em" }}>Blog</PageHeader>
-      </BlogNavbar>
       <PostsContainer>
+        <Typography
+          sx={{ paddingBottom: "32px", paddingLeft: "4px" }}
+          color="text.primary"
+          variant="h3"
+        >
+          Blog
+        </Typography>
         {posts.map((post, index) => {
           return <Post key={index} post={post} selectPost={selectPost} />;
         })}
       </PostsContainer>
-    </BlogContainer>
+    </Box>
   );
 }
 
