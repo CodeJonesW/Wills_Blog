@@ -10,7 +10,7 @@ import matter from "gray-matter";
 import { post } from "../enums";
 import { Box, Typography } from "@mui/material";
 import { UnshrinkableDiv } from "../components/shared/styles";
-import Blog from "./blog";
+import Blog from "./blog/blog";
 
 interface BlogProps {
   posts: post[];

@@ -4,9 +4,9 @@ import fs from "fs";
 import path from "path";
 import matter from "gray-matter";
 import router from "next/router";
-import Post from "../components/shared/post";
-import { post } from "../enums";
-import { sendAnalyticsEvent } from "../lib/google_analytics";
+import Post from "../../components/shared/post";
+import { post } from "../../enums";
+import { sendAnalyticsEvent } from "../../lib/google_analytics";
 import { Box, Typography } from "@mui/material";
 
 const PostsContainer = styled(motion.div)`
