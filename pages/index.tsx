@@ -132,7 +132,9 @@ export default function Home({ posts }: BlogProps) {
                 }}
                 color="text.primary"
               >
-                {`A few technologies I've been working with recently:
+                {`Im the rare backend developer who also makes clean user interfaces.
+                
+                A few technologies I've been working with recently:
                 - React
                 - TypeScript
                 - Node.js

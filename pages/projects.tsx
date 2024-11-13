@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { AnimatePresence } from "framer-motion";
-import React, { useState } from "react";
+import React from "react";
 import { motion } from "framer-motion";
 import {
   ContactContainer,
@@ -10,7 +10,6 @@ import {
 import { Box, List, ListItemButton, Typography } from "@mui/material";
 import { useTheme } from "@mui/material";
 
-// Sample project data; you could add more projects here
 const projects = [
   {
     name: "My Goal Creator",
@@ -18,11 +17,9 @@ const projects = [
       "A goal setting app that helps you set and track your goals with AI.",
     link: "https://www.mygoalcreator.com",
   },
-  // Add more projects here as needed
 ];
 export default function Projects() {
   const theme = useTheme();
-  const [focusedProject, setFocusedProject] = useState(projects[0]);
 
   return (
     <AnimatePresence>
@@ -45,10 +42,25 @@ export default function Projects() {
           </ContactContainer>
         </HomeNavBar>
 
-        <Box sx={{ padding: "32px" }}>
+        <Box
+          sx={{
+            padding: "32px",
+            "@media (max-width:768px)": {
+              padding: "0px",
+            },
+          }}
+        >
           <List>
             {projects.map((project, index) => (
-              <ListItemButton href={project.link} key={index}>
+              <ListItemButton
+                sx={{
+                  "@media (max-width:768px)": {
+                    padding: "8px",
+                  },
+                }}
+                href={project.link}
+                key={index}
+              >
                 <Box
                   sx={{
                     flex: "1",
@@ -59,6 +71,9 @@ export default function Projects() {
                     backgroundColor: theme.palette.background.paper,
                     borderRadius: "8px",
                     boxShadow: "0px 4px 12px rgba(0, 0, 0, 0.1)",
+                    "@media (max-width:768px)": {
+                      padding: "8px",
+                    },
                   }}
                 >
                   <Typography variant="h6" color="text.primary">
