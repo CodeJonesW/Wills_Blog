@@ -40,7 +40,11 @@ export default function Blog({ posts }: BlogProps) {
         flexDirection: "column",
         alignItems: "center",
         justifyContent: "center",
-        paddingTop: "24px",
+        "@media (max-width:768px)": {
+          paddingLeft: "32px",
+          paddingRight: "32px",
+          paddingTop: "32px",
+        },
       }}
     >
       <PostsContainer>

@@ -1,7 +1,10 @@
 html {
-  width: "100vw";
-  height: "100vh";
+  width: auto;
+  height: auto;
   background-color: var(--primary-color);
+}
+body {
+  padding: 4px;
 }
 
 a {

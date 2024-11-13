@@ -38,8 +38,8 @@ export default function Home({ posts }: BlogProps) {
         animate={{ opacity: 1 }}
         transition={{ duration: 2, type: "spring" }}
         style={{
-          padding: "24px",
           backgroundColor: theme.palette.background.default,
+          width: "100%",
         }}
       >
         <Box
@@ -48,21 +48,16 @@ export default function Home({ posts }: BlogProps) {
             width: "100%",
             flexDirection: "row",
             justifyContent: "space-between",
-            paddingBottom: "32px",
           }}
         >
-          <Box>
-            <Typography variant="h4" color="text.primary">
-              williamjonescodes.com
+          <Typography variant="h4" color="text.primary">
+            williamjonescodes.com
+          </Typography>
+          <Link href="/projects">
+            <Typography variant="body1" color="text.primary">
+              Projects
             </Typography>
-          </Box>
-          <Box display="flex" flexDirection={"row"}>
-            <Link href="/projects">
-              <Typography variant="body1" color="text.primary">
-                Projects
-              </Typography>
-            </Link>
-          </Box>
+          </Link>
         </Box>
         <Box
           sx={{
@@ -72,7 +67,17 @@ export default function Home({ posts }: BlogProps) {
             flexWrap: "wrap",
           }}
         >
-          <Box>
+          <Box
+            sx={{
+              display: "flex",
+              alignItems: "center",
+              flexDirection: "column",
+              width: "40%",
+              "@media (max-width: 768px)": {
+                width: "100%",
+              },
+            }}
+          >
             <ProfileImage src="selfie.jpg" />
 
             <Box
@@ -90,15 +95,16 @@ export default function Home({ posts }: BlogProps) {
               <Typography
                 variant="body1"
                 sx={{
-                  maxWidth: "400px",
+                  maxWidth: "375px",
                 }}
                 color="text.primary"
               >
-                Whats up! I&apos;m Will Jones, a software engineer and
-                entrepreneur. I am passionate about solving problems and
-                creating things that make the world a better place. I am
-                currently working on a project called My Goal Creator, a goal
-                setting app that helps me set and track my goals with AI.
+                Hey! Thanks for checking out my page. I&apos;m Will Jones, a
+                software engineer and entrepreneur. I am passionate about
+                solving problems and creating things that make the world a
+                better place. I am currently working on a project called My Goal
+                Creator, a goal setting app that helps me set and track my goals
+                with AI.
               </Typography>
             </Box>
           </Box>
