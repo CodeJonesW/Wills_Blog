@@ -26,12 +26,7 @@ const ProfileImage = styled.img`
   object-fit: cover;
   border-radius: 50%;
   padding: 16px;
-
-  @media (max-width: 768px) {
-    width: 40px;
-    height: 100px;
-    padding: 8px;
-  }
+  object-fit: cover;
 `;
 
 export default function Home({ posts }: BlogProps) {
@@ -53,6 +48,7 @@ export default function Home({ posts }: BlogProps) {
             width: "100%",
             flexDirection: "row",
             justifyContent: "space-between",
+            paddingBottom: "32px",
           }}
         >
           <Box>
@@ -70,10 +66,9 @@ export default function Home({ posts }: BlogProps) {
             flexDirection: "row",
             justifyContent: "space-between",
             flexWrap: "wrap",
-            padding: "24px",
           }}
         >
-          <Box sx={{ paddingRight: "24px" }}>
+          <Box>
             <ProfileImage src="selfie.jpg" />
             <Typography
               variant="body1"
