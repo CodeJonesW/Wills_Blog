@@ -36,7 +36,7 @@ export default function Home({ posts }: BlogProps) {
       <motion.div
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
-        transition={{ duration: 2, type: "spring" }}
+        transition={{ duration: 4, type: "spring" }}
         style={{
           backgroundColor: theme.palette.background.default,
           width: "100%",
@@ -102,12 +102,12 @@ export default function Home({ posts }: BlogProps) {
                 }}
                 color="text.primary"
               >
-                Hey! Thanks for checking out my page. I&apos;m Will Jones, a
-                software engineer and entrepreneur. I am passionate about
-                solving problems and creating things that make the world a
-                better place. I am currently working on a project called My Goal
-                Creator, a goal setting app that helps me set and track my goals
-                with AI.
+                Hi! 👋🏻 Thanks for checking out my page. I&apos;m Will Jones, a
+                Fullstack software engineer and entrepreneur. I am passionate
+                about solving problems and creating things that make the world a
+                better place. I am looking for my next opportunity to make an
+                impact. In the meantime I am continuing to build and advance my
+                skills
               </Typography>
             </Box>
           </Box>

@@ -2,12 +2,13 @@ import Link from "next/link";
 import styled from "styled-components";
 import { Box, Typography } from "@mui/material";
 import { post } from "../../enums";
+import { motion } from "framer-motion";
 interface PostProps {
   post: post;
   selectPost: (slug: string) => void;
 }
 
-const PostContainer = styled.div`
+const PostContainer = styled(motion.div)`
   display: flex;
   flex-direction: row;
   align-items: flex-start;
@@ -31,7 +32,11 @@ export const PostImage = styled.img`
 export default function Post({ post, selectPost }: PostProps) {
   const { slug, frontmatter } = post;
   return (
-    <PostContainer>
+    <PostContainer
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      transition={{ duration: 8, type: "spring" }}
+    >
       <Link href={`/blog/${slug}`}>
         <Box
           sx={{ display: "flex", flexDirection: "row", alignItems: "center" }}
