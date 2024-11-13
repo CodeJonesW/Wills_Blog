@@ -1,7 +1,8 @@
 import Link from "next/link";
-import Router from "next/router";
 import { routes, theme } from "../../enums";
 import { BackArrow, BackArrowContainer, Circle } from "./styles";
+import { useHtmlContext } from "next/dist/shared/lib/html-context.shared-runtime";
+import { useTheme } from "@mui/material";
 
 interface backProps {
   themeProp: string;
@@ -9,6 +10,7 @@ interface backProps {
 }
 
 export default function Back({ themeProp, route = "" }: backProps) {
+  const myTheme = useTheme();
   return (
     <Link href={!!route ? route : routes.home}>
       <BackArrowContainer
@@ -19,7 +21,10 @@ export default function Back({ themeProp, route = "" }: backProps) {
       >
         <Circle
           style={{
-            borderColor: themeProp === theme.dark ? "white" : "black",
+            borderColor:
+              themeProp === theme.dark
+                ? myTheme.palette.text.primary
+                : myTheme.palette.text.secondary,
           }}
         >
           <BackArrow
@@ -28,7 +33,9 @@ export default function Back({ themeProp, route = "" }: backProps) {
               top: "0",
               left: "-2px",
               borderRight: `10px solid ${
-                themeProp === theme.dark ? "white" : "black"
+                themeProp === theme.dark
+                  ? myTheme.palette.text.primary
+                  : myTheme.palette.text.secondary
               }`,
             }}
           />

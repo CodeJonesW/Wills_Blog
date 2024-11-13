@@ -42,8 +42,12 @@ export default function Post({ post, selectPost }: PostProps) {
             src={frontmatter.cover_image}
           />
           <Box sx={{ paddingLeft: "16px" }}>
-            <Typography color="text.primary">{frontmatter.title}</Typography>
-            <Typography color="text.secondary">{frontmatter.date}</Typography>
+            <Typography variant="body1" color="text.primary">
+              {frontmatter.title}
+            </Typography>
+            <Typography variant="body2" color="text.secondary">
+              {frontmatter.date}
+            </Typography>
           </Box>
         </Box>
       </Link>

@@ -52,7 +52,9 @@ export default function Home({ posts }: BlogProps) {
           }}
         >
           <Box>
-            <Typography color="text.primary">williamjonescodes.com</Typography>
+            <Typography variant="h4" color="text.primary">
+              williamjonescodes.com
+            </Typography>
           </Box>
           <Box display="flex" flexDirection={"row"}>
             <Link href="/projects">

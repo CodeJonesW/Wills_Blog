@@ -47,6 +47,7 @@ export default function Blog({ posts }: BlogProps) {
         <Typography
           sx={{ paddingBottom: "32px", paddingLeft: "4px" }}
           color="text.primary"
+          variant="h3"
         >
           Blog
         </Typography>

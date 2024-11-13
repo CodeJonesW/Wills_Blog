@@ -4,24 +4,36 @@ export const theme = createTheme({
   palette: {
     mode: "dark",
     primary: {
-      main: "#90caf9",
+      main: "#1A1A19",
     },
     secondary: {
-      main: "#f48fb1",
+      main: "#31511E",
     },
     background: {
-      default: "#121212",
-      paper: "#1d1d1d",
+      default: "#1A1A19",
+      paper: "#31511E",
     },
     text: {
-      primary: "#ffffff",
-      secondary: "#bbbbbb",
+      primary: "#859F3D",
+      secondary: "#F6FCDF",
     },
   },
   typography: {
-    fontFamily: "AngleterreBook",
-    h6: {
+    fontFamily: "Merriweather",
+    h4: {
+      fontSize: "1rem",
       letterSpacing: "0.14em",
+    },
+    h3: {
+      fontSize: "1.5rem",
+      letterSpacing: "0.14em",
+    },
+    body1: {
+      fontFamily: "Open Sans",
+    },
+    body2: {
+      fontFamily: "Open Sans",
+      fontStyle: "italic",
     },
   },
 });

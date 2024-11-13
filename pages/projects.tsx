@@ -9,8 +9,10 @@ import {
 } from "../components/shared/styles";
 
 import { Box, List, ListItem, Typography } from "@mui/material";
+import { useTheme } from "@mui/material";
 
 export default function Projects() {
+  const theme = useTheme();
   return (
     <AnimatePresence>
       <motion.div
@@ -25,7 +27,7 @@ export default function Projects() {
             </Typography>
           </Box>
           <ContactContainer>
-            <Link style={{ color: "black" }} href="/">
+            <Link href="/">
               <Typography color="text.primary" style={{}}>
                 Blog
               </Typography>
