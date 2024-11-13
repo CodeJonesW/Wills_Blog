@@ -99,15 +99,46 @@ export default function Home({ posts }: BlogProps) {
                 variant="body1"
                 sx={{
                   maxWidth: "375px",
+                  whiteSpace: "pre-line",
                 }}
                 color="text.primary"
               >
-                Hi! 👋🏻 Thanks for checking out my page. I&apos;m Will Jones, a
-                Fullstack software engineer and entrepreneur. I am passionate
-                about solving problems and creating things that make the world a
-                better place. I am looking for my next opportunity to make an
-                impact. In the meantime I am continuing to build and advance my
-                skills
+                {`Hi! 👋🏻 I'm Will Jones.
+                
+                I am passionate about solving problems with software and creating things that make the world a better place. 
+
+                I love clean code, beautiful design, and fast functionality.`}
+              </Typography>
+            </Box>
+
+            <Box
+              sx={{
+                display: "flex",
+                flexDirection: "column",
+                alignItems: "center",
+                justifyContent: "center",
+                border: "1px solid",
+                borderColor: "text.primary",
+                borderRadius: "4px",
+                padding: "16px",
+                marginTop: "32px",
+              }}
+            >
+              <Typography
+                variant="body1"
+                sx={{
+                  maxWidth: "375px",
+                  whiteSpace: "pre-line",
+                }}
+                color="text.primary"
+              >
+                {`A few technologies I've been working with recently:
+                - React
+                - TypeScript
+                - Node.js
+                - SQLite
+                - Cloudflare Workers
+                `}
               </Typography>
             </Box>
           </Box>

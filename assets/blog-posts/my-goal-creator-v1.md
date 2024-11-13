@@ -70,7 +70,7 @@ Prompting the AI to consistently produce reliable, structured markdown was anoth
 
 ## Kanban Board for Tracking 📊
 
-I’m also developing a kanban board feature for tracking goals and progress. Currently, a working prototype allows users to drag sub-tasks between columns, providing a visual and interactive way to manage tasks.
+I’m also developing a kanban board feature for tracking goals and progress. Currently, a working prototype allows users to drag sub-tasks between columns, providing a visual and interactive way to manage tasks. The most interesting part of this feature is the backend functionality taking the AI generated markdown and splitting it into tasks and timelines. This relies on the LLM producing consistent markdown formatting making prompting the AI a critical part of the feature.
 
 <img src="/images/posts/mgc_v1/mgc-ui-3.png" alt="web app ui" title="goal tracker"  />
 
