@@ -116,7 +116,7 @@ export default function PostPage({
         initial={{ opacity: 0 }}
         transition={{ duration: 4, type: "spring" }}
       >
-        <Typography variant="h3" color="text.primary">
+        <Typography variant="h2" color="text.primary">
           {title}
         </Typography>
         {!hide_image_in_slug ? (

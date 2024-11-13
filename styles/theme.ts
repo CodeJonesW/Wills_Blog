@@ -14,19 +14,30 @@ export const theme = createTheme({
       paper: "#31511E",
     },
     text: {
-      primary: "#859F3D",
-      secondary: "#F6FCDF",
+      primary: "#F6FCDF",
+      secondary: "#859F3D",
     },
   },
   typography: {
-    fontFamily: "Merriweather",
     h4: {
       fontSize: "1rem",
       letterSpacing: "0.14em",
+      fontFamily: "Merriweather",
     },
     h3: {
       fontSize: "1.5rem",
       letterSpacing: "0.14em",
+      fontFamily: "Merriweather",
+    },
+    h2: {
+      fontSize: "2rem",
+      letterSpacing: "0.14em",
+      fontFamily: "Merriweather",
+    },
+    h1: {
+      fontSize: "2.5rem",
+      letterSpacing: "0.14em",
+      fontFamily: "Merriweather",
     },
     body1: {
       fontFamily: "Open Sans",

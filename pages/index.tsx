@@ -58,7 +58,9 @@ export default function Home({ posts }: BlogProps) {
           </Box>
           <Box display="flex" flexDirection={"row"}>
             <Link href="/projects">
-              <Typography color="text.primary">Projects</Typography>
+              <Typography variant="body1" color="text.primary">
+                Projects
+              </Typography>
             </Link>
           </Box>
         </Box>

@@ -23,6 +23,14 @@ function MyApp({ Component, pageProps }: AppProps) {
       "--secondary-color",
       theme.palette.secondary.main
     );
+    document.documentElement.style.setProperty(
+      "--text-primary-color",
+      theme.palette.text.primary
+    );
+    document.documentElement.style.setProperty(
+      "--text-secondary-color",
+      theme.palette.text.secondary
+    );
   };
 
   useEffect(() => {
