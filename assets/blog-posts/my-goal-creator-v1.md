@@ -21,9 +21,9 @@ The commits have been steady!
 
 ## Project Recap ☕️
 
-My Goal Creator is a web application designed to help users set, track, and refine their goals. Built with React, TypeScript, Node.js, SQL, and Cloudflare services, it uses OpenAI on the backend to dynamically stream responses to users' inputs.
+My Goal Creator is a web application designed to help users set, track, and refine their goals. The app is built with React, TypeScript, Node.js, SQLite, Cloudflare Workers, and uses OpenAI to dynamically stream responses to users' inputs.
 
-The app acts like a reader where the user can ask how to achieve a goal or task and recieve a detailed plan. Once a plan has been generated the user has the ability to easily select a line from the text and dive deeper into that subject. This recursive style of research allows for users to find sub topics of interest and quickly generate information about them. I have been referring to this as 'diving'.
+The app acts like a task manager and research tool where the user can ask how to achieve a goal or task and recieve a detailed plan. Once a plan has been generated the user has the ability to easily select a line from the text and dive deeper into that subject. This recursive style of research allows for users to find sub topics of interest and quickly generate information about them. I have been referring to this as 'diving'.
 
 <img src="/images/posts/mgc_v1/mgc-ui-4.png" alt="web app ui" title="plan"  />
 
