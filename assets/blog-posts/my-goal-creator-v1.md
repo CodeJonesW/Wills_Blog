@@ -90,9 +90,7 @@ I thought this [article](https://about.gitlab.com/blog/2024/05/09/developing-git
 
 If you have any feedback or ideas, feel free to reach out at williamjonescodes@gmail.com.
 
-Cheers,
-
-Will Jones
+Cheers!
 
 ### Resources for future me
 
