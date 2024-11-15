@@ -23,7 +23,7 @@ After 2 months of applying to jobs I have had three intro interviews in which I 
 
 ## Answering my own questions 🙋🏻‍♂️
 
-1. I love to learn new technologies all the time but quantifying that learning in a way that proves it remotely is difficult. Acquiring official certifications seems to be a good way to do this. I have decided to start with the AWS Cloud Practitioner certificate.
+1. I love to learn new technologies but quantifying that learning in a way that proves it remotely is difficult. Acquiring official certifications seems to be a good way to do this. I have decided to start with the AWS Cloud Practitioner certificate.
 
 2. Fortunately the #1 answer also helps with this question. Certificates are a way to quantify my skills and experience in a way that is easily digestible for hiring managers.
 
