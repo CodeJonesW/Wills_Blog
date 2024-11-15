@@ -1,11 +1,11 @@
 ---
 title: "Becoming Unique in a Vast Market of Competition"
 date: "November 14, 2024"
-cover_image: "/images/posts/flask-to-kubernetes/main1.png"
+cover_image: "/images/posts/becoming-unique/cert.png"
 hide_image_in_slug: true
 ---
 
-## The Job Market in 2024
+## The Job Market in November 2024
 
 Today it seems evident that getting a job in software engineering is not as easy as it may have been in 2019 (or other boom tech phases). In the year of 2024, the combination of resume filtering technologies and remote work has made it difficult to get attention when applying to jobs. While scanning the internet for available positions there appears to be no shortage of job postings for frontend, backend, fullstack, AI, and cloud engineers. However anyone from anywhere can now apply which makes it equally difficult for hiring managers to sift through the applications as it is for the applicants to get noticed.
 
