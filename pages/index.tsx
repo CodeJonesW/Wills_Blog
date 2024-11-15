@@ -132,14 +132,14 @@ export default function Home({ posts }: BlogProps) {
                 }}
                 color="text.primary"
               >
-                {`Im the backend developer who also makes clean user interfaces.
+                {`Im a backend developer who also makes clean user interfaces.
                 
                 A few technologies I've been working with recently:
                 - React
                 - TypeScript
-                - Node.js
-                - SQLite
-                - Cloudflare Workers
+                - Python
+                - PostgreSQL
+                - AWS
                 `}
               </Typography>
             </Box>
