@@ -1,5 +1,5 @@
 ---
-title: "Differentiating myself in a Vast Market of Competition"
+title: "Differentiating Myself in a Vast Market of Competition"
 date: "November 14, 2024"
 cover_image: "/images/posts/differentiating-myself/cert.png"
 hide_image_in_slug: true
