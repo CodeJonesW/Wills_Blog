@@ -44,11 +44,13 @@ I love checking boxes. Satisfaction at its finest. ✅
 
 Without a defined plan the application process seems to rather chaotic in nature. Although the role may be titled Software Engineer, every job listing is a specific flavor of technologies and due to mass competition and resume filtering technologies not having an exact match could be the difference between getting an interview or not.
 
-<img src="/images/posts/becoming-unique/cloudpractitioner.png" alt="aws cloud quest screenshot" title="AWS Cloudquest"/>
+<img src="/images/posts/differentiating-myself/cloudpractitioner.png" alt="aws cloud quest screenshot" title="AWS Cloudquest"/>
 
 ## AWS Cloud Practitioner
 
 I have found [AWS Skill Builder](https://www.aws.training/) to be a great resource for learning about AWS. They have a free tier that allows you to build solutions in their cloud environment.
+
+The above image is a bit funny but I love gamifying the learning process so Cloudquest appeals to me.
 
 So far I have build 6 solutions in Amazon's Cloudquest platform covering the below topics:
 
