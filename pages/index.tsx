@@ -137,9 +137,9 @@ export default function Home({ posts }: BlogProps) {
                 A few technologies I've been working with recently:
                 - React
                 - TypeScript
-                - Node.js
-                - SQLite
-                - Cloudflare Workers
+                - Python
+                - PostgreSQL
+                - AWS
                 `}
               </Typography>
             </Box>
