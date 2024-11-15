@@ -38,7 +38,7 @@ After 2 months of applying to jobs I have had three intro interviews in which I 
 
 My plan is to check these boxes 5 days a week until I have passed the AWS Cloud Practitioner certificate exam. Afterwards I will reorganize the daily goals for new objectives while continuing to improve my Leetcode skills and apply to new jobs.
 
-This is where I shamelessly plug [mygoalcreator.com]('https://mygoalcreator.com') which is a tool I am building and using to help me stay on track with these goals.
+This is where I shamelessly plug [mygoalcreator.com]('https://www.mygoalcreator.com') which is a tool I am building and using to help me stay on track with these goals.
 
 I love checking boxes. Satisfaction at its finest. ✅
 
