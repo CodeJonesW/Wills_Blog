@@ -7,9 +7,9 @@ hide_image_in_slug: true
 
 ## The Job Market in November 2024 👨🏻‍💻
 
-Today it seems evident that getting a job in software engineering is not as easy as it may have been in 2019 (or other boom tech phases). In the year of 2024, the combination of resume filtering technologies and remote work has made it difficult to get attention when applying to jobs. While scanning the internet for available positions there appears to be no shortage of job postings for frontend, backend, fullstack, AI, and cloud engineers. However anyone from anywhere can now apply which makes it equally difficult for hiring managers to sift through the applications as it is for the applicants to get noticed.
+Today, it is evident that getting a job in software engineering is not as easy as it may have been in 2019 (or other boom tech phases). In the year of 2024, the combination of resume filtering technologies and remote work has made it difficult to get attention when applying to jobs. While scanning the internet for available positions there appears to be no shortage of job postings for frontend, backend, fullstack, AI, and cloud engineers. However, anyone from anywhere can now apply, which makes it just as difficult for hiring managers to sift through the applications as it is for the applicants to get noticed.
 
-Working on projects and writing code seems to be a good way to show off skills. However getting an introductory meeting and passing a coding challenge will likely be the first hurdles to overcome. After that, system design knowledge and actual experience with building applications will come into play. Judging by the data in my latest project it is rare that a hiring manager will take the time to look at a project in depth or take the time to login to an application. I have had a few but a small percentage.
+Working on projects and writing code seems to be a good way to show off skills. However getting an introductory meeting and passing a coding challenge will likely be the first hurdles to overcome. After that, system design knowledge and actual experience with building applications will come into play. Judging by the data in my latest project, it is rare that a hiring manager will take the time to look at a project in depth or take the time to log in to an application. I have had a few but a small percentage.
 
 ## The Challenge 🥅
 
@@ -50,7 +50,7 @@ Without a defined plan the application process seems to rather chaotic in nature
 
 I have found [AWS Skill Builder](https://www.aws.training/) to be a great resource for learning about AWS. They have a free tier that allows you to build solutions in their cloud environment.
 
-The above image is a bit funny but I love gamifying the learning process so Cloudquest appeals to me.
+The above image is a bit funny, but I love gamifying the learning process, so Cloudquest appeals to me.
 
 So far I have built 6 solutions in Amazon's Cloudquest platform covering the below topics:
 
