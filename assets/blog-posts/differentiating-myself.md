@@ -52,7 +52,7 @@ I have found [AWS Skill Builder](https://www.aws.training/) to be a great resour
 
 The above image is a bit funny but I love gamifying the learning process so Cloudquest appeals to me.
 
-So far I have build 6 solutions in Amazon's Cloudquest platform covering the below topics:
+So far I have built 6 solutions in Amazon's Cloudquest platform covering the below topics:
 
 - AWS Global Infrastructure
 - VPC - Virtual Private Cloud
