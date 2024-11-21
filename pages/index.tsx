@@ -132,7 +132,7 @@ export default function Home({ posts }: BlogProps) {
                 }}
                 color="text.primary"
               >
-                {`Im a backend developer who also makes clean user interfaces.
+                {`I am a backend developer who also makes clean user interfaces.
                 
                 A few technologies I've been working with recently:
                 - React
