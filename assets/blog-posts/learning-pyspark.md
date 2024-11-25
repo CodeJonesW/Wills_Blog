@@ -15,9 +15,9 @@ I have not worked with these technologies before, so I decided to read the [docu
 
 PySpark is the Python API for Apache Spark. It enables you to perform real-time, large-scale data processing in a distributed environment using Python.
 
-Using less technical verbage, Pyspark allows developers to take a variety of data formats such [CSV](https://en.wikipedia.org/wiki/Comma-separated_values), [Parquet](https://en.wikipedia.org/wiki/Apache_Parquet), [ORC](https://en.wikipedia.org/wiki/Apache_ORC), [JSON](https://en.wikipedia.org/wiki/JSON), or [text](https://en.wikipedia.org/wiki/Text_file) and transform them into a dataframe that can be queried and manipulated using Python. - [source](https://spark.apache.org/docs/latest/sql-data-sources.html)
+Using less technical verbage, Pyspark allows developers to take a variety of data formats such [CSV](https://en.wikipedia.org/wiki/Comma-separated_values), [Parquet](https://en.wikipedia.org/wiki/Apache_Parquet), [ORC](https://en.wikipedia.org/wiki/Apache_ORC), [JSON](https://en.wikipedia.org/wiki/JSON), or [text](https://en.wikipedia.org/wiki/Text_file) and transform them into a RDD (Resilient Distributed Dataset) or dataframe that can be queried and manipulated using Python. - [source](https://spark.apache.org/docs/latest/sql-data-sources.html)
 
-If you arent familiar with dataframes - imagine an excel spreadsheet or relational database table that can be queried and manipulated using Python.
+If you arent familiar with RDDs or dataframes - imagine an excel spreadsheet or relational database table that can be queried and manipulated using Python.
 
 One can view a live jupiter notebook example - [here](https://mybinder.org/v2/gh/apache/spark/32232e9ed33?filepath=python%2Fdocs%2Fsource%2Fgetting_started%2Fquickstart_df.ipynb)
 
@@ -27,7 +27,7 @@ PySpark is popular in big data because it can scale horizontally. As the data gr
 
 "Spark SQL is a Spark module for structured data processing. Unlike the basic [Spark RDD API](https://spark.apache.org/docs/latest/rdd-programming-guide.html#basics), the interfaces provided by Spark SQL provide Spark with more information about the structure of both the data and the computation being performed. Internally, Spark SQL uses this extra information to perform extra optimizations. There are several ways to interact with Spark SQL including SQL and the Dataset API. When computing a result, the same execution engine is used, independent of which API/language you are using to express the computation. This unification means that developers can easily switch back and forth between different APIs based on which provides the most natural way to express a given transformation." - [source](https://spark.apache.org/docs/latest/sql-programming-guide.html)
 
-In simpler terms users can choose to use built in Spark operations like map, filter, join, groupBy, and sortByKey to manipulate an RDD (Resilient Distributed Dataset). Alternatively, they can use SQL queries to manipulate dataframes. Using SQL queries offers more data to Spark SQL to optimize the query to be more efficient.
+In simpler terms users can choose to use built in Spark operations like map, filter, join, groupBy, and sortByKey to manipulate an RDD. Alternatively, they can use SQL queries to manipulate dataframes. Using SQL queries offers more data to Spark SQL to optimize the query to be more efficient.
 
 When working with extremely large datasets, the optimizations that Spark SQL provides can be the difference between a query taking minutes or hours to run.
 
