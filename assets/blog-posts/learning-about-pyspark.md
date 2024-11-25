@@ -128,7 +128,7 @@ result.show()
 
 ## Conclusion 🎬
 
-While researching this article, I found [Jack Laskowski's writing](https://jaceklaskowski.gitbooks.io/mastering-spark-sql/content/) to be extremely helpful. Tonight I made it through the basics of Apache Spark's documentation and the beginning of Jack's book - Mastering Spark SQL.
+While researching this article, I found [Jack Laskowski's writing](https://jaceklaskowski.gitbooks.io/mastering-spark-sql/content/) to be very helpful. Tonight I made it through the basics of Apache Spark's documentation and the beginning of Jack's online book - Mastering Spark SQL.
 
 On his initial page Jack cites a quote by Flannery O'Conner - _'I write to discover what I know.'_
 
