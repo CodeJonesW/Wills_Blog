@@ -10,13 +10,13 @@ hide_image_in_slug: true
 
 I recently came across a backend software engineering opportunity where the majority of the work is Python and SQL based. The role advertised it would be nice to have experience with Spark or PySpark.
 
-I have not worked with Spark or PySpark before, so I decided to read the [documentation](https://spark.apache.org/docs/latest/api/python/index.html) and get a feel for the tool.
+I have not worked with these technologies before, so I decided to read the [documentation](https://spark.apache.org/docs/latest/api/python/index.html) and get a feel for the tool.
 
 ## PySpark ⚡️
 
 PySpark is the Python API for Apache Spark. It enables you to perform real-time, large-scale data processing in a distributed environment using Python.
 
-Using less technical verbage, Pyspark allows developers to take a variety of data formats such [CSV](https://en.wikipedia.org/wiki/Comma-separated_values), [Parquet](https://en.wikipedia.org/wiki/Apache_Parquet), [ORC](https://en.wikipedia.org/wiki/Apache_ORC), JSON, or text and transform them into a dataframe that can be queried and manipulated using Python. - [source](https://spark.apache.org/docs/latest/sql-data-sources.html)
+Using less technical verbage, Pyspark allows developers to take a variety of data formats such [CSV](https://en.wikipedia.org/wiki/Comma-separated_values), [Parquet](https://en.wikipedia.org/wiki/Apache_Parquet), [ORC](https://en.wikipedia.org/wiki/Apache_ORC), [JSON](https://en.wikipedia.org/wiki/JSON), or [text](https://en.wikipedia.org/wiki/Text_file) and transform them into a dataframe that can be queried and manipulated using Python. - [source](https://spark.apache.org/docs/latest/sql-data-sources.html)
 
 If you arent familiar with dataframes - imagine an excel spreadsheet or relational database table that can be queried and manipulated using Python.
 
