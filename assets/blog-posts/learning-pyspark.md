@@ -89,9 +89,13 @@ LIMIT 100
 result.show()
 ```
 
+## Wip
+
+This article is currently a work in progress. I will be updating it more in the next few days.
+
 ## Conclusion
 
-While researching this article, I found [Jack Laskowski's writing](https://jaceklaskowski.gitbooks.io/mastering-spark-sql/content/) to be extremely helpful. Tonight I made it throught the basics of Apache Spark's documentation and the beginning of Jack's book - Mastering Spark SQL.
+While researching this article, I found [Jack Laskowski's writing](https://jaceklaskowski.gitbooks.io/mastering-spark-sql/content/) to be extremely helpful. Tonight I made it through the basics of Apache Spark's documentation and the beginning of Jack's book - Mastering Spark SQL.
 
 On his initial page Jack cites a quote by Flannery O'Conner - _'I write to discover what I know.'_
 
@@ -103,4 +107,4 @@ Cheers!
 
 - [Hive Apache](https://hive.apache.org/)
 - [Testing PySpark](https://spark.apache.org/docs/latest/api/python/getting_started/testing_pyspark.html)
--
+- [Apache Spark](https://spark.apache.org/docs/latest/index.html)
