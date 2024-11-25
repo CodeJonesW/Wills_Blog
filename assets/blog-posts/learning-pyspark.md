@@ -22,7 +22,7 @@ Using even less technical verbage - imagine an excel spreadsheet that can be que
 
 One can view a live jupiter notebook example - [here](https://mybinder.org/v2/gh/apache/spark/32232e9ed33?filepath=python%2Fdocs%2Fsource%2Fgetting_started%2Fquickstart_df.ipynb)
 
-Pyspark is popular in big data is because it has the ability to scale horizontally. This means that as the data grows, you can add more machines to the cluster to handle the increased load. This is in contrast to scaling vertically, where you would need to upgrade the hardware of a single machine to handle the increased load.
+PySpark is popular in big data is because it has the ability to scale horizontally. This means that as the data grows, you can add more machines to the cluster to handle the increased load. This is in contrast to scaling vertically, where you would need to upgrade the hardware of a single machine to handle the increased load.
 
 ## Spark SQL
 
