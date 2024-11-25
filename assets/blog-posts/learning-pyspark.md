@@ -16,17 +16,17 @@ I have not worked with Spark or PySpark before, so I decided to read the [docume
 
 PySpark is the Python API for Apache Spark. It enables you to perform real-time, large-scale data processing in a distributed environment using Python.
 
-Using less technical verbage, Pyspark allows developers to take a variety of data formats such [CSV](https://en.wikipedia.org/wiki/Comma-separated_values), [Parquet](https://en.wikipedia.org/wiki/Apache_Parquet), [ORC](https://en.wikipedia.org/wiki/Apache_ORC) and transform them into a dataframe that can be queried and manipulated using Python.
+Using less technical verbage, Pyspark allows developers to take a variety of data formats such [CSV](https://en.wikipedia.org/wiki/Comma-separated_values), [Parquet](https://en.wikipedia.org/wiki/Apache_Parquet), [ORC](https://en.wikipedia.org/wiki/Apache_ORC), JSON, or text and transform them into a dataframe that can be queried and manipulated using Python. - [source](https://spark.apache.org/docs/latest/sql-data-sources.html)
 
-Using even less technical verbage - imagine an excel spreadsheet that can be queried and manipulated using Python.
+If you arent familiar with dataframees - imagine an excel spreadsheet that can be queried and manipulated using Python.
 
 One can view a live jupiter notebook example - [here](https://mybinder.org/v2/gh/apache/spark/32232e9ed33?filepath=python%2Fdocs%2Fsource%2Fgetting_started%2Fquickstart_df.ipynb)
 
-PySpark is popular in big data is because it has the ability to scale horizontally. This means that as the data grows, you can add more machines to the cluster to handle the increased load. This is in contrast to scaling vertically, where you would need to upgrade the hardware of a single machine to handle the increased load.
+PySpark is popular in big data because it can scale horizontally. As the data grows, you can add more machines to the cluster to handle the increased load. This is in contrast to scaling vertically, where you would need to upgrade the hardware of a single machine to handle the increased load.
 
 ## Spark SQL
 
-"Spark SQL is a Spark module for structured data processing. Unlike the basic Spark RDD API, the interfaces provided by Spark SQL provide Spark with more information about the structure of both the data and the computation being performed. Internally, Spark SQL uses this extra information to perform extra optimizations. There are several ways to interact with Spark SQL including SQL and the Dataset API. When computing a result, the same execution engine is used, independent of which API/language you are using to express the computation. This unification means that developers can easily switch back and forth between different APIs based on which provides the most natural way to express a given transformation." - [source](https://spark.apache.org/docs/latest/sql-programming-guide.html)
+"Spark SQL is a Spark module for structured data processing. Unlike the basic [Spark RDD API](https://spark.apache.org/docs/latest/rdd-programming-guide.html#basics), the interfaces provided by Spark SQL provide Spark with more information about the structure of both the data and the computation being performed. Internally, Spark SQL uses this extra information to perform extra optimizations. There are several ways to interact with Spark SQL including SQL and the Dataset API. When computing a result, the same execution engine is used, independent of which API/language you are using to express the computation. This unification means that developers can easily switch back and forth between different APIs based on which provides the most natural way to express a given transformation." - [source](https://spark.apache.org/docs/latest/sql-programming-guide.html)
 
 In simpler terms users can choose to use built in methods like select, filter, groupBy, and join to manipulate dataframes. Or they can use SQL queries to manipulate dataframes. Using SQL queries offers more data to Spark SQL to optimize the query to be more efficient.
 
@@ -108,3 +108,7 @@ Cheers!
 - [Hive Apache](https://hive.apache.org/)
 - [Testing PySpark](https://spark.apache.org/docs/latest/api/python/getting_started/testing_pyspark.html)
 - [Apache Spark](https://spark.apache.org/docs/latest/index.html)
+- [Mastering Spark SQL](https://jaceklaskowski.gitbooks.io/mastering-spark-sql/content/)
+- [Spark SQL Programming Guide](https://spark.apache.org/docs/latest/sql-programming-guide.html)
+- [Spark SQL Performance Tuning](https://spark.apache.org/docs/latest/sql-performance-tuning.html)
+- [Spark SQL Syntax Guide](https://spark.apache.org/docs/latest/sql-ref-syntax.html)
