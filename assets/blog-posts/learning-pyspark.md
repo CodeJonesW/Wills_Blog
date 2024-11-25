@@ -3,7 +3,6 @@ title: "Learning about PySpark"
 date: "Nov 24, 2024"
 excerpt: "Getting a start with big data tools."
 cover_image: "/images/posts/learning-pyspark/pyspark-art.webp"
-hide_image_in_slug: true
 ---
 
 ## Intro 🐍
