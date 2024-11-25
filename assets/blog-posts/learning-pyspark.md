@@ -18,7 +18,7 @@ PySpark is the Python API for Apache Spark. It enables you to perform real-time,
 
 Using less technical verbage, Pyspark allows developers to take a variety of data formats such [CSV](https://en.wikipedia.org/wiki/Comma-separated_values), [Parquet](https://en.wikipedia.org/wiki/Apache_Parquet), [ORC](https://en.wikipedia.org/wiki/Apache_ORC), JSON, or text and transform them into a dataframe that can be queried and manipulated using Python. - [source](https://spark.apache.org/docs/latest/sql-data-sources.html)
 
-If you arent familiar with dataframees - imagine an excel spreadsheet that can be queried and manipulated using Python.
+If you arent familiar with dataframes - imagine an excel spreadsheet or relational database table that can be queried and manipulated using Python.
 
 One can view a live jupiter notebook example - [here](https://mybinder.org/v2/gh/apache/spark/32232e9ed33?filepath=python%2Fdocs%2Fsource%2Fgetting_started%2Fquickstart_df.ipynb)
 
@@ -28,9 +28,13 @@ PySpark is popular in big data because it can scale horizontally. As the data gr
 
 "Spark SQL is a Spark module for structured data processing. Unlike the basic [Spark RDD API](https://spark.apache.org/docs/latest/rdd-programming-guide.html#basics), the interfaces provided by Spark SQL provide Spark with more information about the structure of both the data and the computation being performed. Internally, Spark SQL uses this extra information to perform extra optimizations. There are several ways to interact with Spark SQL including SQL and the Dataset API. When computing a result, the same execution engine is used, independent of which API/language you are using to express the computation. This unification means that developers can easily switch back and forth between different APIs based on which provides the most natural way to express a given transformation." - [source](https://spark.apache.org/docs/latest/sql-programming-guide.html)
 
-In simpler terms users can choose to use built in methods like select, filter, groupBy, and join to manipulate dataframes. Or they can use SQL queries to manipulate dataframes. Using SQL queries offers more data to Spark SQL to optimize the query to be more efficient.
+In simpler terms users can choose to use built in Spark operations like map, filter, join, groupBy, and sortByKey to manipulate an RDD (Resilient Distributed Dataset). Alternatively, they can use SQL queries to manipulate dataframes. Using SQL queries offers more data to Spark SQL to optimize the query to be more efficient.
 
 When working with extremely large datasets, the optimizations that Spark SQL provides can be the difference between a query taking minutes or hours to run.
+
+## Wip 🚧
+
+This next section is a work in progess. I am currently researching how Spark SQL can optimize queries to run more efficiently. I will continually update this section with my findings.
 
 Imagine we have a dataset containing 1 billion rows of user transaction data stored in CSV files spread across an unoptimized cluster. Let's say the dataset is around 5 TB in size.
 
@@ -61,37 +65,67 @@ Simulation of the above query using PySpark:
 
 ```python
 from pyspark.sql import SparkSession
+from pyspark.sql.functions import rand, expr
 
-spark = SparkSession.builder.appName("Large Dataset Query").getOrCreate()
+# Initialize Spark session
+spark = SparkSession.builder \
+    .appName("Large Dataset Optimization") \
+    .config("spark.sql.shuffle.partitions", "200") \
+    .getOrCreate()
 
-# Generate 1 billion rows of dummy data
-data = [(i % 10000, i * 0.01, f"2023-{i % 12 + 1:02d}-{i % 28 + 1:02d}") for i in range(1, 10**9 + 1)]
-schema = ["user_id", "transaction_amount", "transaction_date"]
-df = spark.createDataFrame(data, schema)
+# Generate synthetic data using Spark
+df = spark.range(0, 10**8).select(
+    (rand() * 1000000).cast("int").alias("user_id"),
+    rand().alias("transaction_amount"),
+    expr("concat('2023-', cast(floor(rand() * 12 + 1) as string), '-', cast(floor(rand() * 28 + 1) as string))").alias("transaction_date")
+)
 
-# Write data to Parquet (Partitioned)
-df.write.partitionBy("transaction_date").mode("overwrite").parquet("transactions_parquet")
+# Write data to Parquet with partitioning and compression
+df.write \
+    .partitionBy("transaction_date") \
+    .option("compression", "snappy") \
+    .mode("overwrite") \
+    .parquet("optimized_transactions_parquet")
 
-# Read back and query
-transactions = spark.read.parquet("transactions_parquet")
-transactions.createOrReplaceTempView("transactions")
+# Read the data back
+transactions = spark.read.parquet("optimized_transactions_parquet")
 
-# Perform the SQL query
-result = spark.sql("""
-SELECT user_id, SUM(transaction_amount) AS total_spent
-FROM transactions
-WHERE transaction_date >= '2023-01-01'
-GROUP BY user_id
-ORDER BY total_spent DESC
-LIMIT 100
-""")
+# Query the dataset with predicate pushdown and aggregation
+result = transactions.filter("transaction_date >= '2023-01-01'") \
+    .groupBy("user_id") \
+    .sum("transaction_amount") \
+    .orderBy("sum(transaction_amount)", ascending=False) \
+    .limit(100)
 
+# Show the results
 result.show()
 ```
 
-## Wip 🚧
+### Why Is This Optimized?
 
-This article is currently a work in progress. I will be updating it more in the next few days.
+1. Efficient Data Generation:
+
+   - Data is generated using Spark's distributed processing, which avoids memory issues in Python.
+
+2. Partitioning:
+   - Partitioning by transaction_date improves predicate pushdown, reducing the amount of data read.
+3. Compressed Storage:
+
+   - Using Snappy compression reduces disk I/O and speeds up data reading.
+
+4. Shuffle Partitioning:
+   - The number of shuffle partitions (spark.sql.shuffle.partitions) is tuned for the cluster size, reducing overhead during aggregations.
+5. Scalability:
+   - The setup is designed to handle larger datasets (e.g., TBs) more effectively without bottlenecks.
+
+### Potential Results
+
+- Small Dataset (10 GB):
+  - Query executes in seconds to minutes.
+- Large Dataset (1 TB):
+  - Query takes several minutes.
+- Massive Dataset (10+ TB):
+  - Query could take hours on an unoptimized cluster but would run faster with proper partitioning, bucketing, and resources.
 
 ## Conclusion 🎬
 
