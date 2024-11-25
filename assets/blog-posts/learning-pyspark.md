@@ -12,7 +12,7 @@ I recently came across a backend software engineering opportunity where the majo
 
 I have not worked with Spark or PySpark before, so I decided to read the [documentation](https://spark.apache.org/docs/latest/api/python/index.html) and get a feel for the tool.
 
-## PySpark
+## PySpark ⚡️
 
 PySpark is the Python API for Apache Spark. It enables you to perform real-time, large-scale data processing in a distributed environment using Python.
 
@@ -24,7 +24,7 @@ One can view a live jupiter notebook example - [here](https://mybinder.org/v2/gh
 
 PySpark is popular in big data because it can scale horizontally. As the data grows, you can add more machines to the cluster to handle the increased load. This is in contrast to scaling vertically, where you would need to upgrade the hardware of a single machine to handle the increased load.
 
-## Spark SQL
+## Spark SQL 📀
 
 "Spark SQL is a Spark module for structured data processing. Unlike the basic [Spark RDD API](https://spark.apache.org/docs/latest/rdd-programming-guide.html#basics), the interfaces provided by Spark SQL provide Spark with more information about the structure of both the data and the computation being performed. Internally, Spark SQL uses this extra information to perform extra optimizations. There are several ways to interact with Spark SQL including SQL and the Dataset API. When computing a result, the same execution engine is used, independent of which API/language you are using to express the computation. This unification means that developers can easily switch back and forth between different APIs based on which provides the most natural way to express a given transformation." - [source](https://spark.apache.org/docs/latest/sql-programming-guide.html)
 
@@ -89,11 +89,11 @@ LIMIT 100
 result.show()
 ```
 
-## Wip
+## Wip 🚧
 
 This article is currently a work in progress. I will be updating it more in the next few days.
 
-## Conclusion
+## Conclusion 🎬
 
 While researching this article, I found [Jack Laskowski's writing](https://jaceklaskowski.gitbooks.io/mastering-spark-sql/content/) to be extremely helpful. Tonight I made it through the basics of Apache Spark's documentation and the beginning of Jack's book - Mastering Spark SQL.
 
@@ -103,7 +103,7 @@ I resonated with this quote strongly. Writing forces me to think and refine my u
 
 Cheers!
 
-### More Resources:
+### More Resources 👏
 
 - [Hive Apache](https://hive.apache.org/)
 - [Testing PySpark](https://spark.apache.org/docs/latest/api/python/getting_started/testing_pyspark.html)
