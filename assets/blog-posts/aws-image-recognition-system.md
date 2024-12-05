@@ -6,9 +6,11 @@ cover_image: "/images/posts/image-recognition-design/rekognition.png"
 # hide_image_in_slug: true
 ---
 
-## Intro
+## Serverless Developer Cert
 
-I recently completed my Serverless Developer Certificate 🥳. Throughout the process I built 24 different solutions using AWS serverless technologies. One of the last projects was an image recognition system. I found this project interesting and wanted to cement the knowledge in my brain so I wrote this article.
+Since my last [post](https://www.williamjonescodes.com/blog/differentiating-myself) about setting a goal to acquire several AWS certificates, I have earned the Cloud Practitioner and Serverless Developer certificates. I find working in the cloud fun and interesting. The suite of available tools makes building systems fast. There is no shortage of options when it comes to piecing together the ideal stack to solve an issue. I cannot reccomend Cloudquest enough because it offers the ability to dive into technologies and designs that would otherwise run up a bill in independent projects.
+
+The serverless developer track was even more engaging than the previous. Throughout the process I built 24 different solutions using AWS serverless technologies. One of the last projects was an image recognition system. I found this project intriguing and wanted to cement the knowledge in my brain so I wrote this article.
 
 ## Building an Image Recognition System with Gen AI
 
