@@ -8,9 +8,9 @@ cover_image: "/images/posts/image-recognition-design/rekognition.png"
 
 ## Serverless Developer Cert
 
-Since my last [post](https://www.williamjonescodes.com/blog/differentiating-myself) about setting a goal to acquire several AWS certificates, I have earned the Cloud Practitioner and Serverless Developer certificates. I find working in the cloud fun and interesting. The suite of available tools makes building systems fast. There is no shortage of options when it comes to piecing together the ideal stack to solve an issue. I cannot reccomend Cloudquest enough because it offers the ability to dive into technologies and designs that would otherwise run up a bill in independent projects.
+Since my last [post](https://www.williamjonescodes.com/blog/differentiating-myself) about setting a goal to acquire several AWS certificates, I have earned the Cloud Practitioner and Serverless Developer certificates. I find working in the cloud fun and interesting. The suite of available tools makes building systems fast. There is no shortage of options when it comes to piecing together the ideal stack to solve an issue. I cannot recommend Cloudquest enough because it offers the ability to dive into technologies and designs that would otherwise run up a bill in independent projects.
 
-The serverless developer track was even more engaging than the Cloud Practitioner. Throughout the process I built 24 different solutions using AWS serverless technologies. One of the last projects was an image recognition system. I found this project intriguing and wanted to cement the knowledge in my brain so I wrote this article on the project.
+The serverless developer track was even more engaging than the Cloud Practitioner. Throughout the process, I built 24 different solutions using AWS serverless technologies. One of the last projects was an image recognition system. I found this project intriguing and wanted to cement the knowledge in my brain, so I wrote this article on the project.
 
 ## Overview of the Project
 
@@ -24,48 +24,48 @@ The system is deployed using the AWS cloud development kit. (AWS CDK) in three d
 
 #### The API stack
 
-is composed of an AWS Lambda function thtat retrieves an image from a web server and stores that image in an Amazon Simple Storage Service Bucket
+is composed of an AWS Lambda function that retreives an image from a web server and stores that image in an Amazon Simple Storage Service Bucket
 
 <img src="/images/posts/image-recognition-design/system_design_2.png" alt="api stack" title="api stack"  />
 
-The Lambda function is invoked by the user through an API hosted on Amazon API Gateway. When an image is stored in the S3 bucket an event notification places a messag into an Amazon Simple Notification Service (Amazon SNS) topic.
+The Lambda function is invoked by the user through an API hosted on Amazon API Gateway. When an image is stored in the S3 bucket an event notification places a message into an Amazon Simple Notification Service (Amazon SNS) topic.
 
 The SNS topic then delivers the message to a subscriber Amazon Simple Queue Service (Amazon SQS) queue.
 
-Before diving into the recognition stack, lets summarize the Amazon Rekognition technology.
+Before diving into the recognition stack, let's summarize the Amazon Rekognition technology.
 
 ---
 
 #### AWS Rekognition
 
-makes it easy to add image and video analysis to applications. The service can identify people, scenes, objects, text and activities. It can detect inappropriate content. It can detect analyze and compare faces for a wide variety of user verification, people counting, and public safety use cases. based on amazon deep learning technology
+makes it easy to add image and video analysis to applications. The service can identify people, scenes, objects, text, and activities. It can detect inappropriate content. It can detect analyze and compare faces for a wide variety of user verification, people counting, and public safety use cases. based on amazon deep learning technology
 
 ##### Key benefits
 
-- Simple integration via easy to use apis. No machine learning expertise required.
-- Fully managed and provides consistent response times even as request volume increases to tens millions of requests
-- It is continually learning from new data
-- Batch and real time analysis
+- Simple integration via easy-to-use apis. No machine learning expertise required.
+- Fully managed and provides consistent response times even as request volume increases to tens of millions of requests.
+- It is continually learning from new data.
+- Batch and real-time analysis
 
-  - video streaming using Amazon kinesis video streams can be analyzed in real time.
-  - images can be analyzed as they are uploaded to amazon s3
-  - for large jobs images and videos can be analyzed in batches
+  - Video streaming using Amazon Kinesis video streams can be analyzed in real time.
+  - Images can be analyzed as they are uploaded to Amazon S3.
+  - For large jobs images and videos can be analyzed in batches.
 
-- low cost
-  - only pay for the number of images or minutes of videos you analyze and face data you store for verification.
-- easily integrate face based verification into new or existing applications
+- Low cost
+  - Only pay for the number of images or minutes of videos you analyze, and face data you store for verification.
+- Easily integrate face based verification into new or existing applications.
 
 ##### Key Features
 
-- identify thousands of objects, scenes, and activities
-- capture pathing in videos - example: analyze athlete movement for post game analysis
-- facial recognition fast and accurate with the ability to search a private repository of face images
-- crowd mode face detection can detect and analyze up to 100 faces in a single image
-- identify potentially unsafe or inappropriate content across images and videos
-- control content via moderation levels
-- facial analysis - demographic data, emotions, gender, age, general attributes like eyes open or glasses
-- celebrity recognition identify well known people in image libraries
-- recognize text from real world images such as street names, products, and license plates.
+- Identify thousands of objects, scenes, and activities
+- Capture pathing in videos - example: analyze athlete movement for post game analysis
+- Facial recognition is fast and accurate, with the ability to search a private repository of face images
+- Crowd mode face detection can detect and analyze up to 100 faces in a single image
+- Identify potentially unsafe or inappropriate content across images and videos
+- Control content via moderation levels
+- Facial analysis - demographic data, emotions, gender, age, general attributes like eyes open or glasses
+- Celebrity recognition identifies well-known people in image libraries
+- Recognize text from real world images such as street names, products, and license plates
 
 ---
 
@@ -79,17 +79,17 @@ This Lambda function uses Amazon Rekognition to create labels for the image that
 
 The Lambda function stores these labels in an Amazon DynamoDB table and places a message in the integration stack SNS topic.
 
-The user can retrive the labels from the DynamoDB table by issuing an API call that invokes the list images Lambda function.
+The user can retrieve the labels from the DynamoDB table by issuing an API call that invokes the list images Lambda function.
 
 #### The Integration Stack
 
-is the final piece of this system. When the image recognition Lambda function places a message in the integration stack SNS topic, the message is delivered to the subscriber SQS queue. This new work item in the SQS queue invkes the integration Lambda function. The Lambda function converts the message to XML format and sends a POST request to the third party server via API Gateway.
+is the final piece of this system. When the image recognition Lambda function places a message in the integration stack SNS topic, the message is delivered to the subscriber SQS queue. This new work item in the SQS queue invokes the integration Lambda function. The Lambda function converts the message to XML format and sends a POST request to the third-party server via API Gateway.
 
 <img src="/images/posts/image-recognition-design/system_design_4.png" alt="integration stack" title="integration stack"  />
 
 ### The Code
 
-In this project AWS provides a zip file that the user is expected to unzip. follow instructions to set up a python environment, and proceed to navigate through a series of steps to fill in code snippets. When doing each project AWS cloud quest provisions an AWS environment that allows access to the resources required to complete the required steps.
+In this project AWS provides a zip file that the user is expected to unzip, follow instructions to set up a Python environment, and proceed through a series of steps to complete code snippets. For each project, AWS Cloud Quest provisions an AWS environment that allows access to the resources required to complete the required steps.
 
 The project directory looks like the following
 
@@ -116,8 +116,8 @@ The project directory looks like the following
 
 #### API
 
-The folders api, integration, and recognition represent each stack of the overall system. Each integration file holds a class that represents the stack with the associated AWS technologies and configurations.
-This is all done via the [AWS CDK](https://aws.amazon.com/cdk/) which allows one to define the required cloud resources in a programming language of their choice instead of manually using the AWS Ui in the browser.
+The API, integration, and recognition folders represent each stack of the overall system. Each file in the integration folder holds a class representing the stack, including its associated AWS technologies and configurations.
+This is all done via the [AWS CDK](https://aws.amazon.com/cdk/), which allows one to define the required cloud resources in a programming language of their choice instead of manually using the AWS UI in the browser.
 
 When inspecting the main app.py file we can see
 
@@ -314,7 +314,7 @@ def handler(event, context):
 
 After each completing the code above we deploy the API stack to the cloud with the cdk deploy command.
 
-We then make a curl request to upload an image via the newly deployed API
+We then make a curl request to upload an image via the newly deployed API.
 
 ```bash
 curl "$(aws cloudformation describe-stacks --stack-name APIStack --query "Stacks[0].Outputs[0].OutputValue" --region us-east-1 --output text)?name=img-01.jpg&url=https://m.media-amazon.com/images/I/61IxvVh3M8L._AC_SX679_.jpg"
@@ -591,7 +591,7 @@ def handler(event, context):
 
 Following the completion of these files we deploy them to the cloud with another cdk deploy command.
 
-After upload we can add upload another image via a curl request and inspect the results of the system with the newly added Rekognition stack.
+After the deployment is completed, we can add upload another image via a curl request and inspect the results of the system with the newly added Rekognition stack.
 
 Below we send a curl request to the rekognition stack to see the labels defined from the uploaded image.
 
@@ -736,9 +736,9 @@ def handler(event, context):
 
 ```
 
-The final stack once deployed sends a post request containing the xml with image categorization created in the recognition stack when ever an image is uploaded to the API stack.
+The final stack once deployed sends a POST request containing the XML with image categorization created in the recognition stack whenever an image is uploaded to the API stack.
 
-If you have made it with me this far, thanks for reading. I hope this was informative and interesting. I am planning to write another article on how one could integrate similar technologies into workflows containing step functions that stitch together services and conditionally take actions based on the results from rekognition analysis.
+If you have made it with me this far, thanks for reading. I hope this was informative, and interesting. I am planning to write another article on how one could integrate similar technologies into workflows containing step functions that stitch together services and conditionally take actions based on the results from Rekognition analysis.
 
 Cheers!
 
