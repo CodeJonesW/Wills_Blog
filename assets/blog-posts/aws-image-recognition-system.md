@@ -736,9 +736,9 @@ def handler(event, context):
 
 ```
 
-The final stack once deployed sends a post request containing the xml with image categorization created in the recognition stack when ever an image is uploaded to the API stack.
+The final stack once deployed sends a POST request containing the XML with image categorization created in the recognition stack whenever an image is uploaded to the API stack.
 
-If you have made it with me this far, thanks for reading. I hope this was informative and interesting. I am planning to write another article on how one could integrate similar technologies into workflows containing step functions that stitch together services and conditionally take actions based on the results from rekognition analysis.
+If you have made it with me this far, thanks for reading. I hope this was informative, and interesting. I am planning to write another article on how one could integrate similar technologies into workflows containing step functions that stitch together services and conditionally take actions based on the results from Rekognition analysis.
 
 Cheers!
 
