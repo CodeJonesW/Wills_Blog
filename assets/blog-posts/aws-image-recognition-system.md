@@ -38,7 +38,7 @@ Before diving into the recognition stack, let's summarize the Amazon Rekognition
 
 #### AWS Rekognition
 
-makes it easy to add image and video analysis to applications. The service can identify people, scenes, objects, text, and activities. It can detect inappropriate content. It can detect analyze and compare faces for a wide variety of user verification, people counting, and public safety use cases. based on amazon deep learning technology
+makes it easy to add image and video analysis to applications. The service can identify people, scenes, objects, text, and activities. It can detect inappropriate content. It can detect analyze and compare faces for a wide variety of user verification, people counting, and public safety use cases. The technology is based on amazon deep learning technology.
 
 ##### Key benefits
 
