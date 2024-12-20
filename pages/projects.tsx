@@ -12,6 +12,12 @@ import { useTheme } from "@mui/material";
 
 const projects = [
   {
+    name: "WeightLiftr",
+    description:
+      "Web app for tracking exercises in the gym and reviewing stats",
+    link: "https://weightliftr.com/",
+  },
+  {
     name: "My Goal Creator",
     description:
       "A goal setting app that helps you set and track your goals with AI.",
