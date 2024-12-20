@@ -14,6 +14,8 @@ In November of 2024, I set out to begin acquiring AWS certificates and increase 
 
 In traditional software deployments you will have hardware or infrastructure that runs an operating system and on top of that operating system you will run multiple applications created with languages like python, node.js, ruby, etc. These applications require specific libraries and dependencies to run properly and that can cause difficult installations or application version conflicts that make scaling your applications challenging software deployment using containers provide a standard way to package your applications code libraries and dependencies into a single object s that includes the library. With software deployment using containers you have infrastructure and an operating system plus a container engine like docker that share the resources of the underlying operating system with your app. Creates container packages that create the libs and packages that enable your app to run. This enables you to move your application across different platforms with ease. Containers are lightweight portable and scalable.
 
+<img src="/images/posts/aws-container-services/containers_vs_traditional_software.png" alt="containers vs traditional software deployments" title="containers vs traditional software deployments"  />
+
 ### AWS Container Services
 
 - Fargate: serverless compute for containers
@@ -38,5 +40,3 @@ Container Management tools can be broken down into 3 categories
 - Use to run, stop, and manage containers across availability zones without complexity of managing control plane or nodes.
 - Supports Docker and Windows containers.
 - For more control you can run container workloads on a cluster of Amazon EC2 instances. Alternatively you can choose to launch containers on a serverless infrastructure managed by AWS Fargate.
-
-- <img src="/images/posts/aws-container-services/containers_vs_traditional_software.png" alt="containers vs traditional software deployments" title="containers vs traditional software deployments"  />
