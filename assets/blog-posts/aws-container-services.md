@@ -1,6 +1,6 @@
 ---
 title: "AWS Container Services"
-date: "Dec 11, 2024"
+date: "Janaury 12, 2024"
 excerpt: ""
 cover_image: "/images/posts/aws-container-services/containers_vs_traditional_software.png"
 hide_image_in_slug: true
@@ -16,27 +16,81 @@ In traditional software deployments you will have hardware or infrastructure tha
 
 <img src="/images/posts/aws-container-services/containers_vs_traditional_software.png" alt="containers vs traditional software deployments" title="containers vs traditional software deployments"  />
 
-### AWS Container Services
+### AWS Container Services Overview
 
-- Fargate: serverless compute for containers
-- EC2 - allows for control over installation and management over compute environment
-- Allows for choice of container orchestration between Amazon Elastic Container Service and Amazon Elastic Kubernetes Service
+AWS offers a range of services to help you build, deploy, and scale containerized applications. Here's an overview of the key services and tools available:
 
-- AWS Fargate, AWS ECS, and EKS enable you to run and manage docker containers at scale
+#### 1. Compute Options for Containers
 
-Container Management tools can be broken down into 3 categories
+AWS provides multiple compute options for running containers, catering to different levels of management and control:
 
-- Registry
-  - Secure place to store and manage containers like ECR
-- Orchestration
-  - Manage when and where they are run and flexible compute engines to power containers such ECS, EKS, Redhat Openshift
-- Compute
-  - Fully managed with Fargate
-  - Control your own virtual infratructure with EC2 instances
+- **AWS Fargate**
 
-### Amazone ECS
+  - A serverless compute engine for containers.
+  - Automatically manages the underlying infrastructure, allowing you to focus solely on your applications.
+
+- **Amazon EC2 (Elastic Compute Cloud)**
+
+  - Provides full control over the underlying infrastructure.
+  - You can install, configure, and manage the compute environment as needed.
+
+- **Container Orchestration Choices**
+  - **Amazon Elastic Container Service (ECS)**: A fully managed container orchestration service designed to work seamlessly with AWS services.
+  - **Amazon Elastic Kubernetes Service (EKS)**: A managed Kubernetes service that makes it easier to run Kubernetes clusters on AWS.
+
+These services allow you to run Docker containers at scale, whether you prefer a fully managed solution or greater control over the environment.
+
+---
+
+### 2. Container Management Tools
+
+Container management involves several key components, which can be grouped into three categories:
+
+#### Registry
+
+- A secure and scalable place to store and manage container images.
+- Example: **Amazon Elastic Container Registry (ECR)** is a fully managed container registry integrated with AWS services.
+
+#### Orchestration
+
+- Tools that manage where and when containers are run and ensure the required infrastructure is in place.
+- Examples:
+  - **Amazon ECS**: Optimized for AWS workloads, simplifying container orchestration.
+  - **Amazon EKS**: Allows you to run Kubernetes clusters on AWS or on-premises.
+  - **Red Hat OpenShift**: A Kubernetes-based platform for managing containers across environments.
+
+#### Compute
+
+- **AWS Fargate**: A fully managed, serverless compute engine for running containers without provisioning or managing servers.
+- **Amazon EC2**: Offers full control over virtual infrastructure, letting you choose instance types, storage, and networking configurations.
+
+---
+
+#### 3. Key Benefits of AWS Container Services
+
+- **Flexibility**: Choose between fully managed services or full control over your infrastructure.
+- **Scalability**: Easily scale applications with AWS services that handle resource provisioning and scaling.
+- **Integration**: AWS container services integrate seamlessly with other AWS services like IAM, VPC, and CloudWatch for security, networking, and monitoring.
+
+#### Amazon ECS
 
 - Fully managed, scalable, and high performance container service.
 - Use to run, stop, and manage containers across availability zones without complexity of managing control plane or nodes.
 - Supports Docker and Windows containers.
 - For more control you can run container workloads on a cluster of Amazon EC2 instances. Alternatively you can choose to launch containers on a serverless infrastructure managed by AWS Fargate.
+
+#### The Container Services Project (WIP)
+
+The project used Amazon Elastic Container Registry and Amazon Elastic Container Service and Amazon Fargate to host containerized applications without the need to provision and manage servers.
+
+<img src="/images/posts/aws-container-services/sys_design.png" alt="AWS application container system design" title="AWS application container system design"  />
+
+The lab allows me to use AWS session manager to connect to an EC2 instance where I unzip a .zip file containing the application. The applcation is a python web app that is pretty simple.
+
+First we create a docker image of the application. This is done by creating a dockerfile which describes the base image to use for the Docker image and includes what I want to install and run on it. I build the docker image and push it to an Amazon ECR repository.
+
+A task definition is required to run Docker containers in Amazon ECS/ A task definition specifies parameters such as CPU and memory to use with each task, launch type, networking mode, logging configuration, run command, data volume, and IAM role that the task uses.
+
+An Amazon ECS cluster is a logical grouping of tasks or services running on Amazon Elastic Compute Cloud (EC2) instances. A task is the instantiation of a task definition within a cluster. If you want to maintain a desired number of tasks simultaneously in a cluster you use Amazon ECS.
+
+AWS Fargate technology can be used with Amazon ECS to run containers without having to manage servers or clusters of EC2 instances. Fargate is a quick way to launch an run containers on AWS. Customers that want greater control of their EC2 instances can use ECS without Fargate.
