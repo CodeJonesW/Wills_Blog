@@ -1,6 +1,6 @@
 ---
 title: "AWS Container Services"
-date: "Janaury 12, 2024"
+date: "Janaury 12, 2025"
 excerpt: ""
 cover_image: "/images/posts/aws-container-services/containers_vs_traditional_software.png"
 hide_image_in_slug: true
