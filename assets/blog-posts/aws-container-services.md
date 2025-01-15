@@ -83,6 +83,8 @@ Container management involves several key components, which can be grouped into 
 - Supports Docker and Windows containers.
 - For more control you can run container workloads on a cluster of Amazon EC2 instances. Alternatively you can choose to launch containers on a serverless infrastructure managed by AWS Fargate.
 
+---
+
 #### The Container Services Project
 
 The project used Amazon Elastic Container Registry and Amazon Elastic Container Service and Amazon Fargate to host containerized applications without the need to provision and manage servers.
