@@ -16,7 +16,7 @@ I am happy to have accepted a new software position! I estimate it will allow me
 
 ## Overview of Containers
 
-In traditional software deployments you will have hardware or infrastructure that runs an operating system and on top of that operating system you will run multiple applications created with languages like python, node.js, ruby, etc. These applications require specific libraries and dependencies to run properly and that can cause difficult installations or application version conflicts that make scaling your applications challenging software deployment using containers provide a standard way to package your applications code libraries and dependencies into a single object s that includes the library. With software deployment using containers you have infrastructure and an operating system plus a container engine like docker that share the resources of the underlying operating system with your app. Creates container packages that create the libs and packages that enable your app to run. This enables you to move your application across different platforms with ease. Containers are lightweight portable and scalable.
+In traditional software deployments you will have hardware or infrastructure that runs an operating system and on top of that operating system you will run multiple applications created with languages like python, node.js, ruby, etc. These applications require specific libraries and dependencies to run properly and that can cause difficult installations or application version conflicts that make scaling your applications challenging. Software deployment using containers provide a standard way to package your applications code libraries and dependencies into a single object that includes the library. With software deployment using containers you have infrastructure and an operating system plus a container engine like docker that share the resources of the underlying operating system with your app. Creates container packages that create the libs and packages that enable your app to run. This enables you to move your application across different platforms with ease. Containers are lightweight portable and scalable.
 
 <img src="/images/posts/aws-container-services/containers_vs_traditional_software.png" alt="containers vs traditional software deployments" title="containers vs traditional software deployments"  />
 
@@ -83,7 +83,9 @@ Container management involves several key components, which can be grouped into 
 - Supports Docker and Windows containers.
 - For more control you can run container workloads on a cluster of Amazon EC2 instances. Alternatively you can choose to launch containers on a serverless infrastructure managed by AWS Fargate.
 
-#### The Container Services Project (WIP)
+---
+
+#### The Container Services Project
 
 The project used Amazon Elastic Container Registry and Amazon Elastic Container Service and Amazon Fargate to host containerized applications without the need to provision and manage servers.
 
