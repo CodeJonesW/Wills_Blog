@@ -10,7 +10,7 @@ hide_image_in_slug: true
 
 Learning to use unit tests to become confident in code changes is a lovely thing. Deploying changes with confidence gives back hours of sleep, provides a life like glow, and brings good weather.
 
-## Unit Test Spies
+## Visualizing a Spy
 
 <img src="/images/posts/unit-test-spies/test4.png" alt="spies-diagram" title="spies-diagram"  />
 
