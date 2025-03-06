@@ -81,7 +81,7 @@ export default function Home({ posts }: BlogProps) {
               },
             }}
           >
-            <ProfileImage src="selfie.jpg" />
+            <ProfileImage src="warlock.jpg" />
 
             <Box
               sx={{
