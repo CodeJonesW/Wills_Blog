@@ -14,10 +14,8 @@ Learning to use unit tests to become confident in code changes is a lovely thing
 
 <img src="/images/posts/unit-test-spies/test4.png" alt="spies-diagram" title="spies-diagram"  />
 
-In our unit test we want to test a function. The function uses an import called fn that we cannot change the actual response of. Therefore we spy on the function and change the response via a mock implementation.
+In our unit test we want to test a function. The function uses an import called fn that we cannot change the actual response of. Therefore we spy on the function and change the response via a mock implementation. Spies are often used for external API calls and external dependencies. They allow you to control the behavior of functions without invoking their actual implementation, making it easier to test edge cases, different return values, and code paths.
 
-This allows us to test different code paths based on the results of our mock implementation.
-
-Sometimes setting up spies in unit tests can have syntax that is frustrating. Despite the lift, it is very nice to have the pattern established for changing the returned value to suit your needs. Spies are often used for external API calls, library functions, and
+Setting up spies in unit tests can have syntax that is frustrating. Despite the lift, it is very nice to have the pattern established for changing the returned value to suit your needs.
 
 I love making diagrams of programming concepts - A picture is worth a thousand words 🙂
