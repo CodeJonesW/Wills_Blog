@@ -1,4 +1,9 @@
-# Understanding Autonomous Vehicle Tech Stacks and Building a Finite State Machine in ROS 2
+---
+title: "Understanding Autonomous Vehicle Tech Stacks and Building a Finite State Machine in ROS 2"
+date: "March 25, 2025"
+excerpt: ""
+cover_image: "/images/posts/learning-about-self-driving-cars-v1/nodes.png"
+---
 
 ## 🚗 Introduction
 
@@ -81,6 +86,6 @@ All the source code for this project is available here: [GitHub Repository](http
 
 ## 📌 Conclusion
 
-Understanding **autonomous vehicle tech stacks** is essential for building intelligent decision-making systems. By implementing an FSM in ROS 2, we've taken the first step toward simulating real-world AV decision-making. Whether you're looking to expand this project with real sensor integration, visualization tools like `rviz2`, or more advanced FSM behaviors, the foundations are now in place.
+Understanding **autonomous vehicle tech stacks** is essential for building intelligent decision-making systems. By implementing an FSM in ROS 2, we've taken the first step toward simulating real-world AV decision-making. Whether you're looking to expand this project with real sensor integration, visualization tools like rviz2, or more advanced FSM behaviors, the foundations are now in place.
 
 Stay tuned for further enhancements and experiments in the world of autonomous systems! 🚗💡
