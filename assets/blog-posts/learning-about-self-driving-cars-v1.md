@@ -1,7 +1,7 @@
 ---
-title: "Understanding Autonomous Vehicle Tech Stacks and Building a Finite State Machine in ROS 2"
+title: "Understanding Autonomous Vehicle Tech Stacks v0.0.1"
 date: "March 25, 2025"
-excerpt: ""
+excerpt: "Building a Finite State Machine in ROS 2"
 cover_image: "/images/posts/learning-about-self-driving-cars-v1/nodes.png"
 ---
 
@@ -243,6 +243,8 @@ Tesla’s philosophy is that humans drive using vision alone, so AI should be ab
 #### 💡 Why Waymo Uses LiDAR
 
 Waymo argues that LiDAR provides precise depth perception and is necessary for safety-critical scenarios. Unlike cameras, LiDAR works in total darkness and poor weather.
+
+<img src="/images/posts/learning-about-self-driving-cars-v1/waymo.png" alt="waymo" title="waymo"  />
 
 ### 🏆 Which One Is Closer to Full Self-Driving?
 
